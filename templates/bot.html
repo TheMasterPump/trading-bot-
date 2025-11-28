@@ -1,0 +1,3693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRADING BOT AI - Automated Solana Trading</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --terminal-bg: #0a0e27;
+            --terminal-text: #00ffff;
+            --terminal-blue: #0099cc;
+            --terminal-cyan: #00ffff;
+            --terminal-green: #00ff88;
+            --terminal-red: #ff0051;
+            --terminal-yellow: #ffd700;
+            --terminal-border: #0099cc;
+            --terminal-glow: #00ffff;
+        }
+
+        body {
+            background: var(--terminal-bg);
+            color: var(--terminal-text);
+            font-family: 'Roboto Mono', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix Rain Background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #00ffff;
+            opacity: 0.2;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #0099cc;
+            animation: matrixFall linear infinite;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        @keyframes matrixFall {
+            0% { top: -100%; opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Scanlines */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 255, 255, 0.03), rgba(0, 255, 255, 0.03) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .terminal-header {
+            background: linear-gradient(180deg, #0d1330 0%, #0a0e27 100%);
+            border-bottom: 2px solid var(--terminal-border);
+            padding: 15px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0099cc;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Cyber Eye Logo Styles */
+        .cyber-eye-container {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        .cyber-eye-logo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            animation: eyeFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes eyeFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-3px) scale(1.05); }
+        }
+
+        .cyber-outer-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%,
+                #00ffff 0%,
+                #0099cc 40%,
+                #006699 70%,
+                #003366 100%);
+            box-shadow:
+                0 0 20px #00ffff,
+                0 0 40px #0099cc,
+                inset 0 0 20px rgba(0, 255, 255, 0.3);
+            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
+        }
+
+        @keyframes cyberPulse {
+            0%, 100% {
+                box-shadow:
+                    0 0 20px #00ffff,
+                    0 0 40px #0099cc,
+                    inset 0 0 20px rgba(0, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow:
+                    0 0 30px #00ffff,
+                    0 0 60px #0099cc,
+                    inset 0 0 30px rgba(0, 255, 255, 0.5);
+            }
+        }
+
+        @keyframes cyberRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cyber-white-ring {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                #ffffff 0%,
+                #f0f0f0 50%,
+                #e0e0e0 100%);
+            box-shadow:
+                0 0 10px rgba(255, 255, 255, 0.8),
+                inset 0 0 8px rgba(0, 0, 0, 0.1);
+            animation: glowWhite 3s ease-in-out infinite;
+        }
+
+        @keyframes glowWhite {
+            0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        }
+
+        .cyber-iris {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 40% 40%,
+                #00ff88 0%,
+                #00cc66 40%,
+                #009944 70%,
+                #006633 100%);
+            box-shadow:
+                0 0 15px #00ff88,
+                inset 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: irisPulse 2.5s ease-in-out infinite;
+            transition: transform 0.15s ease-out;
+        }
+
+        @keyframes irisPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px #00ff88;
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 25px #00ff88;
+            }
+        }
+
+        .cyber-pupil {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            width: 20%;
+            height: 20%;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                #000000 0%,
+                #111111 50%,
+                #000000 100%);
+            box-shadow:
+                inset 0 0 8px #000,
+                0 0 3px rgba(0, 0, 0, 0.8);
+            animation: pupilDilate 4s ease-in-out infinite;
+            transition: transform 0.1s ease-out;
+        }
+
+        @keyframes pupilDilate {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(0.8); }
+            75% { transform: scale(1.2); }
+        }
+
+        .cyber-reflection1 {
+            position: absolute;
+            top: 25%;
+            left: 35%;
+            width: 15%;
+            height: 20%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse,
+                rgba(255, 255, 255, 0.9) 0%,
+                rgba(255, 255, 255, 0.6) 40%,
+                transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .cyber-reflection2 {
+            position: absolute;
+            top: 60%;
+            right: 25%;
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.7) 0%,
+                transparent 70%);
+            animation: shimmer 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        .cyber-scan-line {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                #00ffff 50%,
+                transparent 100%);
+            opacity: 0.6;
+            animation: cyberScan 3s linear infinite;
+        }
+
+        @keyframes cyberScan {
+            0% { top: -1px; }
+            100% { top: 100%; }
+        }
+
+        .cyber-eye-logo.clicked {
+            animation: colorFlash 0.8s ease-in-out;
+        }
+
+        @keyframes colorFlash {
+            0% { filter: hue-rotate(0deg) brightness(1); }
+            20% { filter: hue-rotate(30deg) brightness(1.5); }
+            40% { filter: hue-rotate(350deg) brightness(1.5); }
+            60% { filter: hue-rotate(120deg) brightness(1.5); }
+            80% { filter: hue-rotate(220deg) brightness(1.5); }
+            100% { filter: hue-rotate(0deg) brightness(1); }
+        }
+
+        .nav-link {
+            color: rgba(0, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .terminal-window {
+            background: rgba(10, 14, 39, 0.95);
+            border: 2px solid #0099cc;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), inset 0 0 50px rgba(0, 255, 255, 0.1);
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .auth-container {
+            max-width: 500px;
+            margin: 100px auto;
+        }
+
+        .form-control {
+            background: rgba(0, 20, 40, 0.8);
+            border: 2px solid #0099cc;
+            color: #00ffff;
+            font-family: 'Roboto Mono', monospace;
+            padding: 15px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            background: rgba(0, 30, 60, 0.9);
+            border-color: #00ffff;
+            color: #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: rgba(0, 153, 204, 0.5);
+        }
+
+        .btn-cyber {
+            background: linear-gradient(135deg, #00ffff, #0099cc, #00ffff);
+            background-size: 200% 200%;
+            border: 2px solid #00ffff;
+            color: #0a0e27;
+            font-weight: 700;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            transition: all 0.3s;
+            cursor: pointer;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .btn-cyber:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 40px rgba(0, 255, 255, 1);
+        }
+
+        .btn-secondary {
+            background: rgba(0, 153, 204, 0.2);
+            border: 2px solid #0099cc;
+            color: #00ffff;
+        }
+
+        .btn-danger {
+            background: rgba(255, 0, 81, 0.2);
+            border: 2px solid var(--terminal-red);
+            color: var(--terminal-red);
+        }
+
+        .btn-success {
+            background: rgba(0, 255, 136, 0.2);
+            border: 2px solid var(--terminal-green);
+            color: var(--terminal-green);
+        }
+
+        .mode-toggle-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .mode-toggle-btn:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .mode-toggle-btn.active {
+            background: linear-gradient(135deg, #00ff88, #00cc66);
+            color: #0a0e27;
+        }
+
+        .mode-toggle-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .dashboard-card {
+            background: rgba(0, 20, 40, 0.6);
+            border: 2px solid #0099cc;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .card-title {
+            color: #00ffff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #00ffff;
+            border-bottom: 2px solid rgba(0, 153, 204, 0.4);
+            padding-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00ffff;
+            text-shadow: 0 0 15px #00ffff;
+            margin: 15px 0;
+        }
+
+        .stat-label {
+            color: rgba(0, 255, 255, 0.7);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .wallet-address {
+            background: rgba(0, 10, 20, 0.8);
+            border: 1px solid #0099cc;
+            border-radius: 4px;
+            padding: 15px;
+            font-size: 0.85rem;
+            word-break: break-all;
+            color: #00ffff;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 153, 204, 0.3);
+            border: 1px solid #0099cc;
+            color: #00ffff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(0, 153, 204, 0.6);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .boost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        /* Duration Toggle */
+        .duration-toggle {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .duration-btn {
+            padding: 8px 16px;
+            border: 2px solid;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .duration-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .boost-card.risky .duration-btn {
+            border-color: #ff0051;
+            color: rgba(255, 0, 81, 0.7);
+        }
+
+        .boost-card.risky .duration-btn.active {
+            background: #ff0051;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 0, 81, 0.6);
+        }
+
+        .boost-card.safe .duration-btn {
+            border-color: #00ff88;
+            color: rgba(0, 255, 136, 0.7);
+        }
+
+        .boost-card.safe .duration-btn.active {
+            background: #00ff88;
+            color: #0a0e27;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+        }
+
+        .boost-card.ultra .duration-btn {
+            border-color: #00d4ff;
+            color: rgba(0, 212, 255, 0.7);
+        }
+
+        .boost-card.ultra .duration-btn.active {
+            background: #00d4ff;
+            color: #0a0e27;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+        }
+
+        .boost-card.lifetime .duration-btn {
+            border-color: #ffd700;
+            color: rgba(255, 215, 0, 0.7);
+        }
+
+        .boost-card.lifetime .duration-btn.active {
+            background: #ffd700;
+            color: #0a0e27;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+        }
+
+        .boost-card {
+            background: rgba(10, 14, 39, 0.95);
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s;
+        }
+
+        .boost-card.risky {
+            border-color: #ff0051;
+            box-shadow: 0 0 40px rgba(255, 0, 81, 0.3);
+        }
+
+        .boost-card.safe {
+            border-color: #00ff88;
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .boost-card.ultra {
+            border-color: #00d4ff;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+            opacity: 0.7;
+        }
+
+        .boost-card:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .boost-card.risky:hover {
+            box-shadow: 0 15px 60px rgba(255, 0, 81, 0.6);
+        }
+
+        .boost-card.safe:hover {
+            box-shadow: 0 15px 60px rgba(0, 255, 136, 0.6);
+        }
+
+        .boost-card.ultra:hover {
+            box-shadow: 0 15px 60px rgba(0, 212, 255, 0.6);
+        }
+
+        .boost-card.featured {
+            transform: scale(1.05);
+            border-width: 4px;
+        }
+
+        .boost-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .boost-badge.recommended {
+            background: linear-gradient(135deg, #00ff88, #00cc66);
+            color: #0a0e27;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+        }
+
+        .boost-badge.coming-soon {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .limited-spots {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse-spot 2s ease-in-out infinite;
+        }
+
+        .boost-card.risky .limited-spots {
+            background: rgba(255, 0, 81, 0.2);
+            color: #ff0051;
+            border: 2px solid #ff0051;
+        }
+
+        .boost-card.safe .limited-spots {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            border: 2px solid #00ff88;
+        }
+
+        .boost-card.ultra .limited-spots {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .boost-card.lifetime .limited-spots {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+
+        @keyframes pulse-spot {
+            0%, 100% {
+                box-shadow: 0 0 5px currentColor;
+            }
+            50% {
+                box-shadow: 0 0 20px currentColor;
+            }
+        }
+
+        .boost-eye-container {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto 20px;
+            position: relative;
+        }
+
+        .boost-eye {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            animation: eyeFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes eyeFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-3px) scale(1.05); }
+        }
+
+        /* Red Eye */
+        .red-eye .eye-outer-ring {
+            background: radial-gradient(circle at 30% 30%,
+                #ff0051 0%, #cc0040 40%, #990030 70%, #660020 100%);
+            box-shadow: 0 0 25px #ff0051, 0 0 50px #cc0040, inset 0 0 25px rgba(255, 0, 81, 0.3);
+        }
+
+        .red-eye .eye-iris {
+            background: radial-gradient(circle at 40% 40%,
+                #ff3366 0%, #ff0051 40%, #cc0040 70%, #990030 100%);
+            box-shadow: 0 0 15px #ff0051;
+        }
+
+        /* Green Eye */
+        .green-eye .eye-outer-ring {
+            background: radial-gradient(circle at 30% 30%,
+                #00ff88 0%, #00cc66 40%, #009944 70%, #006633 100%);
+            box-shadow: 0 0 25px #00ff88, 0 0 50px #00cc66, inset 0 0 25px rgba(0, 255, 136, 0.3);
+        }
+
+        .green-eye .eye-iris {
+            background: radial-gradient(circle at 40% 40%,
+                #00ff88 0%, #00cc66 40%, #009944 70%, #006633 100%);
+            box-shadow: 0 0 15px #00ff88;
+        }
+
+        /* Blue Eye */
+        .blue-eye .eye-outer-ring {
+            background: radial-gradient(circle at 30% 30%,
+                #00d4ff 0%, #0099cc 40%, #006699 70%, #003366 100%);
+            box-shadow: 0 0 25px #00d4ff, 0 0 50px #0099cc, inset 0 0 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .blue-eye .eye-iris {
+            background: radial-gradient(circle at 40% 40%,
+                #00d4ff 0%, #0099cc 40%, #006699 70%, #003366 100%);
+            box-shadow: 0 0 15px #00d4ff;
+        }
+
+        .eye-outer-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
+        }
+
+        @keyframes cyberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes cyberRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .eye-white-ring {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffffff 0%, #f0f0f0 50%, #e0e0e0 100%);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .eye-iris {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            animation: irisPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes irisPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .eye-pupil {
+            position: absolute;
+            top: 40%;
+            left: 40%;
+            width: 20%;
+            height: 20%;
+            border-radius: 50%;
+            background: radial-gradient(circle, #000000 0%, #111111 50%, #000000 100%);
+            box-shadow: inset 0 0 8px #000;
+            animation: pupilDilate 4s ease-in-out infinite;
+        }
+
+        @keyframes pupilDilate {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(0.8); }
+            75% { transform: scale(1.2); }
+        }
+
+        .eye-reflection1 {
+            position: absolute;
+            top: 25%;
+            left: 35%;
+            width: 15%;
+            height: 20%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 40%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .eye-reflection2 {
+            position: absolute;
+            top: 60%;
+            right: 25%;
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .boost-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .boost-card.risky .boost-name {
+            color: #ff0051;
+            text-shadow: 0 0 20px #ff0051;
+        }
+
+        .boost-card.safe .boost-name {
+            color: #00ff88;
+            text-shadow: 0 0 20px #00ff88;
+        }
+
+        .boost-card.ultra .boost-name {
+            color: #00d4ff;
+            text-shadow: 0 0 20px #00d4ff;
+        }
+
+        .boost-card.lifetime {
+            border-color: #ffd700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+        }
+
+        .boost-card.lifetime:hover {
+            box-shadow: 0 15px 60px rgba(255, 215, 0, 0.7);
+        }
+
+        .boost-card.lifetime .boost-name {
+            color: #ffd700;
+            text-shadow: 0 0 20px #ffd700;
+        }
+
+        /* Gold Eye */
+        .gold-eye .eye-outer-ring {
+            background: radial-gradient(circle at 30% 30%,
+                #ffd700 0%, #ffaa00 40%, #ff8800 70%, #cc6600 100%);
+            box-shadow: 0 0 25px #ffd700, 0 0 50px #ffaa00, inset 0 0 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .gold-eye .eye-iris {
+            background: radial-gradient(circle at 40% 40%,
+                #ffff00 0%, #ffd700 40%, #ffaa00 70%, #ff8800 100%);
+            box-shadow: 0 0 15px #ffd700;
+        }
+
+        .boost-price {
+            font-size: 2rem;
+            color: var(--terminal-green);
+            margin: 15px 0;
+        }
+
+        .boost-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .boost-features li {
+            padding: 8px 0;
+            color: rgba(0, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .boost-features li:before {
+            content: "✓ ";
+            color: var(--terminal-green);
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+        .trades-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .trades-table th {
+            background: rgba(0, 20, 40, 0.8);
+            color: #00ffff;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #0099cc;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .trades-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(0, 153, 204, 0.3);
+            color: rgba(0, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+
+        .trades-table tr:hover {
+            background: rgba(0, 20, 40, 0.6);
+        }
+
+        .profit-positive {
+            color: var(--terminal-green);
+            font-weight: 700;
+        }
+
+        .profit-negative {
+            color: var(--terminal-red);
+            font-weight: 700;
+        }
+
+        .bot-status {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 10, 20, 0.8);
+            border-radius: 8px;
+            border: 2px solid #0099cc;
+            margin: 20px 0;
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .status-indicator.running {
+            background: var(--terminal-green);
+            box-shadow: 0 0 20px var(--terminal-green);
+        }
+
+        .status-indicator.stopped {
+            background: var(--terminal-red);
+            box-shadow: 0 0 20px var(--terminal-red);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border: 2px solid;
+        }
+
+        .alert-error {
+            background: rgba(255, 0, 81, 0.1);
+            border-color: var(--terminal-red);
+            color: var(--terminal-red);
+        }
+
+        .alert-success {
+            background: rgba(0, 255, 136, 0.1);
+            border-color: var(--terminal-green);
+            color: var(--terminal-green);
+        }
+
+        .alert-info {
+            background: rgba(0, 255, 255, 0.1);
+            border-color: var(--terminal-cyan);
+            color: var(--terminal-cyan);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(0, 153, 204, 0.3);
+            border-top: 3px solid #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            border-bottom: 2px solid rgba(0, 153, 204, 0.3);
+        }
+
+        .tab {
+            padding: 15px 30px;
+            background: rgba(0, 20, 40, 0.4);
+            border: 2px solid transparent;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            color: rgba(0, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .tab:hover {
+            color: #00ffff;
+            background: rgba(0, 20, 40, 0.6);
+        }
+
+        .tab.active {
+            background: rgba(0, 20, 40, 0.8);
+            border-color: #0099cc;
+            color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .tab-content {
+            padding: 30px;
+            background: rgba(0, 20, 40, 0.4);
+            border-radius: 0 8px 8px 8px;
+            border: 2px solid #0099cc;
+        }
+
+        .terminal-title {
+            color: #00ffff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0099cc;
+            text-align: center;
+        }
+
+        .terminal-title::before {
+            content: "> ";
+            color: #0099cc;
+        }
+
+        .qr-code-container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Matrix Rain Background -->
+<div class="matrix-bg" id="matrixBg"></div>
+
+<!-- Main Content -->
+<div class="content-wrapper">
+
+<!-- Header -->
+<div class="terminal-header">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <span>VISION BOT</span>
+                <div class="cyber-eye-container">
+                    <div class="cyber-eye-logo" id="headerEye">
+                        <div class="cyber-outer-ring"></div>
+                        <div class="cyber-white-ring"></div>
+                        <div class="cyber-iris" id="headerIris"></div>
+                        <div class="cyber-pupil" id="headerPupil"></div>
+                        <div class="cyber-reflection1"></div>
+                        <div class="cyber-reflection2"></div>
+                        <div class="cyber-scan-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home me-1"></i>HOME
+                </a>
+                <a href="/bot" class="nav-link active">
+                    <i class="fas fa-eye me-1"></i>VISION BOT
+                </a>
+                <a href="/about" class="nav-link">
+                    <i class="fas fa-book me-1"></i>DOC
+                </a>
+                <span id="userEmail" class="nav-link" style="cursor: default;"></span>
+                <a href="#" id="logoutBtn" class="nav-link hidden">
+                    <i class="fas fa-sign-out-alt me-1"></i>LOGOUT
+                </a>
+                <a href="https://x.com/VisionAIHQ" target="_blank" class="nav-link" title="Follow us on X" style="font-weight: bold; font-size: 1.1rem;">
+                    𝕏
+                </a>
+                <a href="https://t.me/PortalvisionAI" target="_blank" class="nav-link" title="Join our Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Auth Section (shown when not logged in) -->
+    <div id="authSection" class="auth-container hidden">
+        <div class="terminal-window">
+            <h2 class="terminal-title">ACCESS TERMINAL</h2>
+
+            <div id="authTabs" class="tab-container">
+                <div class="tab active" onclick="showAuthTab('login')">LOGIN</div>
+                <div class="tab" onclick="showAuthTab('register')">REGISTER</div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="tab-content">
+                <div id="loginError" class="alert alert-error hidden"></div>
+                <form onsubmit="handleLogin(event)">
+                    <div class="mb-3">
+                        <label class="form-label" style="color: var(--terminal-cyan);">
+                            <i class="fas fa-envelope me-2"></i>EMAIL
+                        </label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: var(--terminal-cyan);">
+                            <i class="fas fa-lock me-2"></i>PASSWORD
+                        </label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-cyber w-100">
+                        <i class="fas fa-sign-in-alt me-2"></i>LOGIN
+                    </button>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="tab-content hidden">
+                <div id="registerError" class="alert alert-error hidden"></div>
+                <div id="registerSuccess" class="alert alert-success hidden"></div>
+                <form onsubmit="handleRegister(event)">
+                    <div class="mb-3">
+                        <label class="form-label" style="color: var(--terminal-cyan);">
+                            <i class="fas fa-envelope me-2"></i>EMAIL
+                        </label>
+                        <input type="email" class="form-control" id="registerEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: var(--terminal-cyan);">
+                            <i class="fas fa-lock me-2"></i>PASSWORD (min 6 characters)
+                        </label>
+                        <input type="password" class="form-control" id="registerPassword" placeholder="••••••••" required minlength="6">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: var(--terminal-cyan);">
+                            <i class="fas fa-lock me-2"></i>CONFIRM PASSWORD
+                        </label>
+                        <input type="password" class="form-control" id="registerPasswordConfirm" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-cyber w-100">
+                        <i class="fas fa-user-plus me-2"></i>CREATE ACCOUNT
+                    </button>
+                </form>
+                <div class="alert alert-info mt-3">
+                    <i class="fas fa-info-circle me-2"></i>
+                    A Solana wallet will be automatically generated for you!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section (shown when logged in) -->
+    <div id="dashboardSection" class="hidden">
+        <div class="terminal-window">
+            <h2 class="terminal-title">TRADING DASHBOARD</h2>
+
+            <!-- Bot Status Bar -->
+            <div class="bot-status">
+                <div id="statusIndicator" class="status-indicator stopped"></div>
+                <div style="flex: 1;">
+                    <strong style="color: #00ffff;">BOT STATUS:</strong>
+                    <span id="botStatusText" style="color: var(--terminal-red);">STOPPED</span>
+                    <div style="font-size: 0.85rem; color: rgba(0, 255, 255, 0.6); margin-top: 5px;">
+                        Strategy: <span id="botStrategy">AI PREDICTIONS</span> |
+                        Risk: <span id="botRisk">MEDIUM</span> |
+                        Mode: <span id="botMode">SIMULATION</span>
+                    </div>
+                </div>
+
+                <!-- Mode Toggle (Simulation/Real) -->
+                <div id="modeToggle" style="display: flex; align-items: center; gap: 10px; margin-right: 15px;">
+                    <div style="display: flex; background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 5px; gap: 5px;">
+                        <button id="simModeBtn" class="mode-toggle-btn active" onclick="selectMode('simulation')">
+                            <i class="fas fa-gamepad me-1"></i>SIMULATION
+                        </button>
+                        <button id="realModeBtn" class="mode-toggle-btn" onclick="selectMode('real')">
+                            <i class="fas fa-wallet me-1"></i>REAL
+                            <i class="fas fa-lock" style="font-size: 0.7rem; margin-left: 3px;" id="realModeLock"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" id="startBotBtn" onclick="startBot()">
+                    <i class="fas fa-play me-2"></i>START BOT
+                </button>
+                <button class="btn btn-danger hidden" id="stopBotBtn" onclick="stopBot()">
+                    <i class="fas fa-stop me-2"></i>STOP BOT
+                </button>
+            </div>
+
+            <!-- Simulation Mode Banner -->
+            <div id="simulationModeBanner" style="background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.15)); border: 2px solid #ffa500; border-radius: 15px; padding: 20px; margin: 20px 0; display: none;">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <div style="color: #ffa500; font-weight: 700; font-size: 1.1rem; margin-bottom: 8px;">
+                            <i class="fas fa-gamepad me-2"></i>SIMULATION MODE ACTIVE
+                        </div>
+                        <div style="color: rgba(255, 255, 255, 0.9); font-size: 0.9rem; line-height: 1.6;">
+                            💰 <strong>Virtual balance:</strong> <span id="simBalance">10.00 SOL</span><br>
+                            ⏱️ <strong>Time remaining:</strong> <span id="simTimeRemaining">2h 00m</span><br>
+                            📊 <strong>Simulated trades:</strong> <span id="simTrades">0</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <button onclick="toggleSimulationMode()" class="btn" style="background: linear-gradient(135deg, #00ff88, #00cc66); color: #0a0e27; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer;">
+                            <i class="fas fa-wallet me-2"></i>SWITCH TO REAL MODE
+                        </button>
+                        <div style="text-align: center; font-size: 0.75rem; color: rgba(255, 255, 255, 0.6);">
+                            Upgrade to real trading anytime!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulation Mode Toggle (for users without subscription) -->
+            <div id="simulationToggleCard" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(138, 43, 226, 0.1)); border: 2px solid rgba(0, 212, 255, 0.3); border-radius: 15px; padding: 25px; margin: 20px 0;">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <i class="fas fa-gamepad" style="font-size: 3rem; color: #00d4ff; margin-bottom: 15px;"></i>
+                    <h3 style="color: #00ffff; margin-bottom: 10px; font-size: 1.3rem;">TRY THE BOT FOR FREE</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6;">
+                        Test VISION AI for <strong>2 hours</strong> with <strong>10 virtual SOL</strong>.<br>
+                        See how the bot detects and trades the best tokens in real-time!
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 25px;">
+                    <div style="background: rgba(0, 255, 136, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 255, 136, 0.3);">
+                        <div style="color: #00ff88; font-weight: 700; margin-bottom: 5px;">
+                            <i class="fas fa-coins me-2"></i>10 SOL VIRTUELS
+                        </div>
+                        <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">
+                            Starting balance for testing
+                        </div>
+                    </div>
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                        <div style="color: #ffd700; font-weight: 700; margin-bottom: 5px;">
+                            <i class="fas fa-clock me-2"></i>2 HEURES
+                        </div>
+                        <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">
+                            Simulation duration
+                        </div>
+                    </div>
+                    <div style="background: rgba(0, 212, 255, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 212, 255, 0.3);">
+                        <div style="color: #00d4ff; font-weight: 700; margin-bottom: 5px;">
+                            <i class="fas fa-robot me-2"></i>REAL TRADING
+                        </div>
+                        <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">
+                            Real tokens, virtual money
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button onclick="startSimulationMode()" class="btn btn-cyber" style="background: linear-gradient(135deg, #00d4ff, #8a2be2); padding: 15px 40px; font-size: 1.1rem; font-weight: 700;">
+                        <i class="fas fa-play me-2"></i>START SIMULATION
+                    </button>
+                    <div style="margin-top: 15px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">
+                        <i class="fas fa-info-circle me-1"></i>No payment required • Free trial limited to 2 hours
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tab-container">
+                <div class="tab active" onclick="showDashboardTab('overview')">
+                    <i class="fas fa-home me-2"></i>OVERVIEW
+                </div>
+                <div class="tab" onclick="showDashboardTab('wallet')">
+                    <i class="fas fa-wallet me-2"></i>WALLET
+                </div>
+                <div class="tab" onclick="showDashboardTab('boosts')">
+                    <i class="fas fa-rocket me-2"></i>BOOSTS
+                </div>
+                <div class="tab" onclick="showDashboardTab('console')">
+                    <i class="fas fa-terminal me-2"></i>CONSOLE
+                </div>
+                <div class="tab" onclick="showDashboardTab('trades')">
+                    <i class="fas fa-history me-2"></i>TRADES
+                </div>
+                <div class="tab" onclick="showDashboardTab('settings')">
+                    <i class="fas fa-cog me-2"></i>SETTINGS
+                </div>
+            </div>
+
+            <!-- Overview Tab -->
+            <div id="overviewTab" class="tab-content">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-dollar-sign me-2"></i>TOTAL PROFIT</div>
+                        <div class="stat-value" id="totalProfit">$0.00</div>
+                        <div class="stat-label">All-time earnings</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-percentage me-2"></i>WIN RATE</div>
+                        <div class="stat-value" id="winRate">0%</div>
+                        <div class="stat-label">Success rate</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-chart-line me-2"></i>TOTAL TRADES</div>
+                        <div class="stat-value" id="totalTrades">0</div>
+                        <div class="stat-label">Executed orders</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-trophy me-2"></i>BEST TRADE</div>
+                        <div class="stat-value" id="bestTrade">$0.00</div>
+                        <div class="stat-label">Highest profit</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card mt-4">
+                    <div class="card-title"><i class="fas fa-info-circle me-2"></i>HOW TO USE VISION BOT</div>
+                    <div style="color: rgba(0, 255, 255, 0.8); line-height: 1.8;">
+                        <p><strong>1. CHOOSE YOUR SUBSCRIPTION</strong></p>
+                        <p>Go to the BOOSTS tab and select a plan (RISKY, SAFE, or ULTRA).</p>
+                        <p>Pay with SOL to activate your bot. Free 2-hour trial available in SIMULATION mode!</p>
+                        <p class="mt-3"><strong>2. DEPOSIT FUNDS</strong></p>
+                        <p>Go to the WALLET tab and deposit SOL to your generated wallet.</p>
+                        <p>Minimum: 0.01 SOL for testing, recommended: 1+ SOL for real trading.</p>
+                        <p class="mt-3"><strong>3. START THE BOT</strong></p>
+                        <p>Click START BOT at the top. The bot uses ML to scan tokens and trades 24/7 automatically!</p>
+                        <p class="mt-3"><strong>4. MONITOR & PROFIT</strong></p>
+                        <p>Check the TRADES tab to see your active positions and profits in real-time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wallet Tab -->
+            <div id="walletTab" class="tab-content hidden">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-coins me-2"></i>BALANCE SOL</div>
+                        <div class="stat-value" id="balanceSol">0.000</div>
+                        <div class="stat-label">Solana</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title"><i class="fas fa-dollar-sign me-2"></i>BALANCE USD</div>
+                        <div class="stat-value" id="balanceUsd">$0.00</div>
+                        <div class="stat-label">US Dollar</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card mt-4">
+                    <div class="card-title"><i class="fas fa-wallet me-2"></i>YOUR WALLET ADDRESS</div>
+                    <div class="wallet-address" id="walletAddress">
+                        Loading...
+                        <button class="copy-btn" onclick="copyAddress()">
+                            <i class="fas fa-copy"></i> COPY
+                        </button>
+                    </div>
+                    <div class="alert alert-info mt-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        Deposit SOL to this address to fund your trading bot!
+                    </div>
+                    <button class="btn btn-cyber mt-3" onclick="refreshBalance()">
+                        <i class="fas fa-sync-alt me-2"></i>REFRESH BALANCE
+                    </button>
+                </div>
+            </div>
+
+            <!-- Boosts Tab -->
+            <div id="boostsTab" class="tab-content hidden">
+                <div class="alert alert-info">
+                    <i class="fas fa-rocket me-2"></i>
+                    Choose your trading strategy and start generating profits with VISION AI!
+                </div>
+
+                <div class="boost-grid">
+                    <!-- RISKY Plan -->
+                    <div class="boost-card risky" id="riskyBoost">
+                        <div class="boost-eye-container">
+                            <div class="boost-eye red-eye">
+                                <div class="eye-outer-ring"></div>
+                                <div class="eye-white-ring"></div>
+                                <div class="eye-iris"></div>
+                                <div class="eye-pupil"></div>
+                                <div class="eye-reflection1"></div>
+                                <div class="eye-reflection2"></div>
+                            </div>
+                        </div>
+                        <div class="boost-name">RISKY</div>
+                        <div class="limited-spots">
+                            <i class="fas fa-fire me-1"></i>99 SPOTS REMAINING
+                        </div>
+
+                        <!-- Duration Toggle -->
+                        <div class="duration-toggle">
+                            <div class="duration-btn active" onclick="selectDuration('risky', 'week', 1.5)">WEEK</div>
+                            <div class="duration-btn" onclick="selectDuration('risky', 'month', 4)">MONTH</div>
+                        </div>
+
+                        <div class="boost-price" id="risky-price" data-amount="1.5">1.5 SOL</div>
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Aggressive Strategy</p>
+                        <ul class="boost-features">
+                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
+                            <li><i class="fas fa-chart-line me-2"></i> ROI: 2-20x</li>
+                            <li><i class="fas fa-brain me-2"></i> AI high confidence</li>
+                            <li><i class="fas fa-rocket me-2"></i> Ultra-fast execution</li>
+                            <li><i class="fas fa-database me-2"></i> AI trained on 4000+ tokens</li>
+                            <li><i class="fas fa-bullseye me-2"></i> Custom Take Profit</li>
+                            <li><i class="fas fa-shield-alt me-2"></i> Custom Stop Loss</li>
+                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
+                        </ul>
+                        <button class="btn btn-cyber" onclick="openPaymentModal('RISKY', document.getElementById('risky-price').dataset.amount)" style="background: linear-gradient(135deg, #ff0051, #cc0040); border-color: #ff0051;" id="risky-btn">
+                            <i class="fas fa-fire me-2"></i>ACTIVATE
+                        </button>
+                    </div>
+
+                    <!-- SAFE Plan -->
+                    <div class="boost-card safe featured" id="safeBoost">
+                        <div class="boost-badge recommended">RECOMMENDED</div>
+                        <div class="boost-eye-container">
+                            <div class="boost-eye green-eye">
+                                <div class="eye-outer-ring"></div>
+                                <div class="eye-white-ring"></div>
+                                <div class="eye-iris"></div>
+                                <div class="eye-pupil"></div>
+                                <div class="eye-reflection1"></div>
+                                <div class="eye-reflection2"></div>
+                            </div>
+                        </div>
+                        <div class="boost-name">SAFE</div>
+                        <div class="limited-spots">
+                            <i class="fas fa-users me-1"></i>69 SPOTS REMAINING
+                        </div>
+
+                        <!-- Duration Toggle -->
+                        <div class="duration-toggle">
+                            <div class="duration-btn active" onclick="selectDuration('safe', 'week', 2)">WEEK</div>
+                            <div class="duration-btn" onclick="selectDuration('safe', 'month', 6)">MONTH</div>
+                        </div>
+
+                        <div class="boost-price" id="safe-price" data-amount="2">2 SOL</div>
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Conservative Strategy</p>
+                        <ul class="boost-features">
+                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
+                            <li><i class="fas fa-chart-line me-2"></i> ROI: 5x-30x</li>
+                            <li><i class="fas fa-check-circle me-2"></i> AI verified</li>
+                            <li><i class="fas fa-filter me-2"></i> Safety filters</li>
+                            <li><i class="fas fa-database me-2"></i> AI trained on 6000+ tokens</li>
+                            <li><i class="fas fa-bullseye me-2"></i> AI Strategy</li>
+                            <li><i class="fas fa-shield-alt me-2"></i> Trailing Stop Loss</li>
+                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
+                        </ul>
+                        <button class="btn btn-cyber" onclick="openPaymentModal('SAFE', document.getElementById('safe-price').dataset.amount)" style="background: linear-gradient(135deg, #00ff88, #00cc66); border-color: #00ff88; color: #0a0e27;" id="safe-btn">
+                            <i class="fas fa-check me-2"></i>ACTIVATE
+                        </button>
+                    </div>
+
+                    <!-- ULTRA Plan -->
+                    <div class="boost-card ultra" id="ultraBoost">
+                        <div class="boost-badge coming-soon">COMING SOON</div>
+                        <div class="boost-eye-container">
+                            <div class="boost-eye blue-eye">
+                                <div class="eye-outer-ring"></div>
+                                <div class="eye-white-ring"></div>
+                                <div class="eye-iris"></div>
+                                <div class="eye-pupil"></div>
+                                <div class="eye-reflection1"></div>
+                                <div class="eye-reflection2"></div>
+                            </div>
+                        </div>
+                        <div class="boost-name">ULTRA</div>
+                        <div class="limited-spots">
+                            <i class="fas fa-star me-1"></i>59 SPOTS REMAINING
+                        </div>
+
+                        <!-- Duration Toggle -->
+                        <div class="duration-toggle">
+                            <div class="duration-btn active" onclick="selectDuration('ultra', 'week', 3)">WEEK</div>
+                            <div class="duration-btn" onclick="selectDuration('ultra', 'month', 10)">MONTH</div>
+                        </div>
+
+                        <div class="boost-price" id="ultra-price" data-amount="3">3 SOL</div>
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Premium Strategy</p>
+                        <ul class="boost-features">
+                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
+                            <li><i class="fas fa-chart-line me-2"></i> ROI: x10-x100</li>
+                            <li><i class="fas fa-brain me-2"></i> AI + Auto-compound</li>
+                            <li><i class="fas fa-bolt me-2"></i> Front run top traders</li>
+                            <li><i class="fas fa-layer-group me-2"></i> Multi-strategy</li>
+                            <li><i class="fas fa-database me-2"></i> AI trained on 10,000+ tokens</li>
+                            <li><i class="fas fa-bullseye me-2"></i> AI Strategy</li>
+                            <li><i class="fas fa-shield-alt me-2"></i> Trailing Stop Loss</li>
+                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
+                        </ul>
+                        <button class="btn btn-cyber" disabled style="background: rgba(0, 212, 255, 0.2); border-color: #00d4ff; color: #00d4ff; cursor: not-allowed;">
+                            <i class="fas fa-lock me-2"></i>COMING SOON
+                        </button>
+                    </div>
+
+                    <!-- LIFETIME Plan -->
+                    <div class="boost-card lifetime" id="lifetimeBoost">
+                        <div class="boost-badge" style="background: rgba(255, 215, 0, 0.2); color: #ffd700; border: 2px solid #ffd700;">
+                            <i class="fas fa-lock me-1"></i>COMING SOON
+                        </div>
+                        <div class="boost-eye-container">
+                            <div class="boost-eye gold-eye">
+                                <div class="eye-outer-ring"></div>
+                                <div class="eye-white-ring"></div>
+                                <div class="eye-iris"></div>
+                                <div class="eye-pupil"></div>
+                                <div class="eye-reflection1"></div>
+                                <div class="eye-reflection2"></div>
+                            </div>
+                        </div>
+                        <div class="boost-name">LIFETIME</div>
+                        <div class="limited-spots">
+                            <i class="fas fa-crown me-1"></i>49 SPOTS REMAINING
+                        </div>
+                        <div class="boost-price" style="color: #ffd700; text-shadow: 0 0 20px #ffd700;">18 SOL</div>
+                        <p style="color: rgba(255, 215, 0, 0.9); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase; font-weight: 700;">
+                            <i class="fas fa-infinity me-1"></i>ONE-TIME PAYMENT
+                        </p>
+                        <ul class="boost-features" style="text-align: left;">
+                            <li><i class="fas fa-check-circle me-2" style="color: #ffd700;"></i> ALL BOTS ACCESS (Risky+Safe+Ultra)</li>
+                            <li><i class="fas fa-infinity me-2" style="color: #ffd700;"></i> Unlimited trades</li>
+                            <li><i class="fas fa-chart-line me-2" style="color: #ffd700;"></i> ROI: x10-x100</li>
+                            <li><i class="fas fa-brain me-2" style="color: #ffd700;"></i> AI + Auto-compound</li>
+                            <li><i class="fas fa-bolt me-2" style="color: #ffd700;"></i> Front run top traders</li>
+                            <li><i class="fas fa-layer-group me-2" style="color: #ffd700;"></i> Multi-strategy</li>
+                            <li><i class="fas fa-database me-2" style="color: #ffd700;"></i> AI trained on 10,000+ tokens</li>
+                            <li><i class="fas fa-bullseye me-2" style="color: #ffd700;"></i> AI Strategy</li>
+                            <li><i class="fas fa-shield-alt me-2" style="color: #ffd700;"></i> Trailing Stop Loss</li>
+                            <li><i class="fas fa-sync-alt me-2" style="color: #ffd700;"></i> Lifetime free updates</li>
+                            <li><i class="fas fa-star me-2" style="color: #ffd700;"></i> Early access to new features</li>
+                            <li><i class="fas fa-infinity me-2" style="color: #ffd700;"></i> Unlimited everything</li>
+                            <li><i class="fas fa-headset me-2" style="color: #ffd700;"></i> VIP Support 24/7</li>
+                            <li><i class="fas fa-crown me-2" style="color: #ffd700;"></i> Priority support</li>
+                        </ul>
+                        <button class="btn btn-cyber" disabled style="background: rgba(255, 215, 0, 0.2); border-color: #ffd700; color: #ffd700; cursor: not-allowed; font-weight: 700;">
+                            <i class="fas fa-lock me-2"></i>COMING SOON
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trades Tab -->
+            <div id="tradesTab" class="tab-content hidden">
+                <!-- Active Positions Section -->
+                <div class="dashboard-card" id="activePositionsCard" style="margin-bottom: 20px;">
+                    <div class="card-title">
+                        <i class="fas fa-chart-line me-2"></i>POSITIONS ACTIVES
+                        <span id="positionsCount" style="background: rgba(0, 255, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px;">0</span>
+                    </div>
+                    <div id="activePositionsContent">
+                        <div style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 30px;">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.3;"></i>
+                            <p>No active positions at the moment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trade History Section -->
+                <div class="dashboard-card">
+                    <div class="card-title"><i class="fas fa-history me-2"></i>TRADE HISTORY</div>
+                    <div id="tradesContent">
+                        <table class="trades-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Token</th>
+                                    <th>Entry MC</th>
+                                    <th>Exit MC</th>
+                                    <th>Amount</th>
+                                    <th>Profit/Loss</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tradesTableBody">
+                                <tr>
+                                    <td colspan="7" style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 40px;">
+                                        No trades yet. Start the bot to begin!
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-content hidden">
+                <div class="dashboard-card">
+                    <div class="card-title"><i class="fas fa-cog me-2"></i>BOT CONFIGURATION</div>
+                    <form onsubmit="saveBotSettings(event)">
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-brain me-2"></i>STRATEGY
+                            </label>
+                            <select class="form-control" id="strategySelect">
+                                <option value="AI_PREDICTIONS">AI Predictions (Recommended)</option>
+                                <option value="COPY_TRADING" disabled>Copy Trading (Pro)</option>
+                                <option value="SCALPING" disabled>Scalping (Premium)</option>
+                                <option value="DCA" disabled>DCA (Premium)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-chart-line me-2"></i>RISK LEVEL
+                            </label>
+                            <select class="form-control" id="riskSelect">
+                                <option value="LOW">Low (Conservative)</option>
+                                <option value="MEDIUM" selected>Medium (Balanced)</option>
+                                <option value="HIGH">High (Aggressive)</option>
+                            </select>
+                        </div>
+
+                        <!-- TAKE PROFIT STRATEGY -->
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-rocket me-2"></i>TAKE PROFIT STRATEGY
+                            </label>
+                            <select class="form-control" id="tpStrategySelect" onchange="updateTPStrategyUI()">
+                                <option value="SIMPLE_MULTIPLIER">Sell All at xN (Simple)</option>
+                                <option value="PARTIAL_HOLD">Sell 50% @ x2 + Hold Rest</option>
+                                <option value="EXIT_BEFORE_MIGRATION">Exit Avant Migration (40K/58K)</option>
+                                <option value="PROGRESSIVE_AFTER_MIGRATION">Progressive Sale After Migration</option>
+                                <option value="ALL_IN_AFTER_MIGRATION">Sell All After Migration</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic configuration based on strategy -->
+                        <div id="tpConfigContainer">
+                            <!-- SIMPLE_MULTIPLIER -->
+                            <div id="config_SIMPLE_MULTIPLIER" class="tp-config">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-times me-1"></i>Multiplier (sell at x?)
+                                    </label>
+                                    <input type="number" class="form-control" id="simple_multiplier" value="2.0" min="1.5" max="20" step="0.5">
+                                    <small style="color: rgba(0, 255, 255, 0.5);">Example: x2 = sell all when 2x initial</small>
+                                </div>
+                            </div>
+
+                            <!-- PARTIAL_HOLD -->
+                            <div id="config_PARTIAL_HOLD" class="tp-config" style="display: none;">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-percent me-1"></i>% to sell at first TP
+                                    </label>
+                                    <input type="number" class="form-control" id="partial_first_percent" value="50" min="10" max="90" step="10">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-times me-1"></i>Premier TP multiplier
+                                    </label>
+                                    <input type="number" class="form-control" id="partial_first_tp" value="2.0" min="1.5" max="10" step="0.5">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-arrow-up me-1"></i>Hold rest until (MC)
+                                    </label>
+                                    <input type="number" class="form-control" id="partial_hold_until" value="50000" min="10000" max="100000" step="5000">
+                                    <small style="color: rgba(0, 255, 255, 0.5);">Sell rest before this market cap</small>
+                                </div>
+                            </div>
+
+                            <!-- EXIT_BEFORE_MIGRATION -->
+                            <div id="config_EXIT_BEFORE_MIGRATION" class="tp-config" style="display: none;">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-flag me-1"></i>Exit Market Cap Target
+                                    </label>
+                                    <select class="form-control" id="exit_target">
+                                        <option value="40000">40K (avant migration)</option>
+                                        <option value="50000">50K (proche migration)</option>
+                                        <option value="58000" selected>58K (juste avant migration)</option>
+                                    </select>
+                                    <small style="color: rgba(0, 255, 255, 0.5);">Sell 100% at this market cap</small>
+                                </div>
+                            </div>
+
+                            <!-- PROGRESSIVE_AFTER_MIGRATION -->
+                            <div id="config_PROGRESSIVE_AFTER_MIGRATION" class="tp-config" style="display: none;">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-percent me-1"></i>Sell initiaux @ x2
+                                    </label>
+                                    <input type="number" class="form-control" id="progressive_initial_percent" value="50" min="0" max="90" step="10">
+                                    <small style="color: rgba(0, 255, 255, 0.5);">0 = pas de sell partiel, directement migration</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-chart-line me-1"></i>% to sell per step after migration
+                                    </label>
+                                    <input type="number" class="form-control" id="progressive_step_percent" value="5" min="1" max="20" step="1">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-clock me-1"></i>Delay between each sale (seconds)
+                                    </label>
+                                    <input type="number" class="form-control" id="progressive_step_interval" value="20" min="5" max="60" step="5">
+                                </div>
+                            </div>
+
+                            <!-- ALL_IN_AFTER_MIGRATION -->
+                            <div id="config_ALL_IN_AFTER_MIGRATION" class="tp-config" style="display: none;">
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-bolt me-1"></i>Sell 100% when migration reached
+                                    </label>
+                                    <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.3);">
+                                        <i class="fas fa-info-circle me-2" style="color: gold;"></i>
+                                        <span style="color: rgba(255, 255, 255, 0.8);">The bot will sell 100% of the position as soon as the Pumpswap migration is reached (~58K MC)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-arrow-down me-2"></i>STOP LOSS (%)
+                            </label>
+                            <input type="number" class="form-control" id="stopLossInput" value="25" min="10" max="90" step="5">
+                            <small style="color: rgba(0, 255, 255, 0.5);">Automatic sale if loss exceeds this %</small>
+                        </div>
+
+                        <!-- TRAILING STOP LOSS -->
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-chart-line me-2"></i>TRAILING STOP LOSS
+                            </label>
+                            <div class="form-check mb-3" style="padding-left: 0;">
+                                <input type="checkbox" class="form-check-input" id="trailingStopEnabled" style="width: 20px; height: 20px; margin-right: 10px; cursor: pointer;">
+                                <label class="form-check-label" for="trailingStopEnabled" style="color: rgba(0, 255, 255, 0.9); font-weight: 600; cursor: pointer;">
+                                    Activer le Trailing Stop Loss
+                                </label>
+                            </div>
+
+                            <div id="trailingStopConfig" style="display: none;">
+                                <div style="background: rgba(0, 255, 136, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(0, 255, 136, 0.3); margin-bottom: 20px;">
+                                    <div style="color: var(--terminal-green); font-weight: 700; margin-bottom: 10px;">
+                                        <i class="fas fa-info-circle me-2"></i>HOW DOES IT WORK?
+                                    </div>
+                                    <p style="color: rgba(255, 255, 255, 0.8); margin: 0; font-size: 0.9rem; line-height: 1.6;">
+                                        Trailing Stop Loss automatically rises with your profits to secure your gains:<br>
+                                        • <strong>Profit ≥ 80%</strong> → Stop Loss rises to <strong>+30%</strong><br>
+                                        • <strong>Profit ≥ 50%</strong> → Stop Loss rises to <strong>breakeven (0%)</strong><br>
+                                        • <strong>Profit &lt; 50%</strong> → Normal Stop Loss applies
+                                    </p>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-percentage me-1"></i>Stop Loss if profit ≥ 80%
+                                    </label>
+                                    <input type="number" class="form-control" id="trailingStop80" value="30" min="0" max="70" step="5">
+                                    <small style="color: rgba(0, 255, 255, 0.5);">If you make +80% profit, SL rises to +X%</small>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                        <i class="fas fa-percentage me-1"></i>Stop Loss if profit ≥ 50%
+                                    </label>
+                                    <input type="number" class="form-control" id="trailingStop50" value="0" min="-10" max="40" step="5">
+                                    <small style="color: rgba(0, 255, 255, 0.5);">If you make +50% profit, SL rises to +X% (0 = breakeven)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label" style="color: var(--terminal-cyan);">
+                                <i class="fas fa-coins me-2"></i>MAX POSITION SIZE (% of balance)
+                            </label>
+                            <input type="number" class="form-control" id="maxPositionInput" value="10" min="1" max="50" step="1">
+                        </div>
+
+                        <button type="submit" class="btn btn-cyber">
+                            <i class="fas fa-save me-2"></i>SAVE SETTINGS
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Wallet Management Section -->
+                <div class="dashboard-card" style="margin-top: 30px;">
+                    <div class="card-title"><i class="fas fa-wallet me-2"></i>WALLET MANAGEMENT</div>
+
+                    <div style="background: rgba(255, 0, 81, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(255, 0, 81, 0.3); margin-bottom: 20px;">
+                        <div style="color: var(--terminal-red); font-weight: 700; margin-bottom: 10px;">
+                            <i class="fas fa-exclamation-triangle me-2"></i>LOST YOUR PRIVATE KEY?
+                        </div>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 15px; font-size: 0.95rem; line-height: 1.6;">
+                            If you lost your private key, you can generate a <strong>new wallet</strong>.<br>
+                            ⚠️ <strong>WARNING</strong>: The old wallet will be replaced. Make sure you have transferred all your funds before!
+                        </p>
+                        <button onclick="confirmRegenerateWallet()" class="btn" style="background: linear-gradient(135deg, var(--terminal-red), #cc0033); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: all 0.3s;">
+                            <i class="fas fa-sync-alt me-2"></i>GENERATE NEW WALLET
+                        </button>
+                    </div>
+
+                    <div style="background: rgba(0, 255, 136, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(0, 255, 136, 0.3);">
+                        <div style="color: var(--terminal-green); font-weight: 700; margin-bottom: 10px;">
+                            <i class="fas fa-info-circle me-2"></i>SECURITY
+                        </div>
+                        <ul style="color: rgba(255, 255, 255, 0.8); margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                            <li>You can import your wallet into <strong>Phantom, Solflare, Backpack</strong>, etc.</li>
+                            <li>ALWAYS keep a copy of your private key in a safe place</li>
+                            <li>NEVER share your private key with anyone</li>
+                            <li>Verify that your wallet is empty before regenerating it</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Console Tab -->
+            <div id="consoleTab" class="tab-content hidden">
+                <div class="dashboard-card">
+                    <div class="card-title">
+                        <i class="fas fa-terminal me-2"></i>BOT CONSOLE - LIVE LOGS
+                        <button class="btn btn-sm" style="background: rgba(0, 153, 204, 0.2); border: 1px solid #0099cc; padding: 5px 15px; margin-left: 10px; float: right;" onclick="clearConsole()">
+                            <i class="fas fa-trash me-2"></i>CLEAR
+                        </button>
+                    </div>
+                    <div id="consoleOutput" style="background: #000; color: #00ff00; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 15px; border-radius: 5px; height: 600px; overflow-y: auto; border: 1px solid #0099cc;">
+                        <div style="color: #0099cc;">[CONSOLE] Waiting for logs...</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Global state
+let currentUser = null;
+let currentWallet = null;
+let botStatus = null;
+
+// Matrix rain effect
+function createMatrix() {
+    const container = document.getElementById('matrixBg');
+    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン10ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    for (let i = 0; i < 40; i++) {
+        const column = document.createElement('div');
+        column.className = 'matrix-column';
+        column.style.left = Math.random() * 100 + '%';
+        column.style.animationDuration = (Math.random() * 12 + 8) + 's';
+        column.style.animationDelay = Math.random() * 5 + 's';
+
+        let text = '';
+        for (let j = 0; j < 80; j++) {
+            text += characters[Math.floor(Math.random() * characters.length)] + '<br>';
+        }
+        column.innerHTML = text;
+        container.appendChild(column);
+    }
+}
+
+createMatrix();
+
+// Check authentication on page load
+async function checkAuth() {
+    try {
+        const response = await fetch('/api/auth/me');
+        const data = await response.json();
+
+        if (data.success) {
+            currentUser = data.user;
+            showDashboard();
+            loadDashboardData();
+        } else {
+            showAuth();
+        }
+    } catch (error) {
+        showAuth();
+    }
+}
+
+function showAuth() {
+    document.getElementById('authSection').classList.remove('hidden');
+    document.getElementById('dashboardSection').classList.add('hidden');
+    document.getElementById('logoutBtn').classList.add('hidden');
+}
+
+function showDashboard() {
+    document.getElementById('authSection').classList.add('hidden');
+    document.getElementById('dashboardSection').classList.remove('hidden');
+    document.getElementById('logoutBtn').classList.remove('hidden');
+    document.getElementById('userEmail').textContent = currentUser.email;
+}
+
+// Auth tab switching
+function showAuthTab(tab) {
+    const tabs = document.querySelectorAll('#authTabs .tab');
+    tabs.forEach(t => t.classList.remove('active'));
+
+    if (tab === 'login') {
+        tabs[0].classList.add('active');
+        document.getElementById('loginForm').classList.remove('hidden');
+        document.getElementById('registerForm').classList.add('hidden');
+    } else {
+        tabs[1].classList.add('active');
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('registerForm').classList.remove('hidden');
+    }
+}
+
+// Dashboard tab switching
+function showDashboardTab(tab) {
+    const tabs = document.querySelectorAll('.tab-container .tab');
+    tabs.forEach(t => t.classList.remove('active'));
+    event.target.closest('.tab').classList.add('active');
+
+    // Hide all tab contents
+    document.getElementById('overviewTab').classList.add('hidden');
+    document.getElementById('walletTab').classList.add('hidden');
+    document.getElementById('boostsTab').classList.add('hidden');
+    document.getElementById('tradesTab').classList.add('hidden');
+    document.getElementById('settingsTab').classList.add('hidden');
+    document.getElementById('consoleTab').classList.add('hidden');
+
+    // Show selected tab
+    document.getElementById(tab + 'Tab').classList.remove('hidden');
+
+    // Load data for specific tabs
+    if (tab === 'wallet') {
+        loadWalletData();
+    } else if (tab === 'trades') {
+        loadActivePositions();
+        loadTradesData();
+    } else if (tab === 'console') {
+        loadConsoleLogs();
+    }
+}
+
+// Handle login
+async function handleLogin(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+    const errorDiv = document.getElementById('loginError');
+
+    errorDiv.classList.add('hidden');
+
+    try {
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            currentUser = data.user;
+            showDashboard();
+            loadDashboardData();
+        } else {
+            errorDiv.textContent = data.error;
+            errorDiv.classList.remove('hidden');
+        }
+    } catch (error) {
+        errorDiv.textContent = 'Server connection error';
+        errorDiv.classList.remove('hidden');
+    }
+}
+
+// Handle register
+async function handleRegister(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+    const errorDiv = document.getElementById('registerError');
+    const successDiv = document.getElementById('registerSuccess');
+
+    errorDiv.classList.add('hidden');
+    successDiv.classList.add('hidden');
+
+    if (password !== passwordConfirm) {
+        errorDiv.textContent = 'Les mots de passe ne correspondent pas';
+        errorDiv.classList.remove('hidden');
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            currentUser = data.user;
+
+            // Show private key modal if present
+            if (data.wallet && data.wallet.show_warning && data.wallet.private_key) {
+                showPrivateKeyModal(data.wallet.private_key, data.wallet.address);
+            } else {
+                // Ancienne logique si pas de warning
+                successDiv.innerHTML = `
+                    <strong>Account created successfully!</strong><br>
+                    Your wallet: ${data.wallet.address.substring(0, 20)}...<br>
+                    Redirection...
+                `;
+                successDiv.classList.remove('hidden');
+
+                setTimeout(() => {
+                    showDashboard();
+                    loadDashboardData();
+                }, 2000);
+            }
+        } else {
+            errorDiv.textContent = data.error;
+            errorDiv.classList.remove('hidden');
+        }
+    } catch (error) {
+        errorDiv.textContent = 'Server connection error';
+        errorDiv.classList.remove('hidden');
+    }
+}
+
+// Logout
+document.getElementById('logoutBtn').addEventListener('click', async (e) => {
+    e.preventDefault();
+    await fetch('/api/auth/logout', { method: 'POST' });
+    currentUser = null;
+    currentWallet = null;
+    showAuth();
+});
+
+// Load dashboard data
+async function loadDashboardData() {
+    await loadBotStatus();
+    await loadBotStats();
+    await loadWalletData();
+}
+
+// Load bot status
+async function loadBotStatus() {
+    try {
+        const response = await fetch('/api/bot/status');
+        const data = await response.json();
+
+        if (data.success) {
+            botStatus = data.status;
+            updateBotStatusUI();
+        }
+    } catch (error) {
+        console.error('Error loading bot status:', error);
+    }
+}
+
+// Update bot status UI
+function updateBotStatusUI() {
+    const indicator = document.getElementById('statusIndicator');
+    const statusText = document.getElementById('botStatusText');
+    const startBtn = document.getElementById('startBotBtn');
+    const stopBtn = document.getElementById('stopBotBtn');
+
+    if (botStatus && botStatus.is_running) {
+        indicator.className = 'status-indicator running';
+        statusText.textContent = 'RUNNING';
+        statusText.style.color = 'var(--terminal-green)';
+        startBtn.classList.add('hidden');
+        stopBtn.classList.remove('hidden');
+    } else {
+        indicator.className = 'status-indicator stopped';
+        statusText.textContent = 'STOPPED';
+        statusText.style.color = 'var(--terminal-red)';
+        startBtn.classList.remove('hidden');
+        stopBtn.classList.add('hidden');
+    }
+
+    if (botStatus) {
+        document.getElementById('botStrategy').textContent = botStatus.strategy || 'AI PREDICTIONS';
+        document.getElementById('botRisk').textContent = botStatus.risk_level || 'MEDIUM';
+    }
+}
+
+// Load bot stats
+async function loadBotStats() {
+    try {
+        const response = await fetch('/api/bot/stats');
+        const data = await response.json();
+
+        if (data.success && data.stats) {
+            const stats = data.stats;
+            document.getElementById('totalProfit').textContent = '$' + (stats.total_profit_usd || 0).toFixed(2);
+            document.getElementById('winRate').textContent = (stats.win_rate || 0).toFixed(1) + '%';
+            document.getElementById('totalTrades').textContent = stats.total_trades || 0;
+            document.getElementById('bestTrade').textContent = '$' + (stats.best_trade_profit || 0).toFixed(2);
+        }
+    } catch (error) {
+        console.error('Error loading stats:', error);
+    }
+}
+
+// Load wallet data
+async function loadWalletData() {
+    try {
+        const response = await fetch('/api/wallet/info');
+        const data = await response.json();
+
+        if (data.success) {
+            currentWallet = data.wallet;
+            document.getElementById('walletAddress').innerHTML = `
+                ${currentWallet.address}
+                <button class="copy-btn" onclick="copyAddress()">
+                    <i class="fas fa-copy"></i> COPY
+                </button>
+            `;
+            document.getElementById('balanceSol').textContent = (currentWallet.balance_sol || 0).toFixed(3);
+            document.getElementById('balanceUsd').textContent = '$' + (currentWallet.balance_usd || 0).toFixed(2);
+        }
+    } catch (error) {
+        console.error('Error loading wallet:', error);
+    }
+}
+
+// Load trades data
+async function loadTradesData() {
+    try {
+        const response = await fetch('/api/bot/trades');
+        const data = await response.json();
+
+        if (data.success) {
+            const tbody = document.getElementById('tradesTableBody');
+
+            if (data.trades.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 40px;">
+                            No trades yet. Start the bot to begin!
+                        </td>
+                    </tr>
+                `;
+            } else {
+                tbody.innerHTML = data.trades.map(trade => {
+                    const isSimulated = trade.status === 'SIMULATED';
+                    const statusBadge = isSimulated
+                        ? '<span style="background: rgba(255, 165, 0, 0.2); color: #ffa500; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;"><i class="fas fa-gamepad me-1"></i>SIM</span>'
+                        : '<span style="background: rgba(0, 255, 0, 0.2); color: #00ff00; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;"><i class="fas fa-check-circle me-1"></i>REAL</span>';
+
+                    // CORRECTION 2025-11-27: price_usd contient l'ENTRY MC (pas l'EXIT MC!)
+                    const entryMC = trade.price_usd || 0;
+                    const profitPercent = trade.profit_loss_percentage / 100;
+                    // Calculer l'EXIT MC depuis l'ENTRY MC
+                    const exitMC = entryMC * (1 + profitPercent);
+                    console.log(`[TRADE DEBUG] ${trade.token_name}: Entry=${entryMC}, Profit=${profitPercent}, Exit=${exitMC}`);
+
+                    // Format MC values
+                    // Note: Les valeurs sont en USD complet (12030 = $12,030, pas 12.03K)
+                    const formatMC = (mc) => {
+                        if (mc >= 1000000) return '$' + (mc / 1000000).toFixed(2) + 'M';  // >= 1M USD = afficher en M
+                        if (mc >= 1000) return '$' + (mc / 1000).toFixed(1) + 'K';  // >= 1K USD = afficher en K
+                        return '$' + mc.toFixed(0);  // < 1K USD = afficher en USD
+                    };
+
+                    // Result indicator
+                    const isWin = trade.profit_loss >= 0;
+                    const resultIcon = isWin
+                        ? '<i class="fas fa-check-circle" style="color: #00ff88; font-size: 1.2rem;"></i>'
+                        : '<i class="fas fa-times-circle" style="color: #ff0051; font-size: 1.2rem;"></i>';
+
+                    return `
+                        <tr style="${isSimulated ? 'background: rgba(255, 165, 0, 0.05);' : ''}">
+                            <td>${statusBadge}</td>
+                            <td style="font-weight: 700; color: #00ffff;">${trade.token_name || trade.token_address.substring(0, 8) + '...'}</td>
+                            <td style="color: rgba(0, 255, 255, 0.7);">${formatMC(entryMC)}</td>
+                            <td style="color: rgba(0, 255, 255, 0.7);">${formatMC(exitMC)}</td>
+                            <td style="color: rgba(255, 255, 255, 0.8);">${trade.amount_sol.toFixed(3)} SOL</td>
+                            <td class="${isWin ? 'profit-positive' : 'profit-negative'}" style="font-weight: 700;">
+                                ${isWin ? '+' : ''}${trade.profit_loss.toFixed(3)} SOL<br>
+                                <span style="font-size: 0.85rem;">(${isWin ? '+' : ''}${trade.profit_loss_percentage.toFixed(1)}%)</span>
+                            </td>
+                            <td style="text-align: center;">${resultIcon}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        }
+    } catch (error) {
+        console.error('Error loading trades:', error);
+    }
+}
+
+// Load active positions
+async function loadActivePositions() {
+    try {
+        const response = await fetch('/api/bot/positions');
+        const data = await response.json();
+
+        // Format MC helper function
+        const formatMC = (mc) => {
+            if (mc >= 1000000) return (mc / 1000000).toFixed(2) + 'M';
+            if (mc >= 1000) return (mc / 1000).toFixed(1) + 'K';
+            return mc.toFixed(0);
+        };
+
+        if (data.success) {
+            const content = document.getElementById('activePositionsContent');
+            const countBadge = document.getElementById('positionsCount');
+
+            countBadge.textContent = data.positions.length;
+
+            if (data.positions.length === 0) {
+                content.innerHTML = `
+                    <div style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 30px;">
+                        <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.3;"></i>
+                        <p>No active positions at the moment</p>
+                    </div>
+                `;
+            } else {
+                content.innerHTML = data.positions.map(pos => {
+                    const profitPercent = pos.profit_percent;
+                    const profitMultiplier = pos.profit_multiplier;
+                    const isPositive = profitPercent >= 0;
+                    const profitColor = isPositive ? '#00ff88' : '#ff0051';
+
+                    // CORRECT status emoji based on partial_sold and migration_reached
+                    let statusEmoji = '🟢';
+                    let statusText = 'ACTIVE';
+                    let statusColor = '#00ffff';
+
+                    if (pos.migration_reached || pos.current_mc >= 58000) {
+                        statusEmoji = '✅';
+                        statusText = 'MIGRATION ATTEINTE';
+                        statusColor = '#00ff88';
+                    } else if (pos.partial_sold) {
+                        statusEmoji = '💰';
+                        statusText = 'EN ATTENTE MIGRATION';
+                        statusColor = '#ffa500';
+                    } else if (pos.current_mc >= 40000) {
+                        statusEmoji = '🎯';
+                        statusText = 'PROCHE MIGRATION';
+                        statusColor = '#ffd700';
+                    } else if (profitPercent >= 50) {
+                        statusEmoji = '📈';
+                        statusText = 'EN PROFIT';
+                        statusColor = '#00ff88';
+                    }
+
+                    // Position gratuite si partial_sold OU profit > 100%
+                    const isFreePosition = pos.partial_sold || profitPercent >= 100;
+
+                    // Distance to migration
+                    const distanceToMigration = 58000 - pos.current_mc;
+                    const percentToMigration = ((pos.current_mc / 58000) * 100).toFixed(1);
+
+                    return `
+                        <div style="background: rgba(0, 255, 255, 0.05); border-left: 3px solid ${statusColor}; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+                                <div style="flex: 1;">
+                                    <div style="font-size: 1.1rem; font-weight: 700; color: #00ffff; margin-bottom: 5px;">
+                                        ${statusEmoji} ${pos.token_name}
+                                    </div>
+                                    <div style="color: ${statusColor}; font-size: 0.9rem; font-weight: 600;">
+                                        <i class="fas fa-circle-notch"></i> ${statusText}
+                                    </div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="color: ${profitColor}; font-size: 1.3rem; font-weight: 700;">
+                                        ${profitMultiplier.toFixed(2)}x
+                                    </div>
+                                    <div style="color: ${profitColor}; font-size: 0.9rem;">
+                                        ${isPositive ? '+' : ''}${profitPercent.toFixed(1)}%
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="background: rgba(0, 0, 0, 0.3); padding: 10px; border-radius: 5px; margin-bottom: 10px;">
+                                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 5px;">
+                                    Entry: <span style="color: #00ffff; font-weight: 600;">$${formatMC(pos.entry_mc)}</span>
+                                    →
+                                    Current: <span style="color: #ffd700; font-weight: 600;">$${formatMC(pos.current_mc)}</span>
+                                </div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+                                    Amount: ${(pos.amount_sol || pos.amount || 0).toFixed(3)} SOL
+                                    ${isFreePosition ? '<span style="color: #00ff88; margin-left: 10px;"><i class="fas fa-check-circle"></i> Profit recovered</span>' : ''}
+                                </div>
+                            </div>
+
+                            <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; margin-bottom: 8px;">
+                                <i class="fas fa-bullseye me-1"></i>
+                                Distance migration: <span style="color: #ffd700; font-weight: 600;">$${distanceToMigration.toLocaleString()}</span>
+                                <span style="color: rgba(255, 255, 255, 0.5);"> (${percentToMigration}% to 58K)</span>
+                            </div>
+
+                            ${isFreePosition ? `
+                                <div style="background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.3); padding: 8px 12px; border-radius: 5px; margin-top: 10px;">
+                                    <i class="fas fa-gift me-2" style="color: #00ff88;"></i>
+                                    <span style="color: #00ff88; font-weight: 600;">💰 FREE Position - Investment recovered!</span>
+                                </div>
+                            ` : ''}
+
+                            <!-- Boutons SELL Partiels -->
+                            <div style="margin-top: 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
+                                <button onclick="manualSell('${pos.token_address}', '${pos.token_name}', 25)"
+                                    style="background: linear-gradient(135deg, #ffa500 0%, #ffb347 100%);
+                                    color: white; border: none; padding: 8px; border-radius: 5px;
+                                    font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem;
+                                    box-shadow: 0 2px 6px rgba(255, 165, 0, 0.3);"
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(255, 165, 0, 0.5)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(255, 165, 0, 0.3)';">
+                                    25%
+                                </button>
+                                <button onclick="manualSell('${pos.token_address}', '${pos.token_name}', 50)"
+                                    style="background: linear-gradient(135deg, #ff8c00 0%, #ffa500 100%);
+                                    color: white; border: none; padding: 8px; border-radius: 5px;
+                                    font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem;
+                                    box-shadow: 0 2px 6px rgba(255, 140, 0, 0.3);"
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(255, 140, 0, 0.5)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(255, 140, 0, 0.3)';">
+                                    50%
+                                </button>
+                                <button onclick="manualSell('${pos.token_address}', '${pos.token_name}', 75)"
+                                    style="background: linear-gradient(135deg, #ff6347 0%, #ff7f50 100%);
+                                    color: white; border: none; padding: 8px; border-radius: 5px;
+                                    font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem;
+                                    box-shadow: 0 2px 6px rgba(255, 99, 71, 0.3);"
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(255, 99, 71, 0.5)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(255, 99, 71, 0.3)';">
+                                    75%
+                                </button>
+                                <button onclick="manualSell('${pos.token_address}', '${pos.token_name}', 100)"
+                                    style="background: linear-gradient(135deg, #ff0051 0%, #ff4081 100%);
+                                    color: white; border: none; padding: 8px; border-radius: 5px;
+                                    font-weight: 700; cursor: pointer; transition: all 0.3s ease; font-size: 0.85rem;
+                                    box-shadow: 0 2px 6px rgba(255, 0, 81, 0.3);"
+                                    onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 10px rgba(255, 0, 81, 0.5)';"
+                                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(255, 0, 81, 0.3)';">
+                                    100%
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+    } catch (error) {
+        console.error('Error loading active positions:', error);
+    }
+}
+
+// Console Tab Functions
+async function loadConsoleLogs() {
+    try {
+        const response = await fetch('/api/bot/console-logs');
+        const data = await response.json();
+
+        if (data.success) {
+            const consoleOutput = document.getElementById('consoleOutput');
+
+            if (data.logs.length === 0) {
+                consoleOutput.innerHTML = '<div style="color: #0099cc;">[CONSOLE] Waiting for logs...</div>';
+                return;
+            }
+
+            consoleOutput.innerHTML = data.logs.map(log => {
+                // Determine color based on type
+                let color = '#00ff00'; // Green by default
+                if (log.type === 'BUY') {
+                    color = '#00ff88'; // Vert clair pour BUY
+                } else if (log.type === 'SKIP') {
+                    color = '#ff9900'; // Orange pour SKIP
+                } else if (log.type === 'NEW_TOKEN') {
+                    color = '#00ffff'; // Cyan pour nouveau token
+                } else if (log.type === 'ERROR') {
+                    color = '#ff0051'; // Red for error
+                } else if (log.type === 'SELL') {
+                    color = '#ffd700'; // Or pour SELL
+                } else if (log.type === 'INFO') {
+                    color = '#0099cc'; // Bleu pour info
+                }
+
+                return `<div style="color: ${color}; margin-bottom: 5px;">[${log.timestamp}] ${log.message}</div>`;
+            }).join('');
+
+            // Auto-scroll vers le bas
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+    } catch (error) {
+        console.error('Error loading console logs:', error);
+    }
+}
+
+function clearConsole() {
+    document.getElementById('consoleOutput').innerHTML = '<div style="color: #0099cc;">[CONSOLE] Logs cleared...</div>';
+}
+
+// Auto-refresh console quand le tab est actif
+setInterval(() => {
+    const consoleTab = document.getElementById('consoleTab');
+    if (consoleTab && !consoleTab.classList.contains('hidden')) {
+        loadConsoleLogs();
+    }
+}, 2000); // Refresh toutes les 2 secondes
+
+// ===== MODE SELECTION (SIMULATION / REAL) =====
+let selectedMode = 'simulation';  // By default
+let userInfo = null;  // Infos utilisateur (abonnement, wallet, etc.)
+
+// Load user info on startup
+async function loadUserInfo() {
+    try {
+        const response = await fetch('/api/user/info');
+        const data = await response.json();
+
+        if (data.success) {
+            userInfo = data;
+
+            // Update REAL MODE button based on subscription
+            const realModeBtn = document.getElementById('realModeBtn');
+            const realModeLock = document.getElementById('realModeLock');
+
+            if (data.permissions.can_use_real_mode) {
+                // User can use real mode (RISKY or SAFE subscription)
+                realModeBtn.disabled = false;
+                realModeLock.classList.remove('fa-lock');
+                realModeLock.classList.add('fa-unlock');
+                realModeLock.style.color = '#00ff88';
+            } else {
+                // Utilisateur ne peut pas (pas d'abonnement ou abonnement BASIC)
+                realModeBtn.disabled = true;
+                realModeLock.classList.remove('fa-unlock');
+                realModeLock.classList.add('fa-lock');
+                realModeLock.style.color = '#ff0051';
+            }
+
+            console.log('[USER INFO]', data);
+        }
+    } catch (error) {
+        console.error('[ERROR] Failed to load user info:', error);
+    }
+}
+
+// Select mode (simulation or real)
+async function selectMode(mode) {
+    const simBtn = document.getElementById('simModeBtn');
+    const realBtn = document.getElementById('realModeBtn');
+    const botMode = document.getElementById('botMode');
+
+    if (mode === 'real') {
+        // Check if user can use real mode
+        if (!userInfo || !userInfo.permissions.can_use_real_mode) {
+            await showCustomAlert('⚠️ REAL MODE RESERVED FOR SUBSCRIBERS\n\n' +
+                  'Real money mode is reserved for RISKY and SAFE subscriptions.\n\n' +
+                  'Go to the BOOSTS tab to subscribe!', 'warning');
+            return;
+        }
+
+        // Check wallet balance
+        if (userInfo.wallet.balance_sol < 0.01) {
+            await showCustomAlert('⚠️ INSUFFICIENT BALANCE\n\n' +
+                  `Your wallet contains ${userInfo.wallet.balance_sol.toFixed(4)} SOL.\n` +
+                  'Minimum required: 0.01 SOL (TEST MODE)\n\n' +
+                  'Go to the WALLET tab to deposit funds.', 'warning');
+            return;
+        }
+
+        selectedMode = 'real';
+        simBtn.classList.remove('active');
+        realBtn.classList.add('active');
+        botMode.textContent = 'REAL';
+        botMode.style.color = '#00ff88';
+    } else {
+        selectedMode = 'simulation';
+        simBtn.classList.add('active');
+        realBtn.classList.remove('active');
+        botMode.textContent = 'SIMULATION';
+        botMode.style.color = '#ffa500';
+    }
+}
+
+// Start bot
+async function startBot() {
+    try {
+        // SECURITY CONFIRMATION FOR REAL MODE
+        if (selectedMode === 'real') {
+            const confirmReal = await showCustomConfirm(
+                '🚨 REAL MODE CONFIRMATION 🚨\n\n' +
+                '⚠️ You are about to trade with REAL SOL!\n\n' +
+                `💰 Current balance: ${userInfo.wallet.balance_sol.toFixed(4)} SOL (~$${userInfo.wallet.balance_usd.toFixed(2)})\n\n` +
+                '📊 Strategy: ' + document.getElementById('strategySelect').value + '\n' +
+                '🎲 Risk: ' + document.getElementById('riskSelect').value + '\n\n' +
+                '✅ Confirm starting in REAL MODE?',
+                'danger'
+            );
+
+            if (!confirmReal) {
+                console.log('[BOT] User cancelled real mode start');
+                return;
+            }
+        }
+
+        const response = await fetch('/api/bot/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                strategy: document.getElementById('strategySelect').value,
+                risk_level: document.getElementById('riskSelect').value,
+                real_mode: selectedMode === 'real'  // NEW PARAMETER
+            })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            const modeText = data.mode === 'REAL' ? '🚀 REAL MODE' : '🎮 MODE SIMULATION';
+            await showCustomAlert(`✅ Bot started successfully!\n\n${modeText}\n\n${data.message}`, 'success');
+            await loadBotStatus();
+        } else {
+            // Specific errors
+            if (data.require_subscription) {
+                await showCustomAlert('⚠️ SUBSCRIPTION REQUIRED\n\n' + data.error + '\n\nGo to the BOOSTS tab to subscribe!', 'warning');
+            } else if (data.insufficient_balance) {
+                await showCustomAlert('⚠️ INSUFFICIENT BALANCE\n\n' + data.error, 'warning');
+            } else {
+                await showCustomAlert('❌ Error: ' + data.error, 'error');
+            }
+        }
+    } catch (error) {
+        await showCustomAlert('❌ Server connection error', 'error');
+        console.error('[ERROR]', error);
+    }
+}
+
+// Stop bot
+async function stopBot() {
+    try {
+        const response = await fetch('/api/bot/stop', { method: 'POST' });
+        const data = await response.json();
+
+        if (data.success) {
+            await showCustomAlert('✅ Bot stopped', 'success');
+            await loadBotStatus();
+        }
+    } catch (error) {
+        await showCustomAlert('❌ Server connection error', 'error');
+    }
+}
+
+// Manual sell position
+async function manualSell(tokenAddress, tokenName, percentage) {
+    try {
+        // Security confirmation
+        const confirmMsg = `SELL ${percentage}% ?\n\n` +
+                          `Token: ${tokenName}\n` +
+                          `Adresse: ${tokenAddress.substring(0, 8)}...\n` +
+                          `Percentage: ${percentage}%\n\n` +
+                          `This action is IRREVERSIBLE!\n` +
+                          `Confirm sale?`;
+
+        if (!await showCustomConfirm(confirmMsg, 'danger')) {
+            console.log(`[SELL] ${percentage}% sale canceled by user`);
+            return;
+        }
+
+        // Afficher un message de chargement
+        const loadingMsg = document.createElement('div');
+        loadingMsg.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); ' +
+                                   'background: rgba(0, 0, 0, 0.9); color: #00ffff; padding: 20px 40px; ' +
+                                   'border-radius: 10px; z-index: 10000; border: 2px solid #00ffff;';
+        loadingMsg.innerHTML = `<i class="fas fa-spinner fa-spin me-2"></i>Selling ${percentage}% in progress...`;
+        document.body.appendChild(loadingMsg);
+
+        // Appeler l'API de vente manuelle
+        const response = await fetch('/api/bot/sell', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                token_address: tokenAddress,
+                percentage: percentage
+            })
+        });
+
+        const data = await response.json();
+
+        // Retirer le message de chargement
+        document.body.removeChild(loadingMsg);
+
+        if (data.success) {
+            // Show result
+            const positionStatus = percentage === 100 ? 'Position closed!' : `Remaining position: ${100 - percentage}%`;
+            await showCustomAlert(`✅ SALE SUCCESSFUL!\n\n` +
+                  `Token: ${tokenName}\n` +
+                  `Percentage sold: ${percentage}%\n` +
+                  `Montant: ${data.amount_sol || 'N/A'} SOL\n` +
+                  `TX: ${data.tx_signature || 'N/A'}\n\n` +
+                  `${positionStatus}`, 'success');
+
+            // Refresh positions and wallet
+            await loadActivePositions();
+            await loadRecentTrades();
+            await loadWalletData();
+        } else {
+            await showCustomAlert(`❌ SELL ERROR\n\n${data.error || 'Unknown error'}`, 'error');
+        }
+    } catch (error) {
+        console.error('Error selling position:', error);
+        await showCustomAlert(`❌ Server connection error\n\n${error.message}`, 'error');
+    }
+}
+
+// Copy address
+async function copyAddress() {
+    if (currentWallet) {
+        navigator.clipboard.writeText(currentWallet.address);
+        await showCustomAlert('✅ Address copied!', 'success');
+    }
+}
+
+// Refresh balance
+async function refreshBalance() {
+    await loadWalletData();
+    await showCustomAlert('✅ Balance refreshed!', 'success');
+}
+
+// Upgrade boost
+async function upgradeBoost(level, price) {
+    const confirmMsg = `Upgrade to ${level} for ${price} SOL?\n\nNote: Payment implementation in development.\nFor now, the subscription will be activated for free.`;
+
+    if (await showCustomConfirm(confirmMsg, 'warning')) {
+        try {
+            const response = await fetch('/api/subscription/upgrade', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    boost_level: level,
+                    payment_tx: 'demo_tx_' + Date.now()
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                await showCustomAlert('✅ Subscription ' + level + ' activated!', 'success');
+                location.reload();
+            } else {
+                await showCustomAlert('❌ Error: ' + data.error, 'error');
+            }
+        } catch (error) {
+            await showCustomAlert('❌ Server connection error', 'error');
+        }
+    }
+}
+
+// Update TP Strategy UI
+function updateTPStrategyUI() {
+    const strategy = document.getElementById('tpStrategySelect').value;
+
+    // Hide all configs
+    document.querySelectorAll('.tp-config').forEach(el => {
+        el.style.display = 'none';
+    });
+
+    // Show selected config
+    const selectedConfig = document.getElementById(`config_${strategy}`);
+    if (selectedConfig) {
+        selectedConfig.style.display = 'block';
+    }
+}
+
+// Toggle Trailing Stop Loss Config
+document.addEventListener('DOMContentLoaded', function() {
+    const trailingStopCheckbox = document.getElementById('trailingStopEnabled');
+    const trailingStopConfig = document.getElementById('trailingStopConfig');
+
+    if (trailingStopCheckbox && trailingStopConfig) {
+        trailingStopCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                trailingStopConfig.style.display = 'block';
+            } else {
+                trailingStopConfig.style.display = 'none';
+            }
+        });
+    }
+
+    // Charger les infos utilisateur (abonnement, wallet, permissions)
+    loadUserInfo();
+});
+
+// Get TP Strategy Config
+function getTPStrategyConfig() {
+    const strategy = document.getElementById('tpStrategySelect').value;
+    const config = { strategy };
+
+    switch (strategy) {
+        case 'SIMPLE_MULTIPLIER':
+            config.multiplier = parseFloat(document.getElementById('simple_multiplier').value);
+            break;
+
+        case 'PARTIAL_HOLD':
+            config.first_percent = parseInt(document.getElementById('partial_first_percent').value);
+            config.first_tp = parseFloat(document.getElementById('partial_first_tp').value);
+            config.hold_until_mc = parseInt(document.getElementById('partial_hold_until').value);
+            break;
+
+        case 'EXIT_BEFORE_MIGRATION':
+            config.exit_mc = parseInt(document.getElementById('exit_target').value);
+            break;
+
+        case 'PROGRESSIVE_AFTER_MIGRATION':
+            config.initial_percent = parseInt(document.getElementById('progressive_initial_percent').value);
+            config.step_percent = parseInt(document.getElementById('progressive_step_percent').value);
+            config.step_interval = parseInt(document.getElementById('progressive_step_interval').value);
+            break;
+
+        case 'ALL_IN_AFTER_MIGRATION':
+            config.exit_at_migration = true;
+            break;
+    }
+
+    return config;
+}
+
+// Save bot settings
+function saveBotSettings(event) {
+    event.preventDefault();
+
+    const strategy = document.getElementById('strategySelect').value;
+    const riskLevel = document.getElementById('riskSelect').value;
+    const stopLoss = parseFloat(document.getElementById('stopLossInput').value);
+    const maxPosition = parseFloat(document.getElementById('maxPositionInput').value);
+    const tpConfig = getTPStrategyConfig();
+
+    // Trailing Stop Loss settings
+    const trailingStopEnabled = document.getElementById('trailingStopEnabled').checked;
+    const trailingStopConfig = {
+        enabled: trailingStopEnabled,
+        stop_80: trailingStopEnabled ? parseFloat(document.getElementById('trailingStop80').value) : null,
+        stop_50: trailingStopEnabled ? parseFloat(document.getElementById('trailingStop50').value) : null
+    };
+
+    const settings = {
+        strategy,
+        risk_level: riskLevel,
+        stop_loss: stopLoss,
+        max_position_size: maxPosition,
+        tp_strategy: tpConfig.strategy,
+        tp_config: tpConfig,
+        trailing_stop: trailingStopConfig
+    };
+
+    console.log('Bot settings:', settings);
+
+    // Show success message
+    const statusEl = document.createElement('div');
+    statusEl.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(0, 255, 0, 0.2); border: 1px solid rgba(0, 255, 0, 0.5); color: #00ff00; padding: 15px 25px; border-radius: 10px; z-index: 10000; font-weight: 700;';
+    statusEl.innerHTML = '<i class="fas fa-check-circle me-2"></i>Strategy saved!';
+    document.body.appendChild(statusEl);
+
+    setTimeout(() => {
+        document.body.removeChild(statusEl);
+    }, 3000);
+}
+
+// Simulation Mode Variables
+let simulationMode = false;
+let simulationStartTime = null;
+let simulationDuration = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
+let simulationBalance = 10.0; // 10 SOL virtual
+let simulationTrades = 0;
+let simulationTimerInterval = null;
+
+// Start Simulation Mode
+async function startSimulationMode() {
+    try {
+        // API call to start simulation
+        const response = await fetch('/api/simulation/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            await showCustomAlert(data.error || 'Error starting simulation', 'error');
+            return;
+        }
+
+        // Activer le mode simulation
+        simulationMode = true;
+        simulationStartTime = Date.now();
+        simulationBalance = data.session.virtual_balance;
+        simulationTrades = data.session.total_trades;
+
+        // Hide toggle card, show banner
+        document.getElementById('simulationToggleCard').style.display = 'none';
+        document.getElementById('simulationModeBanner').style.display = 'block';
+
+        // Update UI
+        updateSimulationUI();
+
+        // Start timer
+        simulationTimerInterval = setInterval(updateSimulationTimer, 1000);
+
+        // Show success message
+        const statusEl = document.createElement('div');
+        statusEl.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(0, 212, 255, 0.2); border: 1px solid rgba(0, 212, 255, 0.5); color: #00d4ff; padding: 15px 25px; border-radius: 10px; z-index: 10000; font-weight: 700;';
+        statusEl.innerHTML = '<i class="fas fa-gamepad me-2"></i>' + data.message;
+        document.body.appendChild(statusEl);
+
+        setTimeout(() => {
+            document.body.removeChild(statusEl);
+        }, 4000);
+
+    } catch (error) {
+        console.error('Error starting simulation:', error);
+        await showCustomAlert('❌ Error starting simulation', 'error');
+    }
+}
+
+// Toggle Simulation Mode (switch back to real)
+async function toggleSimulationMode() {
+    if (await showCustomConfirm('Do you want to exit simulation mode and switch to real mode?\n\nYou will need to subscribe to trade with real money.', 'warning')) {
+        endSimulationMode();
+        // Redirect to BOOSTS tab
+        showDashboardTab('boosts');
+    }
+}
+
+// End Simulation Mode
+async function endSimulationMode() {
+    simulationMode = false;
+    clearInterval(simulationTimerInterval);
+
+    // API call to end simulation
+    try {
+        await fetch('/api/simulation/end', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+    } catch (error) {
+        console.error('Error ending simulation:', error);
+    }
+
+    // Show toggle card, hide banner
+    document.getElementById('simulationToggleCard').style.display = 'block';
+    document.getElementById('simulationModeBanner').style.display = 'none';
+}
+
+// Update Simulation UI
+function updateSimulationUI() {
+    document.getElementById('simBalance').textContent = simulationBalance.toFixed(2) + ' SOL';
+    document.getElementById('simTrades').textContent = simulationTrades;
+}
+
+// Update Simulation Balance from API
+async function updateSimulationBalance() {
+    try {
+        const response = await fetch('/api/simulation/status');
+        const data = await response.json();
+
+        if (data.success && data.has_simulation && data.session.is_active) {
+            // Update balance and trades count
+            simulationBalance = data.session.final_balance;
+            simulationTrades = data.session.total_trades;
+
+            // Update UI
+            updateSimulationUI();
+        }
+    } catch (error) {
+        console.error('Error updating simulation balance:', error);
+    }
+}
+
+// Update Simulation Timer
+function updateSimulationTimer() {
+    if (!simulationMode || !simulationStartTime) return;
+
+    const elapsed = Date.now() - simulationStartTime;
+    const remaining = simulationDuration - elapsed;
+
+    if (remaining <= 0) {
+        // Simulation time expired
+        endSimulationMode();
+        showCustomAlert('⏱️ Your 2-hour simulation period has ended!\n\nTo continue trading, please subscribe to a plan in the BOOSTS tab.', 'warning');
+        showDashboardTab('boosts');
+        return;
+    }
+
+    // Convert to hours and minutes
+    const hours = Math.floor(remaining / (60 * 60 * 1000));
+    const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+
+    document.getElementById('simTimeRemaining').textContent = `${hours}h ${minutes.toString().padStart(2, '0')}m`;
+}
+
+// Check simulation status on load
+async function checkSimulationStatus() {
+    try {
+        const response = await fetch('/api/simulation/status');
+        const data = await response.json();
+
+        if (data.success && data.has_simulation && data.session.is_active) {
+            // Restore simulation mode
+            simulationMode = true;
+            simulationBalance = data.session.final_balance;
+            simulationTrades = data.session.total_trades;
+
+            // Calculate remaining time
+            const remainingMs = data.time_remaining_seconds * 1000;
+            simulationStartTime = Date.now() - (simulationDuration - remainingMs);
+
+            // Show banner, hide toggle
+            document.getElementById('simulationToggleCard').style.display = 'none';
+            document.getElementById('simulationModeBanner').style.display = 'block';
+
+            // Update UI
+            updateSimulationUI();
+
+            // Start timer
+            simulationTimerInterval = setInterval(updateSimulationTimer, 1000);
+        }
+    } catch (error) {
+        console.error('Error checking simulation status:', error);
+    }
+}
+
+// Initialize
+checkAuth();
+checkSimulationStatus();
+
+// Auto-refresh data every 10 seconds
+setInterval(() => {
+    if (currentUser) {
+        loadBotStats();
+
+        // Refresh trades if on trades tab
+        const activeTab = document.querySelector('.nav-link.active');
+        if (activeTab && activeTab.textContent.includes('TRADES')) {
+            loadActivePositions();
+            loadTradesData();
+        }
+
+        // Refresh simulation balance if in simulation mode
+        if (simulationMode) {
+            updateSimulationBalance();
+        }
+    }
+}, 10000);
+
+// AUTO-REFRESH POSITIONS EVERY 3 SECONDS (real time!)
+setInterval(() => {
+    console.log('[AUTO-REFRESH] Callback fired, currentUser:', currentUser);
+    if (currentUser) {
+        // CORRECTION: Chercher le sous-onglet actif (.tab.active) au lieu du nav-link principal
+        const activeDashboardTab = document.querySelector('.tab-container .tab.active');
+        console.log('[AUTO-REFRESH] Active dashboard tab:', activeDashboardTab, 'Text:', activeDashboardTab?.textContent);
+        // Refresh positions only if on TRADES tab
+        if (activeDashboardTab && activeDashboardTab.textContent.includes('TRADES')) {
+            console.log('[AUTO-REFRESH] Calling loadActivePositions()');
+            loadActivePositions();
+        } else {
+            console.log('[AUTO-REFRESH] NOT on TRADES tab, skipping refresh');
+        }
+    } else {
+        console.log('[AUTO-REFRESH] No currentUser, skipping refresh');
+    }
+}, 3000);
+</script>
+
+<!-- Payment Modal -->
+<div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 600px; width: 90%; position: relative; box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);">
+
+        <!-- Close Button -->
+        <button onclick="closePaymentModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: var(--terminal-cyan); font-size: 30px; cursor: pointer; transition: all 0.3s;">&times;</button>
+
+        <!-- Title -->
+        <h2 style="color: var(--terminal-cyan); text-align: center; margin-bottom: 10px; font-family: 'Courier New', monospace; text-transform: uppercase;">
+            <i class="fas fa-wallet me-2"></i>Payment <span id="paymentPlanName">RISKY</span>
+        </h2>
+
+        <div style="text-align: center; color: rgba(0, 255, 255, 0.6); margin-bottom: 30px; font-size: 0.9rem;">
+            <i class="fas fa-clock me-2"></i>Expires in <span id="paymentTimer">30:00</span>
+        </div>
+
+        <!-- Amount -->
+        <div style="background: rgba(0, 255, 255, 0.1); padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 30px; border: 1px solid rgba(0, 255, 255, 0.3);">
+            <div style="font-size: 0.9rem; color: rgba(0, 255, 255, 0.7); margin-bottom: 10px;">AMOUNT TO PAY</div>
+            <div style="font-size: 2.5rem; font-weight: 700; color: var(--terminal-cyan); font-family: 'Courier New', monospace;">
+                <span id="paymentAmount">0.15</span> SOL
+            </div>
+        </div>
+
+        <!-- QR Code -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <div style="background: white; padding: 20px; border-radius: 10px; display: inline-block;">
+                <img id="paymentQRCode" src="" alt="QR Code" style="width: 200px; height: 200px;">
+            </div>
+            <div style="margin-top: 10px; font-size: 0.8rem; color: rgba(0, 255, 255, 0.6);">
+                <i class="fas fa-qrcode me-2"></i>Scan with your Solana wallet
+            </div>
+        </div>
+
+        <!-- Payment Address -->
+        <div style="margin-bottom: 30px;">
+            <div style="font-size: 0.9rem; color: rgba(0, 255, 255, 0.7); margin-bottom: 10px; text-align: center;">PAYMENT ADDRESS</div>
+            <div style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(0, 255, 255, 0.3);">
+                <input id="paymentAddress" type="text" readonly value="" style="flex: 1; background: transparent; border: none; color: var(--terminal-cyan); font-family: 'Courier New', monospace; font-size: 0.85rem; outline: none;">
+                <button onclick="copyPaymentAddress()" style="background: var(--terminal-cyan); color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 700; transition: all 0.3s;">
+                    <i class="fas fa-copy"></i> COPY
+                </button>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div style="background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 30px; border: 1px solid rgba(255, 215, 0, 0.3);">
+            <div style="color: gold; font-weight: 700; margin-bottom: 10px;">
+                <i class="fas fa-info-circle me-2"></i>INSTRUCTIONS
+            </div>
+            <ol style="color: rgba(255, 255, 255, 0.8); margin: 0; padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                <li>Open your Solana wallet (Phantom, Solflare, etc.)</li>
+                <li>Send <strong id="paymentAmount2">0.15 SOL</strong> to the address above</li>
+                <li>Click "VERIFY PAYMENT" once sent</li>
+                <li>Your subscription will be activated automatically</li>
+            </ol>
+        </div>
+
+        <!-- Status -->
+        <div id="paymentStatus" style="display: none; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; font-weight: 700;"></div>
+
+        <!-- Verify Button -->
+        <button id="verifyPaymentBtn" onclick="verifyPayment()" style="width: 100%; padding: 18px; background: linear-gradient(135deg, var(--terminal-cyan), #00cccc); color: black; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase;">
+            <i class="fas fa-check-circle me-2"></i>VERIFY PAYMENT
+        </button>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: rgba(0, 255, 255, 0.5);">
+            <i class="fas fa-shield-alt me-2"></i>Secure transaction on Solana blockchain
+        </div>
+    </div>
+</div>
+
+<!-- Private Key Warning Modal -->
+<div id="privateKeyModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.95); z-index: 10000; align-items: center; justify-content: center;">
+    <div style="background: linear-gradient(135deg, #1a0000, #2e0a1a); padding: 40px; border-radius: 20px; border: 3px solid var(--terminal-red); max-width: 700px; width: 95%; position: relative; box-shadow: 0 0 60px rgba(255, 0, 81, 0.5);">
+
+        <!-- Warning Icon -->
+        <div style="text-align: center; margin-bottom: 20px;">
+            <i class="fas fa-exclamation-triangle" style="font-size: 4rem; color: var(--terminal-red); animation: pulse 2s infinite;"></i>
+        </div>
+
+        <!-- Title -->
+        <h2 style="color: var(--terminal-red); text-align: center; margin-bottom: 10px; font-family: 'Courier New', monospace; text-transform: uppercase; font-size: 1.8rem;">
+            SAVE YOUR PRIVATE KEY!
+        </h2>
+
+        <div style="text-align: center; color: rgba(255, 0, 81, 0.8); margin-bottom: 30px; font-size: 1.1rem; font-weight: 700;">
+            YOU WILL NEVER SEE IT AGAIN!
+        </div>
+
+        <!-- Critical Warning Box -->
+        <div style="background: rgba(255, 0, 81, 0.15); padding: 25px; border-radius: 10px; margin-bottom: 30px; border: 2px solid rgba(255, 0, 81, 0.4);">
+            <div style="color: var(--terminal-red); font-weight: 700; margin-bottom: 15px; font-size: 1.1rem;">
+                <i class="fas fa-shield-alt me-2"></i>WARNING - VERY IMPORTANT
+            </div>
+            <ul style="color: rgba(255, 255, 255, 0.9); margin: 0; padding-left: 25px; font-size: 1rem; line-height: 2;">
+                <li><strong>This key = access to your wallet</strong></li>
+                <li><strong>If you lose it = you lose everything</strong></li>
+                <li><strong>If someone steals it = they steal your funds</strong></li>
+                <li><strong>NEVER SHARE IT with anyone</strong></li>
+            </ul>
+        </div>
+
+        <!-- Private Key Display -->
+        <div style="margin-bottom: 30px;">
+            <div style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 12px; text-align: center; font-weight: 600;">
+                <i class="fas fa-key me-2"></i>YOUR SOLANA PRIVATE KEY
+            </div>
+            <div style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px; border: 2px solid var(--terminal-cyan); position: relative;">
+                <div id="privateKeyDisplay" style="color: var(--terminal-cyan); font-family: 'Courier New', monospace; font-size: 0.85rem; word-break: break-all; line-height: 1.6; text-align: center;"></div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div style="display: flex; gap: 15px; margin-bottom: 25px;">
+            <button onclick="copyPrivateKey()" style="flex: 1; padding: 15px; background: linear-gradient(135deg, var(--terminal-cyan), #00cccc); color: black; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase;">
+                <i class="fas fa-copy me-2"></i>COPIER
+            </button>
+            <button onclick="downloadPrivateKey()" style="flex: 1; padding: 15px; background: linear-gradient(135deg, var(--terminal-green), #00bb66); color: black; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase;">
+                <i class="fas fa-download me-2"></i>DOWNLOAD
+            </button>
+        </div>
+
+        <!-- Compatibility Info -->
+        <div style="background: rgba(0, 255, 136, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 25px; border: 1px solid rgba(0, 255, 136, 0.3);">
+            <div style="color: var(--terminal-green); font-weight: 700; margin-bottom: 10px; font-size: 1rem;">
+                <i class="fas fa-wallet me-2"></i>COMPATIBLE WITH
+            </div>
+            <div style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.8;">
+                You can import this key into:<br>
+                <strong>Phantom</strong>, <strong>Solflare</strong>, <strong>Backpack</strong>, or any other Solana wallet
+            </div>
+        </div>
+
+        <!-- Confirmation Checkbox -->
+        <div style="background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 10px; margin-bottom: 25px; border: 2px solid rgba(255, 215, 0, 0.4);">
+            <label style="display: flex; align-items: center; cursor: pointer; color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; font-weight: 600;">
+                <input type="checkbox" id="privateKeyConfirm" onchange="toggleConfirmButton()" style="width: 24px; height: 24px; margin-right: 15px; cursor: pointer;">
+                <span>I saved my private key in a safe place</span>
+            </label>
+        </div>
+
+        <!-- Confirm Button -->
+        <button id="privateKeyConfirmBtn" disabled onclick="closePrivateKeyModal()" style="width: 100%; padding: 20px; background: gray; color: rgba(255, 255, 255, 0.4); border: none; border-radius: 10px; font-size: 1.2rem; font-weight: 700; cursor: not-allowed; transition: all 0.3s; text-transform: uppercase;">
+            <i class="fas fa-check-circle me-2"></i>I UNDERSTOOD AND SAVED
+        </button>
+
+        <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: rgba(255, 0, 81, 0.7); font-style: italic;">
+            <i class="fas fa-info-circle me-2"></i>This key will NEVER be shown again
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+</style>
+
+<script>
+// Private Key Modal Variables
+let currentPrivateKey = null;
+let currentWalletAddress = null;
+
+function showPrivateKeyModal(privateKey, walletAddress) {
+    currentPrivateKey = privateKey;
+    currentWalletAddress = walletAddress;
+
+    document.getElementById('privateKeyDisplay').textContent = privateKey;
+    document.getElementById('privateKeyModal').style.display = 'flex';
+
+    // Reset checkbox and button
+    document.getElementById('privateKeyConfirm').checked = false;
+    toggleConfirmButton();
+}
+
+async function closePrivateKeyModal() {
+    const checkbox = document.getElementById('privateKeyConfirm');
+    if (!checkbox.checked) {
+        if (!await showCustomConfirm('Are you SURE you saved your private key? You will NEVER be able to see it again!', 'danger')) {
+            return;
+        }
+    }
+
+    document.getElementById('privateKeyModal').style.display = 'none';
+    currentPrivateKey = null;
+
+    // Continue to dashboard
+    showDashboard();
+    loadDashboardData();
+}
+
+function toggleConfirmButton() {
+    const checkbox = document.getElementById('privateKeyConfirm');
+    const button = document.getElementById('privateKeyConfirmBtn');
+
+    if (checkbox.checked) {
+        button.disabled = false;
+        button.style.background = 'linear-gradient(135deg, var(--terminal-green), #00bb66)';
+        button.style.color = 'black';
+        button.style.cursor = 'pointer';
+    } else {
+        button.disabled = true;
+        button.style.background = 'gray';
+        button.style.color = 'rgba(255, 255, 255, 0.4)';
+        button.style.cursor = 'not-allowed';
+    }
+}
+
+function copyPrivateKey() {
+    if (!currentPrivateKey) return;
+
+    navigator.clipboard.writeText(currentPrivateKey).then(() => {
+        const btn = event.target.closest('button');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check me-2"></i>COPIED!';
+        btn.style.background = 'linear-gradient(135deg, var(--terminal-green), #00bb66)';
+
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = 'linear-gradient(135deg, var(--terminal-cyan), #00cccc)';
+        }, 2000);
+    }).catch(err => {
+        showCustomAlert('❌ Copy error. Please select and copy manually.', 'error');
+    });
+}
+
+function downloadPrivateKey() {
+    if (!currentPrivateKey || !currentWalletAddress) return;
+
+    const content = `SOLANA WALLET - PRIVATE KEY
+
+⚠️ KEEP THIS FILE SAFE! ⚠️
+
+Wallet Address:
+${currentWalletAddress}
+
+Private Key:
+${currentPrivateKey}
+
+IMPORTANT:
+- This key gives TOTAL access to your wallet
+- NEVER SHARE IT with anyone
+- Keep it in a safe place (password manager, safe, etc.)
+- You can import it into Phantom, Solflare, Backpack, etc.
+
+Creation date: ${new Date().toLocaleString()}
+`;
+
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `wallet_private_key_${currentWalletAddress.substring(0, 8)}.txt`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    // Success feedback
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check me-2"></i>DOWNLOADED!';
+    btn.style.background = 'linear-gradient(135deg, var(--terminal-green), #00bb66)';
+
+    setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = 'linear-gradient(135deg, var(--terminal-green), #00bb66)';
+    }, 2000);
+}
+
+// ===== WALLET REGENERATION =====
+
+async function confirmRegenerateWallet() {
+    // Confirmation 1: General warning
+    const confirm1 = await showCustomConfirm(
+        '⚠️ WARNING!\n\n' +
+        'You are about to REPLACE your current wallet with a new one.\n\n' +
+        'BEFORE CONTINUING:\n' +
+        '• Make sure you have TRANSFERRED all your funds from the old wallet\n' +
+        '• Make sure you have SAVED your current private key (if you want to keep it)\n\n' +
+        'Do you really want to continue?',
+        'danger'
+    );
+
+    if (!confirm1) return;
+
+    // Confirmation 2: Verify that they emptied the wallet
+    const confirm2 = await showCustomConfirm(
+        '🚨 FINAL CONFIRMATION\n\n' +
+        'Have you REALLY transferred all your funds from the old wallet?\n\n' +
+        'If not, you will LOSE your funds!\n\n' +
+        'Continue?',
+        'danger'
+    );
+
+    if (!confirm2) return;
+
+    // Call API to regenerate
+    await regenerateWallet();
+}
+
+async function regenerateWallet() {
+    try {
+        const response = await fetch('/api/wallet/regenerate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            // Show new private key in modal (LIKE AT REGISTER)
+            if (data.wallet && data.wallet.show_warning && data.wallet.private_key) {
+                // Show success message with old wallet
+                if (data.wallet.old_address) {
+                    await showCustomAlert(
+                        '✅ NEW WALLET GENERATED!\n\n' +
+                        `Old wallet: ${data.wallet.old_address.substring(0, 20)}...\n` +
+                        `New wallet: ${data.wallet.address.substring(0, 20)}...\n\n` +
+                        'You will now see your NEW private key.\n' +
+                        'SAVE IT IMMEDIATELY!',
+                        'success'
+                    );
+                }
+
+                // Show private key modal
+                showPrivateKeyModal(data.wallet.private_key, data.wallet.address);
+
+                // Refresh dashboard data
+                loadDashboardData();
+            } else {
+                await showCustomAlert('✅ New wallet generated successfully!\nRefresh the page to see changes.', 'success');
+                location.reload();
+            }
+        } else {
+            await showCustomAlert(`❌ Error: ${data.error || 'Unable to generate a new wallet'}`, 'error');
+        }
+    } catch (error) {
+        console.error('Error regenerating wallet:', error);
+        await showCustomAlert('❌ Error regenerating wallet. Check your connection and try again.', 'error');
+    }
+}
+</script>
+
+<script>
+// Payment Modal Variables
+let currentPaymentId = null;
+let paymentTimerInterval = null;
+
+// Duration Selection Function
+function selectDuration(plan, duration, amount) {
+    // Get the boost card
+    const card = document.getElementById(`${plan}Boost`);
+    if (!card) return;
+
+    // Remove active class from all duration buttons in this card
+    const buttons = card.querySelectorAll('.duration-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Add active class to the clicked button
+    event.target.classList.add('active');
+
+    // Update the price display
+    const priceElement = document.getElementById(`${plan}-price`);
+    if (priceElement) {
+        priceElement.textContent = `${amount} SOL`;
+        priceElement.dataset.amount = amount;
+    }
+}
+
+async function openPaymentModal(boostLevel, amountSol) {
+    try {
+        // Create payment request
+        const response = await fetch('/api/payment/create', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ boost_level: boostLevel })
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            await showCustomAlert(data.error || 'Error creating payment', 'error');
+            return;
+        }
+
+        // Stocker l'ID du paiement
+        currentPaymentId = data.payment_id;
+
+        // Afficher les infos
+        document.getElementById('paymentPlanName').textContent = boostLevel;
+        document.getElementById('paymentAmount').textContent = data.amount_sol;
+        document.getElementById('paymentAmount2').textContent = data.amount_sol + ' SOL';
+        document.getElementById('paymentAddress').value = data.payment_address;
+
+        // Generate QR code (via API)
+        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=solana:${data.payment_address}?amount=${data.amount_sol}`;
+        document.getElementById('paymentQRCode').src = qrCodeUrl;
+
+        // Start timer
+        startPaymentTimer(data.expires_in_minutes * 60);
+
+        // Afficher la modale
+        document.getElementById('paymentModal').style.display = 'flex';
+
+    } catch (error) {
+        console.error('Error opening payment modal:', error);
+        await showCustomAlert('❌ Error creating payment', 'error');
+    }
+}
+
+function closePaymentModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+    if (paymentTimerInterval) {
+        clearInterval(paymentTimerInterval);
+    }
+}
+
+function startPaymentTimer(seconds) {
+    if (paymentTimerInterval) {
+        clearInterval(paymentTimerInterval);
+    }
+
+    let remaining = seconds;
+
+    paymentTimerInterval = setInterval(() => {
+        const minutes = Math.floor(remaining / 60);
+        const secs = remaining % 60;
+        document.getElementById('paymentTimer').textContent =
+            `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+        if (remaining <= 0) {
+            clearInterval(paymentTimerInterval);
+            showPaymentStatus('Payment request expired', 'error');
+            document.getElementById('verifyPaymentBtn').disabled = true;
+        }
+
+        remaining--;
+    }, 1000);
+}
+
+function copyPaymentAddress() {
+    const addressInput = document.getElementById('paymentAddress');
+    addressInput.select();
+    document.execCommand('copy');
+
+    // Visual feedback
+    const btn = event.target.closest('button');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<i class="fas fa-check"></i> COPIED!';
+    btn.style.background = 'var(--terminal-green)';
+
+    setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.style.background = 'var(--terminal-cyan)';
+    }, 2000);
+}
+
+async function verifyPayment() {
+    if (!currentPaymentId) return;
+
+    const btn = document.getElementById('verifyPaymentBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>VERIFICATION IN PROGRESS...';
+
+    try {
+        const response = await fetch(`/api/payment/verify/${currentPaymentId}`, {
+            method: 'POST'
+        });
+
+        const data = await response.json();
+
+        if (data.verified) {
+            showPaymentStatus('✓ Payment verified! Subscription activated.', 'success');
+            setTimeout(() => {
+                closePaymentModal();
+                location.reload(); // Refresh page
+            }, 2000);
+        } else {
+            showPaymentStatus(data.message || 'Transaction not found. Please wait a few seconds and try again.', 'warning');
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>VERIFY PAYMENT';
+        }
+
+    } catch (error) {
+        console.error('Error verifying payment:', error);
+        showPaymentStatus('Verification error', 'error');
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-check-circle me-2"></i>VERIFY PAYMENT';
+    }
+}
+
+function showPaymentStatus(message, type) {
+    const statusEl = document.getElementById('paymentStatus');
+    statusEl.textContent = message;
+    statusEl.style.display = 'block';
+
+    if (type === 'success') {
+        statusEl.style.background = 'rgba(0, 255, 0, 0.2)';
+        statusEl.style.border = '1px solid rgba(0, 255, 0, 0.5)';
+        statusEl.style.color = '#00ff00';
+    } else if (type === 'error') {
+        statusEl.style.background = 'rgba(255, 0, 0, 0.2)';
+        statusEl.style.border = '1px solid rgba(255, 0, 0, 0.5)';
+        statusEl.style.color = '#ff4444';
+    } else {
+        statusEl.style.background = 'rgba(255, 215, 0, 0.2)';
+        statusEl.style.border = '1px solid rgba(255, 215, 0, 0.5)';
+        statusEl.style.color = 'gold';
+    }
+}
+
+// Remove old upgradeBoost function (no longer needed)
+
+// ===== CUSTOM ALERT & CONFIRM MODALS =====
+function showCustomAlert(message, type = 'info') {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('customAlertModal');
+        const messageEl = document.getElementById('customAlertMessage');
+        const iconEl = document.getElementById('customAlertIcon');
+        const titleEl = document.getElementById('customAlertTitle');
+
+        // Set message
+        messageEl.innerHTML = message.replace(/\n/g, '<br>');
+
+        // Set style based on type
+        if (type === 'success') {
+            iconEl.className = 'fas fa-check-circle';
+            iconEl.style.color = 'var(--terminal-green)';
+            titleEl.textContent = 'SUCCESS';
+            titleEl.style.color = 'var(--terminal-green)';
+        } else if (type === 'error') {
+            iconEl.className = 'fas fa-times-circle';
+            iconEl.style.color = 'var(--terminal-red)';
+            titleEl.textContent = 'ERROR';
+            titleEl.style.color = 'var(--terminal-red)';
+        } else if (type === 'warning') {
+            iconEl.className = 'fas fa-exclamation-triangle';
+            iconEl.style.color = '#ffd700';
+            titleEl.textContent = 'WARNING';
+            titleEl.style.color = '#ffd700';
+        } else {
+            iconEl.className = 'fas fa-info-circle';
+            iconEl.style.color = 'var(--terminal-cyan)';
+            titleEl.textContent = 'INFO';
+            titleEl.style.color = 'var(--terminal-cyan)';
+        }
+
+        modal.style.display = 'flex';
+
+        // OK button handler
+        window.customAlertOk = () => {
+            modal.style.display = 'none';
+            resolve(true);
+        };
+    });
+}
+
+function showCustomConfirm(message, type = 'warning') {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('customConfirmModal');
+        const messageEl = document.getElementById('customConfirmMessage');
+        const iconEl = document.getElementById('customConfirmIcon');
+        const titleEl = document.getElementById('customConfirmTitle');
+
+        // Set message
+        messageEl.innerHTML = message.replace(/\n/g, '<br>');
+
+        // Set style based on type
+        if (type === 'danger') {
+            iconEl.className = 'fas fa-exclamation-triangle';
+            iconEl.style.color = 'var(--terminal-red)';
+            titleEl.textContent = 'CONFIRMATION REQUIRED';
+            titleEl.style.color = 'var(--terminal-red)';
+        } else {
+            iconEl.className = 'fas fa-question-circle';
+            iconEl.style.color = '#ffd700';
+            titleEl.textContent = 'CONFIRM ACTION';
+            titleEl.style.color = '#ffd700';
+        }
+
+        modal.style.display = 'flex';
+
+        // Yes/No button handlers
+        window.customConfirmYes = () => {
+            modal.style.display = 'none';
+            resolve(true);
+        };
+
+        window.customConfirmNo = () => {
+            modal.style.display = 'none';
+            resolve(false);
+        };
+    });
+}
+
+</script>
+
+<!-- Custom Alert Modal -->
+<div id="customAlertModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 99999; align-items: center; justify-content: center;">
+    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 500px; width: 90%; box-shadow: 0 0 50px rgba(0, 255, 255, 0.3); animation: slideIn 0.3s ease;">
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <i id="customAlertIcon" class="fas fa-info-circle" style="font-size: 3.5rem; color: var(--terminal-cyan);"></i>
+        </div>
+
+        <h2 id="customAlertTitle" style="color: var(--terminal-cyan); text-align: center; margin-bottom: 20px; font-family: 'Courier New', monospace; text-transform: uppercase; font-size: 1.3rem;">
+            INFO
+        </h2>
+
+        <div id="customAlertMessage" style="color: rgba(255, 255, 255, 0.9); text-align: center; margin-bottom: 30px; font-size: 1rem; line-height: 1.8; font-family: 'Courier New', monospace;">
+        </div>
+
+        <button onclick="customAlertOk()" style="width: 100%; padding: 15px; background: linear-gradient(135deg, var(--terminal-cyan), #00cccc); color: black; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; font-family: 'Courier New', monospace;">
+            <i class="fas fa-check me-2"></i>OK
+        </button>
+    </div>
+</div>
+
+<!-- Custom Confirm Modal -->
+<div id="customConfirmModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 99999; align-items: center; justify-content: center;">
+    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid #ffd700; max-width: 500px; width: 90%; box-shadow: 0 0 50px rgba(255, 215, 0, 0.3); animation: slideIn 0.3s ease;">
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <i id="customConfirmIcon" class="fas fa-question-circle" style="font-size: 3.5rem; color: #ffd700;"></i>
+        </div>
+
+        <h2 id="customConfirmTitle" style="color: #ffd700; text-align: center; margin-bottom: 20px; font-family: 'Courier New', monospace; text-transform: uppercase; font-size: 1.3rem;">
+            CONFIRM ACTION
+        </h2>
+
+        <div id="customConfirmMessage" style="color: rgba(255, 255, 255, 0.9); text-align: center; margin-bottom: 30px; font-size: 1rem; line-height: 1.8; font-family: 'Courier New', monospace;">
+        </div>
+
+        <div style="display: flex; gap: 15px;">
+            <button onclick="customConfirmNo()" style="flex: 1; padding: 15px; background: linear-gradient(135deg, #333, #555); color: white; border: 1px solid #666; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; font-family: 'Courier New', monospace;">
+                <i class="fas fa-times me-2"></i>NO
+            </button>
+            <button onclick="customConfirmYes()" style="flex: 1; padding: 15px; background: linear-gradient(135deg, var(--terminal-green), #00cc66); color: black; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; text-transform: uppercase; font-family: 'Courier New', monospace;">
+                <i class="fas fa-check me-2"></i>YES
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+</style>
+
+</body>
+</html>

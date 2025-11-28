@@ -1,0 +1,102 @@
+================================================================================
+MODE SCREENSHOT - INTERFACE PROFESSIONNELLE EN ANGLAIS
+================================================================================
+
+ACTIVATION:
+  Dans live_trading_bot.py, ligne 43:
+  SCREENSHOT_MODE = True  # Activé par défaut
+
+FONCTIONNALITÉS:
+  ✅ Interface complètement en ANGLAIS
+  ✅ Pas d'affichage "SIMULATION" ou "TEST"
+  ✅ Montant affiché: 0.3 SOL (réaliste pour screenshots)
+  ✅ Compteur de MIGRATIONS ajouté (x2, x3 ou migration = WIN)
+  ✅ Messages "WIN" / "LOSS" au lieu de emojis complexes
+
+AFFICHAGE STARTUP:
+  ================================================================================
+  PUMPFUN AI TRADING BOT - AUTOMATED INTELLIGENCE SYSTEM
+  ================================================================================
+  
+  [💰 SOL PRICE - REAL TIME]
+    SOL Price: $129.87 USD (CoinGecko)
+    Updated every 30s
+  
+  [🧠 AI AUTO-LEARNING]
+    > 176 trades in history
+    > Mode: CONSERVATIVE
+    > Auto-analysis every 10 trades
+    > Auto-adjustment every 50 trades
+  
+  [🎯 OPTIMIZATIONS - BASED ON 174 TRADES ANALYSIS]
+    ✅ Optimal Sweet Spot: MC $8K-$12K (19.5% WR + avg profit +110%!)
+    ✅ ANTI-WHALE FILTERS: 0 whales for AUTO-BUY, max 1 for AI
+    ✅ Minimum buy ratio: 80%
+    ✅ Stop Loss: -35% (widened to let tokens breathe)
+    ✅ Timeout: 45 min (catch slow runners)
+    ✅ LIVE PRICE verification before each trade
+  
+  [PARAMETERS]
+  Amount per trade: 0.3 SOL
+  Stop Loss: -35% (✅ CHECKED EVERY SECOND)
+  Take Profit: $53,000 (migration)
+  
+  [LIVE STATISTICS]
+  Total Trades: 0
+  Migrations: 0
+  PNL: 0.000 SOL
+
+MESSAGES D'ACHAT:
+  [LIVE] Buying 0.3 SOL on EPSTRON
+  
+  [POSITION OPENED - PARTIAL_PROFIT]
+    Token: EPSTRON
+    Reason: AUTO-BUY: 42txn, 32traders, 82% buy
+    Entry MC: $11,340
+    Confidence: 100%
+    Stop Loss: $7,371
+    Partial TP: $22,680 (2.0x - SELL 50%)
+    Migration: $53,000 -> PROGRESSIVE SELL 5% every 20s
+
+MESSAGES DE VENTE:
+  [LIVE] Selling EPSTRON
+  
+  💰 [POSITION CLOSED - WIN] - TIMEOUT (45min)
+    Token: EPSTRON
+    Entry: $11,340
+    Exit: $38,075
+    Profit: 3.36x (+235.5%)
+
+STATISTIQUES EN DIRECT:
+  ────────────────────────────────────────────────────────────────────────────────
+  [📊 LIVE STATISTICS]
+  ────────────────────────────────────────────────────────────────────────────────
+  Total Trades: 15 (Wins: 5 | Losses: 10)
+  Win Rate: 🟡 33.3%
+  Migrations: 🚀 3
+  PNL: 💰 +0.245 SOL
+  Avg Profit: 1.45x
+  Open Positions: 1
+  ────────────────────────────────────────────────────────────────────────────────
+
+COMPTEUR DE MIGRATIONS:
+  Un trade compte comme "MIGRATION" si:
+  - Exit MC >= $53,000 (migration Raydium atteinte)
+  - OU Profit >= 2.0x (x2, x3, etc.)
+  - OU "MIGRATION" dans la raison de sortie
+
+  Cela permet de tracker les VRAIES WINS (pas juste +5%)
+
+POUR DÉSACTIVER LE MODE SCREENSHOT:
+  Dans live_trading_bot.py, ligne 43:
+  SCREENSHOT_MODE = False
+
+  Le bot reviendra en français avec affichage "SIMULATION"
+
+REMARQUES:
+  - Le bot reste en SIMULATION_MODE = True (pas de vrai argent dépensé)
+  - Seul l'AFFICHAGE change pour paraître professionnel
+  - Parfait pour faire des captures d'écran pour montrer le bot
+  - Le montant 0.3 SOL est affiché mais le vrai montant reste 0.01 SOL en simulation
+
+================================================================================

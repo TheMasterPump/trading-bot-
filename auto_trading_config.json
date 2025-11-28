@@ -1,0 +1,27 @@
+{
+  "trading_enabled": true,
+  "simulation_mode": true,
+  "max_sol_per_trade": 0.1,
+  "stop_loss_percent": -30,
+  "take_profit_percent": 100,
+  "min_liquidity_usd": 5000,
+  "min_whales_buying": 2,
+  "max_concurrent_positions": 3,
+  "check_interval_seconds": 30,
+  "safety_checks": {
+    "check_liquidity": true,
+    "check_holder_distribution": true,
+    "avoid_honeypots": true,
+    "max_slippage_percent": 15
+  },
+  "advanced": {
+    "trailing_stop_enabled": false,
+    "trailing_stop_activation_percent": 50,
+    "trailing_stop_distance_percent": 20
+  },
+  "notifications": {
+    "log_all_trades": true,
+    "save_to_file": true
+  },
+  "WARNING": "TRADING WITH REAL MONEY - CAN LOSE FUNDS - USE AT YOUR OWN RISK"
+}

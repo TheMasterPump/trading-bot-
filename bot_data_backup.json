@@ -1,0 +1,2866 @@
+{
+  "tokens": [],
+  "completed": [
+    {
+      "symbol": "COSMOPIG",
+      "mint": "7wn2gJc9Zp3Fxnb7bvwTYChukYspDarSg1u5bSjeP4ZQ",
+      "15s": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "solfi",
+      "mint": "6HLj76hKnUf8wKe6gcHaqrTc8dw1xgo9hCTU1iZpVXVr",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Breakpoint",
+      "mint": "8fhw1j5qmRVHqN7VrDS8XEcpt3fQGp84fp5FgzcCpump",
+      "15s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5690.143069065625
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5690.143069065625
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5690.143069065625
+      },
+      "1min": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5690.143069065625
+      },
+      "final_mc": 5690.143069065625,
+      "is_runner": false
+    },
+    {
+      "symbol": "CI",
+      "mint": "4uZjygUBW6o2tWsg9S7HzPtGQqmzntrmeZnDxHJGpump",
+      "15s": {
+        "txn": 1,
+        "buys": 0,
+        "sells": 1,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 0,
+        "sells": 1,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 0,
+        "sells": 1,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 1,
+        "buys": 0,
+        "sells": 1,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "SOLcock",
+      "mint": "FjuYVorQv3KGBWcWSKF9s3P5G5w8DuiZi34Y7e6epump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5592.544318113697
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5592.544318113697
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5592.544318113697
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5592.544318113697
+      },
+      "final_mc": 5592.544318113697,
+      "is_runner": false
+    },
+    {
+      "symbol": "TRG",
+      "mint": "EJ1fKYZeqByBay6HiPqryJGgW5HntxNToZij7SiTpump",
+      "15s": {
+        "txn": 2,
+        "buys": 0,
+        "sells": 2,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5599.901567006355
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 0,
+        "sells": 2,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5599.901567006355
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 0,
+        "sells": 2,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5599.901567006355
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 0,
+        "sells": 2,
+        "buy_ratio": 0.0,
+        "traders": 1,
+        "mc": 5599.901567006355
+      },
+      "final_mc": 5599.901567006355,
+      "is_runner": false
+    },
+    {
+      "symbol": "Lilypad",
+      "mint": "C7retBfQ84xiL6QP3L2utw3imaEfWdQx2SKcjqNfpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Lillypad",
+      "mint": "4AaeNVZywKYQw5FD2wtiYgfp7UKyVqrCvzao5cf8pump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Lillypad",
+      "mint": "airRVvMPwS8q3VJsn2ews1N9EP2VFksK1N8i9uDpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "ZOOMER",
+      "mint": "7x5xMhFhYAR2qWVQr9rMum7X4TM2v2HsS9YfSWrqpump",
+      "15s": {
+        "txn": 10,
+        "buys": 9,
+        "sells": 1,
+        "buy_ratio": 0.9,
+        "traders": 9,
+        "mc": 12873.949722650706
+      },
+      "20s": {
+        "txn": 12,
+        "buys": 11,
+        "sells": 1,
+        "buy_ratio": 0.9166666666666666,
+        "traders": 11,
+        "mc": 12972.266970820572
+      },
+      "30s": {
+        "txn": 15,
+        "buys": 13,
+        "sells": 2,
+        "buy_ratio": 0.8666666666666667,
+        "traders": 13,
+        "mc": 12563.326675286227
+      },
+      "1min": {
+        "txn": 22,
+        "buys": 17,
+        "sells": 5,
+        "buy_ratio": 0.7727272727272727,
+        "traders": 18,
+        "mc": 13636.409916781318
+      },
+      "final_mc": 13636.409916781318,
+      "is_runner": false
+    },
+    {
+      "symbol": "56",
+      "mint": "EVSSDYQ6NaweasWVLvMuqpRq9pCLqDPJso4bTGk2UL9i",
+      "15s": {
+        "txn": 6,
+        "buys": 4,
+        "sells": 2,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 5,
+        "mc": 8383.018389416848
+      },
+      "20s": {
+        "txn": 25,
+        "buys": 14,
+        "sells": 11,
+        "buy_ratio": 0.56,
+        "traders": 17,
+        "mc": 9433.79209600172
+      },
+      "30s": {
+        "txn": 55,
+        "buys": 26,
+        "sells": 29,
+        "buy_ratio": 0.4727272727272727,
+        "traders": 27,
+        "mc": 6084.582572314513
+      },
+      "1min": {
+        "txn": 62,
+        "buys": 26,
+        "sells": 36,
+        "buy_ratio": 0.41935483870967744,
+        "traders": 27,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Lilypad",
+      "mint": "2Re3NMRUzVpG9e9UUEJgbrJ2LCeE7eyUbbQLdiFVpump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 6967.822711654399
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 6967.822711654399
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 6967.822711654399
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 6967.822711654399
+      },
+      "final_mc": 6967.822711654399,
+      "is_runner": false
+    },
+    {
+      "symbol": "SOLANA",
+      "mint": "BGN8g1rvLJq88uockQzBzzPiCrFKyhEdP1mceft5pump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5602.27698486842
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5602.27698486842
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5602.27698486842
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5602.27698486842
+      },
+      "final_mc": 5602.27698486842,
+      "is_runner": false
+    },
+    {
+      "symbol": "baldify",
+      "mint": "CbJ5hjFCFDudsMdPjxT6W1dFyFKspKUPbo8AUBHopump",
+      "15s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 8052.190121155597
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 8052.190121155597
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 8052.190121155597
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 6967.822711654399
+      },
+      "final_mc": 6967.822711654399,
+      "is_runner": false
+    },
+    {
+      "symbol": "SDKChan",
+      "mint": "FD6a4YUJKm1TYzgBR9E8hJJB9a9aw8akZAAdLtHfpump",
+      "15s": {
+        "txn": 35,
+        "buys": 20,
+        "sells": 15,
+        "buy_ratio": 0.5714285714285714,
+        "traders": 16,
+        "mc": 5961.251615284884
+      },
+      "20s": {
+        "txn": 35,
+        "buys": 20,
+        "sells": 15,
+        "buy_ratio": 0.5714285714285714,
+        "traders": 16,
+        "mc": 5961.251615284884
+      },
+      "30s": {
+        "txn": 35,
+        "buys": 20,
+        "sells": 15,
+        "buy_ratio": 0.5714285714285714,
+        "traders": 16,
+        "mc": 5961.251615284884
+      },
+      "1min": {
+        "txn": 35,
+        "buys": 20,
+        "sells": 15,
+        "buy_ratio": 0.5714285714285714,
+        "traders": 16,
+        "mc": 5961.251615284884
+      },
+      "final_mc": 5961.251615284884,
+      "is_runner": false
+    },
+    {
+      "symbol": "\u00a9",
+      "mint": "HugMNeMZEFFCZsgX2Jrsbq5X5hHSYcXxv7jreK1rpump",
+      "15s": {
+        "txn": 3,
+        "buys": 2,
+        "sells": 1,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 2,
+        "mc": 6727.594481290319
+      },
+      "20s": {
+        "txn": 3,
+        "buys": 2,
+        "sells": 1,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 2,
+        "mc": 6727.594481290319
+      },
+      "30s": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 5,
+        "buys": 2,
+        "sells": 3,
+        "buy_ratio": 0.4,
+        "traders": 3,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "VITALEAK",
+      "mint": "25j2nbfX43Z6qnDZHuKXpFDCsY8irAnfBsuMyvAtpump",
+      "15s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5617.601291202105
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5617.601291202105
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5617.601291202105
+      },
+      "1min": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5617.601291202105
+      },
+      "final_mc": 5617.601291202105,
+      "is_runner": false
+    },
+    {
+      "symbol": "FGC",
+      "mint": "2dYYGd2ULA4dExyyfRRdr5wDopuA9C8uDjS7f2XMpump",
+      "15s": {
+        "txn": 9,
+        "buys": 4,
+        "sells": 5,
+        "buy_ratio": 0.4444444444444444,
+        "traders": 7,
+        "mc": 6391.25333847446
+      },
+      "20s": {
+        "txn": 9,
+        "buys": 4,
+        "sells": 5,
+        "buy_ratio": 0.4444444444444444,
+        "traders": 7,
+        "mc": 6391.25333847446
+      },
+      "30s": {
+        "txn": 10,
+        "buys": 5,
+        "sells": 5,
+        "buy_ratio": 0.5,
+        "traders": 7,
+        "mc": 6508.694517333353
+      },
+      "1min": {
+        "txn": 11,
+        "buys": 6,
+        "sells": 5,
+        "buy_ratio": 0.5454545454545454,
+        "traders": 7,
+        "mc": 6122.6179408895705
+      },
+      "final_mc": 6122.6179408895705,
+      "is_runner": false
+    },
+    {
+      "symbol": "Pants",
+      "mint": "6ku7VcR2SjKTAUJG3EwFGd3xFkUvZoDua2H1wjzSpump",
+      "15s": {
+        "txn": 55,
+        "buys": 40,
+        "sells": 15,
+        "buy_ratio": 0.7272727272727273,
+        "traders": 25,
+        "mc": 41410.582974920195
+      },
+      "20s": {
+        "txn": 75,
+        "buys": 57,
+        "sells": 18,
+        "buy_ratio": 0.76,
+        "traders": 32,
+        "mc": 58525.99439547151
+      },
+      "30s": {
+        "txn": 106,
+        "buys": 67,
+        "sells": 39,
+        "buy_ratio": 0.6320754716981132,
+        "traders": 42,
+        "mc": 41955.715828389875
+      },
+      "1min": {
+        "txn": 163,
+        "buys": 73,
+        "sells": 90,
+        "buy_ratio": 0.44785276073619634,
+        "traders": 47,
+        "mc": 12542.114025129144
+      },
+      "final_mc": 12542.114025129144,
+      "is_runner": false
+    },
+    {
+      "symbol": "SOLTV",
+      "mint": "BzHg8q9uUR6ZzKjajdabTpW7fYHrdzCcr4v7bAkwpump",
+      "15s": {
+        "txn": 20,
+        "buys": 8,
+        "sells": 12,
+        "buy_ratio": 0.4,
+        "traders": 12,
+        "mc": 5591.824467504055
+      },
+      "20s": {
+        "txn": 20,
+        "buys": 8,
+        "sells": 12,
+        "buy_ratio": 0.4,
+        "traders": 12,
+        "mc": 5591.824467504055
+      },
+      "30s": {
+        "txn": 21,
+        "buys": 9,
+        "sells": 12,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 13,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 21,
+        "buys": 9,
+        "sells": 12,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 13,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Smarty Pan",
+      "mint": "FVNkD3B5YJNtFqgtSdHJWKPYiYf2ZDDJwcenuFugpump",
+      "15s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 4,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 4,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 4,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 4,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "BOLD",
+      "mint": "BDohNVUjjMmAWBDLTmzgCtb9A4MXYkjTuBnaz2P6pump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "MonkFun",
+      "mint": "482J9CU8vbNxRNCFN5Vj5xe4nmFHfjumnN77iW8ouQ6m",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5647.642130402804
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5647.642130402804
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5647.642130402804
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5647.642130402804
+      },
+      "final_mc": 5647.642130402804,
+      "is_runner": false
+    },
+    {
+      "symbol": "Bo",
+      "mint": "9GT6ovhi1rMd8i8pin5hg4NFE5jY4pT4tA8QAWWipump",
+      "15s": {
+        "txn": 13,
+        "buys": 7,
+        "sells": 6,
+        "buy_ratio": 0.5384615384615384,
+        "traders": 8,
+        "mc": 5612.708961159375
+      },
+      "20s": {
+        "txn": 15,
+        "buys": 7,
+        "sells": 8,
+        "buy_ratio": 0.4666666666666667,
+        "traders": 8,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 15,
+        "buys": 7,
+        "sells": 8,
+        "buy_ratio": 0.4666666666666667,
+        "traders": 8,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 15,
+        "buys": 7,
+        "sells": 8,
+        "buy_ratio": 0.4666666666666667,
+        "traders": 8,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "Jubby",
+      "mint": "ByGVFuRhRtEJdtCvpfF6xEdiPmZc71erqdLFpzcQpump",
+      "15s": {
+        "txn": 12,
+        "buys": 8,
+        "sells": 4,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 10,
+        "mc": 6857.322825514616
+      },
+      "20s": {
+        "txn": 13,
+        "buys": 9,
+        "sells": 4,
+        "buy_ratio": 0.6923076923076923,
+        "traders": 11,
+        "mc": 6999.651401577906
+      },
+      "30s": {
+        "txn": 16,
+        "buys": 12,
+        "sells": 4,
+        "buy_ratio": 0.75,
+        "traders": 14,
+        "mc": 7468.579043460375
+      },
+      "1min": {
+        "txn": 24,
+        "buys": 18,
+        "sells": 6,
+        "buy_ratio": 0.75,
+        "traders": 20,
+        "mc": 8538.923382403786
+      },
+      "final_mc": 8538.923382403786,
+      "is_runner": false
+    },
+    {
+      "symbol": "MAXXED",
+      "mint": "AmtoVgrEE2CTm8V8Vb3NkfNuMVzRoBCSkSHwKUnSpump",
+      "15s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 3,
+        "mc": 7588.830584654782
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 3,
+        "mc": 7588.830584654782
+      },
+      "30s": {
+        "txn": 6,
+        "buys": 4,
+        "sells": 2,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 4,
+        "mc": 7830.800241725352
+      },
+      "1min": {
+        "txn": 9,
+        "buys": 7,
+        "sells": 2,
+        "buy_ratio": 0.7777777777777778,
+        "traders": 7,
+        "mc": 9064.138790908888
+      },
+      "final_mc": 9064.138790908888,
+      "is_runner": false
+    },
+    {
+      "symbol": "VITALEAK",
+      "mint": "2SCJhsRcXjWhUc5SWcmBkBCH5Sege2gkmruNa6Vmpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5654.565173927956
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5654.565173927956
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5654.565173927956
+      },
+      "1min": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5728.856578540242
+      },
+      "final_mc": 5728.856578540242,
+      "is_runner": false
+    },
+    {
+      "symbol": "???",
+      "mint": "B1yXboir5x4gNdDKsaUcGDLieE9f8gedjc5ZUU1ybonk",
+      "15s": {
+        "txn": 78,
+        "buys": 0,
+        "sells": 78,
+        "buy_ratio": 0.0,
+        "traders": 61,
+        "mc": 16507.550066847405
+      },
+      "20s": {
+        "txn": 117,
+        "buys": 0,
+        "sells": 117,
+        "buy_ratio": 0.0,
+        "traders": 80,
+        "mc": 15074.219438097685
+      },
+      "30s": {
+        "txn": 195,
+        "buys": 0,
+        "sells": 195,
+        "buy_ratio": 0.0,
+        "traders": 121,
+        "mc": 17784.69406532408
+      },
+      "1min": {
+        "txn": 385,
+        "buys": 0,
+        "sells": 385,
+        "buy_ratio": 0.0,
+        "traders": 198,
+        "mc": 17882.53721872907
+      },
+      "final_mc": 17882.53721872907,
+      "is_runner": true
+    },
+    {
+      "symbol": "AIDOL",
+      "mint": "8nnMpzuWbqftq4Qdicf6yXkkK8EpLrs4egXF6YQv28pk",
+      "15s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 7613.984893008408
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 7613.984893008408
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 7613.984893008408
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 2,
+        "mc": 7613.980525936357
+      },
+      "final_mc": 7613.980525936357,
+      "is_runner": false
+    },
+    {
+      "symbol": "ride",
+      "mint": "HfJgvCnX8eVtmMwA5AMESCqTRAaJxKfSET2o1ueqpump",
+      "15s": {
+        "txn": 33,
+        "buys": 25,
+        "sells": 8,
+        "buy_ratio": 0.7575757575757576,
+        "traders": 26,
+        "mc": 9277.300383350628
+      },
+      "20s": {
+        "txn": 41,
+        "buys": 28,
+        "sells": 13,
+        "buy_ratio": 0.6829268292682927,
+        "traders": 29,
+        "mc": 9746.167698416273
+      },
+      "30s": {
+        "txn": 50,
+        "buys": 33,
+        "sells": 17,
+        "buy_ratio": 0.66,
+        "traders": 33,
+        "mc": 9914.623252027868
+      },
+      "1min": {
+        "txn": 100,
+        "buys": 62,
+        "sells": 38,
+        "buy_ratio": 0.62,
+        "traders": 37,
+        "mc": 8878.983369421316
+      },
+      "final_mc": 8878.983369421316,
+      "is_runner": false
+    },
+    {
+      "symbol": "cantcook",
+      "mint": "D8MBDXmubPKy8Vr4QNBWPpp1bhxDacRU3nL8ikeKpump",
+      "15s": {
+        "txn": 11,
+        "buys": 10,
+        "sells": 1,
+        "buy_ratio": 0.9090909090909091,
+        "traders": 10,
+        "mc": 7442.077690507095
+      },
+      "20s": {
+        "txn": 14,
+        "buys": 13,
+        "sells": 1,
+        "buy_ratio": 0.9285714285714286,
+        "traders": 13,
+        "mc": 7611.230330482168
+      },
+      "30s": {
+        "txn": 21,
+        "buys": 18,
+        "sells": 3,
+        "buy_ratio": 0.8571428571428571,
+        "traders": 20,
+        "mc": 7111.726584863807
+      },
+      "1min": {
+        "txn": 27,
+        "buys": 22,
+        "sells": 5,
+        "buy_ratio": 0.8148148148148148,
+        "traders": 23,
+        "mc": 7277.118211759617
+      },
+      "final_mc": 7277.118211759617,
+      "is_runner": false
+    },
+    {
+      "symbol": "FORKY",
+      "mint": "8e2kCg9g2UpW5TYX8znKm2YYsB5VW3xEDPEoJo56pump",
+      "15s": {
+        "txn": 13,
+        "buys": 7,
+        "sells": 6,
+        "buy_ratio": 0.5384615384615384,
+        "traders": 7,
+        "mc": 6550.334709203915
+      },
+      "20s": {
+        "txn": 13,
+        "buys": 7,
+        "sells": 6,
+        "buy_ratio": 0.5384615384615384,
+        "traders": 7,
+        "mc": 6550.334709203915
+      },
+      "30s": {
+        "txn": 15,
+        "buys": 8,
+        "sells": 7,
+        "buy_ratio": 0.5333333333333333,
+        "traders": 9,
+        "mc": 5591.80178514674
+      },
+      "1min": {
+        "txn": 15,
+        "buys": 8,
+        "sells": 7,
+        "buy_ratio": 0.5333333333333333,
+        "traders": 9,
+        "mc": 5591.80178514674
+      },
+      "final_mc": 5591.80178514674,
+      "is_runner": false
+    },
+    {
+      "symbol": "MINE",
+      "mint": "634jVYK4kGUu5W9ULoMCoe3K5jFVpZ87KT63Y7Topump",
+      "15s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "20s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "30s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "1min": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "final_mc": 5643.689248271832,
+      "is_runner": false
+    },
+    {
+      "symbol": "BOLD",
+      "mint": "CS1utNJktbzKP3h5bg7JR8y6Q2vje4n2t1hp2c7bpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "UNTRACE",
+      "mint": "APEeVipUVJCAW3ukm4XAZJ3fMPHNjyZFuNJ3Yjh4Gdev",
+      "15s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "GOLD",
+      "mint": "DyBzVhDGHSdLAKBufCfWDr4FTVEtWmoCb7caWHGZpump",
+      "15s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "final_mc": 5659.4934835949725,
+      "is_runner": false
+    },
+    {
+      "symbol": "loancoin",
+      "mint": "GkzH3HPDkDb5Xqjf1btSh3GNUeM8UVuCeUDmSb6Mpump",
+      "15s": {
+        "txn": 15,
+        "buys": 7,
+        "sells": 8,
+        "buy_ratio": 0.4666666666666667,
+        "traders": 11,
+        "mc": 6005.233030141871
+      },
+      "20s": {
+        "txn": 17,
+        "buys": 7,
+        "sells": 10,
+        "buy_ratio": 0.4117647058823529,
+        "traders": 11,
+        "mc": 6005.091372413659
+      },
+      "30s": {
+        "txn": 27,
+        "buys": 8,
+        "sells": 19,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 12,
+        "mc": 6202.753838912783
+      },
+      "1min": {
+        "txn": 28,
+        "buys": 9,
+        "sells": 19,
+        "buy_ratio": 0.32142857142857145,
+        "traders": 13,
+        "mc": 6592.5928428255775
+      },
+      "final_mc": 6592.5928428255775,
+      "is_runner": false
+    },
+    {
+      "symbol": "McRib",
+      "mint": "Gf37cJg6VJYwckSE2JGWgENqePNS5q495w7WcEEEpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5862.481827452277
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5862.481827452277
+      },
+      "30s": {
+        "txn": 26,
+        "buys": 15,
+        "sells": 11,
+        "buy_ratio": 0.5769230769230769,
+        "traders": 15,
+        "mc": 5755.410758672453
+      },
+      "1min": {
+        "txn": 29,
+        "buys": 15,
+        "sells": 14,
+        "buy_ratio": 0.5172413793103449,
+        "traders": 15,
+        "mc": 5613.911569677895
+      },
+      "final_mc": 5613.911569677895,
+      "is_runner": false
+    },
+    {
+      "symbol": "dumbo",
+      "mint": "FqWXTrMhgAC3VHKVvyEf6RWDsAJksV6j1E8ttKVjpump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "???",
+      "mint": "4ZEDvMJ4kne46MUrayYvEDawMvow26F9kr8wrx5xbonk",
+      "15s": {
+        "txn": 9,
+        "buys": 0,
+        "sells": 9,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 7147.3823007362425
+      },
+      "20s": {
+        "txn": 9,
+        "buys": 0,
+        "sells": 9,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 7147.3823007362425
+      },
+      "30s": {
+        "txn": 10,
+        "buys": 0,
+        "sells": 10,
+        "buy_ratio": 0.0,
+        "traders": 6,
+        "mc": 7137.195153111874
+      },
+      "1min": {
+        "txn": 15,
+        "buys": 0,
+        "sells": 15,
+        "buy_ratio": 0.0,
+        "traders": 8,
+        "mc": 6950.433043410299
+      },
+      "final_mc": 6950.433043410299,
+      "is_runner": false
+    },
+    {
+      "symbol": "LODI",
+      "mint": "9dEZJnA4yUHCXUqLFLpHaJ3YVrEwWoMYtxErKCTGpump",
+      "15s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "20s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "30s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "1min": {
+        "txn": 34,
+        "buys": 25,
+        "sells": 9,
+        "buy_ratio": 0.7352941176470589,
+        "traders": 25,
+        "mc": 9405.55158050855
+      },
+      "final_mc": 9405.55158050855,
+      "is_runner": false
+    },
+    {
+      "symbol": "???",
+      "mint": "5Ld8ejJN4QPzwfZCuphnry33Cpg79nfGcecosS7rbonk",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5965.496143881188
+      },
+      "20s": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "30s": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "1min": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "final_mc": 5973.098890781524,
+      "is_runner": false
+    },
+    {
+      "symbol": "WC",
+      "mint": "ESnveB8iH2i8LtdNr9mq4Ee6tNoB3g6XCCjUF9iKpump",
+      "15s": {
+        "txn": 44,
+        "buys": 16,
+        "sells": 28,
+        "buy_ratio": 0.36363636363636365,
+        "traders": 18,
+        "mc": 5895.945143546356
+      },
+      "20s": {
+        "txn": 53,
+        "buys": 16,
+        "sells": 37,
+        "buy_ratio": 0.3018867924528302,
+        "traders": 18,
+        "mc": 5858.254046669777
+      },
+      "30s": {
+        "txn": 54,
+        "buys": 16,
+        "sells": 38,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 18,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 54,
+        "buys": 16,
+        "sells": 38,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 18,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "DENG",
+      "mint": "HhckBjDK3nfTGDHppgjMXcpwtspUu7X4Mp3kRip6pump",
+      "15s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "20s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "30s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "1min": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "final_mc": 6243.272965597635,
+      "is_runner": false
+    },
+    {
+      "symbol": "AGENTHOUSE",
+      "mint": "AsdegbLcukS1ikhNgma56JwfLd5eYsXSmFJizh7vpump",
+      "15s": {
+        "txn": 29,
+        "buys": 20,
+        "sells": 9,
+        "buy_ratio": 0.6896551724137931,
+        "traders": 22,
+        "mc": 11551.817106260343
+      },
+      "20s": {
+        "txn": 40,
+        "buys": 26,
+        "sells": 14,
+        "buy_ratio": 0.65,
+        "traders": 28,
+        "mc": 13797.791203385108
+      },
+      "30s": {
+        "txn": 49,
+        "buys": 32,
+        "sells": 17,
+        "buy_ratio": 0.6530612244897959,
+        "traders": 33,
+        "mc": 11736.878635382624
+      },
+      "1min": {
+        "txn": 80,
+        "buys": 38,
+        "sells": 42,
+        "buy_ratio": 0.475,
+        "traders": 39,
+        "mc": 5608.699106828395
+      },
+      "final_mc": 5608.699106828395,
+      "is_runner": false
+    },
+    {
+      "symbol": "bountymad",
+      "mint": "6aLYpt2aUnMDN7j6FJxiu7eZ7z9q1ty2isEvbFPmpump",
+      "15s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 4,
+        "mc": 6233.991062104901
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 4,
+        "mc": 6233.991062104901
+      },
+      "30s": {
+        "txn": 7,
+        "buys": 5,
+        "sells": 2,
+        "buy_ratio": 0.7142857142857143,
+        "traders": 6,
+        "mc": 6240.186511640001
+      },
+      "1min": {
+        "txn": 7,
+        "buys": 5,
+        "sells": 2,
+        "buy_ratio": 0.7142857142857143,
+        "traders": 6,
+        "mc": 6240.186511640001
+      },
+      "final_mc": 6240.186511640001,
+      "is_runner": false
+    },
+    {
+      "symbol": "SAUCE",
+      "mint": "Crda6WMKnAc5gYRUc7wP67r3AWTvzu3du8SP8iucpump",
+      "15s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 9,
+        "buys": 2,
+        "sells": 7,
+        "buy_ratio": 0.2222222222222222,
+        "traders": 7,
+        "mc": 5606.720099406271
+      },
+      "final_mc": 5606.720099406271,
+      "is_runner": false
+    },
+    {
+      "symbol": "Islam",
+      "mint": "5biSMXz8u5xoNqCC5XSeHyQLxpngfixwCHqGYnFKpump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "final_mc": 5966.043616842864,
+      "is_runner": false
+    },
+    {
+      "symbol": "HEART",
+      "mint": "GZsPS9UAVoBGn9XVY67fd2iQw8ujYxvff9NituQLnCht",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5977.458238650865
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 2,
+        "mc": 5977.458238650865
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 2,
+        "mc": 5977.458238650865
+      },
+      "1min": {
+        "txn": 3,
+        "buys": 2,
+        "sells": 1,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 2,
+        "mc": 5988.883768844685
+      },
+      "final_mc": 5988.883768844685,
+      "is_runner": false
+    },
+    {
+      "symbol": "MONSTER",
+      "mint": "6cvpEmCf8LAnnu3h8YwCiD6JcFbCukW3ANPzZJCqpump",
+      "15s": {
+        "txn": 47,
+        "buys": 33,
+        "sells": 14,
+        "buy_ratio": 0.7021276595744681,
+        "traders": 29,
+        "mc": 12851.171833146338
+      },
+      "20s": {
+        "txn": 49,
+        "buys": 33,
+        "sells": 16,
+        "buy_ratio": 0.673469387755102,
+        "traders": 29,
+        "mc": 12393.60483063667
+      },
+      "30s": {
+        "txn": 58,
+        "buys": 34,
+        "sells": 24,
+        "buy_ratio": 0.5862068965517241,
+        "traders": 30,
+        "mc": 8898.773374568464
+      },
+      "1min": {
+        "txn": 62,
+        "buys": 35,
+        "sells": 27,
+        "buy_ratio": 0.5645161290322581,
+        "traders": 31,
+        "mc": 8811.555396226215
+      },
+      "final_mc": 8811.555396226215,
+      "is_runner": false
+    }
+  ],
+  "runners": [
+    {
+      "symbol": "SPREDIUM",
+      "mint": "8gPq7v3unVKLr5WMNbb8oUYm5koDYLEyLdupjXkcpump",
+      "15s": {
+        "txn": 15,
+        "buys": 15,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 15,
+        "mc": 32929.00815280978
+      },
+      "20s": {
+        "txn": 17,
+        "buys": 16,
+        "sells": 1,
+        "buy_ratio": 0.9411764705882353,
+        "traders": 16,
+        "mc": 33119.62363497191
+      },
+      "30s": {
+        "txn": 29,
+        "buys": 28,
+        "sells": 1,
+        "buy_ratio": 0.9655172413793104,
+        "traders": 28,
+        "mc": 33413.113425853015
+      },
+      "1min": {
+        "txn": 79,
+        "buys": 75,
+        "sells": 4,
+        "buy_ratio": 0.9493670886075949,
+        "traders": 74,
+        "mc": 35089.67927055555
+      },
+      "final_mc": 35089.67927055555,
+      "is_runner": true
+    },
+    {
+      "symbol": "NBC",
+      "mint": "EybPhh5yEcWZjb93P8z8nj3bdX6ViGyxHmiqZe9ppump",
+      "15s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 25902.540351875905
+      },
+      "20s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 25902.540351875905
+      },
+      "30s": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 25902.540351875905
+      },
+      "1min": {
+        "txn": 1,
+        "buys": 1,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 25902.540351875905
+      },
+      "final_mc": 25902.540351875905,
+      "is_runner": true
+    },
+    {
+      "symbol": "Lilypad",
+      "mint": "GWJ62m4LA4MpfMLA4dEkLL3gsvb3W5FFwCLL4AC3pump",
+      "15s": {
+        "txn": 63,
+        "buys": 49,
+        "sells": 14,
+        "buy_ratio": 0.7777777777777778,
+        "traders": 41,
+        "mc": 14800.688440585149
+      },
+      "20s": {
+        "txn": 99,
+        "buys": 69,
+        "sells": 30,
+        "buy_ratio": 0.696969696969697,
+        "traders": 48,
+        "mc": 14438.88138912123
+      },
+      "30s": {
+        "txn": 165,
+        "buys": 121,
+        "sells": 44,
+        "buy_ratio": 0.7333333333333333,
+        "traders": 90,
+        "mc": 21596.069291384243
+      },
+      "1min": {
+        "txn": 325,
+        "buys": 229,
+        "sells": 96,
+        "buy_ratio": 0.7046153846153846,
+        "traders": 168,
+        "mc": 28980.300544242495
+      },
+      "final_mc": 28980.300544242495,
+      "is_runner": true
+    },
+    {
+      "symbol": "TRINCH",
+      "mint": "GjYs6KNQFtQwNGR4gFQNSGduGCNhMhzYPUfR9Dmdpump",
+      "15s": {
+        "txn": 4,
+        "buys": 3,
+        "sells": 1,
+        "buy_ratio": 0.75,
+        "traders": 3,
+        "mc": 15303.884518624693
+      },
+      "20s": {
+        "txn": 4,
+        "buys": 3,
+        "sells": 1,
+        "buy_ratio": 0.75,
+        "traders": 3,
+        "mc": 15303.884518624693
+      },
+      "30s": {
+        "txn": 4,
+        "buys": 3,
+        "sells": 1,
+        "buy_ratio": 0.75,
+        "traders": 3,
+        "mc": 15303.884518624693
+      },
+      "1min": {
+        "txn": 26,
+        "buys": 17,
+        "sells": 9,
+        "buy_ratio": 0.6538461538461539,
+        "traders": 18,
+        "mc": 15100.406638913168
+      },
+      "final_mc": 15100.406638913168,
+      "is_runner": true
+    },
+    {
+      "symbol": "???",
+      "mint": "B1yXboir5x4gNdDKsaUcGDLieE9f8gedjc5ZUU1ybonk",
+      "15s": {
+        "txn": 78,
+        "buys": 0,
+        "sells": 78,
+        "buy_ratio": 0.0,
+        "traders": 61,
+        "mc": 16507.550066847405
+      },
+      "20s": {
+        "txn": 117,
+        "buys": 0,
+        "sells": 117,
+        "buy_ratio": 0.0,
+        "traders": 80,
+        "mc": 15074.219438097685
+      },
+      "30s": {
+        "txn": 195,
+        "buys": 0,
+        "sells": 195,
+        "buy_ratio": 0.0,
+        "traders": 121,
+        "mc": 17784.69406532408
+      },
+      "1min": {
+        "txn": 385,
+        "buys": 0,
+        "sells": 385,
+        "buy_ratio": 0.0,
+        "traders": 198,
+        "mc": 17882.53721872907
+      },
+      "final_mc": 17882.53721872907,
+      "is_runner": true
+    }
+  ],
+  "flops": [
+    {
+      "symbol": "cantcook",
+      "mint": "D8MBDXmubPKy8Vr4QNBWPpp1bhxDacRU3nL8ikeKpump",
+      "15s": {
+        "txn": 11,
+        "buys": 10,
+        "sells": 1,
+        "buy_ratio": 0.9090909090909091,
+        "traders": 10,
+        "mc": 7442.077690507095
+      },
+      "20s": {
+        "txn": 14,
+        "buys": 13,
+        "sells": 1,
+        "buy_ratio": 0.9285714285714286,
+        "traders": 13,
+        "mc": 7611.230330482168
+      },
+      "30s": {
+        "txn": 21,
+        "buys": 18,
+        "sells": 3,
+        "buy_ratio": 0.8571428571428571,
+        "traders": 20,
+        "mc": 7111.726584863807
+      },
+      "1min": {
+        "txn": 27,
+        "buys": 22,
+        "sells": 5,
+        "buy_ratio": 0.8148148148148148,
+        "traders": 23,
+        "mc": 7277.118211759617
+      },
+      "final_mc": 7277.118211759617,
+      "is_runner": false
+    },
+    {
+      "symbol": "FORKY",
+      "mint": "8e2kCg9g2UpW5TYX8znKm2YYsB5VW3xEDPEoJo56pump",
+      "15s": {
+        "txn": 13,
+        "buys": 7,
+        "sells": 6,
+        "buy_ratio": 0.5384615384615384,
+        "traders": 7,
+        "mc": 6550.334709203915
+      },
+      "20s": {
+        "txn": 13,
+        "buys": 7,
+        "sells": 6,
+        "buy_ratio": 0.5384615384615384,
+        "traders": 7,
+        "mc": 6550.334709203915
+      },
+      "30s": {
+        "txn": 15,
+        "buys": 8,
+        "sells": 7,
+        "buy_ratio": 0.5333333333333333,
+        "traders": 9,
+        "mc": 5591.80178514674
+      },
+      "1min": {
+        "txn": 15,
+        "buys": 8,
+        "sells": 7,
+        "buy_ratio": 0.5333333333333333,
+        "traders": 9,
+        "mc": 5591.80178514674
+      },
+      "final_mc": 5591.80178514674,
+      "is_runner": false
+    },
+    {
+      "symbol": "MINE",
+      "mint": "634jVYK4kGUu5W9ULoMCoe3K5jFVpZ87KT63Y7Topump",
+      "15s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "20s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "30s": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "1min": {
+        "txn": 21,
+        "buys": 7,
+        "sells": 14,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 13,
+        "mc": 5643.689248271832
+      },
+      "final_mc": 5643.689248271832,
+      "is_runner": false
+    },
+    {
+      "symbol": "BOLD",
+      "mint": "CS1utNJktbzKP3h5bg7JR8y6Q2vje4n2t1hp2c7bpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "UNTRACE",
+      "mint": "APEeVipUVJCAW3ukm4XAZJ3fMPHNjyZFuNJ3Yjh4Gdev",
+      "15s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 5,
+        "buys": 0,
+        "sells": 5,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "GOLD",
+      "mint": "DyBzVhDGHSdLAKBufCfWDr4FTVEtWmoCb7caWHGZpump",
+      "15s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 1,
+        "mc": 5659.4934835949725
+      },
+      "final_mc": 5659.4934835949725,
+      "is_runner": false
+    },
+    {
+      "symbol": "loancoin",
+      "mint": "GkzH3HPDkDb5Xqjf1btSh3GNUeM8UVuCeUDmSb6Mpump",
+      "15s": {
+        "txn": 15,
+        "buys": 7,
+        "sells": 8,
+        "buy_ratio": 0.4666666666666667,
+        "traders": 11,
+        "mc": 6005.233030141871
+      },
+      "20s": {
+        "txn": 17,
+        "buys": 7,
+        "sells": 10,
+        "buy_ratio": 0.4117647058823529,
+        "traders": 11,
+        "mc": 6005.091372413659
+      },
+      "30s": {
+        "txn": 27,
+        "buys": 8,
+        "sells": 19,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 12,
+        "mc": 6202.753838912783
+      },
+      "1min": {
+        "txn": 28,
+        "buys": 9,
+        "sells": 19,
+        "buy_ratio": 0.32142857142857145,
+        "traders": 13,
+        "mc": 6592.5928428255775
+      },
+      "final_mc": 6592.5928428255775,
+      "is_runner": false
+    },
+    {
+      "symbol": "McRib",
+      "mint": "Gf37cJg6VJYwckSE2JGWgENqePNS5q495w7WcEEEpump",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5862.481827452277
+      },
+      "20s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5862.481827452277
+      },
+      "30s": {
+        "txn": 26,
+        "buys": 15,
+        "sells": 11,
+        "buy_ratio": 0.5769230769230769,
+        "traders": 15,
+        "mc": 5755.410758672453
+      },
+      "1min": {
+        "txn": 29,
+        "buys": 15,
+        "sells": 14,
+        "buy_ratio": 0.5172413793103449,
+        "traders": 15,
+        "mc": 5613.911569677895
+      },
+      "final_mc": 5613.911569677895,
+      "is_runner": false
+    },
+    {
+      "symbol": "dumbo",
+      "mint": "FqWXTrMhgAC3VHKVvyEf6RWDsAJksV6j1E8ttKVjpump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "???",
+      "mint": "4ZEDvMJ4kne46MUrayYvEDawMvow26F9kr8wrx5xbonk",
+      "15s": {
+        "txn": 9,
+        "buys": 0,
+        "sells": 9,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 7147.3823007362425
+      },
+      "20s": {
+        "txn": 9,
+        "buys": 0,
+        "sells": 9,
+        "buy_ratio": 0.0,
+        "traders": 5,
+        "mc": 7147.3823007362425
+      },
+      "30s": {
+        "txn": 10,
+        "buys": 0,
+        "sells": 10,
+        "buy_ratio": 0.0,
+        "traders": 6,
+        "mc": 7137.195153111874
+      },
+      "1min": {
+        "txn": 15,
+        "buys": 0,
+        "sells": 15,
+        "buy_ratio": 0.0,
+        "traders": 8,
+        "mc": 6950.433043410299
+      },
+      "final_mc": 6950.433043410299,
+      "is_runner": false
+    },
+    {
+      "symbol": "LODI",
+      "mint": "9dEZJnA4yUHCXUqLFLpHaJ3YVrEwWoMYtxErKCTGpump",
+      "15s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "20s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "30s": {
+        "txn": 7,
+        "buys": 3,
+        "sells": 4,
+        "buy_ratio": 0.42857142857142855,
+        "traders": 3,
+        "mc": 5969.847278909978
+      },
+      "1min": {
+        "txn": 34,
+        "buys": 25,
+        "sells": 9,
+        "buy_ratio": 0.7352941176470589,
+        "traders": 25,
+        "mc": 9405.55158050855
+      },
+      "final_mc": 9405.55158050855,
+      "is_runner": false
+    },
+    {
+      "symbol": "???",
+      "mint": "5Ld8ejJN4QPzwfZCuphnry33Cpg79nfGcecosS7rbonk",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 2,
+        "mc": 5965.496143881188
+      },
+      "20s": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "30s": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "1min": {
+        "txn": 3,
+        "buys": 1,
+        "sells": 2,
+        "buy_ratio": 0.3333333333333333,
+        "traders": 2,
+        "mc": 5973.098890781524
+      },
+      "final_mc": 5973.098890781524,
+      "is_runner": false
+    },
+    {
+      "symbol": "WC",
+      "mint": "ESnveB8iH2i8LtdNr9mq4Ee6tNoB3g6XCCjUF9iKpump",
+      "15s": {
+        "txn": 44,
+        "buys": 16,
+        "sells": 28,
+        "buy_ratio": 0.36363636363636365,
+        "traders": 18,
+        "mc": 5895.945143546356
+      },
+      "20s": {
+        "txn": 53,
+        "buys": 16,
+        "sells": 37,
+        "buy_ratio": 0.3018867924528302,
+        "traders": 18,
+        "mc": 5858.254046669777
+      },
+      "30s": {
+        "txn": 54,
+        "buys": 16,
+        "sells": 38,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 18,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 54,
+        "buys": 16,
+        "sells": 38,
+        "buy_ratio": 0.2962962962962963,
+        "traders": 18,
+        "mc": 5591.798695246971
+      },
+      "final_mc": 5591.798695246971,
+      "is_runner": false
+    },
+    {
+      "symbol": "DENG",
+      "mint": "HhckBjDK3nfTGDHppgjMXcpwtspUu7X4Mp3kRip6pump",
+      "15s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "20s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "30s": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "1min": {
+        "txn": 28,
+        "buys": 15,
+        "sells": 13,
+        "buy_ratio": 0.5357142857142857,
+        "traders": 16,
+        "mc": 6243.272965597635
+      },
+      "final_mc": 6243.272965597635,
+      "is_runner": false
+    },
+    {
+      "symbol": "AGENTHOUSE",
+      "mint": "AsdegbLcukS1ikhNgma56JwfLd5eYsXSmFJizh7vpump",
+      "15s": {
+        "txn": 29,
+        "buys": 20,
+        "sells": 9,
+        "buy_ratio": 0.6896551724137931,
+        "traders": 22,
+        "mc": 11551.817106260343
+      },
+      "20s": {
+        "txn": 40,
+        "buys": 26,
+        "sells": 14,
+        "buy_ratio": 0.65,
+        "traders": 28,
+        "mc": 13797.791203385108
+      },
+      "30s": {
+        "txn": 49,
+        "buys": 32,
+        "sells": 17,
+        "buy_ratio": 0.6530612244897959,
+        "traders": 33,
+        "mc": 11736.878635382624
+      },
+      "1min": {
+        "txn": 80,
+        "buys": 38,
+        "sells": 42,
+        "buy_ratio": 0.475,
+        "traders": 39,
+        "mc": 5608.699106828395
+      },
+      "final_mc": 5608.699106828395,
+      "is_runner": false
+    },
+    {
+      "symbol": "bountymad",
+      "mint": "6aLYpt2aUnMDN7j6FJxiu7eZ7z9q1ty2isEvbFPmpump",
+      "15s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 4,
+        "mc": 6233.991062104901
+      },
+      "20s": {
+        "txn": 5,
+        "buys": 3,
+        "sells": 2,
+        "buy_ratio": 0.6,
+        "traders": 4,
+        "mc": 6233.991062104901
+      },
+      "30s": {
+        "txn": 7,
+        "buys": 5,
+        "sells": 2,
+        "buy_ratio": 0.7142857142857143,
+        "traders": 6,
+        "mc": 6240.186511640001
+      },
+      "1min": {
+        "txn": 7,
+        "buys": 5,
+        "sells": 2,
+        "buy_ratio": 0.7142857142857143,
+        "traders": 6,
+        "mc": 6240.186511640001
+      },
+      "final_mc": 6240.186511640001,
+      "is_runner": false
+    },
+    {
+      "symbol": "SAUCE",
+      "mint": "Crda6WMKnAc5gYRUc7wP67r3AWTvzu3du8SP8iucpump",
+      "15s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "20s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "30s": {
+        "txn": 8,
+        "buys": 2,
+        "sells": 6,
+        "buy_ratio": 0.25,
+        "traders": 6,
+        "mc": 5591.798695246971
+      },
+      "1min": {
+        "txn": 9,
+        "buys": 2,
+        "sells": 7,
+        "buy_ratio": 0.2222222222222222,
+        "traders": 7,
+        "mc": 5606.720099406271
+      },
+      "final_mc": 5606.720099406271,
+      "is_runner": false
+    },
+    {
+      "symbol": "Islam",
+      "mint": "5biSMXz8u5xoNqCC5XSeHyQLxpngfixwCHqGYnFKpump",
+      "15s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "1min": {
+        "txn": 2,
+        "buys": 1,
+        "sells": 1,
+        "buy_ratio": 0.5,
+        "traders": 1,
+        "mc": 5966.043616842864
+      },
+      "final_mc": 5966.043616842864,
+      "is_runner": false
+    },
+    {
+      "symbol": "HEART",
+      "mint": "GZsPS9UAVoBGn9XVY67fd2iQw8ujYxvff9NituQLnCht",
+      "15s": {
+        "txn": 0,
+        "buys": 0,
+        "sells": 0,
+        "buy_ratio": 0,
+        "traders": 0,
+        "mc": 5977.458238650865
+      },
+      "20s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 2,
+        "mc": 5977.458238650865
+      },
+      "30s": {
+        "txn": 2,
+        "buys": 2,
+        "sells": 0,
+        "buy_ratio": 1.0,
+        "traders": 2,
+        "mc": 5977.458238650865
+      },
+      "1min": {
+        "txn": 3,
+        "buys": 2,
+        "sells": 1,
+        "buy_ratio": 0.6666666666666666,
+        "traders": 2,
+        "mc": 5988.883768844685
+      },
+      "final_mc": 5988.883768844685,
+      "is_runner": false
+    },
+    {
+      "symbol": "MONSTER",
+      "mint": "6cvpEmCf8LAnnu3h8YwCiD6JcFbCukW3ANPzZJCqpump",
+      "15s": {
+        "txn": 47,
+        "buys": 33,
+        "sells": 14,
+        "buy_ratio": 0.7021276595744681,
+        "traders": 29,
+        "mc": 12851.171833146338
+      },
+      "20s": {
+        "txn": 49,
+        "buys": 33,
+        "sells": 16,
+        "buy_ratio": 0.673469387755102,
+        "traders": 29,
+        "mc": 12393.60483063667
+      },
+      "30s": {
+        "txn": 58,
+        "buys": 34,
+        "sells": 24,
+        "buy_ratio": 0.5862068965517241,
+        "traders": 30,
+        "mc": 8898.773374568464
+      },
+      "1min": {
+        "txn": 62,
+        "buys": 35,
+        "sells": 27,
+        "buy_ratio": 0.5645161290322581,
+        "traders": 31,
+        "mc": 8811.555396226215
+      },
+      "final_mc": 8811.555396226215,
+      "is_runner": false
+    }
+  ],
+  "alerts": [],
+  "stats": {
+    "total_tokens": 127,
+    "total_runners": 5,
+    "total_flops": 122,
+    "win_rate": 3.937007874015748
+  }
+}

@@ -1,0 +1,4155 @@
+{
+  "wallets": [
+    {
+      "address": "4xLpwxgYuPwPvtQjE94RLS4WZ4aD8NJYYKr2AJk99Qdg",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.581443"
+    },
+    {
+      "address": "9ZifroknFoYu4r6DUk6nYoJiUQnEyyoUyeAwjXbPoL2x",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.645863"
+    },
+    {
+      "address": "u6PJ8DtQuPFnfmwHbGFULQ4u4EgjDiyYKjVEsynXq2w",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "BILLY",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 86,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.700740"
+    },
+    {
+      "address": "5Q544fKrFoe6tsEbD7S8EmxGTJYAKtTVhAW5Q5pge4j1",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "BILLY",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 86,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.753020"
+    },
+    {
+      "address": "6LY1JzAFVZsP2a2xKrtU6znQMQ5h4i7tocWdgrkZzkzF",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.805972"
+    },
+    {
+      "address": "8Tp9fFkZ2KcRBLYDTUNXo98Ez6ojGb6MZEPXfGDdeBzG",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:15.870955"
+    },
+    {
+      "address": "6GTYrwStnattq8hE1XyWmNxQq731MoxzYFPmEKz68QHe",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:16.034541"
+    },
+    {
+      "address": "5PAhQiYdLBd6SVdjzBQDxUAEFyDdF5ExNPQfcscnPRj5",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT",
+        "BILLY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:16.087398"
+    },
+    {
+      "address": "EFE3j1pcSP1paUzA86zW7989ZjsFP2J7ginyUqo4ewqR",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:16.154903"
+    },
+    {
+      "address": "E2RvJg2myWpKcbkhBuF81gfhYr6KvmNcDbSmr5qnatYy",
+      "name": "Holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:16.472192"
+    },
+    {
+      "address": "8Mm46CsqxiyAputDUp2cXHg41HE3BfynTeMBDwzrMZQH",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:26.606298"
+    },
+    {
+      "address": "Am8MAEorCMAKxphqjAz3Ff59NEwPm4W2eS3DQLi2B4hg",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:26.736316"
+    },
+    {
+      "address": "Gem2VAypSg7Ai7vjDKPTtqFahpoQWkfgVkyzx3rPoTka",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:26.787709"
+    },
+    {
+      "address": "CBEADkb8TZAXHjVE3zwad4L995GZE7rJcacJ7asebkVG",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:26.914650"
+    },
+    {
+      "address": "C68a6RCGLiPskbPYtAcsCjhG8tfTWYcoB4JjCrXFdqyo",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY",
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 83,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:27.172736"
+    },
+    {
+      "address": "A77HErqtfN1hLLpvZ9pCtu66FEtM8BveoaKbbMoZ4RiR",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:27.225922"
+    },
+    {
+      "address": "6FEVkH17P9y8Q9aCkDdPcMDjvj7SVxrTETaYEm8f51Jy",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:27.287456"
+    },
+    {
+      "address": "417ccNwQnQykVbFUDKd3sh6xHKGSRTaCTWr6sdR9ZuCa",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:27.415052"
+    },
+    {
+      "address": "2tU4k62hFNMwwxrynmudXGv3csNQuxLtDBUsxAMt9SdL",
+      "name": "Holder of BILLY",
+      "source": "Top holder of BILLY",
+      "tokens_held": [
+        "BILLY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:27.491073"
+    },
+    {
+      "address": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.445588"
+    },
+    {
+      "address": "3B7XAQrLoEMDEGvX8569F9GRb9PcXXocJmj5wvhhei9z",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.496000"
+    },
+    {
+      "address": "GBrURzmtWujJRTA3Bkvo7ZgWuZYLMMwPCwre7BejJXnK",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.568886"
+    },
+    {
+      "address": "5LZkATrLwHYCQj2YuVbjjgsDZzBk6YfL4pFQRJmtboT2",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.628090"
+    },
+    {
+      "address": "5tzFkiKscXHK5ZXCGbXZxdw7gTjjD1mBwuoFbhUvuAi9",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.683968"
+    },
+    {
+      "address": "7TWnq4WeYcwQWBCwKeEX2Q9xqVtthPGkB7adNvueuVuh",
+      "name": "Holder of CHILLGUY",
+      "source": "Top holder of CHILLGUY",
+      "tokens_held": [
+        "CHILLGUY"
+      ],
+      "estimated_success_rate": 80,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions",
+      "discovered_at": "2025-11-08T13:11:37.956110"
+    },
+    {
+      "address": "4VJTaS8qu9upcoNH3BdR7hjcztbJ6nh1iC9qTcYDfzoe",
+      "name": "Rename wallet",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051016",
+      "whale_status": true,
+      "original_emoji": "🙅‍♀️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "CDNt6H6J7ZBWVjyKJmFRjcJAoHa6XKrn2mTLK3DZwnqL",
+      "name": "marc",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051057",
+      "whale_status": true,
+      "original_emoji": "〽️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HAtrevHSQUeFNzTR6pd5JqVgkQvUSSamFMsLHomcmdCC",
+      "name": "solana. degen",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051071",
+      "whale_status": true,
+      "original_emoji": "💫",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "831yhv67QpKqLBJjbmw2xoDUeeFHGUx8RnuRj9imeoEs",
+      "name": "Trey",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051084",
+      "whale_status": true,
+      "original_emoji": "🤠",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2fg5QD1eD7rzNNCsvnhmXFm5hqNgwTTG8p7kQ6f3rx6f",
+      "name": "cupssy",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051090",
+      "whale_status": true,
+      "original_emoji": "👰‍♀️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "A8P6ePrf24aKF3Zj9KLfHofx6D4Jx4LxeNEgFboVWC6c",
+      "name": "Rename wallet",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051105",
+      "whale_status": true,
+      "original_emoji": "🪲",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FsEnYNmbDb9xwPdiw5B1PXkCn5Av6oLLQikaTsA8E1bW",
+      "name": "47",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051109",
+      "whale_status": true,
+      "original_emoji": "🍎",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "56S29mZ3wqvw8hATuUUFqKhGcSGYFASRRFNT38W8q7G3",
+      "name": "rt",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051112",
+      "whale_status": true,
+      "original_emoji": "🫵",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BPKDoJ2cbRQeKuTArnJbz26ik93jhLzsn63vLo26guTx",
+      "name": "avant",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051117",
+      "whale_status": true,
+      "original_emoji": "🫥",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4XMPyWFsYdNcCN4FG8geyytyTeUNacn4QundBzMqbGGT",
+      "name": "Stxtics",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051136",
+      "whale_status": true,
+      "original_emoji": "😰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FWnCbrrRbzASFtmnxs3RcKQSkahN9MJNuNfbXtHwvdAd",
+      "name": "clown2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051139",
+      "whale_status": true,
+      "original_emoji": "🤡",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "ding"
+      }
+    },
+    {
+      "address": "EDXHdSFdadFbYFFjxPXBqMe1kCEDFqpPu552uvp48HR8",
+      "name": "clown1",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051141",
+      "whale_status": true,
+      "original_emoji": "🤡",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "kaching"
+      }
+    },
+    {
+      "address": "6pkYrAM2hWWjQHPq5GYkRxzM8e4m7MKxa2iANNjTNj1p",
+      "name": "ALX",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051151",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FEDt3TPMu2KTJpzPBMmxHN3zebs1oYGJrbxuE1ycKG9s",
+      "name": "cented friend2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051154",
+      "whale_status": true,
+      "original_emoji": "😶‍🌫️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "99i9uVA7Q56bY22ajKKUfTZTgTeP5yCtVGsrG9J4pDYQ",
+      "name": "Zrool",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051155",
+      "whale_status": true,
+      "original_emoji": "🌡️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3LYtEmYerFPeXgu1c9Y4553oMk2qVdcxiwWzDjzMkwPx",
+      "name": "no by",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051157",
+      "whale_status": true,
+      "original_emoji": "🎻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "JDd3hy3gQn2V982mi1zqhNqUw1GfV2UL6g76STojCJPN",
+      "name": "West",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051160",
+      "whale_status": true,
+      "original_emoji": "🐀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AeLaMjzxErZt4drbWVWvcxpVyo8p94xu5vrg41eZPFe3",
+      "name": "Simple DEV",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051161",
+      "whale_status": true,
+      "original_emoji": "🌏",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BtMBMPkoNbnLF9Xn552guQq528KKXcsNBNNBre3oaQtr",
+      "name": "letterbo...",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051163",
+      "whale_status": true,
+      "original_emoji": "💌",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HRS6JqXcFgWrWxaBPjhnThQiWmUMkE3GrYHWR86tbFqR",
+      "name": "r bcab",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051164",
+      "whale_status": true,
+      "original_emoji": "💤",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HdxkiXqeN6qpK2YbG51W23QSWj3Yygc1eEk2zwmKJExp",
+      "name": "HDX GOAT",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051174",
+      "whale_status": true,
+      "original_emoji": "🐐",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8fSnLTnRViK83dDesivTsPx2wiRhwti9xoafeMGjEyLJ",
+      "name": "good trader 4 (500kpnl)",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051178",
+      "whale_status": true,
+      "original_emoji": "💰️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FXzJ6xwH2HfdKshERVAYiLh79PAUw9zC7ucngupt91ap",
+      "name": "DAVE INSIDER",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051183",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FRbUNvGxYNC1eFngpn7AD3f14aKKTJVC6zSMtvj2dyCS",
+      "name": "Hen",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051191",
+      "whale_status": true,
+      "original_emoji": "🐔",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "As7HjL7dzzvbRbaD3WCun47robib2kmAKRXMvjHkSMB5",
+      "name": "OTTA",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051195",
+      "whale_status": true,
+      "original_emoji": "🦦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FTg1gqW7vPm4kdU1LPM7JJnizbgPdRDy2PitKw6mY27j",
+      "name": "xp do",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051197",
+      "whale_status": true,
+      "original_emoji": "📉",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7Xp7QGQsg7payRELFY8f9ten7hU9tALQ9LXArhrxZnFm",
+      "name": "r buca",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051198",
+      "whale_status": true,
+      "original_emoji": "🫁",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "FqojC24nUn3x6oMQC2ypBHmtH7rFAnKS6DvwsJoCMaiv",
+      "name": "r buca",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051200",
+      "whale_status": true,
+      "original_emoji": "🫁",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "JDWErnwoWcQ81bdAZEbZ6dmYpkfAsf3NoJ739WxPkFRx",
+      "name": "psyco 2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051204",
+      "whale_status": true,
+      "original_emoji": "🦴",
+      "alert_settings": {
+        "toast": true,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "J3wA9xnAvuDYJ3BhtDvGh4VFPDUt5JXjEWiuvVtZDxTN",
+      "name": "lelu 2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051207",
+      "whale_status": true,
+      "original_emoji": "🕳️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7mkCiMpnkZbbtEYqgzseQ7ntJhogNsKkeSTw2vtVUzZz",
+      "name": "psyko3",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051212",
+      "whale_status": true,
+      "original_emoji": "👮‍♂️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "H8xQ6poBjB9DTPMDTKWzWPrnxu4bDEhybxiouF8Ppump",
+      "name": "x",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051213",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5B79fMkcFeRTiwm7ehsZsFiKsC7m7n1Bgv9yLxPp9q2X",
+      "name": "bandit ",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051229",
+      "whale_status": true,
+      "original_emoji": "🤹",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7SDs3PjT2mswKQ7Zo4FTucn9gJdtuW4jaacPA65BseHS",
+      "name": "INSENTOS",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051231",
+      "whale_status": true,
+      "original_emoji": "🤫",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HSf9tqnNKrpS7wSVoVDYt3Bv6hdNAAGQd5nQkj33eMHd",
+      "name": "Rename wallet",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051239",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "JD25qVdtd65FoiXNmR89JjmoJdYk9sjYQeSTZAALFiMy",
+      "name": "btst",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051243",
+      "whale_status": true,
+      "original_emoji": "🧠",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "77N86XfcBSAvcGNPYMAVjjyf2feUJwmUoiJ96HzPtySd",
+      "name": "gd one",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051245",
+      "whale_status": true,
+      "original_emoji": "🤑",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "6VghqrNipu1GJu3W7xcTrc1dkutiWSW9ez9vshguQdBx",
+      "name": "6",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051248",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EDY5ssvZEx6HHL5BjVs5NjJvc2BHib2pcynZ7v6eMCFZ",
+      "name": "Kev 2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051249",
+      "whale_status": true,
+      "original_emoji": "🤍",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EHg5YkU2SZBTvuT87rUsvxArGp3HLeye1fXaSDfuMyaf",
+      "name": "TIL",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051251",
+      "whale_status": true,
+      "original_emoji": "🥝",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EuC9bwq7AhtvgqhzFG5TtB2q8PYmgWbQ7Eei7FaC4oG3",
+      "name": "crazy",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051252",
+      "whale_status": true,
+      "original_emoji": "👩‍💻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EwTNPYTuwxMzrvL19nzBsSLXdAoEmVBKkisN87csKgtt",
+      "name": "GAKE SIDE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051254",
+      "whale_status": true,
+      "original_emoji": "🍰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "F5jWYuiDLTiaLYa54D88YbpXgEsA6NKHzWy4SN4bMYjt",
+      "name": "Mercy",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051257",
+      "whale_status": true,
+      "original_emoji": "🐕",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BTf4A2exGK9BCVDNzy65b9dUzXgMqB4weVkvTMFQsadd",
+      "name": "kev",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051258",
+      "whale_status": true,
+      "original_emoji": "💙",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8Ltv5royXzxVG3tAhVhRnfXrzapS5Dwqt1ocxprgu6YP",
+      "name": "blu7k",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051265",
+      "whale_status": true,
+      "original_emoji": "🏛️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DBXKqYQGKdR8gj8sLhK6Qo7tj5kxwhgN3GvbZm439FDn",
+      "name": "good trader",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051267",
+      "whale_status": true,
+      "original_emoji": "🥷",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "B3wagQZiZU2hKa5pUCj6rrdhWsX3Q6WfTTnki9PjwzMh",
+      "name": "xander",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051273",
+      "whale_status": true,
+      "original_emoji": "🚀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DfMxre4cKmvogbLrPigxmibVTTQDuzjdXojWzjCXXhzj",
+      "name": "Euris",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051278",
+      "whale_status": true,
+      "original_emoji": "💪",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "9yYya3F5EJoLnBNKW6z4bZvyQytMXzDcpU5D6yYr4jqL",
+      "name": "Loopier",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051282",
+      "whale_status": true,
+      "original_emoji": "➰️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BNnN2MqfWLvgThYBsv6v8JQaYZXYKYahC5YCy27Ct1cX",
+      "name": "hty",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051284",
+      "whale_status": true,
+      "original_emoji": "🤜",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "CWryqL8F79bCUPfRMnFHxXpJEyW5TixWe59hEuFXWYnD",
+      "name": "774",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051296",
+      "whale_status": true,
+      "original_emoji": "😪",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DuQabFqdC9eeBULVa7TTdZYxe8vK8ct5DZr4Xcf7docy",
+      "name": "orangie",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051303",
+      "whale_status": true,
+      "original_emoji": "🍯",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4YzpSZpxDdjNf3unjkCtdWEsz2FL5mok7e5XQaDNqry8",
+      "name": "hirox",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051304",
+      "whale_status": true,
+      "original_emoji": "👾",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4nwfXw7n98jEQn93VWY7Cuf1jnn1scHXuXCPGVYS9k6T",
+      "name": "4nwf",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051306",
+      "whale_status": true,
+      "original_emoji": "🍇",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BAr5csYtpWoNpwhUjixX7ZPHXkUciFZzjBp9uNxZXJPh",
+      "name": "jackduva...",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051309",
+      "whale_status": true,
+      "original_emoji": "💀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "kaching"
+      }
+    },
+    {
+      "address": "UxuuMeyX2pZPHmGZ2w3Q8MysvExCAquMtvEfqp2etvm",
+      "name": "Pandora",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051310",
+      "whale_status": true,
+      "original_emoji": "🥁",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5V9zsFPtN2nxoA53Xm6FKbx797NBnBZFxMdr84H1QXNL",
+      "name": "levansol",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051312",
+      "whale_status": true,
+      "original_emoji": "🐺",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "bing"
+      }
+    },
+    {
+      "address": "J7VHxngEiZ7ZLQ2VshqWNra2eZcTg2VHkbTiwmVARoQV",
+      "name": "april 3",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051317",
+      "whale_status": true,
+      "original_emoji": "♨️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "D7xK1ZLz8KQNWN8aU1jbzNAuT5xwqgFrCUUYodVU4G42",
+      "name": "jackduva...",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051320",
+      "whale_status": true,
+      "original_emoji": "☠️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3in1nAQoJdnTZsYdmgVfJFLrRR1EoE3HVjyVnZVTMULV",
+      "name": "insyderdomn",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051324",
+      "whale_status": true,
+      "original_emoji": "🗯️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2kv8X2a9bxnBM8NKLc6BBTX2z13GFNRL4oRotMUJRva9",
+      "name": "Ghostee",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051329",
+      "whale_status": true,
+      "original_emoji": "🤯",
+      "alert_settings": {
+        "toast": true,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "niggerd597QYedtvjQDVHZTCCGyJrwHNm2i49dkm5zS",
+      "name": "snipe migrate",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051330",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "E1WMiXmroZw1LG9GBPQ1iDk9299bYCAFCiyozVTmY2XF",
+      "name": "voir",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051335",
+      "whale_status": true,
+      "original_emoji": "🐉",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "G5nxEXuFMfV74DSnsrSatqCW32F34XUnBeq3PfDS7w5E",
+      "name": "Profit",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051341",
+      "whale_status": true,
+      "original_emoji": "💎",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BoBo2S28s9E2gE2qMJPSMFUvdptpBCXaRhLg6UYR8teE",
+      "name": "66",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051354",
+      "whale_status": true,
+      "original_emoji": "🐙",
+      "alert_settings": {
+        "toast": true,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5bYTrRkQg8xfLmPBVfcXtSz6z8iheCMYRqhw3UZ6jvNo",
+      "name": "bd du",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051360",
+      "whale_status": true,
+      "original_emoji": "🗺️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk",
+      "name": "Jijo",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051365",
+      "whale_status": true,
+      "original_emoji": "🤖",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AbcX4XBm7DJ3i9p29i6sU8WLmiW4FWY5tiwB9D6UBbcE",
+      "name": "404flips",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051376",
+      "whale_status": true,
+      "original_emoji": "👀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "72h6NEiWjGBhL6mbKLvBsWj9Tk4EcEZaEPitSS9QvXBW",
+      "name": "cabal red",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051383",
+      "whale_status": true,
+      "original_emoji": "👩‍🏭",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "bozo8DPprqrU6N3y5cUDMDBCA61wGrk7qfy24Wm5rLB",
+      "name": "floppa",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051391",
+      "whale_status": true,
+      "original_emoji": "🚶‍♀️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4hSXPtxZgXFpo6Vxq9yqxNjcBoqWN3VoaPJWonUtupzD",
+      "name": "90% WINRATE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051392",
+      "whale_status": true,
+      "original_emoji": "🎯",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4DdrfiDHpmx55i4SPssxVzS9ZaKLb8qr45NKY9Er9nNh",
+      "name": "Mr.Frog",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051395",
+      "whale_status": true,
+      "original_emoji": "🐸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BCnqsPEtA1TkgednYEebRpkmwFRJDCjMQcKZMMtEdArc",
+      "name": "kreo",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051398",
+      "whale_status": true,
+      "original_emoji": "☣️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "89HbgWduLwoxcofWpmn1EiF9wEdpgkNDEyPjzZ72mkDi",
+      "name": "alx",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051401",
+      "whale_status": true,
+      "original_emoji": "🦉",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "6LChaYRYtEYjLEHhzo4HdEmgNwu2aia8CM8VhR9wn6n7",
+      "name": "Assasin",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051419",
+      "whale_status": true,
+      "original_emoji": "🗡️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "55SoJzCa7fdY2tKP8Yy5wRkn9yS7wvDsatfidCmRjVFH",
+      "name": "solshotta holdings",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051422",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DwtF6KdjB9xgzKhCvcxKQLGU1NezdFFdVo8tLzSb7C8W",
+      "name": "POW SIDE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051434",
+      "whale_status": true,
+      "original_emoji": "💥",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EaVboaPxFCYanjoNWdkxTbPvt57nhXGu5i6m9m6ZS2kK",
+      "name": "Danny",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051438",
+      "whale_status": true,
+      "original_emoji": "🍟",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2YJbcB9G8wePrpVBcT31o8JEed6L3abgyCjt5qkJMymV",
+      "name": "Al4n",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051440",
+      "whale_status": true,
+      "original_emoji": "🧊",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5YkZmuaLhrPjFv4vtYE2mcR6J4JEXG1EARGh8YYFo8s4",
+      "name": "500k pnl",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051443",
+      "whale_status": true,
+      "original_emoji": "💦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DbFS3c9wpKtJiqFYu83QmpqHDBJtjKY8hqTL9AGZfRir",
+      "name": "ntg",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051444",
+      "whale_status": true,
+      "original_emoji": "🧚‍♀️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": false,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GfXQesPe3Zuwg8JhAt6Cg8euJDTVx751enp9EQQmhzPH",
+      "name": "Spuno",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051454",
+      "whale_status": true,
+      "original_emoji": "🎦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "21RrzDXUSQF2jPGsmEZ55VPD7MEjRDJaZhRCjf2Sd83G",
+      "name": "cabal",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051458",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BCagckXeMChUKrHEd6fKFA1uiWDtcmCXMsqaheLiUPJd",
+      "name": "DV",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051479",
+      "whale_status": true,
+      "original_emoji": "⛑️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5v26QPSD82u9ikoauJkfu9rsjJkMxtqNXYAUYizGLe45",
+      "name": "psyko9",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051483",
+      "whale_status": true,
+      "original_emoji": "🦴",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HtucFepgUkMpHdrYsxMqjBNN6qVBdjmFaLZneNXopuJm",
+      "name": "frostyjayys",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051487",
+      "whale_status": true,
+      "original_emoji": "❄️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8HeDT75s5g4CtCimH5B5nySqCiQhtWii8UnZhxBtFo38",
+      "name": "88888888",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051491",
+      "whale_status": true,
+      "original_emoji": "🗣️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "9hD5wsPWy7xzU8aVxToZsgiAVvjhHgf4A6AmA1Cjn49o",
+      "name": "Gake SIDE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051493",
+      "whale_status": true,
+      "original_emoji": "🍰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8deJ9xeUvXSJwicYptA9mHsU2rN2pDx37KWzkDkEXhU6",
+      "name": "cooker",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051502",
+      "whale_status": true,
+      "original_emoji": "🍳",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "J23qr98GjGJJqKq9CBEnyRhHbmkaVxtTJNNxKu597wsA",
+      "name": "GR3G",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051514",
+      "whale_status": true,
+      "original_emoji": "🐸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "J6TDXvarvpBdPXTaTU8eJbtso1PUCYKGkVtMKUUY8iEa",
+      "name": "PAIN",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051516",
+      "whale_status": true,
+      "original_emoji": "🔶",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AM84n1iLdxgVTAyENBcLdjXoyvjentTbu5Q6EpKV1PeG",
+      "name": "SHAW",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051521",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3rSZJHysEk2ueFVovRLtZ8LGnQBMZGg96H2Q4jErspAF",
+      "name": "staqi",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051539",
+      "whale_status": true,
+      "original_emoji": "⚡️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "6S8GezkxYUfZy9JPtYnanbcZTMB87Wjt1qx3c6ELajKC",
+      "name": "Nyrox",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051542",
+      "whale_status": true,
+      "original_emoji": "🔫",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4jRX4iW2F5wBnfYMyB7RjS2PU5MjXrST3fB9DoV4BjHa",
+      "name": "andrew tate",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051544",
+      "whale_status": true,
+      "original_emoji": "👔",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "RFSqPtn1JfavGiUD4HJsZyYXvZsycxf31hnYfbyG6iB",
+      "name": "alvin/patty",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051551",
+      "whale_status": true,
+      "original_emoji": "🐿️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "sAdNbe1cKNMDqDsa4npB3TfL62T14uAo2MsUQfLvzLT",
+      "name": "Ethan",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051558",
+      "whale_status": true,
+      "original_emoji": "🈂️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "V1PeVeZhAtCwMWmVWEY1edrn6Sg3pTw74qoCmoHxL32",
+      "name": "Jaylen",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051559",
+      "whale_status": true,
+      "original_emoji": "🤪",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HL3FZ8XWnLnn1HuktmgpNRyFRjuAxWbXNQVj5fPPzZwt",
+      "name": "1111111",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051564",
+      "whale_status": true,
+      "original_emoji": "🧛",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "53BnNc49Ajgstciq3CRoyxuBpkkW1r8pgPyvr7JGYnsh",
+      "name": "cryptom0nki",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051567",
+      "whale_status": true,
+      "original_emoji": "🐒",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AJ6MGExeK7FXmeKkKPmALjcdXVStXYokYNv9uVfDRtvo",
+      "name": "TIM",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051568",
+      "whale_status": true,
+      "original_emoji": "🕵️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DKgvpfttzmJqZXdavDwTxwSVkajibjzJnN2FA99dyciK",
+      "name": "Rowdy",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051571",
+      "whale_status": true,
+      "original_emoji": "⛰️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4ADFwrmsrdSVUx8cp7mVtcynvM3hFcdkBZk4vi83KnrA",
+      "name": "kolwaii whale",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051577",
+      "whale_status": true,
+      "original_emoji": "🌏️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "G1pRtSyKuWSjTqRDcazzKBDzqEF96i1xSURpiXj3yFcc",
+      "name": "GIBBY/MOODENG",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051592",
+      "whale_status": true,
+      "original_emoji": "🎭",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "G3g1CKqKWSVEVURZDNMazDBv7YAhMNTjhJBVRTiKZygk",
+      "name": "insyder",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051594",
+      "whale_status": true,
+      "original_emoji": "🕵️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "9YGd2uCJj9XuLtrFmyi4jVJb7zqhya7Vbk4KGHpZrYNJ",
+      "name": "Bob",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051607",
+      "whale_status": true,
+      "original_emoji": "😍",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BieeZkdnBAgNYknzo3RH2vku7FcPkFZMZmRJANh2TpW",
+      "name": "400K PNL",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051615",
+      "whale_status": true,
+      "original_emoji": "💸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "D3Z7weHeLGWA7eg1qwVB66NCs8YLxiDTBVE6Eb1tTmwg",
+      "name": "ANDREW TATE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051618",
+      "whale_status": true,
+      "original_emoji": "💪",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4jSmEmBkuBi1JxZHM1khkf57xPR2oW1EnkRxqehq1cSK",
+      "name": "Kiko",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051621",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DNfuF1L62WWyW3pNakVkyGGFzVVhj4Yr52jSmdTyeBHm",
+      "name": "GAKE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051623",
+      "whale_status": true,
+      "original_emoji": "🍰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2huXTbjeBhtMZ1ugNwUGucYBRasRaaiypymUX6P1Kwjx",
+      "name": "GRANDFNF",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051627",
+      "whale_status": true,
+      "original_emoji": "🤐",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "719sfKUjiMThumTt2u39VMGn612BZyCcwbM5Pe8SqFYz",
+      "name": "FASHR",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051629",
+      "whale_status": true,
+      "original_emoji": "🔫",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HyYNVYmnFmi87NsQqWzLJhUTPBKQUfgfhdbBa554nMFF",
+      "name": "fartcoindev",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051633",
+      "whale_status": true,
+      "original_emoji": "💨",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7TEegnxDmGaecZeyDQtjYyLQLD7aEDGp2XjutKs84dE2",
+      "name": "6",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051641",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "ApRnQN2HkbCn7W2WWiT2FEKvuKJp9LugRyAE1a9Hdz1",
+      "name": "Solkcrow",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051646",
+      "whale_status": true,
+      "original_emoji": "🐦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "86AEJExyjeNNgcp7GrAvCXTDicf5aGWgoERbXFiG1EdD",
+      "name": "Publix",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051658",
+      "whale_status": true,
+      "original_emoji": "🔔",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2F19ZXrvQDCoYXdBoFBiBcEmgrAKYAheZHnQxZksHQhN",
+      "name": "Solarnius",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051664",
+      "whale_status": true,
+      "original_emoji": "🌎️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "71CPXu3TvH3iUKaY1bNkAAow24k6tjH473SsKprQBABC",
+      "name": "ChineseQuant",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051684",
+      "whale_status": true,
+      "original_emoji": "🈸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BAGSB9TpGrZxQbEsrEznv5jXXdwyP6AXerN8aVRiAmcv",
+      "name": "bon dev",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051686",
+      "whale_status": true,
+      "original_emoji": "👺",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BkLsbxUeUEP3Yytdt2m84BzSKMnex9qn5HtERmYWqv8Q",
+      "name": "otta",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051696",
+      "whale_status": true,
+      "original_emoji": "🦦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4yc51C6KGirDBLjpymMr7rzYuM2wNd2TxXC2rArSPBES",
+      "name": "HS Secondary",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051698",
+      "whale_status": true,
+      "original_emoji": "📈",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "62FZUSWPMX9pofoV1uWHMdzFJRjwMa1LHgh2zhdEB7Zj",
+      "name": "Blossom",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051702",
+      "whale_status": true,
+      "original_emoji": "🌸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "6DwBGYF7JbLUmsMeAGn9ZMCv2sKF6s6UGAQtBkDzJtw4",
+      "name": "Noah",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051705",
+      "whale_status": true,
+      "original_emoji": "🦍",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7VBTpiiEjkwRbRGHJFUz6o5fWuhPFtAmy8JGhNqwHNnn",
+      "name": "HOLDER 700K",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051711",
+      "whale_status": true,
+      "original_emoji": "💎",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GPowjEv4Hm84z2nbE7xsFwwBFDNouvqo8SbhzvKXg5xo",
+      "name": "xander",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051723",
+      "whale_status": true,
+      "original_emoji": "👦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GzNus5Ka6kjJrqKCJRHmEVLiAS3HJ9RrBp1mdnxqGXTb",
+      "name": "goatse",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051724",
+      "whale_status": true,
+      "original_emoji": "🐐",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "oYYe854PaZtEgEoGb2QZN3MTfrGU1GQQHqqQZFQuV3K",
+      "name": "Truth Of Terninal",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051736",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "6jfC9p4jzTBTGpMrbR8H464kNo1SBGNCW17oDETzSJrf",
+      "name": "Darkfarms ART",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051743",
+      "whale_status": true,
+      "original_emoji": "🚾",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3xzTSh7KSFsnhzVvuGWXMmA3xaA89gCCM1MSS1Ga6ka6",
+      "name": "TRUTH TERMINAL",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051785",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AC5RDfQFmDS1deWZos921JfqscXdByf8BKHs5ACWjtW2",
+      "name": "Bybit",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051810",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "Av3xWHJ5EsoLZag6pr7LKbrGgLRTaykXomDD5kBhL9YQ",
+      "name": "Yolo",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051817",
+      "whale_status": true,
+      "original_emoji": "☮️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "bing"
+      }
+    },
+    {
+      "address": "DYAn4XpAkN5mhiXkRB7dGq4Jadnx6XYgu8L5b3WGhbrt",
+      "name": "The Doc",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051839",
+      "whale_status": true,
+      "original_emoji": "👨‍⚕️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "EnQLCLB7NWojruXXNopgH7jhkwoHihTpuzsrtsM2UCSe",
+      "name": "Erikstevens",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051842",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "F2SuErm4MviWJ2HzKXk2nuzBC6xe883CFWUDCPz6cyWm",
+      "name": "earl",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051848",
+      "whale_status": true,
+      "original_emoji": "🐸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HiMomFaRLrcRuasmmpE9ixUrQKa4EgoP5r2HaHo73Qt1",
+      "name": "HiMom",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051872",
+      "whale_status": true,
+      "original_emoji": "🌐",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "HrWt6V3kjv26bfUTzBroVAp87W62AWD3LsRfsNdgXJrc",
+      "name": "Erik Stevens",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051878",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "mpa4abUkjQoAvPzREkh5Mo75hZhPFQ2FSH6w7dWKuQ5",
+      "name": "Toly",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051891",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "2YDJDvAZ4yZc6NZgUdnMyysxfv65npBr3DvJiz4d7YA1",
+      "name": "yupiiii2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051903",
+      "whale_status": true,
+      "original_emoji": "🏴",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3BLjRcxWGtR7WRshJ3hL25U3RjWr5Ud98wMcczQqk4Ei",
+      "name": "sebastian",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051920",
+      "whale_status": true,
+      "original_emoji": "📚",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3dNTS4e2pwtQsTLgdKNm3p6vVijAfM6c57EajDY4zrpt",
+      "name": "LITECOIN INSIDER?",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051921",
+      "whale_status": true,
+      "original_emoji": "👥",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3kebnKw7cPdSkLRfiMEALyZJGZ4wdiSRvmoN4rD1yPzV",
+      "name": "bastille",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051928",
+      "whale_status": true,
+      "original_emoji": "🏰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3tc4BVAdzjr1JpeZu6NAjLHyp4kK3iic7TexMBYGJ4Xk",
+      "name": "devgngf",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051933",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "42cfcPtPRHN6YQkWMzFhD9N67XWNZnAARYdMoR7RjsLX",
+      "name": "SolPortTom",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051938",
+      "whale_status": true,
+      "original_emoji": "‼️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT",
+      "name": "joji",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051942",
+      "whale_status": true,
+      "original_emoji": "🔱",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5h7yzwmrGoG2BmxNCqNR2EnSv1LWCFo7n6SKSh5ZWkfE",
+      "name": "russky quant",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051946",
+      "whale_status": true,
+      "original_emoji": "🍾",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5R4RJojpoKNwBcJNgVYGtwXdmhyEHWXGDBQqUnSpLfcW",
+      "name": "ANDY",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051951",
+      "whale_status": true,
+      "original_emoji": "🤖",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5rkPDK4JnVAumgzeV2Zu8vjggMTtHdDtrsd5o9dhGZHD",
+      "name": "DAVE PORTNOY",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051952",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5wTLevkkUWzKgRTWKcSjrgdoP8TnrEnXYGaAxFKibsS5",
+      "name": "WHALE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051957",
+      "whale_status": true,
+      "original_emoji": "🐋",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7o1UnDXtvUn6kgdkgDG5jocPZTDGVJScWQKkiD71yEBs",
+      "name": "aura ins 2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051969",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7tiRXPM4wwBMRMYzmywRAE6jveS3gDbNyxgRrEoU6RLA",
+      "name": "QT",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051970",
+      "whale_status": true,
+      "original_emoji": "🏁",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "87HxPLvuBDK7FfRJdLoWkdnz4B3paKnCeEr8dQSVM5gP",
+      "name": "Setora",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051972",
+      "whale_status": true,
+      "original_emoji": "☄️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8uDfUvwik5PxdUPsQ6J7anyhChXLx8hQYNoRsusox9XB",
+      "name": "good trader 6",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051979",
+      "whale_status": true,
+      "original_emoji": "🤑",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "ATFRUwvyMh61w2Ab6AZxUyxsAfiiuG1RqL6iv3Vi9q2B",
+      "name": "MARCEL",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051989",
+      "whale_status": true,
+      "original_emoji": "🎳",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "ECCKBDWX3MkEcf3bULbLBb9FvrEQLsmPMFTKFpvjzqgP",
+      "name": "Kenzo",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051997",
+      "whale_status": true,
+      "original_emoji": "🐯",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GJA1HEbxGnqBhBifH9uQauzXSB53to5rhDrzmKxhSU65",
+      "name": "latuche",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.051998",
+      "whale_status": true,
+      "original_emoji": "💼",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GrXjXop95XkVPYJafDJNCLFzK9K8LkpopxYcgUUn2H87",
+      "name": "GRX",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052000",
+      "whale_status": true,
+      "original_emoji": "🧼",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+      "name": "cluzkkk",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052021",
+      "whale_status": true,
+      "original_emoji": "💦",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "bing"
+      }
+    },
+    {
+      "address": "LuitxRGMJErT1N5JDArXVuxtsomBUsLZHf9Yf1TVBBn",
+      "name": "holdeur",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052024",
+      "whale_status": true,
+      "original_emoji": "👻",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7Dt5oUpxHWuKH8bCTXDLz2j3JyxA7jEmtzqCG6pnh96X",
+      "name": "leens2",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052040",
+      "whale_status": true,
+      "original_emoji": "🦷",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4NtyFqqRzvHWsTmJZoT26H9xtL7asWGTxpcpCxiKax9a",
+      "name": "inside call",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052042",
+      "whale_status": true,
+      "original_emoji": "💤",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "3h65MmPZksoKKyEpEjnWU2Yk2iYT5oZDNitGy5cTaxoE",
+      "name": "Jayden",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052048",
+      "whale_status": true,
+      "original_emoji": "🔥",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4MTk6Yf7eCEbdQdzLBSnbe3T2M7wKCpFFFUXpZKwkX4T",
+      "name": "red 3",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052051",
+      "whale_status": true,
+      "original_emoji": "🦊",
+      "alert_settings": {
+        "toast": true,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "AvzzD7SnRHb8Kv8dRk1JFYdWVcNtYhTybk2KbDWKB5ki",
+      "name": "44",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052054",
+      "whale_status": true,
+      "original_emoji": "👃",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7cm7BtqSJHqy7QYJFh4cr7SybGR6q1zA7oXk6gdvWgTk",
+      "name": "Jihoz",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052060",
+      "whale_status": true,
+      "original_emoji": "✨",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BQVz7fQ1WsQmSTMY3umdPEPPTm1sdcBcX9sP7o6kPRmB",
+      "name": "lim",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052093",
+      "whale_status": true,
+      "original_emoji": "☀️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BuhkHhM3j4viF71pMTd23ywxPhF35LUnc2QCLAvUxCdW",
+      "name": "Saif",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052095",
+      "whale_status": true,
+      "original_emoji": "♣️",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "BXNiM7pqt9Ld3b2Hc8iT3mA5bSwoe9CRrtkSUs15SLWN",
+      "name": "Absol",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052096",
+      "whale_status": true,
+      "original_emoji": "🪙",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "8MaVa9kdt3NW4Q5HyNAm1X5LbR8PQRVDc1W8NMVK88D5",
+      "name": "Daumen",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052100",
+      "whale_status": true,
+      "original_emoji": "👍",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4Be9CvxqHW6BYiRAxW9Q3xu1ycTMWaL5z8NX4HR3ha7t",
+      "name": "MITCH",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052104",
+      "whale_status": true,
+      "original_emoji": "🧑‍💼",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "DGPYpCdiVg2shab2TnNiZ2RnsjBQSmhgN71hJyWC5cYn",
+      "name": "Qwrty",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052106",
+      "whale_status": true,
+      "original_emoji": "🐾",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "GBERKNpahPnBGmeUGWQVjGBDBj6CcJKpGz34FqegmTgu",
+      "name": "Scrim",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052120",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "5pxkp8Rpg7xHekFf7URJ25i4P5ZXVk8hRQUaDKytU5K7",
+      "name": "leens",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052131",
+      "whale_status": true,
+      "original_emoji": "🦷",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "ArfVe1K5gt5zsxzRCWSQeWc1rJSJjZzuuYxmvRh71mMQ",
+      "name": "btt dev",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052135",
+      "whale_status": true,
+      "original_emoji": "😢",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4Bdn33fA7LLZQuuXuFLSxtPWGAUnMBcreQHfh9MXuixe",
+      "name": "Key",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052138",
+      "whale_status": true,
+      "original_emoji": "🔑",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4cXnf2z85UiZ5cyKsPMEULq1yufAtpkatmX4j4DBZqj2",
+      "name": "WaiterG",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052142",
+      "whale_status": true,
+      "original_emoji": "🀄",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "4TS24wgLBMucbZt7zqhM3KakXwdNTT2ECxDXEpsn5AhZ",
+      "name": "Tavern",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052145",
+      "whale_status": true,
+      "original_emoji": "🐢",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "9HhafAZc6jo6rXxeJ7F4RN1BQfsTm6xLRs6YYAq6nhAn",
+      "name": "RYAN",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052148",
+      "whale_status": true,
+      "original_emoji": "😀",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "CkxVhktjqYuhsVfNQzqEZkwQ2gMU1wEFPM3FSSVXGjM9",
+      "name": "FaZe Banks",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052156",
+      "whale_status": true,
+      "original_emoji": "💸",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": false,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "CNudZYFgpbT26fidsiNrWfHeGTBMMeVWqruZXsEkcUPc",
+      "name": "GAKE SIDE",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052157",
+      "whale_status": true,
+      "original_emoji": "🍰",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "9FNz4MjPUmnJqTf6yEDbL1D4SsHVh7uA8zRHhR5K138r",
+      "name": "dany legion",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052169",
+      "whale_status": true,
+      "original_emoji": "👽",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+      "name": "Cented1",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052172",
+      "whale_status": true,
+      "original_emoji": "🐼",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "ding"
+      }
+    },
+    {
+      "address": "A2Yh3pqL9R3Yj8KUvFoZ2Fupxz4rR2XhZBKNXU4ht3wu",
+      "name": "gt",
+      "source": "Whale Tracker Import",
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Whale wallet imported from tracker. Groups: Main",
+      "discovered_at": "2025-11-08T13:55:15.052175",
+      "whale_status": true,
+      "original_emoji": "🧕",
+      "alert_settings": {
+        "toast": false,
+        "bubble": true,
+        "feed": true,
+        "sound": "default"
+      }
+    },
+    {
+      "address": "7Lp4JBapgNhXoxpJtR2twufh7oaQyqngqJpy7HFJcn7h",
+      "name": "Whale holder of BONK",
+      "source": "Top holder of BONK",
+      "tokens_held": [
+        "BONK"
+      ],
+      "sol_balance": 6.518067274,
+      "estimated_success_rate": 85,
+      "total_transactions": 98,
+      "notes": "Top holder with 98 transactions, 6.52 SOL balance",
+      "discovered_at": "2025-11-08T21:33:30.975718",
+      "whale_status": true
+    },
+    {
+      "address": "CJjCPXBnSt6wRoyi7wzcMj5NbWvmPtzxE2JpWDMTRxj4",
+      "name": "Whale holder of BONK",
+      "source": "Top holder of BONK",
+      "tokens_held": [
+        "BONK"
+      ],
+      "sol_balance": 330855.202542951,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 330855.20 SOL balance",
+      "discovered_at": "2025-11-08T21:33:32.966960",
+      "whale_status": true
+    },
+    {
+      "address": "2Ejnns2Fd5gsZdFJbnkZmQEwbrgoiMc2ikKcS2z2Ps3e",
+      "name": "Whale holder of BONK",
+      "source": "Top holder of BONK",
+      "tokens_held": [
+        "BONK"
+      ],
+      "sol_balance": 98622.908510172,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 98622.91 SOL balance",
+      "discovered_at": "2025-11-08T21:33:34.618048",
+      "whale_status": true
+    },
+    {
+      "address": "4TYF8iW8bXET9C8aFgJoiUHhNtpBg5bqRsxSptCExvz7",
+      "name": "Whale holder of BONK",
+      "source": "Top holder of BONK",
+      "tokens_held": [
+        "BONK"
+      ],
+      "sol_balance": 1965.015070176,
+      "estimated_success_rate": 85,
+      "total_transactions": 96,
+      "notes": "Top holder with 96 transactions, 1965.02 SOL balance",
+      "discovered_at": "2025-11-08T21:33:36.135997",
+      "whale_status": true
+    },
+    {
+      "address": "22Wnk8PwyWZV7BfkZGJEKT9jGGdtvu7xY6EXeRh7zkBa",
+      "name": "Whale holder of BONK",
+      "source": "Top holder of BONK",
+      "tokens_held": [
+        "BONK"
+      ],
+      "sol_balance": 855580.628130566,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 855580.63 SOL balance",
+      "discovered_at": "2025-11-08T21:33:37.580482",
+      "whale_status": true
+    },
+    {
+      "address": "3gd3dqgtJ4jWfBfLYTX67DALFetjc5iS72sCgRhCkW2u",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 108104.205213861,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 108104.21 SOL balance",
+      "discovered_at": "2025-11-08T21:33:42.129409",
+      "whale_status": true
+    },
+    {
+      "address": "42brAgAVNzMBP7aaktPvAmBSPEkehnFQejiZc53EpJFd",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 299995.293086985,
+      "estimated_success_rate": 85,
+      "total_transactions": 94,
+      "notes": "Top holder with 94 transactions, 299995.29 SOL balance",
+      "discovered_at": "2025-11-08T21:33:43.662434",
+      "whale_status": true
+    },
+    {
+      "address": "5z7gxL5u4jCW9D6acu28LEw4RKTiBSG1EmXbtCX7efg2",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 603565.631418874,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 603565.63 SOL balance",
+      "discovered_at": "2025-11-08T21:33:44.875543",
+      "whale_status": true
+    },
+    {
+      "address": "CK8i4zFXkDE2KWfyg7g9S748r6mwxajbcKcyGhQMR3qQ",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 88.737917306,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 88.74 SOL balance",
+      "discovered_at": "2025-11-08T21:33:46.746585",
+      "whale_status": true
+    },
+    {
+      "address": "38xCLm9kSExfGU1GdyVuX4vop7SZns9kU2mQyTmmMdUP",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 537139.217022039,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 537139.22 SOL balance",
+      "discovered_at": "2025-11-08T21:33:48.900402",
+      "whale_status": true
+    },
+    {
+      "address": "GYzTxa7CtkJ3gFshi8CusUaY65jX3xM4cEfwbKy2nztM",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 128764.257815842,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 128764.26 SOL balance",
+      "discovered_at": "2025-11-08T21:33:50.285029",
+      "whale_status": true
+    },
+    {
+      "address": "6QJzieMYfp7yr3EdrePaQoG3Ghxs2wM98xSLRu8Xh56U",
+      "name": "Whale holder of WIF",
+      "source": "Top holder of WIF",
+      "tokens_held": [
+        "WIF"
+      ],
+      "sol_balance": 371973.481850721,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 371973.48 SOL balance",
+      "discovered_at": "2025-11-08T21:33:51.672818",
+      "whale_status": true
+    },
+    {
+      "address": "DBmae92YTQKLsNzXcPscxiwPqMcz9stQr2prB5ZCAHPd",
+      "name": "Whale holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "sol_balance": 167637.185196276,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 167637.19 SOL balance",
+      "discovered_at": "2025-11-08T21:33:57.036759",
+      "whale_status": true
+    },
+    {
+      "address": "HVh6wHNBAsG3pq1Bj5oCzRjoWKVogEDHwUHkRz3ekFgt",
+      "name": "Whale holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "sol_balance": 318681.491749336,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 318681.49 SOL balance",
+      "discovered_at": "2025-11-08T21:33:58.982685",
+      "whale_status": true
+    },
+    {
+      "address": "FixDET3jRBMjT9M69Wim8iRpMQiJHkSSfD7wivStuuph",
+      "name": "Whale holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "sol_balance": 109252.683828297,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 109252.68 SOL balance",
+      "discovered_at": "2025-11-08T21:34:00.974678",
+      "whale_status": true
+    },
+    {
+      "address": "ASTyfSima4LLAdDgoFGkgqoKowG1LZFDr9fAQrg7iaJZ",
+      "name": "Whale holder of POPCAT",
+      "source": "Top holder of POPCAT",
+      "tokens_held": [
+        "POPCAT"
+      ],
+      "sol_balance": 19936.615510587,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 19936.62 SOL balance",
+      "discovered_at": "2025-11-08T21:34:02.432014",
+      "whale_status": true
+    },
+    {
+      "address": "AcLHpBGUgsRApF2eF3tPPxMsgsnyBAr53mdBvLM8ST8z",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 646.717250039,
+      "estimated_success_rate": 85,
+      "total_transactions": 96,
+      "notes": "Top holder with 96 transactions, 646.72 SOL balance",
+      "discovered_at": "2025-11-08T21:34:06.008900",
+      "whale_status": true
+    },
+    {
+      "address": "8TWNcXvh9BXKdgNdRKGAfKzGUYsoVDMKUuAdbMYxCJEA",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 39188.533724242,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 39188.53 SOL balance",
+      "discovered_at": "2025-11-08T21:34:07.378930",
+      "whale_status": true
+    },
+    {
+      "address": "8NBEbxLknGv5aRYefFrW2qFXoDZyi9fSHJNiJRvEcMBE",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 51243.35502407,
+      "estimated_success_rate": 85,
+      "total_transactions": 98,
+      "notes": "Top holder with 98 transactions, 51243.36 SOL balance",
+      "discovered_at": "2025-11-08T21:34:08.638251",
+      "whale_status": true
+    },
+    {
+      "address": "4QuB7hY3H512CLG1orbVrA7HTeXbBYCPxBpNfQ6gs5ru",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 120392.435172537,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 120392.44 SOL balance",
+      "discovered_at": "2025-11-08T21:34:10.239753",
+      "whale_status": true
+    },
+    {
+      "address": "3qtaeTSBgcUhV6vWwZpUqFWhXiaTUahGGhDMCFxoXLNH",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 76.736215557,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 76.74 SOL balance",
+      "discovered_at": "2025-11-08T21:34:12.205515",
+      "whale_status": true
+    },
+    {
+      "address": "4QXXp184iMKjL1ZTLrGtjMFvR2n2YhpUS1WypmzGaYB3",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 26024.447299937,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 26024.45 SOL balance",
+      "discovered_at": "2025-11-08T21:34:13.690962",
+      "whale_status": true
+    },
+    {
+      "address": "2h8JJq1kAsJvKYVrsEqwhQTcy99p465esHUFcJA94QY2",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 52117.818331975,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 52117.82 SOL balance",
+      "discovered_at": "2025-11-08T21:34:15.220387",
+      "whale_status": true
+    },
+    {
+      "address": "GdNFzHq2sGEhxuKQMLtxqQb2ZRmHzy9ZcFhvBNGvxXai",
+      "name": "Whale holder of BOME",
+      "source": "Top holder of BOME",
+      "tokens_held": [
+        "BOME"
+      ],
+      "sol_balance": 18727.91682516,
+      "estimated_success_rate": 85,
+      "total_transactions": 96,
+      "notes": "Top holder with 96 transactions, 18727.92 SOL balance",
+      "discovered_at": "2025-11-08T21:34:17.774207",
+      "whale_status": true
+    },
+    {
+      "address": "9CjKf5q7VB7zsAjgnTo1dABUsQtnasu2n8mGQ2aFb6vM",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 3313.749401023,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 3313.75 SOL balance",
+      "discovered_at": "2025-11-08T21:34:26.938130",
+      "whale_status": true
+    },
+    {
+      "address": "4uks6GfvhLaqJxWrZZYYxfbU24Kz7318VLXQozKQav6V",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 24.929046567,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 24.93 SOL balance",
+      "discovered_at": "2025-11-08T21:34:28.479461",
+      "whale_status": true
+    },
+    {
+      "address": "7pBSKCC8dQuA6aV2qMnmwUspZCrNYdN25qR4rMaJLdtd",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 53.908323973,
+      "estimated_success_rate": 85,
+      "total_transactions": 98,
+      "notes": "Top holder with 98 transactions, 53.91 SOL balance",
+      "discovered_at": "2025-11-08T21:34:31.285694",
+      "whale_status": true
+    },
+    {
+      "address": "5BMC1hcGFPQvvVsBzLXzj7NqhbbkaU73HF1Z59YF3WrZ",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 6.683636521,
+      "estimated_success_rate": 85,
+      "total_transactions": 94,
+      "notes": "Top holder with 94 transactions, 6.68 SOL balance",
+      "discovered_at": "2025-11-08T21:34:33.275838",
+      "whale_status": true
+    },
+    {
+      "address": "2kTfCYXFV86W87iskQfg5Qa9CfUgDCXKDvq7Vc45phHk",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 203.692718673,
+      "estimated_success_rate": 85,
+      "total_transactions": 53,
+      "notes": "Top holder with 53 transactions, 203.69 SOL balance",
+      "discovered_at": "2025-11-08T21:34:38.315421",
+      "whale_status": true
+    },
+    {
+      "address": "DU8W6ritu6LuDm6DFkVtrtVyW8KEruMhHagvjxg4DRys",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 7.761196724,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 7.76 SOL balance",
+      "discovered_at": "2025-11-08T21:34:40.365901",
+      "whale_status": true
+    },
+    {
+      "address": "3KaZ63kwwtm7ykhtVQ238TQdsWuJAzFFf93FGW55KicT",
+      "name": "Whale holder of SLERF",
+      "source": "Top holder of SLERF",
+      "tokens_held": [
+        "SLERF"
+      ],
+      "sol_balance": 68.118756323,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 68.12 SOL balance",
+      "discovered_at": "2025-11-08T21:34:42.728300",
+      "whale_status": true
+    },
+    {
+      "address": "7cAui6ADtxLnpRr2wYvwJWTkzwgmVF2LYKnjKTLx4xR8",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 94.309249878,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 94.31 SOL balance",
+      "discovered_at": "2025-11-08T21:34:45.381849",
+      "whale_status": true
+    },
+    {
+      "address": "4GC3a1RkRXx5shwGP8pTY6cxXgSWkbfc66vM53a6qSKj",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 122256.752026333,
+      "estimated_success_rate": 85,
+      "total_transactions": 98,
+      "notes": "Top holder with 98 transactions, 122256.75 SOL balance",
+      "discovered_at": "2025-11-08T21:34:48.027685",
+      "whale_status": true
+    },
+    {
+      "address": "5rhms6jZQaXnQc6wbicnrxDTkKqKi4iwfWW3612r5rHb",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 78780.671820958,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 78780.67 SOL balance",
+      "discovered_at": "2025-11-08T21:34:49.654729",
+      "whale_status": true
+    },
+    {
+      "address": "FZ1t8TZtx7VSCQdBsxvFJiezj9paUBF6Ub7RKA2eTGyE",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 121481.93740156,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 121481.94 SOL balance",
+      "discovered_at": "2025-11-08T21:34:51.640574",
+      "whale_status": true
+    },
+    {
+      "address": "8QCVZ7KL65pBhUxbvfwbyyg4ronxNAEXbDrGLYLrRNn5",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 2889.193895414,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 2889.19 SOL balance",
+      "discovered_at": "2025-11-08T21:34:53.159604",
+      "whale_status": true
+    },
+    {
+      "address": "EWJH1tZ7i7FsZBZVYVXyTu1rAyYtxWSS9gv1MJaknxdU",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 10.094377096,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 10.09 SOL balance",
+      "discovered_at": "2025-11-08T21:34:55.393881",
+      "whale_status": true
+    },
+    {
+      "address": "CSEncqtqbmNRjve42sNnbs5cCSmrjUNsAEwc17XY2RCs",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 9854.481019972,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 9854.48 SOL balance",
+      "discovered_at": "2025-11-08T21:34:56.589191",
+      "whale_status": true
+    },
+    {
+      "address": "3Ln6KEgLoMR2xFHfqtYazP7CxFQPDtUVVtwCVsLKVfmV",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 60654.827913822,
+      "estimated_success_rate": 85,
+      "total_transactions": 93,
+      "notes": "Top holder with 93 transactions, 60654.83 SOL balance",
+      "discovered_at": "2025-11-08T21:34:58.465742",
+      "whale_status": true
+    },
+    {
+      "address": "ADqZYsW9SVZ6bCSGDqfBiPkfaZuQKGg79MA357otX8Ud",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 201324.282159617,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 201324.28 SOL balance",
+      "discovered_at": "2025-11-08T21:34:59.839783",
+      "whale_status": true
+    },
+    {
+      "address": "GL8T72PKygWaYrLKtSteN9UUvYYnuC8azNDunk4eaqqQ",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 56466.842260652,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 56466.84 SOL balance",
+      "discovered_at": "2025-11-08T21:35:01.753521",
+      "whale_status": true
+    },
+    {
+      "address": "BxRtoCWpdeWJPmMHgLKYbfow61yi23uohNEYQAagHHL3",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 111.738220244,
+      "estimated_success_rate": 85,
+      "total_transactions": 91,
+      "notes": "Top holder with 91 transactions, 111.74 SOL balance",
+      "discovered_at": "2025-11-08T21:35:04.779913",
+      "whale_status": true
+    },
+    {
+      "address": "M2St7Gra11AKvk3tC4fJPkxviWYKpLZSMmKcHNoDtxp",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 41.13326778,
+      "estimated_success_rate": 85,
+      "total_transactions": 97,
+      "notes": "Top holder with 97 transactions, 41.13 SOL balance",
+      "discovered_at": "2025-11-08T21:35:06.650178",
+      "whale_status": true
+    },
+    {
+      "address": "4gXs8oc2yEwDTPkDyo6V8ZixheTCZvu8JicrEuDat8tH",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 21891.034731741,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 21891.03 SOL balance",
+      "discovered_at": "2025-11-08T21:35:08.888600",
+      "whale_status": true
+    },
+    {
+      "address": "FE2MHWLTSmndBUWbbtmnfUfoKrn9NKtDCDGxCPG2h9Dy",
+      "name": "Whale holder of MYRO",
+      "source": "Top holder of MYRO",
+      "tokens_held": [
+        "MYRO"
+      ],
+      "sol_balance": 51.641665359,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 51.64 SOL balance",
+      "discovered_at": "2025-11-08T21:35:10.437790",
+      "whale_status": true
+    },
+    {
+      "address": "9D8xSHWqF9NJWqCtn3rNxYEox63aCbWxYzTMfMur7Cc9",
+      "name": "Whale holder of WEN",
+      "source": "Top holder of WEN",
+      "tokens_held": [
+        "WEN"
+      ],
+      "sol_balance": 41484.849064587,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 41484.85 SOL balance",
+      "discovered_at": "2025-11-08T21:35:14.767263",
+      "whale_status": true
+    },
+    {
+      "address": "DMe3ddj7awSR3LFC64rjmCPexsrSv33QAxFoJux4vGH3",
+      "name": "Whale holder of WEN",
+      "source": "Top holder of WEN",
+      "tokens_held": [
+        "WEN"
+      ],
+      "sol_balance": 451195.519225109,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 451195.52 SOL balance",
+      "discovered_at": "2025-11-08T21:35:16.063231",
+      "whale_status": true
+    },
+    {
+      "address": "Da6stGVT84XeipdZ9hc7hWWF3fFGvY4hqHNnUqAPgX4n",
+      "name": "Whale holder of WEN",
+      "source": "Top holder of WEN",
+      "tokens_held": [
+        "WEN"
+      ],
+      "sol_balance": 96.487164795,
+      "estimated_success_rate": 85,
+      "total_transactions": 96,
+      "notes": "Top holder with 96 transactions, 96.49 SOL balance",
+      "discovered_at": "2025-11-08T21:35:18.351817",
+      "whale_status": true
+    },
+    {
+      "address": "BbHG9GvPActFGogv3iNrpDAj4qpXr8t3jF16uGxXcKci",
+      "name": "Whale holder of WEN",
+      "source": "Top holder of WEN",
+      "tokens_held": [
+        "WEN"
+      ],
+      "sol_balance": 49.99919237,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 50.00 SOL balance",
+      "discovered_at": "2025-11-08T21:35:21.262058",
+      "whale_status": true
+    },
+    {
+      "address": "BmFdpraQhkiDQE6SnfG5omcA1VwzqfXrwtNYBwWTymy6",
+      "name": "Whale holder of WEN",
+      "source": "Top holder of WEN",
+      "tokens_held": [
+        "WEN"
+      ],
+      "sol_balance": 16368.695280791,
+      "estimated_success_rate": 85,
+      "total_transactions": 100,
+      "notes": "Top holder with 100 transactions, 16368.70 SOL balance",
+      "discovered_at": "2025-11-08T21:35:22.971220",
+      "whale_status": true
+    },
+    {
+      "address": "AuiAU9Wepwp2DsPmQ34rmfHNchV54vwuXKLrWVSP4w85",
+      "name": "Whale holder of JUP",
+      "source": "Top holder of JUP",
+      "tokens_held": [
+        "JUP"
+      ],
+      "sol_balance": 90.8988686,
+      "estimated_success_rate": 85,
+      "total_transactions": 99,
+      "notes": "Top holder with 99 transactions, 90.90 SOL balance",
+      "discovered_at": "2025-11-08T21:35:33.703378",
+      "whale_status": true
+    },
+    {
+      "address": "3Fy5oFavnWzTZ8YRBhZkyT3ioKtBSDVVxFkbSPefJHyF",
+      "name": "Whale holder of PYTH",
+      "source": "Top holder of PYTH",
+      "tokens_held": [
+        "PYTH"
+      ],
+      "sol_balance": 278557.361887434,
+      "estimated_success_rate": 85,
+      "total_transactions": 91,
+      "notes": "Top holder with 91 transactions, 278557.36 SOL balance",
+      "discovered_at": "2025-11-08T21:35:40.600611",
+      "whale_status": true
+    }
+  ],
+  "total": 259,
+  "last_updated": "2025-11-08T21:35:42.960090",
+  "sources": [
+    "Helius API - Real blockchain data",
+    "Top holders of successful tokens",
+    "Whale wallet tracker import",
+    "Automated collection via real_wallet_collector.py",
+    "Whale collection from popular tokens - 2025-11-08"
+  ],
+  "stats": {
+    "tokens_analyzed": 7,
+    "unique_wallets": 259,
+    "whale_wallets_imported": 646,
+    "collection_method": "Multiple sources + whale tracker",
+    "removed_low_balance": 483,
+    "min_sol_balance": 5.0,
+    "new_whales_found": 52
+  }
+}

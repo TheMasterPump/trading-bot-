@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN MONITORING - System Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --terminal-bg: #0a0e27;
+            --terminal-text: #00ffff;
+            --terminal-blue: #0099cc;
+            --terminal-cyan: #00ffff;
+            --terminal-green: #00ff88;
+            --terminal-red: #ff0051;
+            --terminal-yellow: #ffd700;
+            --terminal-border: #0099cc;
+            --terminal-glow: #00ffff;
+        }
+
+        body {
+            background: var(--terminal-bg);
+            color: var(--terminal-text);
+            font-family: 'Roboto Mono', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Matrix Rain Background */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #00ffff;
+            opacity: 0.2;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #0099cc;
+            animation: matrixFall linear infinite;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        @keyframes matrixFall {
+            0% { top: -100%; opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Scanlines */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 255, 255, 0.03), rgba(0, 255, 255, 0.03) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .terminal-header {
+            background: linear-gradient(180deg, #0d1330 0%, #0a0e27 100%);
+            border-bottom: 2px solid var(--terminal-border);
+            padding: 20px 0;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #0099cc;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: rgba(0, 20, 40, 0.6);
+            border: 1px solid var(--terminal-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 153, 204, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .stat-title {
+            font-size: 0.9rem;
+            color: var(--terminal-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--terminal-green);
+            text-shadow: 0 0 10px var(--terminal-green);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--terminal-text);
+            opacity: 0.6;
+            margin-top: 5px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-running {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--terminal-green);
+            border: 1px solid var(--terminal-green);
+        }
+
+        .status-stopped {
+            background: rgba(255, 0, 81, 0.2);
+            color: var(--terminal-red);
+            border: 1px solid var(--terminal-red);
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 153, 204, 0.2);
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            color: var(--terminal-cyan);
+            font-size: 0.9rem;
+        }
+
+        .metric-value {
+            color: var(--terminal-text);
+            font-weight: 600;
+        }
+
+        .refresh-btn {
+            background: linear-gradient(135deg, #0099cc 0%, #0066aa 100%);
+            border: 1px solid var(--terminal-cyan);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(0, 153, 204, 0.3);
+        }
+
+        .refresh-btn:hover {
+            background: linear-gradient(135deg, #00bbee 0%, #0099cc 100%);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .auto-refresh {
+            font-size: 0.8rem;
+            color: var(--terminal-yellow);
+            margin-top: 10px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--terminal-cyan);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--terminal-border);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .bot-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .bot-item {
+            background: rgba(0, 20, 40, 0.4);
+            border-left: 3px solid var(--terminal-green);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .uptime {
+            color: var(--terminal-yellow);
+            font-size: 0.85rem;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 20, 40, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--terminal-border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--terminal-cyan);
+        }
+
+        .back-link {
+            color: var(--terminal-cyan);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--terminal-green);
+            text-shadow: 0 0 10px var(--terminal-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Background -->
+    <div class="matrix-bg" id="matrixBg"></div>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <div class="terminal-header">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="/bot" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Retour au Bot
+                    </a>
+                    <div class="logo">
+                        <i class="fas fa-chart-line"></i> ADMIN MONITORING
+                    </div>
+                    <div class="text-end">
+                        <button class="refresh-btn" onclick="loadStats()">
+                            <i class="fas fa-sync-alt"></i> REFRESH
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- System Status -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">
+                        <i class="fas fa-server"></i> System Status
+                    </h2>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-title">Active Bots</div>
+                        <div class="stat-value" id="activeBots">-</div>
+                        <div class="stat-label" id="capacityStatus">- / - slots</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-title">Tokens Analyzed</div>
+                        <div class="stat-value" id="tokensAnalyzed">-</div>
+                        <div class="stat-label">Total Processed</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-title">Signals Sent</div>
+                        <div class="stat-value" id="signalsSent">-</div>
+                        <div class="stat-label">Trading Signals</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-card">
+                        <div class="stat-title">Architecture</div>
+                        <div class="stat-value" style="font-size: 1.2rem;" id="architecture">-</div>
+                        <div class="stat-label">System Type</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feed Stats -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="stat-card">
+                        <h3 class="section-title" style="font-size: 1.1rem; margin-bottom: 15px;">
+                            <i class="fas fa-wifi"></i> WebSocket Feed
+                        </h3>
+                        <div class="metric-row">
+                            <span class="metric-label">Status:</span>
+                            <span class="metric-value">
+                                <span id="feedStatus" class="status-badge status-stopped">UNKNOWN</span>
+                            </span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Subscribers:</span>
+                            <span class="metric-value" id="feedSubscribers">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Tokens Received:</span>
+                            <span class="metric-value" id="feedTokens">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Uptime:</span>
+                            <span class="metric-value" id="feedUptime">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Tokens/Min:</span>
+                            <span class="metric-value" id="feedRate">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="stat-card">
+                        <h3 class="section-title" style="font-size: 1.1rem; margin-bottom: 15px;">
+                            <i class="fas fa-cogs"></i> Trading Engine
+                        </h3>
+                        <div class="metric-row">
+                            <span class="metric-label">Active Bots:</span>
+                            <span class="metric-value" id="engineBots">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Tokens Analyzed:</span>
+                            <span class="metric-value" id="engineTokens">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Signals Sent:</span>
+                            <span class="metric-value" id="engineSignals">-</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-label">Max Capacity:</span>
+                            <span class="metric-value" id="maxCapacity">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Bots List -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="stat-card">
+                        <h3 class="section-title" style="font-size: 1.1rem; margin-bottom: 15px;">
+                            <i class="fas fa-robot"></i> Active Bots Details
+                        </h3>
+                        <div id="botsList" class="bot-list">
+                            <div class="text-center" style="padding: 40px; opacity: 0.5;">
+                                No active bots
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Auto-refresh notice -->
+            <div class="text-center mt-4 auto-refresh">
+                <i class="fas fa-sync-alt"></i> Auto-refresh every 5 seconds
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Matrix rain effect
+        function createMatrixRain() {
+            const container = document.getElementById('matrixBg');
+            const chars = '01';
+            const columns = Math.floor(window.innerWidth / 20);
+
+            for (let i = 0; i < columns; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = `${i * 20}px`;
+                column.style.animationDuration = `${Math.random() * 10 + 15}s`;
+                column.style.animationDelay = `${Math.random() * 5}s`;
+
+                let text = '';
+                for (let j = 0; j < 50; j++) {
+                    text += chars[Math.floor(Math.random() * chars.length)] + '\n';
+                }
+                column.textContent = text;
+
+                container.appendChild(column);
+            }
+        }
+
+        createMatrixRain();
+
+        // Fetch capacity info
+        async function fetchCapacity() {
+            try {
+                const response = await fetch('/api/admin/capacity');
+                const data = await response.json();
+                return data.success ? data : null;
+            } catch (error) {
+                console.error('Error fetching capacity:', error);
+                return null;
+            }
+        }
+
+        // Load stats from API
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/admin/stats');
+                const data = await response.json();
+
+                if (data.success) {
+                    const stats = data.stats;
+
+                    // Main stats
+                    document.getElementById('activeBots').textContent = stats.active_bots || 0;
+                    document.getElementById('architecture').textContent = stats.architecture || 'N/A';
+
+                    // Capacity status
+                    const capacity = await fetchCapacity();
+                    if (capacity) {
+                        const maxBots = capacity.limits?.max_concurrent_bots || 200;
+                        const currentBots = capacity.capacity?.current_bots || 0;
+                        const percentUsed = capacity.capacity?.percent_used || 0;
+                        const status = capacity.capacity?.status || 'UNKNOWN';
+
+                        let statusColor = 'var(--terminal-green)';
+                        if (status === 'WARNING') statusColor = 'var(--terminal-yellow)';
+                        if (status === 'FULL') statusColor = 'var(--terminal-red)';
+
+                        document.getElementById('capacityStatus').innerHTML =
+                            `<span style="color: ${statusColor}">${currentBots} / ${maxBots} slots (${percentUsed.toFixed(1)}%)</span>`;
+                    }
+
+                    // Feed stats
+                    if (stats.feed_stats) {
+                        const feed = stats.feed_stats;
+                        document.getElementById('feedStatus').textContent = feed.is_running ? 'RUNNING' : 'STOPPED';
+                        document.getElementById('feedStatus').className = feed.is_running ? 'status-badge status-running' : 'status-badge status-stopped';
+                        document.getElementById('feedSubscribers').textContent = feed.subscribers || 0;
+                        document.getElementById('feedTokens').textContent = feed.tokens_received || 0;
+                        document.getElementById('feedUptime').textContent = formatUptime(feed.uptime_seconds || 0);
+                        document.getElementById('feedRate').textContent = (feed.tokens_per_minute || 0).toFixed(1);
+                    }
+
+                    // Engine stats
+                    if (stats.engine_stats) {
+                        const engine = stats.engine_stats;
+                        document.getElementById('engineBots').textContent = engine.active_bots || 0;
+                        document.getElementById('engineTokens').textContent = engine.tokens_analyzed || 0;
+                        document.getElementById('engineSignals').textContent = engine.signals_sent || 0;
+                        document.getElementById('tokensAnalyzed').textContent = engine.tokens_analyzed || 0;
+                        document.getElementById('signalsSent').textContent = engine.signals_sent || 0;
+
+                        // Max capacity
+                        document.getElementById('maxCapacity').textContent = stats.max_capacity || 'N/A';
+
+                        // Bot list
+                        if (engine.bots && engine.bots.length > 0) {
+                            let botsHtml = '';
+                            engine.bots.forEach(bot => {
+                                botsHtml += `
+                                    <div class="bot-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong style="color: var(--terminal-cyan);">User ${bot.user_id}</strong>
+                                                <div class="uptime">
+                                                    <i class="fas fa-clock"></i> Uptime: ${formatUptime(bot.uptime)}
+                                                </div>
+                                            </div>
+                                            <div class="text-end">
+                                                <div style="color: var(--terminal-green); font-weight: 600;">
+                                                    ${bot.signals_received} signals
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+                            document.getElementById('botsList').innerHTML = botsHtml;
+                        } else {
+                            document.getElementById('botsList').innerHTML = '<div class="text-center" style="padding: 40px; opacity: 0.5;">No active bots</div>';
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        function formatUptime(seconds) {
+            if (!seconds) return '0s';
+
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = Math.floor(seconds % 60);
+
+            if (hours > 0) {
+                return `${hours}h ${minutes}m`;
+            } else if (minutes > 0) {
+                return `${minutes}m ${secs}s`;
+            } else {
+                return `${secs}s`;
+            }
+        }
+
+        // Load stats on page load
+        loadStats();
+
+        // Auto-refresh every 5 seconds
+        setInterval(loadStats, 5000);
+    </script>
+</body>
+</html>

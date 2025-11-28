@@ -1,0 +1,35 @@
+# Fichiers sensibles
+.env
+*.db
+*.sqlite
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Modèles ML (trop gros pour Git)
+models/*.pkl
+models/*.joblib
+*.pkl
+*.joblib
+
+# Windows reserved filenames
+nul

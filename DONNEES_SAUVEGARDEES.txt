@@ -1,0 +1,189 @@
+================================================================================
+DONNÉES COMPLÈTES SAUVEGARDÉES POUR CHAQUE TRADE
+================================================================================
+
+À partir de maintenant, TOUTES les informations suivantes sont sauvegardées
+dans trading_history.json pour chaque trade:
+
+================================================================================
+1. INFORMATIONS GÉNÉRALES
+================================================================================
+
+- timestamp: Date et heure exacte du trade
+- symbol: Symbole du token (ex: "EPSTRON", "Santa")
+- mint: Adresse du token sur Solana
+
+================================================================================
+2. DÉTAILS D'ENTRÉE (ACHAT)
+================================================================================
+
+✅ entry_mc: Market cap au moment de l'achat (en USD)
+✅ entry_time: Moment de l'entrée ("8s" ou "15s")
+✅ entry_reason: RAISON D'ACHAT (NOUVEAU!)
+   - "AUTO-BUY: 40txn, 30traders, 80% buy"
+   - "IA: 85%"
+   - "ELITE WALLET: 1 VIP, 3 whales, 80% buy"
+   - "2 BALEINES CONSECUTIVES"
+   - etc.
+
+✅ confidence: Niveau de confiance (0.0 à 1.0)
+   - 1.0 = AUTO-BUY (confiance totale)
+   - 0.85-0.95 = IA (confiance modèle)
+
+✅ strategy: Stratégie utilisée
+   - "PARTIAL_PROFIT" (vendre 50% @ 2x, 50% @ migration)
+
+================================================================================
+3. DÉTAILS DE SORTIE (VENTE)
+================================================================================
+
+✅ exit_mc: Market cap au moment de la vente (en USD)
+✅ exit_reason: RAISON DE SORTIE (NOUVEAU!)
+   - "STOP LOSS" (-35%)
+   - "TIMEOUT (45min)" (fermeture auto)
+   - "TAKE PROFIT FINAL - MIGRATION" (migration 53K)
+   - "STOP LOSS (50% déjà vendu @ 2x)" (partial profit)
+
+✅ timeout_minutes: DURÉE EXACTE du trade (NOUVEAU!)
+   - Temps en minutes entre l'achat et la vente
+   - Permet d'analyser: winners = lents, losers = rapides
+
+================================================================================
+4. PERFORMANCE
+================================================================================
+
+✅ profit_ratio: Ratio de profit (ex: 2.35 = +235%)
+✅ profit_percent: Profit en pourcentage (ex: +235.5%)
+✅ is_win: true/false (winner ou loser)
+
+✅ partial_sold: Si partial profit atteint (NOUVEAU!)
+   - true = A vendu 50% @ 2x (position gratuite)
+   - false = Position complète
+
+✅ is_elite_trade: Si trade avec elite/baleines (NOUVEAU!)
+   - true = Trade déclenché par elite wallet ou baleines
+   - false = Trade standard AUTO-BUY ou IA
+
+================================================================================
+5. FEATURES AU MOMENT DE L'ACHAT (DÉTAILS COMPLETS)
+================================================================================
+
+✅ txn: Nombre de transactions
+✅ buys: Nombre d'achats
+✅ sells: Nombre de ventes
+✅ buy_ratio: Ratio achats/ventes (ex: 0.80 = 80%)
+✅ traders: Nombre de traders uniques
+✅ mc: Market cap au moment de l'analyse
+✅ velocity: Vitesse de croissance du MC
+
+✅ whale_count: Nombre de baleines détectées
+   - Achats > $500 (environ 2+ SOL)
+
+✅ elite_wallet_count: Nombre de wallets elite détectés
+✅ elite_wallets: Liste des wallets elite (adresses)
+
+✅ consecutive_whales: true/false
+   - Si 2 baleines consécutives détectées
+
+================================================================================
+EXEMPLE DE TRADE COMPLET (FORMAT JSON)
+================================================================================
+
+{
+  "timestamp": "2025-11-24T15:30:45.123456",
+  "symbol": "EPSTRON",
+  "mint": "ABC123...",
+  
+  // ENTRÉE
+  "entry_mc": 11340,
+  "entry_time": "8s",
+  "entry_reason": "AUTO-BUY: 42txn, 32traders, 82% buy",
+  "confidence": 1.0,
+  "strategy": "PARTIAL_PROFIT",
+  
+  // SORTIE
+  "exit_mc": 38075,
+  "exit_reason": "TIMEOUT (45min)",
+  "timeout_minutes": 45.2,
+  
+  // PERFORMANCE
+  "profit_ratio": 3.355,
+  "profit_percent": 235.5,
+  "is_win": true,
+  "partial_sold": false,
+  "is_elite_trade": false,
+  
+  // FEATURES
+  "features": {
+    "txn": 42,
+    "buys": 35,
+    "sells": 7,
+    "buy_ratio": 0.833,
+    "traders": 32,
+    "mc": 11340,
+    "velocity": 1200,
+    "whale_count": 0,
+    "elite_wallet_count": 0,
+    "consecutive_whales": false
+  }
+}
+
+================================================================================
+ANALYSES POSSIBLES AVEC CES DONNÉES
+================================================================================
+
+1. WIN RATE PAR SOURCE:
+   - AUTO-BUY vs IA vs ELITE WALLET vs BALEINES
+   - Identifier quelle source performe le mieux
+
+2. ANALYSE PAR DURÉE:
+   - Winners moyens: X minutes
+   - Losers moyens: Y minutes
+   - Optimiser le timeout
+
+3. ANALYSE PAR MC D'ENTRÉE:
+   - Quelle zone MC performe le mieux
+   - Ajuster SWEET_SPOT_MIN/MAX
+
+4. ANALYSE DES BALEINES:
+   - Impact des baleines sur le win rate
+   - Confirmer que baleines = red flag
+
+5. ANALYSE DES PARTIAL PROFITS:
+   - Combien de trades atteignent 2x
+   - Efficacité de la stratégie partial profit
+
+6. ANALYSE TEMPORELLE:
+   - Winners @ 8s vs 15s
+   - Timing optimal d'entrée
+
+================================================================================
+SCRIPTS D'ANALYSE DISPONIBLES
+================================================================================
+
+1. analyze_recent_trades.py
+   - Analyse générale des derniers trades
+   - Winners vs Losers
+   - Features moyennes
+
+2. analyze_by_entry_reason.py (NOUVEAU!)
+   - Analyse détaillée par source (AUTO-BUY, IA, etc.)
+   - Win rate par raison d'entrée
+   - Top performers par source
+
+3. FUTUR: analyze_by_duration.py
+   - Analyser l'impact de la durée sur le win rate
+
+================================================================================
+UTILISATION POUR LE LEARNING ENGINE
+================================================================================
+
+Le Learning Engine peut maintenant:
+
+✅ Identifier quelle source produit le plus de winners
+✅ Ajuster automatiquement les seuils (THRESHOLD_8S, etc.)
+✅ Désactiver les sources qui ne performent pas
+✅ Optimiser le timeout basé sur la durée moyenne des winners
+✅ Ajuster le sweet spot basé sur les MC d'entrée qui gagnent
+
+================================================================================

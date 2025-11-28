@@ -1,0 +1,130 @@
+{
+  "info": {
+    "title": "MASSIVE WALLET STARTER PACK",
+    "description": "Add 500-1000 wallets ici pour predictions ultra-precises",
+    "current_count": 20,
+    "target_count": "500-1000+",
+    "last_updated": "2025-01-08",
+    "sources_to_use": [
+      "Kolscan.io - Top 100 Whales",
+      "Photon trending traders",
+      "DexScreener top holders of successful tokens",
+      "Twitter CT (Cupsey, Marcel, etc.)",
+      "Solscan early buyers of gems",
+      "Cielo Finance Smart Money"
+    ]
+  },
+  "wallets": [
+    {
+      "address": "WALLET_1_CUPSEY",
+      "name": "Cupsey (EXAMPLE - FIND REAL ADDRESS)",
+      "source": "Twitter CT",
+      "twitter": "@cupseySOL",
+      "estimated_success_rate": 90,
+      "notes": "Top SOL trader - Find his real address on Twitter or by tracking his mentioned buys"
+    },
+    {
+      "address": "WALLET_2_MARCEL",
+      "name": "Marcel (EXAMPLE - FIND REAL ADDRESS)",
+      "source": "Twitter CT",
+      "twitter": "@marcel_sol",
+      "estimated_success_rate": 85,
+      "notes": "Whale trader - Track his tweets to find wallet"
+    },
+    {
+      "address": "WALLET_3_EXAMPLE",
+      "name": "Kolscan Whale #1",
+      "source": "Kolscan",
+      "estimated_success_rate": 80,
+      "notes": "Go to Kolscan.io and copy top 100 whale addresses here"
+    },
+    {
+      "address": "WALLET_4_EXAMPLE",
+      "name": "Photon Top Trader",
+      "source": "Photon",
+      "estimated_success_rate": 82,
+      "notes": "photon-sol.tinyastro.io - copy trending traders"
+    },
+    {
+      "address": "WALLET_5_EXAMPLE",
+      "name": "Successful Token Holder",
+      "source": "DexScreener Analysis",
+      "estimated_success_rate": 78,
+      "notes": "Find token that did 100x, check top 10 holders on Solscan"
+    }
+  ],
+  "collection_guide": {
+    "QUICK_500_WALLETS": {
+      "method": "Batch Collection from DexScreener",
+      "steps": [
+        "1. Go to DexScreener.com",
+        "2. Filter: Solana chain, Sort by: 24h % gain",
+        "3. Top 50 tokens that pumped >1000%",
+        "4. For EACH token:",
+        "   a. Copy token address",
+        "   b. Go to Solscan.io/token/{address}",
+        "   c. Click 'Holders' tab",
+        "   d. Copy top 10 holder addresses",
+        "5. = 50 tokens x 10 holders = 500 wallets!",
+        "6. Add them all here with format:",
+        "   {",
+        "     'address': 'REAL_ADDRESS_HERE',",
+        "     'name': 'Top holder of $TOKEN_SYMBOL',",
+        "     'source': 'DexScreener top holder',",
+        "     'estimated_success_rate': 75,",
+        "     'notes': 'Held $TOKEN through 50x pump'",
+        "   }"
+      ]
+    },
+    "FIND_CUPSEY_MARCEL_ETC": {
+      "method": "Twitter Tracking",
+      "traders_to_find": [
+        "@cupseySOL",
+        "@marcel_sol",
+        "Other top SOL CT traders"
+      ],
+      "how_to_find_their_wallets": [
+        "METHOD 1: When they tweet 'just bought $TOKEN':",
+        "- Go to Photon or Solscan immediately",
+        "- Check recent transactions (last 2 min)",
+        "- Match timing with their tweet",
+        "- Cross-verify with 3-5 trades",
+        "- Found their wallet!",
+        "",
+        "METHOD 2: Check their bio/pinned tweets:",
+        "- Sometimes they share wallet address",
+        "- Or NFT collection which shows wallet",
+        "",
+        "METHOD 3: Ask in community:",
+        "- Telegram groups often know",
+        "- Discord servers may have it pinned"
+      ]
+    },
+    "KOLSCAN_BATCH": {
+      "url": "https://kolscan.io",
+      "steps": [
+        "1. Go to Kolscan",
+        "2. Click 'Whales' or 'Top Traders'",
+        "3. Filter: Win rate > 75%, Trades > 20",
+        "4. Copy first 100 wallet addresses",
+        "5. Paste here with info from Kolscan",
+        "6. = Instant 100 verified smart wallets!"
+      ]
+    }
+  },
+  "template_for_batch_add": {
+    "COPY_THIS_100_TIMES": {
+      "address": "PASTE_WALLET_ADDRESS_HERE",
+      "name": "Whale from [SOURCE]",
+      "source": "Kolscan/DexScreener/Photon/etc",
+      "estimated_success_rate": 75,
+      "notes": "Add any useful info: tokens held, win rate, etc"
+    }
+  },
+  "priority_actions": {
+    "NOW": "Add 50 wallets (1 hour work)",
+    "THIS_WEEK": "Add 200 wallets",
+    "THIS_MONTH": "Add 500-1000 wallets"
+  },
+  "automation_note": "Once you have 50+ wallets here, run: python mass_wallet_collector.py to import all to the tracker system!"
+}

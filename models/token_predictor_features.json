@@ -1,0 +1,18 @@
+{
+  "feature_names": [
+    "price_usd",
+    "price_change_24h",
+    "liquidity_usd",
+    "volume_24h",
+    "volume_mcap_ratio",
+    "market_cap",
+    "fdv",
+    "txns_24h_buys",
+    "txns_24h_sells",
+    "buy_sell_ratio",
+    "liquidity_per_mcap",
+    "avg_buy_size",
+    "avg_sell_size"
+  ],
+  "trained_at": "2025-11-09T10:46:46.857939"
+}

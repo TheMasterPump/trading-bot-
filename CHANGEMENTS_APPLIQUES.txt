@@ -1,0 +1,100 @@
+================================================================================
+AMELIORATIONS APPLIQUEES AU BOT DE TRADING - 24 NOV 2025
+================================================================================
+
+ANALYSE PREALABLE:
+- 174 trades analysés
+- Win rate AVANT: 14-17%
+- Problème principal: 94% des pertes = STOP LOSS
+- AUTO-BUY: 14% WR, IA: 10.5% WR
+
+================================================================================
+CHANGEMENTS APPLIQUES
+================================================================================
+
+1. AMELIORATION AUTO-BUY (Meilleur système - 14% WR)
+   ✅ Buy ratio minimum: 75% -> 80%
+   ✅ MC max: 12K -> 10K (entrée plus tôt)
+   ✅ NOUVEAU: Filtre anti-baleines (rejeter si whale_count > 0)
+   ✅ NOUVEAU: Volume max (txn < 45, traders < 35) pour éviter bots
+   
+   Raison: Winners AUTO-BUY ont 0 baleines, losers ont 0.22
+
+2. AMELIORATION IA (Pire système - 10.5% WR)
+   ✅ Seuil confiance: 75% -> 85% (plus sélectif)
+   ✅ MC max @ 8s: 15K -> 10K
+   ✅ MC max @ 15s: 18K -> 12K
+   ✅ NOUVEAU: Filtre anti-baleines (rejeter si whale_count > 1)
+   ✅ Buy ratio minimum: 65% -> 80%
+   
+   Raison: IA entrait trop tard ($13,715 vs $9,701 pour AUTO-BUY)
+
+3. DESACTIVATION WHALE BOOST
+   ✅ Whale boost threshold: 3 -> 999 (désactivé)
+   ✅ Whale boost amount: 15% -> 0%
+   
+   Raison: Baleines = mauvais signal (losers ont PLUS de baleines)
+
+4. AMELIORATION STOP LOSS
+   ✅ Stop loss: -25% -> -35%
+   
+   Raison: 94% des pertes = stop loss trop serré
+
+5. AMELIORATION TIMEOUT
+   ✅ Timeout positions: 30 min -> 45 min
+   
+   Raison: 94% des winners = TIMEOUT (runners lents organiques)
+
+6. AMELIORATION SWEET SPOT
+   ✅ Sweet spot max: 15K -> 10K
+   
+   Raison: Meilleur WR dans zone 8K-10K
+
+7. BUG FIX: SAUVEGARDE RAISON ENTREE
+   ✅ Ajout champ 'entry_reason' (raison d'achat)
+   ✅ Ajout champ 'exit_reason' (raison de sortie)
+   
+   Avant: La raison d'entrée était écrasée par la raison de sortie
+
+================================================================================
+RESULTATS ATTENDUS
+================================================================================
+
+AUTO-BUY:
+- AVANT: 14% win rate
+- APRES: 25-30% win rate attendu
+- Filtre anti-baleines élimine ~40% de faux positifs
+
+IA:
+- AVANT: 10.5% win rate
+- APRES: 20-25% win rate attendu
+- Entrée plus précoce + sélectivité accrue
+
+GLOBAL:
+- AVANT: 15.5% win rate (27/174)
+- APRES: 30-35% win rate attendu
+- Stop loss élargi permet de capturer plus de runners
+
+================================================================================
+PROCHAINES ETAPES
+================================================================================
+
+1. ✅ TESTER EN MODE SIMULATION pendant 24-48h
+2. Analyser les nouveaux trades avec analyze_recent_trades.py
+3. Si WR > 30%, passer en mode LIVE avec petits montants
+4. Ajuster si nécessaire
+
+================================================================================
+COMMANDES UTILES
+================================================================================
+
+Lancer le bot (simulation):
+  python live_trading_bot.py
+
+Analyser les trades:
+  python analyze_recent_trades.py
+
+Voir l'historique:
+  python -c "import json; data=json.load(open('trading_history.json', encoding='utf-8')); print(f'Total: {len(data[\"trades\"])} trades')"
+
+================================================================================

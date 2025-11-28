@@ -1,0 +1,2422 @@
+{
+  "removed_wallets": [
+    {
+      "address": "CSSJFgoeqidqVtHKSNP7i7s6WX8APHfH2kYGdLV195Jb",
+      "name": "Holder of POPCAT",
+      "balance": 0.981217028
+    },
+    {
+      "address": "8CGJPWdM7xZX5E2ZE7qw5TiNUgpLyUeXJAnHr5goezeD",
+      "name": "Holder of POPCAT",
+      "balance": 2.424574974
+    },
+    {
+      "address": "HeSwJbgBUMPdwAn11EWZmFqjcGwXsWRA5KME7VEwNYgY",
+      "name": "Holder of POPCAT",
+      "balance": 0.099686011
+    },
+    {
+      "address": "5bEwXeo3q5FbYAxvWvgFFzdoR1f3KsoDswB7x83Z2D5Y",
+      "name": "Holder of POPCAT",
+      "balance": 0.097850078
+    },
+    {
+      "address": "GpCaBXxX5jjxnWBC2cdevDMeTPE3RVGzRMXQuvfjvCKv",
+      "name": "Holder of POPCAT",
+      "balance": 0.064986705
+    },
+    {
+      "address": "5zsbHMxdgLUPMFPHTwCykxbbmQ6R7dd8T9vhzWKfuTdm",
+      "name": "Holder of POPCAT",
+      "balance": 0.215006911
+    },
+    {
+      "address": "EZ41WcMH3FmyWGV9WQaDLo5uo4ysVNdeAm1ZoTybxjsJ",
+      "name": "Holder of BILLY",
+      "balance": 0.825908878
+    },
+    {
+      "address": "JBQ1suc4GJBbVYP6y2poGjoDCFrfjtGSEJRt4deasyNe",
+      "name": "Holder of BILLY",
+      "balance": 0.065535103
+    },
+    {
+      "address": "4vmjUC6AtFK4JyF9CrcBM8Wtq9fFvUSa31pLWJumGMZ",
+      "name": "Holder of BILLY",
+      "balance": 1.033475256
+    },
+    {
+      "address": "81BgcfZuZf9bESLvw3zDkh7cZmMtDwTPgkCvYu7zx26o",
+      "name": "Holder of BILLY",
+      "balance": 0.504336728
+    },
+    {
+      "address": "8DBwT4zFqHmK5KU4kMj1zceQANHwf76NRuhevB7ZSoEc",
+      "name": "Holder of BILLY",
+      "balance": 0.728144016
+    },
+    {
+      "address": "7XmrmvNNGc3LHqq3HqGHnCdgoAQv4yx7kHwYqtiMPzgD",
+      "name": "Holder of BILLY",
+      "balance": 0.0
+    },
+    {
+      "address": "Ezhr48hfsyUg9zoAq7CH5opi7NbSM34RjrVFf4n8cVpo",
+      "name": "Holder of BILLY",
+      "balance": 0.145831246
+    },
+    {
+      "address": "Cw32Ny2xcYdpfJmvFd7h2pRhcbcjoJFq8KrrA8YLwZeh",
+      "name": "Holder of BILLY",
+      "balance": 0.076830646
+    },
+    {
+      "address": "Ah7SnagSabPNPvkcciYwqqyCR1ymMVW3C9tFvJea1kzV",
+      "name": "Holder of CHILLGUY",
+      "balance": 0.995075621
+    },
+    {
+      "address": "4JU1YDGTGzNvB4fEZ3DYALhp5dcBPpavrp76HdzHttQx",
+      "name": "Holder of CHILLGUY",
+      "balance": 3.179785904
+    },
+    {
+      "address": "GHQEpXS54MYbdksNNSLq9r5HHtuUAvopakmzDxhw4gKG",
+      "name": "Holder of CHILLGUY",
+      "balance": 0.00303516
+    },
+    {
+      "address": "8wM44Ryv9DFCSfkgUnPEPgnsc53arT4cnmXL6LnnC4UW",
+      "name": "Holder of CHILLGUY",
+      "balance": 0.411755835
+    },
+    {
+      "address": "HP9KTTYgSK1nNLr5v4bcaZtC8QBPmRsipmZ563PFcU2x",
+      "name": "Holder of CHILLGUY",
+      "balance": 0.262960263
+    },
+    {
+      "address": "B2UXEtaz5XWAdfzg3usnrr3Uo2UCp1kzj5yKjorUw5ZS",
+      "name": "v",
+      "balance": 0.56437641
+    },
+    {
+      "address": "3wjyaSegfV7SZzjv9Ut1p6AcY5ZdoZjmu6i6QPCVvnmz",
+      "name": "Rename wallet",
+      "balance": 0.039769127
+    },
+    {
+      "address": "CFUF6Xd7rjoCKvjQqfAbSFsFgCFPmDWZ9RYtbTXqWbMM",
+      "name": "dev 21",
+      "balance": 0.0
+    },
+    {
+      "address": "CwodPaTCAow3H5LygvkAXTuUKyNHavRLyiTCfWnXn2Zx",
+      "name": "safemoon wallet",
+      "balance": 0.178269037
+    },
+    {
+      "address": "D8bs54noaaGWcnKibFs7PbwM4rG5TWjTXrK6tXWbeKnA",
+      "name": "Good DEV1",
+      "balance": 0.059909718
+    },
+    {
+      "address": "FKY9K9K2WjXP5i4FrAo3EZsyfqV4u9CjQAwj59QXh8Uv",
+      "name": "nosh",
+      "balance": 0.0
+    },
+    {
+      "address": "Bm4LKxBhxYxy88UD1THvABLYjc75KqhqHscMVtJGV8RA",
+      "name": "duck b4",
+      "balance": 0.0
+    },
+    {
+      "address": "Bm3hHhZRLtSoQZCYbACpc6X3zNj23sukr4RprbjWEY4m",
+      "name": "kai",
+      "balance": 0.931369316
+    },
+    {
+      "address": "CCUcjek5p6DLoH2YNtjizxYhAnStXAQAGVxhp1cYJF7w",
+      "name": "Charto",
+      "balance": 0.079601967
+    },
+    {
+      "address": "CRVidEDtEUTYZisCxBZkpELzhQc9eauMLR3FWg74tReL",
+      "name": "FRANK",
+      "balance": 0.0
+    },
+    {
+      "address": "Ct8EUM6MvYjnM7ZTaBFR48riUBbnNquwNTSw16yMaEcQ",
+      "name": "Gorilla Sec",
+      "balance": 0.061767847
+    },
+    {
+      "address": "CvNiezB8hofusHCKqu8irJ6t2FKY7VjzpSckofMzk5mB",
+      "name": "dali",
+      "balance": 0.690754426
+    },
+    {
+      "address": "G3zuaUFjjM7TvKobJQXk1euethEXuRCPVBfVrbnzznv8",
+      "name": "Insyder",
+      "balance": 0.0
+    },
+    {
+      "address": "BHREKFkPQgAtDs8Vb1UfLkUpjG6ScidTjHaCWFuG2AtX",
+      "name": "RISK LEGION",
+      "balance": 4.701605796
+    },
+    {
+      "address": "9udqZzePbx3N7917LK9PzgxrDqQEQDECtLc8KTYCNghX",
+      "name": "solo",
+      "balance": 1.262164226
+    },
+    {
+      "address": "Atw6jwhk45oCMEzT5HPf7MAUJzGvoi8QnnpWz4hPaxDc",
+      "name": "bndl",
+      "balance": 0.019005
+    },
+    {
+      "address": "FP2D4342Z14uyMagASPmougW18Tp9WJHoDXFWTtS8fbj",
+      "name": "978",
+      "balance": 0.004609472
+    },
+    {
+      "address": "F2bZ3cXyobKVpAwiUHAue8n89sKQnDw3qZRJCuouP4VC",
+      "name": "bnhkk",
+      "balance": 0.000890882
+    },
+    {
+      "address": "ByJh4SLSL9h8DJHjFjoBmAh3qWVKmaYHrDKffybL2E54",
+      "name": "duck",
+      "balance": 0.0
+    },
+    {
+      "address": "9uCqr5ifytwVq7e426p7FVRKzVXAPmTMr7wrdYzbFYd7",
+      "name": "Rename wallet",
+      "balance": 0.032
+    },
+    {
+      "address": "H7xcpj1eLRfkiiVH99HxCBsqsrfGuBVxBqaYSFESNi7b",
+      "name": "Rename wallet",
+      "balance": 0.011689184
+    },
+    {
+      "address": "4TqKeTKGAhe9WjnXXpK5EYHVK7b4FnGw3LLCbYKYhgqP",
+      "name": "push",
+      "balance": 0.0
+    },
+    {
+      "address": "759KK5KU9dFgxeYp4XQD6fCWS7tm8LW6XC6LKomQJnR6",
+      "name": "snek",
+      "balance": 0.005483101
+    },
+    {
+      "address": "EMxtR2jkUhdVadYLstq2xzp85WjHVRXM8MSsoGNcQCXK",
+      "name": "terance 2",
+      "balance": 0.0
+    },
+    {
+      "address": "3jGrGbqMQaxYJSFeHovTRFhTsGq6AuApFFvTkpMpAiKF",
+      "name": "serenety",
+      "balance": 0.0
+    },
+    {
+      "address": "DMZcsXkw98dyc1RhLBtR9WkBySi93TAQ2ptq529v8o4C",
+      "name": "axl 2 copy",
+      "balance": 0.0
+    },
+    {
+      "address": "GAMBLEdTKyo3Tc9oZKpTYuQJCFBd8GCT98L2s63Rhm2d",
+      "name": "Rename wallet",
+      "balance": 0.383584221
+    },
+    {
+      "address": "8cxWbBeUQsMotoChsVNGe2SBnGdB2JhVdvKey8s3whS",
+      "name": "sert",
+      "balance": 2.217385615
+    },
+    {
+      "address": "Ac3Q471WgbTTiEDBR8bZgi73bdA4SQUsnCixEg5W28bj",
+      "name": "sert dev",
+      "balance": 0.0
+    },
+    {
+      "address": "Af3LHEsF3GNZmFXcK19zDeJ3K7U7SBPxMxuY1m728j5R",
+      "name": "Rename wallet",
+      "balance": 2.048773383
+    },
+    {
+      "address": "CAPn1yH4oSywsxGU456jfgTrSSUidf9jgeAnHceNUJdw",
+      "name": "etd",
+      "balance": 2.596916439
+    },
+    {
+      "address": "8g9aNKbXvhucbg2bA2sBmNa6gJBAhtJwfmxuqaxUxpUB",
+      "name": "Rename wallet",
+      "balance": 0.002044282
+    },
+    {
+      "address": "6xV1gCRijvMmnBhGgMmt8F6TW7xAVayDoy1rYw7w5Hpo",
+      "name": "lelu",
+      "balance": 2.46204968
+    },
+    {
+      "address": "BhNdcz7omArA6ZzDAkQtpiUwQHT1nZRN1mbUu2Dd5gUM",
+      "name": "dukkk",
+      "balance": 0.0
+    },
+    {
+      "address": "7fnhWfEW5Jty8qNR2jG971bvw9b2MXqi3J6JsVcag2CF",
+      "name": "uip",
+      "balance": 0.089681077
+    },
+    {
+      "address": "EEFb6rouHzmHkxAemdaRDx4mE3WacXQnTdNeVh869p6E",
+      "name": "serr",
+      "balance": 3.016420377
+    },
+    {
+      "address": "DW974jPL4NN6ubZhj5M6Z2CiMqyg4yfUBjLaMquyANkR",
+      "name": "dev live ",
+      "balance": 0.027107552
+    },
+    {
+      "address": "5Cf2Wjsm9DK1UberrbVyxvgDumqjMJxrP45YjcEqg2t9",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "7SXq6YM8mD8kHVoSAb7nDrXB1hnuAyw6wybzENEDosHv",
+      "name": "voir",
+      "balance": 0.009711722
+    },
+    {
+      "address": "F5TjPySiUJMdvqMZHnPP85Rc1vErDGV5FR5P2vdVm429",
+      "name": "Zyaf",
+      "balance": 0.004739682
+    },
+    {
+      "address": "3isvJ1xVVRG1zLXSk2ZWQXjAEGTsXiTj8zHgFKUh7Mn1",
+      "name": "Deez nuts",
+      "balance": 0.0
+    },
+    {
+      "address": "BT2sdwJeDWqXNUNBJwtKWBD7RjquACfjo1rT9vpZLUSA",
+      "name": "fwog dev",
+      "balance": 0.020919275
+    },
+    {
+      "address": "DiTQyLH8aT9D7aPMNTxwcTbRddMuY8X9qm4gmVvTBPM3",
+      "name": "Andy McCune",
+      "balance": 0.0
+    },
+    {
+      "address": "CMFPaQCRM7fxsUDAC6aCL9rX1dKmdGYX1iJwZF5yJSxt",
+      "name": "1",
+      "balance": 0.0
+    },
+    {
+      "address": "HLv6yCEpgjQV9PcKsvJpem8ESyULTyh9HjHn9CtqSek1",
+      "name": "Lyxe",
+      "balance": 0.001882269
+    },
+    {
+      "address": "HSQEzVDJajZjnRDqfHYKqmBeiJ8ymNfyMZtbkDxvD1X3",
+      "name": "aura ins",
+      "balance": 0.0
+    },
+    {
+      "address": "EDhiCmwKF9ceofB2kM2QLusY7i4ewKWq3665NxXmbKVQ",
+      "name": "TrashArt DEV",
+      "balance": 0.0
+    },
+    {
+      "address": "AAhnidQyZbh2ej1Ubqc3DAP7oKM72akPzxtYpaZpUe8r",
+      "name": "BetWithSize",
+      "balance": 0.003522221
+    },
+    {
+      "address": "6KUZu9vJPgqdMR8wLhXtQawKM46UdMYKysYeWZRKVE5U",
+      "name": "pre",
+      "balance": 0.353278466
+    },
+    {
+      "address": "GDF6ocfnuan48G21sgSRWMWDEzTfGQcMyKU5UWy3ga84",
+      "name": "Sully",
+      "balance": 3.951684829
+    },
+    {
+      "address": "CPmy54UNQNZWJr4NeLUYJNpxzF1SYTitKMGzPynyMamq",
+      "name": "nael",
+      "balance": 0.0
+    },
+    {
+      "address": "4Nf9cXxKEbQdfEQWt9ma4yJ7xS1GjGUNsXDYwbCwJbwY",
+      "name": "psyco b",
+      "balance": 2.489919319
+    },
+    {
+      "address": "HxgddHBMGbuegjxMnHN7W2MkBw67Frrz5uh6Aw6YbL3H",
+      "name": "psyco b",
+      "balance": 2.028797181
+    },
+    {
+      "address": "9y2e3RDUeh5YW4k5ReF2jznh3GgerAhma5UsrdsBwUBz",
+      "name": "psyco b",
+      "balance": 3.126247656
+    },
+    {
+      "address": "6tJ43iFyujbcmQEUdtHEWgb3pWmh7eJZrjaDbywJBZsD",
+      "name": "Close to Mezo 1",
+      "balance": 0.0
+    },
+    {
+      "address": "691TbtqKYiS3Bmx7UToALWSoC6hozAAsWZzfwt7BoWUM",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "6MYUmuATQYZYXXHq5LgM9WjUrh7zFyxmT4364MhMD2VH",
+      "name": "good trader2 (ACC/MEME)",
+      "balance": 0.004655737
+    },
+    {
+      "address": "22kFm8b2Vb7itdz51dNGd1tn9hkKgF82sc2jNEQkGafp",
+      "name": "SY #2",
+      "balance": 0.0
+    },
+    {
+      "address": "L7bcnFSidka8MqWVG3xea3cx3Kj1DABSsqF9RHdxfkr",
+      "name": "Rename wallet",
+      "balance": 0.698650099
+    },
+    {
+      "address": "FaaYKNeYgphhp7WHP26Vc6bXPNqQdQqMvpv5kcHCAETk",
+      "name": "good trader",
+      "balance": 0.0
+    },
+    {
+      "address": "Fioc1SEW1crdPjFCKVXn4krgwUEYZF6Me8KoAA8XBEVj",
+      "name": "jerry",
+      "balance": 0.006507875
+    },
+    {
+      "address": "8rvAsDKeAcEjEkiZMug9k8v1y8mW6gQQiMobd89Uy7qR",
+      "name": "Casino",
+      "balance": 1.322726793
+    },
+    {
+      "address": "LYfS4Lz2ThY4WX7Q4mYzAyhHQJeSckrgTjUc1moL8rK",
+      "name": "pote duck",
+      "balance": 2.514506399
+    },
+    {
+      "address": "5sxCXRBiD8FgiaTbW9uP3nBtbEwjkjghKP5VM5RgGLw6",
+      "name": "psyco 1",
+      "balance": 0.0
+    },
+    {
+      "address": "39H3DGBpHpffjTuwQDR9yv9AgbK4U4hesLdsVZ9yDDc9",
+      "name": "Rename w...",
+      "balance": 0.000891219
+    },
+    {
+      "address": "EXo6C7cSN2xx2PniKTk3zrdhtk4RQDDTfZnh8SP5AMiB",
+      "name": "7",
+      "balance": 0.0
+    },
+    {
+      "address": "513zdwc1kwQc6dbzJQqr3t4WT7VD1Q7vrzNxRsnf6tM4",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "jbtMcPK9bubwh9rSj5xxtnFQmbWDXrmquvh7A33z7gj",
+      "name": "Rename wallet",
+      "balance": 0.000891062
+    },
+    {
+      "address": "Gf6rWoaqsaYHdu9VXaSp1K9roZDBLzHuVdRavxF937b8",
+      "name": "snp",
+      "balance": 0.000890882
+    },
+    {
+      "address": "EMmVvufpf6o5B27qfYCwr7KnL5m5rAAdVzPSbGuEgTMR",
+      "name": "m",
+      "balance": 0.134515431
+    },
+    {
+      "address": "F2tSrVW764CEZSnxHsCabo4R6DSm4NEL4jTgo6B41k8q",
+      "name": "houssem",
+      "balance": 0.0
+    },
+    {
+      "address": "Gm8iQSZwNBr2C5tVj7pMJUNmHJTBrAxAaXzurLMje6PT",
+      "name": "louay",
+      "balance": 0.0
+    },
+    {
+      "address": "A8bPkyJ1gz4X1zNH6UxH6FkFGLu6AH1bpzkNyHKg2ST6",
+      "name": "pote duc",
+      "balance": 0.0
+    },
+    {
+      "address": "96A5ztGf8oGKqSHiPiwvShMCHMB2Q1UaLhrCvGtQWSU8",
+      "name": "imed",
+      "balance": 0.0
+    },
+    {
+      "address": "APQNGoUnGgBq1fVH7znFQ5vyHufkWjV1GrX5ajy2sKNe",
+      "name": "pote duk 3",
+      "balance": 0.0
+    },
+    {
+      "address": "EKadkkQi8K5Bspc2d7PUsusdPGafZFjdKK8hM82TjvPm",
+      "name": "pote duk n",
+      "balance": 0.000929743
+    },
+    {
+      "address": "XDgpjPubjN5soLAFmAMjD2uVR1XZxUKgNpMU6Eo97H7",
+      "name": "cented",
+      "balance": 0.003746285
+    },
+    {
+      "address": "3ZtwP8peTwTfLUF1rgUQgUxwyeHCxfmoELXghQzKqnAJ",
+      "name": "cxltures",
+      "balance": 0.0
+    },
+    {
+      "address": "HfsL9DSjSaDBM2qAAacSpG1czJyFKRp7nUL9acPnRM4m",
+      "name": "99999",
+      "balance": 0.0
+    },
+    {
+      "address": "EXEeLF1YiZxC1tFneoQPv6rcdq5VMUbKNGy3DLPEo2oH",
+      "name": "MV",
+      "balance": 1.368832423
+    },
+    {
+      "address": "HTLRqk5TpFSuZWTdQ16rp9cLLwCtZLNKzpayo5PDWpBi",
+      "name": "ANT",
+      "balance": 0.0
+    },
+    {
+      "address": "5VDoRNpypnVA3ReTkZM9jvWkbKnAwyyzsozGdML9qt93",
+      "name": "Marko",
+      "balance": 0.0
+    },
+    {
+      "address": "5vR5f7BtxvHCGw1EciwKuEv5EDyvnD3aavrHqRjXyevg",
+      "name": "Reljoo",
+      "balance": 0.0
+    },
+    {
+      "address": "7nsCvX1CNE3BHeCzUcSDLou5KzhN6wTYAk6sqUYX5aY3",
+      "name": "hidari",
+      "balance": 0.0
+    },
+    {
+      "address": "4bKTFx7TKDfFFk5H4M9S1aTuV2aLuDBofHVvMEGcegKG",
+      "name": "good trader 5",
+      "balance": 0.083544473
+    },
+    {
+      "address": "ASgit1viCcskiYtTtyNs8dPS31mr4VgU9efRDMp3FMQH",
+      "name": "Cupseyy 87%",
+      "balance": 0.057121605
+    },
+    {
+      "address": "4sAUSQFdvWRBxR8UoLBYbw8CcXuwXWxnN8pXa4mtm5nU",
+      "name": "sharo",
+      "balance": 0.0
+    },
+    {
+      "address": "BtjCVBh9RVniZxEirQS7fDN5JCd3DxArKZPZUR6DFyMj",
+      "name": "cretsus",
+      "balance": 0.0
+    },
+    {
+      "address": "CTWgGuwqcapEfnsjhamMAtywEGKYdojAKcXuj27foYW4",
+      "name": "kita",
+      "balance": 0.0
+    },
+    {
+      "address": "7wZTe2YQHVWWioAK4HakAkd2UT3aJKivaNN7Q38TYbxB",
+      "name": "bc",
+      "balance": 0.0
+    },
+    {
+      "address": "4EsY8HQB4Ak65diFrSHjwWhKSGC8sKmnzyusM993gk2w",
+      "name": "Prosciutto",
+      "balance": 1.106600116
+    },
+    {
+      "address": "2E76ebKpD8rAzMKsvS9B2tzeyib2bpH3rvLXNW97uwbS",
+      "name": "5",
+      "balance": 0.0
+    },
+    {
+      "address": "4UHc8aHVw9eWkTwgDSZsDv4Z7WaDkuvRCCQvPGmkbz8b",
+      "name": "hiro",
+      "balance": 0.370541251
+    },
+    {
+      "address": "EwYXKrYXNmxP8c75MFLvBzSuxC2iYzjjYYpc78HYJD5U",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "AcEDxrXbh294JEjtR6tVHKDTTPg9M6qNPUmA7zMfQdUZ",
+      "name": "red2",
+      "balance": 4.242090253
+    },
+    {
+      "address": "HSiTUyWvbwie3sA3zKbpByN2FR7JpadBWhDm7MfFkn9f",
+      "name": "hidari cop",
+      "balance": 0.201640923
+    },
+    {
+      "address": "6ruqEocByFM5wUtc2kbA2j2ctG78RtunHmedKjjSrNDw",
+      "name": "55",
+      "balance": 0.034717186
+    },
+    {
+      "address": "Ev4bRUxWyuzn22LM9Sjywe1v8oXay2sESbvn4irhu4Dz",
+      "name": "hidari",
+      "balance": 0.115351473
+    },
+    {
+      "address": "AYHoGxsLVQaJobtGGxa8sRYQtfnj79t8eB6XdLRr6CFG",
+      "name": "kop",
+      "balance": 2.887001281
+    },
+    {
+      "address": "Bb1bAxiR2bRd9RT6mWo772dR3UnsbLYLh8fXriBnjoLc",
+      "name": "moiiiiii",
+      "balance": 0.058435293
+    },
+    {
+      "address": "14V2dF32cjpPhDy5evkJXNuMqG9qGac6Jf9j92Vj431y",
+      "name": "domn",
+      "balance": 0.0
+    },
+    {
+      "address": "AmzUMhJn3hEop4HqErGDR9oF4EjJg8RZXHu4CDh1YkJy",
+      "name": "duck man",
+      "balance": 0.0
+    },
+    {
+      "address": "D4VkW7chHQtV74fCi7nguV9EZw1KNuNkUYgb8YCaEtxx",
+      "name": "lelu dev ",
+      "balance": 0.0
+    },
+    {
+      "address": "6ybTHkbPZ2UAVcPHhHcbqUEJxT92b5hoFKLE6iyyXhUo",
+      "name": "solozuk",
+      "balance": 0.010884085
+    },
+    {
+      "address": "8bspuRy4e22C2KftrthycrD79B5SN3rqi6xfBCd6XMMU",
+      "name": "zuki 2",
+      "balance": 0.0
+    },
+    {
+      "address": "777777SKLnxYweGxa7yjNCyHhiRas6CRYBSrxmvWzmu4",
+      "name": "red",
+      "balance": 0.0
+    },
+    {
+      "address": "Hxu1NY2AxDq7b5UqbALGR2R75V9ufBqiYi7cUvYzUUTw",
+      "name": "bimbom",
+      "balance": 0.159640042
+    },
+    {
+      "address": "CWiZnhQ7K3tCen1ZRoUws3bsnJbDPh5gSQeSukeTkiVS",
+      "name": "hidari",
+      "balance": 0.0
+    },
+    {
+      "address": "DCBV8AXsSaX4SF4zd9HcXg9yuKEaQyVdn6DdTcuj6ZYT",
+      "name": "bcbro 8",
+      "balance": 0.015119938
+    },
+    {
+      "address": "5JGAfmLaa9CmeY9LimHKt3TBM6g61VMca384trr1GmS6",
+      "name": "bcro",
+      "balance": 0.14722295
+    },
+    {
+      "address": "A4567Ef4mQJ1K2DcNQ5UJepYSj6Q6RgfXNPEWRqZa2nJ",
+      "name": "Rename wallet",
+      "balance": 0.23081206
+    },
+    {
+      "address": "HhwkGhMiQDr2hmUuKzShvAjhAAHaTr2NsNRkMvcPExoS",
+      "name": "buca",
+      "balance": 0.001495002
+    },
+    {
+      "address": "3ix4wskDf9LiJGvULZ2ebpxWd8ZHKJ6DjTECu3WwfCeT",
+      "name": "erly man",
+      "balance": 0.000899347
+    },
+    {
+      "address": "CvFPC5NGXotS5QLBa7wiHQEHBNjWKtL7Rv59qazhqWfd",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "GtwsLx1uuvepFGz9CPSFKwQtKFkzi5A9hPLHzSPTqCks",
+      "name": "bucabro",
+      "balance": 0.0
+    },
+    {
+      "address": "CxQAapS7XUmuxn5MtY6tMHp3kEH6R5DfWwHEwUJEr3U8",
+      "name": "gordo",
+      "balance": 0.021875265
+    },
+    {
+      "address": "9n8g63u7HRwUuJKPQysUrexEAB3eDgW9Wm52Ugvq9RVS",
+      "name": "info2gd",
+      "balance": 0.020731603
+    },
+    {
+      "address": "9ecRdqNCBxwReiY2pxtnLeayeBzE1CrSSmKKJJGdmsaJ",
+      "name": "lowkey",
+      "balance": 0.013198271
+    },
+    {
+      "address": "9ha3rJRznYVzNkoJ5xyov3ZBjthrC8e8WNdjn48FQyDd",
+      "name": "Dragon",
+      "balance": 0.247967838
+    },
+    {
+      "address": "ACHhRQMbTxuWqU3bmbBbgUNGsPsYnvB8KLcPkkXCY1C7",
+      "name": "marc",
+      "balance": 4.990405655
+    },
+    {
+      "address": "AcnSuxyFGi54Jro2aSe9Ak5sng6mGkqrQdds2Dr1GFm",
+      "name": "PNUT FARM",
+      "balance": 0.0
+    },
+    {
+      "address": "AjACU2AiU4h3xpakJuaSEkSYXDJhR8JGLtzyJjwrwkjf",
+      "name": "top tier trader",
+      "balance": 4.842541035
+    },
+    {
+      "address": "CjM1MswAw8AA4tHHuQiknvHsWHSovB5PKsXysHrzLSbD",
+      "name": "grimxsol",
+      "balance": 0.0
+    },
+    {
+      "address": "7qGyRwwsF1vihHgYH17dd4BsAPP4i19MSaGtQbferj3K",
+      "name": "pote duck 2",
+      "balance": 0.0
+    },
+    {
+      "address": "FrNpLY7k6ktsp9em8c2fThYJe5yncE9iC4ArFXWLBs4g",
+      "name": "Jose",
+      "balance": 0.006186926
+    },
+    {
+      "address": "3wJ1hey3CYFE5TRpuYWxSR5PEUXCoHt6JXFQC5FSBLcg",
+      "name": "big bonne one",
+      "balance": 0.039470408
+    },
+    {
+      "address": "2SK65k8FjhLpYJjEif6FFPPJjQggvJ2whrhfinLuoFnn",
+      "name": "feiin good wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "8yJFWmVTQq69p6VJxGwpzW7ii7c5J9GRAtHCNMMQPydj",
+      "name": "Lexapro",
+      "balance": 0.836821637
+    },
+    {
+      "address": "DpNVrtA3ERfKzX4F8Pi2CVykdJJjoNxyY5QgoytAwD26",
+      "name": "gorilla",
+      "balance": 0.0
+    },
+    {
+      "address": "EABXkKHLdH8Cb8YjJ2Zcj4ybnY4xUDbXELs9cy6rMQi8",
+      "name": "TRAX",
+      "balance": 0.001420463
+    },
+    {
+      "address": "G2wEVVCHcLix8vRuKDNmB4CtTu9cpeR9p7iny2KoZsBX",
+      "name": "pas mal",
+      "balance": 0.007750421
+    },
+    {
+      "address": "D2wBctC1K2mEtA17i8ZfdEubkiksiAH2j8F7ri3ec71V",
+      "name": "Dior",
+      "balance": 1.645440194
+    },
+    {
+      "address": "ATA9o23RddmDai1S4MPRTQUcBrZDZRyueDRmCz3JmVyg",
+      "name": "god d 2",
+      "balance": 0.0
+    },
+    {
+      "address": "A7oSNrxbSCHFntxTEh1UW6RvQBa9uUVYUAW8xtL3biFq",
+      "name": "Deez nutz banking",
+      "balance": 0.0
+    },
+    {
+      "address": "FsJ6ZbfpxmmjZ4YDVWXSsESCJdGzs5otKCV22MomB2jF",
+      "name": "Joji",
+      "balance": 0.0
+    },
+    {
+      "address": "141Ecbg8dPkigQ6xrYqohzGy3PMwCbafMXKUdYENXPMS",
+      "name": "dukkkk3",
+      "balance": 0.0
+    },
+    {
+      "address": "Fxj1j5ohVoRos1yQnvx6bsvYCt493VGpyLbMiq4eLff3",
+      "name": "SOLSHOTTA",
+      "balance": 0.055659333
+    },
+    {
+      "address": "6FYyMshmaynPWVqsYX8Yowex4FV2728nAuFwqNFYPAiT",
+      "name": "Close to Mezo 2",
+      "balance": 0.0
+    },
+    {
+      "address": "BiqkWhrJ4dfpE6TeNY34tA4GssG23SBH8CU8mqB7xZ6t",
+      "name": "Biq Orangie",
+      "balance": 0.027351045
+    },
+    {
+      "address": "DjpzbYPXReZzSPPgT4DntqdD9qxcrf4euMeb1dY7nqm6",
+      "name": "Tekk",
+      "balance": 0.095969351
+    },
+    {
+      "address": "DJU59MdKSf969fHHXsyhxJAhHDxD2rHer2R7W2XhTmGq",
+      "name": "Kevin2",
+      "balance": 0.0
+    },
+    {
+      "address": "DUQYDumJCrByjbSNtAzQsyG7iipmFQCXmF2EUeugRYMR",
+      "name": "loeki",
+      "balance": 0.00908552
+    },
+    {
+      "address": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
+      "name": "theo",
+      "balance": 0.011578008
+    },
+    {
+      "address": "DsqRyTUh1R37asYcVf1KdX4CNnz5DKEFmnXvgT4NfTPE",
+      "name": "Classic",
+      "balance": 2.107378447
+    },
+    {
+      "address": "E57hYjjwNAnvXe67C1q7nKRdC2jWMRGLWAJsBJAJrgzR",
+      "name": "YNI TRADER",
+      "balance": 0.010165364
+    },
+    {
+      "address": "8vPPBpUe6d4q8UeD1Gup6ymN5BJSTnHXjesPN2viFMdm",
+      "name": "Rename wallet",
+      "balance": 0.000891676
+    },
+    {
+      "address": "6H9TNJZLmcGC5HcnmCfemHSx1k7mJcnNXDFx8Rinzjzk",
+      "name": "duck",
+      "balance": 0.0
+    },
+    {
+      "address": "6jVy19QBtsu39ERRMm7vAyBDNhyBkHwxa6cBxTLuLXG2",
+      "name": "abdou",
+      "balance": 0.0
+    },
+    {
+      "address": "25yrbxZ1GwRJ2UGKNzeFw7JbKXbfKjrobC2qUtBa5WkX",
+      "name": "trance",
+      "balance": 0.0
+    },
+    {
+      "address": "FZB9jYfrqXuQWmiNHJPWigd2d17SA1K2QChSLygSUywz",
+      "name": "pote dux",
+      "balance": 0.0
+    },
+    {
+      "address": "FAhyaJaPwXXNYpFn2WNK1NfwVWyo8Fd27bU7ThqwZAQX",
+      "name": "1q",
+      "balance": 1.088243616
+    },
+    {
+      "address": "Fg9DQs14QUgBJ2SZzDmCRTqCpD9SvmUkN9MjV7szvBqh",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "DdgwqAiQ5c8KpgsoyjSLUPDnWk1bcvwiuxGgUSGWjCiC",
+      "name": "dukkkkk 8s",
+      "balance": 0.000939699
+    },
+    {
+      "address": "EsuDYZ8HHP2SJRjHaiwj4EgAKUfVWLzMqpHMuXWRQmnm",
+      "name": "2",
+      "balance": 0.0
+    },
+    {
+      "address": "7p8bZHUFE8P2gr3qLhXtzECeDgVpqoK5wqHeAQD59Cp7",
+      "name": "april",
+      "balance": 0.0
+    },
+    {
+      "address": "4uYYHBboSgRnMBbnMW4gKP4sguUhM7S6b2dKrRUnG3YM",
+      "name": "dv april",
+      "balance": 0.0
+    },
+    {
+      "address": "9iR4AnD1gDMuZ57uxGyBsdHiskqVtBDW8RebqRdnmFoT",
+      "name": "psy bundel",
+      "balance": 2.045417825
+    },
+    {
+      "address": "GyLEfcnrj2GUmYyKfmA36rMtWMqqfHW8onKeefENmKjD",
+      "name": "duck",
+      "balance": 0.0
+    },
+    {
+      "address": "suqh5sHtr8HyJ7q8scBimULPkPpA557prMG47xCHQfK",
+      "name": "CUPSEY N...",
+      "balance": 2.078481665
+    },
+    {
+      "address": "F72vY99ihQsYwqEDCfz7igKXA5me6vN2zqVsVUTpw6qL",
+      "name": "Jalen",
+      "balance": 0.0
+    },
+    {
+      "address": "26kZ9rg8Y5pd4j1tdT4cbT8BQRu5uDbXkaVs3L5QasHy",
+      "name": "ORANGIE NOV",
+      "balance": 0.065514652
+    },
+    {
+      "address": "EcJWNtETrzdbj8s2dXpaE4Tu4r7fxALD6TNw9H8S6ksz",
+      "name": "Noki",
+      "balance": 0.131657016
+    },
+    {
+      "address": "9oCEJ7uAZbA6op2LgzjQUxYZSz7jw3hxcQUPGGndAdjm",
+      "name": "gd",
+      "balance": 0.038803597
+    },
+    {
+      "address": "jjA7e2quBPPFTxH2jeaoZEqSARWDt8c8peAobdPcSbs",
+      "name": "Loop 2",
+      "balance": 0.013528162
+    },
+    {
+      "address": "5B52w1ZW9tuwUduueP5J7HXz5AcGfruGoX6YoAudvyxG",
+      "name": "YENNI",
+      "balance": 0.074976963
+    },
+    {
+      "address": "8QVfDrEPy3NqgecFea7N9nhiv1ZtYur8TSx53TzNvNpb",
+      "name": "Zyaf",
+      "balance": 0.0
+    },
+    {
+      "address": "8WmmRacCcoPSVzL6vuthdGjqqvXSSepY1nvhb1Jpugcw",
+      "name": "Brencis",
+      "balance": 0.11274143
+    },
+    {
+      "address": "RH6epK9UW5vA5rm23FcLi4rPuTJjwya6UQJeG1tigv3",
+      "name": "JACK sniper #2",
+      "balance": 0.0
+    },
+    {
+      "address": "6Rfz9C1DSZd8mpDgptYi4y3iq4GsZRH1uV7CeBu7qkrL",
+      "name": "W0LF",
+      "balance": 0.018429273
+    },
+    {
+      "address": "7N4bAyZX6z39RozQh7GC8VQmgjvjkkWmSyAt1wdMjEmq",
+      "name": "ZINC",
+      "balance": 0.0
+    },
+    {
+      "address": "z2qnGyuqzQnSg2wzA1RmQmxcfvMbX7NyVRvQMdxQu7H",
+      "name": "Rename wallet",
+      "balance": 0.26954132
+    },
+    {
+      "address": "E7bzuQoG9PLkhqZ79scuGyAJxSW5eJQMLQC1Gj4uNtmU",
+      "name": "Rename wallet",
+      "balance": 0.096722709
+    },
+    {
+      "address": "T476gGutRhrnbeuZUtmyZNkyXiiBmeyyeWTA7U3nbVp",
+      "name": "Rename wallet",
+      "balance": 0.000890883
+    },
+    {
+      "address": "GxceSANEY9hnqK3NWA992wk2i4Qj42MoubribSZrLGcG",
+      "name": "wyley",
+      "balance": 0.0
+    },
+    {
+      "address": "EF58UCMLL7pWM9BSgZbc3Jfa6Gc16Yu5T37sVDxoRRhb",
+      "name": "RIPETH SECONDARY?",
+      "balance": 0.0
+    },
+    {
+      "address": "EhQ7iJNjXFiajR5zwJmXoKo5faQc2X2JHtFx7zWJKTaV",
+      "name": "TJR Trading",
+      "balance": 0.011296324
+    },
+    {
+      "address": "B6f55GwsrTxSgWpfvP4ctXxk5Mr6MPFr6whEXU9vppTX",
+      "name": "Kriss from GC",
+      "balance": 0.0
+    },
+    {
+      "address": "Cbj482ar1f5b7RvoEFJZEPCeZQ3SYEA5oxFYXmX4Wrio",
+      "name": "Roy",
+      "balance": 0.033284878
+    },
+    {
+      "address": "Fdeq9QpnreTaBG1Ro74sroHjPTq373qcPF3n7FFszm6X",
+      "name": "Tracked DEV",
+      "balance": 0.207004797
+    },
+    {
+      "address": "2NrrLM4TM4G5Qz3VXhQXMLFfA6KU76kS61iteBRkbmCR",
+      "name": "INSYDERCRYPTO",
+      "balance": 0.0
+    },
+    {
+      "address": "3b7HqD1YAFgXeqqYmSaMU6tMr2DLMWZXZb5NgajCjpre",
+      "name": "3SOL STRAT",
+      "balance": 0.025190609
+    },
+    {
+      "address": "4bdY7XB6ZtpTFtLwN1zmJEV9Qdo4KvqYqWzaT8jkbjvb",
+      "name": "500kPnut",
+      "balance": 0.928143721
+    },
+    {
+      "address": "4M8QVddY7Ld8eAaHoYcWKPxQcwxVuZsXMFKsm8921Uzd",
+      "name": "Kimichi",
+      "balance": 0.00256596
+    },
+    {
+      "address": "4PhdccRaRMHGR8RAJk6CGmZjNoke6jsM6N9pJ7yCF1mr",
+      "name": "deepfates",
+      "balance": 3.148658203
+    },
+    {
+      "address": "QVxRBmHi4GYQQFs9v5rz9B69e9DpoU1P7CtogFPTs4c",
+      "name": "TEST DEV",
+      "balance": 0.0
+    },
+    {
+      "address": "rgPyefcNqJCsJj1wrWhdQqHVphVWFXLqU5wtiFStBEN",
+      "name": "Truth Of Terminal 2",
+      "balance": 3.421943581
+    },
+    {
+      "address": "9NL6thsiaoyDnm7XF8hEbMoqeG172WmG7iKYpygvjfgo",
+      "name": "scooter",
+      "balance": 0.0
+    },
+    {
+      "address": "9QtwjV8KrA2Wngr6wMYQQ5JwMbezWW9DfsCq3agBqDXc",
+      "name": "Polar",
+      "balance": 0.005522942
+    },
+    {
+      "address": "xXpRSpAe1ajq4tJP78tS3X1AqNwJVQ4Vvb1Swg4hHQh",
+      "name": "aloh",
+      "balance": 2.058394908
+    },
+    {
+      "address": "3tigHDptchPFDFfxgDYkibSGmttSbWiMBZH6Q7C1pMjw",
+      "name": "moi dv",
+      "balance": 0.0
+    },
+    {
+      "address": "GmM5UFm8xu6TnZD7avwYcQ1zq25hD5yvHfYyAksHu9vB",
+      "name": "TOP PNUT",
+      "balance": 0.117721633
+    },
+    {
+      "address": "dATMod1UTXYzvaXji4mBsvXTeAUAC73TNJQAejKS54X",
+      "name": "amtad",
+      "balance": 0.003218602
+    },
+    {
+      "address": "Fog4ieoqbzs4hXBPYR9FYsF7kTT56o6xmYrxfmHnQBZ6",
+      "name": "SaaS low hr%",
+      "balance": 0.0
+    },
+    {
+      "address": "KubTfeir3VGM52DixYjbZDvqgXNXd53XDKG6tm74NX2",
+      "name": "GAKE???",
+      "balance": 0.007168238
+    },
+    {
+      "address": "4qWKgdUQTfV771dxKp2HeBqEzTXEKW7agijrfDfpsXPC",
+      "name": "Good trader10",
+      "balance": 0.0
+    },
+    {
+      "address": "FqL2yC57E833Qnc3TfEJw45gCQcxwPxrQvpAu4Cg2Tjr",
+      "name": "good trader1",
+      "balance": 0.0
+    },
+    {
+      "address": "FUCtc9NkQXWKFDJyA4Xjkvm1CdYNEnvTZkXpThNexnij",
+      "name": "pnut insider?",
+      "balance": 0.412085137
+    },
+    {
+      "address": "6ZddMpdAgo1BNncaQkZcLCCj6ZGwMpLSpiwfMHg9cVxc",
+      "name": "Si1ver",
+      "balance": 0.0
+    },
+    {
+      "address": "7CmXBbwsE5gcuDisSVC1syRgrVC5kYb9Lwb54M8ZadW1",
+      "name": "MrPunk",
+      "balance": 0.009763926
+    },
+    {
+      "address": "7M3AinEXjZ7okFPh8Xw7ESEayZFZzFAKGJTf6yNATPpn",
+      "name": "8chandev",
+      "balance": 0.0
+    },
+    {
+      "address": "7QZGS7MQ4S6hRmE8iXoFTXgQ2hXVUCho2ZhgeWvLNPZT",
+      "name": "Murad1",
+      "balance": 1.379769509
+    },
+    {
+      "address": "ByvdVcNysNew6C5x6VkyFcgbkmYRkESjpii7M3Kq1P2v",
+      "name": "cirmit",
+      "balance": 0.0
+    },
+    {
+      "address": "c3XGUoDSBaJDA8qaJ5pUkCnamMERwZLJBVjxdkNepGo",
+      "name": "Moggers 0.25",
+      "balance": 0.001582363
+    },
+    {
+      "address": "H2BTFXXfBhUML6SPoN7HgAKoU4ZYHc4FA4A2Kjb2vB8a",
+      "name": "airwheel",
+      "balance": 0.0189954
+    },
+    {
+      "address": "6ryvxoTHMYkVUgTTexpqntYLfY4La582UGX7TSX4KRh7",
+      "name": "Obijay",
+      "balance": 0.010815059
+    },
+    {
+      "address": "91jYvzhvCK9mYycVHFeiRaYvHxuzw59VUdC3QPCn4Thf",
+      "name": "safz",
+      "balance": 0.0
+    },
+    {
+      "address": "9E7FsmrFHgkSTXc2Dx9FMkzMHoeFspziruFdNTBSeAG7",
+      "name": "good trader 10",
+      "balance": 0.0
+    },
+    {
+      "address": "9K18MstUaXmSFSBoa9qDTqWTnYhTZqdgEhuKRTVRgh6g",
+      "name": "Sabby",
+      "balance": 3.678441083
+    },
+    {
+      "address": "9ru9BSVFSUqSRQFwdjjnkzQGf9yUdpRTjpjXPKc4BvxX",
+      "name": "ferb2",
+      "balance": 0.066694989
+    },
+    {
+      "address": "AA21BSr7LZAdkyv7UF4EuMDnNEeczjmaDQWBa1rcVxH9",
+      "name": "RIPETH DEV",
+      "balance": 0.491781678
+    },
+    {
+      "address": "AonDkSa2EZ19U365YrY3bKLDbLf7cU1herGFTGxXYrcm",
+      "name": "mrpunk",
+      "balance": 0.075193653
+    },
+    {
+      "address": "BHCm58VsiSq9p3hqjprLAs6wtjXjtuGnz6vj1i3Upe7X",
+      "name": "1M PnL",
+      "balance": 1.014738556
+    },
+    {
+      "address": "FbvUU5qvD9JsU9jp3KDweCpZiVZHLoQBQ1PPCAAbd6FB",
+      "name": "Profitierr",
+      "balance": 0.658178868
+    },
+    {
+      "address": "GfqQkmJZ8h8Th7epmpyJgBXBtm7JA11L8KbnPxisDeHc",
+      "name": "Cryptic",
+      "balance": 0.0
+    },
+    {
+      "address": "GVUxMwUDB4ykNokMCwmDDKaWNxEtyw6aJkJDjZNzqQcU",
+      "name": "chefin (other)",
+      "balance": 0.018995203
+    },
+    {
+      "address": "FRDcU32jfiuo7bTM7e2SHtZnx6fSrLTS19iGScfCamPU",
+      "name": "letter 2",
+      "balance": 0.0
+    },
+    {
+      "address": "FvTBarKFhrnhL9Q55bSJnMmAdXisayUb5u96eLejhMF9",
+      "name": "SCOOTER",
+      "balance": 0.921432539
+    },
+    {
+      "address": "DLXULVPvTsApMcxnreSmua1aHzqWRrSzsB6nGbziqfrw",
+      "name": "dv",
+      "balance": 0.0
+    },
+    {
+      "address": "GpZ64QrY1HZ5c5xKrXc32GFaVTGQBrahcWqbqs6o3qJM",
+      "name": "pote duck",
+      "balance": 0.0
+    },
+    {
+      "address": "HdmfzWNmxwUPSpfWVgeBVdumfWkpKL6m2qX2PP3ddFwD",
+      "name": "dukkkk n",
+      "balance": 0.0
+    },
+    {
+      "address": "trac2nX7912pC7pGfsuKE5H774xFfUZpS64KbeVxnBY",
+      "name": "dec duck",
+      "balance": 0.0
+    },
+    {
+      "address": "4J78XZnV5FoXKcrasVZoDjob6oQnPJoeFnVz7McBNzaF",
+      "name": "Rename wallet",
+      "balance": 0.000898886
+    },
+    {
+      "address": "7iabBMwmSvS4CFPcjW2XYZY53bUCHzXjCFEFhxeYP4CY",
+      "name": "Leens",
+      "balance": 0.0
+    },
+    {
+      "address": "2m5498hY3hpSvm1pVyZwwyU6bpQGFGu3PADSoEoZFXQB",
+      "name": "SOLSHOTTA 2?",
+      "balance": 1.006765194
+    },
+    {
+      "address": "6quKVtdvEjtxwRN7DnACboG1iiGyh17QB34ZfkdxJLH1",
+      "name": "Union",
+      "balance": 0.016549552
+    },
+    {
+      "address": "3qGmwRgam8H8Cupa2TPuEFDgxxVa8ybrF2PAk7YYaQEq",
+      "name": "Rename wallet",
+      "balance": 0.010723076
+    },
+    {
+      "address": "DiAJAw99BQsh63irhNmUMB2vp5SvfNzzabw8RFkSL9yJ",
+      "name": "hhui",
+      "balance": 0.187419906
+    },
+    {
+      "address": "HBsPv4Yr1GLPHgA8oSGauAJ77QKM4ynU26JiZghVBRPh",
+      "name": "pote duck duck",
+      "balance": 0.0
+    },
+    {
+      "address": "6opjDgLTbaZYH2FH374yeMkfci58WdRGBpEohBtZdCJh",
+      "name": "levansol",
+      "balance": 3.815747607
+    },
+    {
+      "address": "2EgSNuR3nEC7JP8Z2Mnxc3bXy3AR4Xf2iqt5P1srexjw",
+      "name": "Scale",
+      "balance": 0.0
+    },
+    {
+      "address": "9MG2kHhEfhKj6mjLQMmTCuMaAFLiZFRw3TYhKGxdvjm",
+      "name": "good candle",
+      "balance": 0.018995004
+    },
+    {
+      "address": "9N5pGaJFEsdwsRyB4XFuJPqTxmPqzUbj6SViTn4KHiTa",
+      "name": "femboylover.sol",
+      "balance": 0.015102906
+    },
+    {
+      "address": "9rccfSiTdSMG7AwvG4wSvAJVzvMgAAqcwkS7LaYau3mr",
+      "name": "Moneymaykah",
+      "balance": 0.0
+    },
+    {
+      "address": "9UUEJrGeNbmRYF16iYdMgZqAk59XEKHyH6cgnb3bMy8P",
+      "name": "JACKsniper #1",
+      "balance": 0.0
+    },
+    {
+      "address": "9uyDy9VDBw4K7xoSkhmCAm8NAFCwu4pkF6JeHUCtVKcX",
+      "name": "FTX estate",
+      "balance": 0.008887647
+    },
+    {
+      "address": "9wpuL27tRTSzK8pZL8euLs1rTnTgx3ixKzSv9XjdZwux",
+      "name": "EXP guy 80%hr,1m$ pnl",
+      "balance": 0.001323273
+    },
+    {
+      "address": "A9bJLuJfrbhFVNr597K9GUtwJWHbKWzRVibkUcAmoF5",
+      "name": "Scale",
+      "balance": 0.043570906
+    },
+    {
+      "address": "A9ta7nQHqHtKtsgNRyXf2bbE3f9cvEWHR8ScQHXmSoFg",
+      "name": "Renzo",
+      "balance": 0.005000002
+    },
+    {
+      "address": "FWznbcNXWQuHTawe9RxvQ2LdCENssh12dsznf4RiouN5",
+      "name": "Kraken",
+      "balance": 4.973913048
+    },
+    {
+      "address": "G4fiaoKwBPTXH2JMekciosBUqjAQY3rQpWyGwZzPpb98",
+      "name": "REEF",
+      "balance": 0.017037295
+    },
+    {
+      "address": "GFJhtZuENEB9StZiacHUd1aoBoCtY2wWLskhgwcyfaYN",
+      "name": "Ansem alt",
+      "balance": 0.402418804
+    },
+    {
+      "address": "4D18MNFXm13txgJGAMJM75YqGaUJyL7SFgW5mCAjhY8Z",
+      "name": "duck b2",
+      "balance": 0.0
+    },
+    {
+      "address": "Haofc4qBKHmezLJbgJ1wWLCa6u8TyXcaj73j6ctmRbT3",
+      "name": "duck b",
+      "balance": 0.0
+    },
+    {
+      "address": "VEFZqDgXJ9FLy4Ct3gvwuQhYWKQmKCGRyuNgxkvrgeH",
+      "name": "3toes alt",
+      "balance": 0.007325267
+    },
+    {
+      "address": "9R2UJG1Wyoo5V376TKkHcp98hrKEQhmGMmx8jVtRLJoz",
+      "name": "gkitad",
+      "balance": 0.021613563
+    },
+    {
+      "address": "9R4H5srNB9Lh996y9ge4ZVJ6UhcUFU6ACs8cJwxw64rD",
+      "name": "Hodler",
+      "balance": 0.001495007
+    },
+    {
+      "address": "4zq1iLpmepj2Rj7W6A3XQMRQA1HyjYqVpZiBzM6aPyH7",
+      "name": "orang",
+      "balance": 0.333469964
+    },
+    {
+      "address": "68TWGYLqKqDPtt8cWQ3bvSi3WsmF7oJj7R9g3F8fce2j",
+      "name": "700k pnl",
+      "balance": 0.119538041
+    },
+    {
+      "address": "6GDEkxQMitnwgauLx8sscAqLNFQHKwKaTckgsYvTmgZK",
+      "name": "leens 100$",
+      "balance": 0.0
+    },
+    {
+      "address": "6P2XrFUBfm6qGSadmopSMovtqNDN5hWj3JJ3bqjaL2NP",
+      "name": "ACT I DEV",
+      "balance": 1.080537648
+    },
+    {
+      "address": "7KpVvyBtxV962E4VEkycaguZkfys35iudnEwsKZAm4Ao",
+      "name": "TRAX",
+      "balance": 0.0
+    },
+    {
+      "address": "FdvYZ99wuATUdd6fuSqyAMJRoGLrcHivnuWHxgst475p",
+      "name": "LUCEtrader",
+      "balance": 0.050592564
+    },
+    {
+      "address": "FEYmfSL4B3Hhk5BzyEJNpHRiwAoMvzdNe2oa1UTKmbYT",
+      "name": "idontpaytaxes",
+      "balance": 0.005170702
+    },
+    {
+      "address": "Fi2hrxExy6TJnKcbPtQpo6iZzX9SUVbB9mDw6d29NgCn",
+      "name": "QUANT DEV",
+      "balance": 0.0
+    },
+    {
+      "address": "FpCgGwrowtdTM8hhHtP3o2shRJqThpnodEk3JG1bkPfx",
+      "name": "quant",
+      "balance": 0.003600676
+    },
+    {
+      "address": "FXobn8QbTmzHeHu5GPWjDR31jh8HCW7TsqrczF8v7cKA",
+      "name": "whale leens",
+      "balance": 0.002064301
+    },
+    {
+      "address": "G2VzymsKt3zNAn4CKBndYcS67w6Kny5sDEp7Y2W1aTf6",
+      "name": "terp",
+      "balance": 0.004618572
+    },
+    {
+      "address": "Hbod3y29PUnpUxGT8zfWAB994JESwhSc5wasFqUgg2tD",
+      "name": "Litecoin2?",
+      "balance": 0.235649498
+    },
+    {
+      "address": "HpLsxpScUjZgZRBHPs3rrhpyQsfoME1zDtXWyjyENu7i",
+      "name": "Wimp",
+      "balance": 0.0
+    },
+    {
+      "address": "HpqYXW5FF1nSjn6oyATEusDoY3bb6MuPaKtFYV6rX1aQ",
+      "name": "MR HAT WALLET",
+      "balance": 0.001005102
+    },
+    {
+      "address": "HrHJputHcA8mkwrcQB3GkrJ2u1f7Fm4LzAZptSYSsUcf",
+      "name": "pnut dev",
+      "balance": 0.015029484
+    },
+    {
+      "address": "iWinRYGEWcaFFqWfgjh28jnqWL72XUMmUfhADpTQaRL",
+      "name": "Scooter",
+      "balance": 0.098471998
+    },
+    {
+      "address": "NFJKkZ7yeoAvfHLWNiqAw6CYKWnVAVAQu5PE3AC3qYt",
+      "name": "SOLSHOOTA",
+      "balance": 0.156602463
+    },
+    {
+      "address": "orcACRJYTFjTeo2pV8TfYRTpmqfoYgbVi9GeANXTCc8",
+      "name": "orca",
+      "balance": 0.578373305
+    },
+    {
+      "address": "4dfJdwntJqhArbBPudMMSzgt1MbKY7aNKsnF5KCkWaCo",
+      "name": "IV",
+      "balance": 0.102901332
+    },
+    {
+      "address": "6m5sW6EAPAHncxnzapi1ZVJNRb9RZHQ3Bj7FD84X9rAF",
+      "name": "JS",
+      "balance": 0.165320836
+    },
+    {
+      "address": "4S9U8HckRngscHWrW418cG6Suw62dhEZzmyrT2hxSye5",
+      "name": "POLAR",
+      "balance": 0.032014181
+    },
+    {
+      "address": "9nJ72hhtwyGHoUbEN3xfGuiLnrX3SnLYX52hkoahn2YH",
+      "name": "Faze Lacy",
+      "balance": 0.00217022
+    },
+    {
+      "address": "thor35EFFJS6xWHxthH5YUgNLxzcCrCKufHDg3GE67H",
+      "name": "Oracle dev",
+      "balance": 0.0
+    },
+    {
+      "address": "ve94tFcRnLnwMGf7e5mUXMyAkzzcS4qkzSKZGsQV4kk",
+      "name": "+1M PNL 65%",
+      "balance": 1.420557516
+    },
+    {
+      "address": "23oT4CDroPK15QJjp9C7f76hg3aLCcNuaKQTCXYYbFZm",
+      "name": "evilE",
+      "balance": 0.832018621
+    },
+    {
+      "address": "2H9YPUWrPYETw6cTERnmUsJLSV5LPcxXCvg75xzcGcyi",
+      "name": "3keb alt",
+      "balance": 0.0
+    },
+    {
+      "address": "2HWT2KLLdN2wxYTqdSuko5SBzg2SEJASgV4GE2tD7TML",
+      "name": "Catolicc",
+      "balance": 0.056098564
+    },
+    {
+      "address": "2JUsjGsrU9aKKWRFGxSKNV61HXbPZakM5JJYufwFaWhm",
+      "name": "Zil",
+      "balance": 0.0
+    },
+    {
+      "address": "2mRTB81JCy425kxUJTEAVPRqmvkdK9xKBc9xVFJQjnu1",
+      "name": "Mezo bank",
+      "balance": 0.022172766
+    },
+    {
+      "address": "2QMXjBufQprAfEutzh4gMWRuMp1impcjk5BLpfYEHAsb",
+      "name": "JZ man",
+      "balance": 0.0
+    },
+    {
+      "address": "2VPBNAf3jmZgiTSiLrPScZvVc1PbazWPU1X1pB2eohDe",
+      "name": "sharkfc",
+      "balance": 0.146584792
+    },
+    {
+      "address": "2xn57hPD2v6ighJFPXNPSoiGUXkW4KKo8Hb3NpXmHZvZ",
+      "name": "Murad3",
+      "balance": 0.127157994
+    },
+    {
+      "address": "3baHSeQ8QSYtHEGYybu3aXgkay8rA62ZEgYfhxrLCSii",
+      "name": "Mezo",
+      "balance": 0.045751579
+    },
+    {
+      "address": "3BMuyJyPySpgsrDjpkwvroEF1uvoPxoqwuLy3EUg9KU2",
+      "name": "Fudster",
+      "balance": 0.0
+    },
+    {
+      "address": "3cG7d6GmX47HKSX5nWRX9MJpruCojbzUkak92gSXGtG5",
+      "name": "Rektober2",
+      "balance": 0.0
+    },
+    {
+      "address": "3gEJhJ8yVEsCbf5Y6JGiS1e5Pu3bJHwYFbd5KBoLNvo6",
+      "name": "Mitch alt",
+      "balance": 0.044432776
+    },
+    {
+      "address": "3jN1M8gWLk2ryTGnscrcwRK1Gy4Ttzq5QizWT8uizZsT",
+      "name": "NEON",
+      "balance": 1.164335471
+    },
+    {
+      "address": "3NzdGknBeQivGUoDzHhaHxLEDN7tNWUyKj5xkqyb4mui",
+      "name": "AlexChoi",
+      "balance": 0.0
+    },
+    {
+      "address": "3pZ59YENxDAcjaKa3sahZJBcgER4rGYi4v6BpPurmsGj",
+      "name": "Kadenox",
+      "balance": 0.091567489
+    },
+    {
+      "address": "3RnKNpzX5Nd7PTZBEVrYXVrHyu8Erbbo23QeXtWMTjaZ",
+      "name": "Solshotta (Less active)",
+      "balance": 0.507323709
+    },
+    {
+      "address": "3ubt1SkopkPkL8raULj9sXMgnhh52LQZQRX7AzuFd8ux",
+      "name": "Ibiraw",
+      "balance": 0.0
+    },
+    {
+      "address": "3uswT1DpBfrpkyJzwZndLV5ZuytAsUvr8dXjYx3pWccq",
+      "name": "Marcell Side",
+      "balance": 0.019006202
+    },
+    {
+      "address": "3VRhoaacnV3bvz4yVwVALpayyhBKQMRuA7pYVB4mrx4m",
+      "name": "artschoolreject",
+      "balance": 0.033791995
+    },
+    {
+      "address": "48kx1v5iNdpwmWKAcfwNKL8brRCZqATJrmrCAw8wnN29",
+      "name": "lagos",
+      "balance": 0.122122106
+    },
+    {
+      "address": "4MazEqxxkjrEcxUo9WnGWykbKC4SjUkxdv4jWGhcubU2",
+      "name": "dev 1",
+      "balance": 0.0
+    },
+    {
+      "address": "4Uq8kK9rzb1BhLKez5LgfzQLHUn2TTX1LRnyfkxFBrDo",
+      "name": "Ace YV",
+      "balance": 0.0
+    },
+    {
+      "address": "5CoxdsuoRHDwDPVYqPoeiJxWZ588jXhpimCRJUj8FUN1",
+      "name": "fascist.eth",
+      "balance": 3.08162051
+    },
+    {
+      "address": "5Etkx7VQFFVMSTtTLWWZoYGn8iPWYLr1TrC3xyrY2fyf",
+      "name": "Roshi",
+      "balance": 0.0
+    },
+    {
+      "address": "5MD7MoVPi7tQCutmSLGhKNXHkanER53VmSSpy2vrru9s",
+      "name": "Marko",
+      "balance": 0.0
+    },
+    {
+      "address": "5PA7XYpE4p78fWvH1HiSD1SQiRKGUWgbWc6jxzWiDpYT",
+      "name": "Connor",
+      "balance": 0.199850815
+    },
+    {
+      "address": "5sLbBRU6KBpfSVXHrLtEWJmfyLtbbjidmVeiUzjPEMe5",
+      "name": "Asperro",
+      "balance": 0.00964258
+    },
+    {
+      "address": "5Uy3muJBCr5wHUovj1J78U8LPneftRF13jQvABtj4U12",
+      "name": "Simple DEV v2",
+      "balance": 0.0
+    },
+    {
+      "address": "5wPWthsivjuGi43WbTo5LdSjDTJ8pXSSHyfXWVojJjUF",
+      "name": "Meechie",
+      "balance": 0.005042014
+    },
+    {
+      "address": "6AQCwV2BcrgGALH3Kj1wndCs6YgKqgvawamDJG5YywPj",
+      "name": "retardmode.sol",
+      "balance": 0.106921347
+    },
+    {
+      "address": "6Ee36QQX6jirDmXtd13CVnwfP7fy5tp2oAfGQnY25w3F",
+      "name": "Marko",
+      "balance": 0.0
+    },
+    {
+      "address": "6Qs6joB349h7zu1z9xRgPgMSmpBYLDQb2wtAecY4LysH",
+      "name": "Chefin",
+      "balance": 0.0
+    },
+    {
+      "address": "9aFx3EUuSLwQAGNQVWUW44Pj2AzaxMdTjXxhBXThozAG",
+      "name": "Mitch jewfolio",
+      "balance": 0.027040171
+    },
+    {
+      "address": "ACzzqa4zbRwgyYBd7dwrgZMFf4Fn7Wir1qA4zpeue3uU",
+      "name": "Moggers other alt",
+      "balance": 0.0
+    },
+    {
+      "address": "AqsygxZ5ekLKaySYdGsRrWTB4NcYrU4vDMp2NFxT2EC3",
+      "name": "Classic",
+      "balance": 0.0
+    },
+    {
+      "address": "ARQvZuk15nmF7qZHLresn7r3awqSpQTTRDpnJLzJZCap",
+      "name": "Earl",
+      "balance": 4.264973102
+    },
+    {
+      "address": "AYrhUeyGCHx9mWpewPNH88VyEwnGyfBMCLBtyTiWPUJU",
+      "name": "Wolf of crypto alt",
+      "balance": 0.208442279
+    },
+    {
+      "address": "B5ScJw8Dw7e1zXoh2ut2F81WVXmGaPWqZZ6JEYBZfAJK",
+      "name": "ross donation w",
+      "balance": 0.018400197
+    },
+    {
+      "address": "BHhRbqadwedgwerPRKQYyf3QHvQyMJ6tFjt5rybaCxjU",
+      "name": "42%wr Publix related?",
+      "balance": 0.082872491
+    },
+    {
+      "address": "BkWpyDT1BGN3AxVsnmpg2TF1LCTeXhHWNhwht2pwjkki",
+      "name": "Catolicc Side",
+      "balance": 0.0
+    },
+    {
+      "address": "Bon5Lroj9DZjP6nsshXXcRpWzTJWnXqBfwksH4HqqyM9",
+      "name": "solshotta newnew",
+      "balance": 2.280732279
+    },
+    {
+      "address": "BSqHQohsYwhZRD9djeUvfDT9GuwDAqbrRZvjSyiVpump",
+      "name": "Orangie",
+      "balance": 0.025046027
+    },
+    {
+      "address": "BUMkYpP7RRFJRHkMpxwN8q62mj1C9SaJsi2nqDBzURwQ",
+      "name": "ALBU",
+      "balance": 0.018000053
+    },
+    {
+      "address": "BURJoWTKS33zCuQLAfuRE7iCvjHkRr2nKUK3KrmQ5XgB",
+      "name": "Holdings wallet",
+      "balance": 0.007063865
+    },
+    {
+      "address": "BXAWg4JbaeyvAHpiyYQ3Xr3bUh6FsyDHwwSkB5dmyGF",
+      "name": "fibs.sol",
+      "balance": 3.759977362
+    },
+    {
+      "address": "D9VNWx8oZX788VRQ9H4qyvHASiQLfWbd2MP3DHKSFvK5",
+      "name": "Paddle",
+      "balance": 0.00999497
+    },
+    {
+      "address": "DdZG8dw12CsHjj2Ytfo1vKNPPoU4DEYSMSxdhPjo5U6N",
+      "name": "PN DEV",
+      "balance": 1.656279064
+    },
+    {
+      "address": "DHEKS3dMShJfdqoUQ5EgGZA5DdKZopMwqD2hWqK2i6gW",
+      "name": "LECK",
+      "balance": 0.0
+    },
+    {
+      "address": "E69FvNvAc1d484uZMWyKR4LDSCmsTxsxaoGnhG5QyfRc",
+      "name": "alesol",
+      "balance": 0.0
+    },
+    {
+      "address": "EVNLVqUuCdbU2ebAwmSPWRcQ73iR4W5cho6shH7fXXir",
+      "name": "Gass",
+      "balance": 0.002740446
+    },
+    {
+      "address": "EXPw1tMuJFsx8vfpeHwuwxLXjMKcXj9vMEHAZNPrVbfU",
+      "name": "Rizz",
+      "balance": 0.277591593
+    },
+    {
+      "address": "F1kQ7RkGtLbUWeVoFo77MUGkcK5dc8q82oG2Q4bC4qn6",
+      "name": "55% wr Publix related?",
+      "balance": 0.0
+    },
+    {
+      "address": "F2TeyuD8XkDM7vyV6PTVBEgSymVvK9ZFfm3p1pLcFTyY",
+      "name": "cirmit 2nd wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "F9TWs2Jmwpcvt8Zzr1wLnA9f4UQKj1huX74eM8vDoXTm",
+      "name": "Catolicc longterm",
+      "balance": 0.0
+    },
+    {
+      "address": "Fa3Sd2ttv1W1mga8Vs6VTtqPyJTsHYk7meZHqSsZR4u3",
+      "name": "ANDY",
+      "balance": 0.0
+    },
+    {
+      "address": "FQh5cst4aKhCZbNxqunns4wZViD52Z2PVTNR3eSYQBhw",
+      "name": "STEVEWILLDOIT",
+      "balance": 0.868045524
+    },
+    {
+      "address": "Gitmf7ap4gYgbEVzkaiy4sLtXev4kHPu8VYdbpcXTV3w",
+      "name": "SHAAMSZN",
+      "balance": 0.018671898
+    },
+    {
+      "address": "GyBkVYkHBPMapyQeueQ6d44YthwqYiX4ajgnGLqq9P7r",
+      "name": "Murad2",
+      "balance": 0.020909057
+    },
+    {
+      "address": "Gye5SkFNxWW2Y5AyuNGKAw3AGmHgQueZ6jyybWDjkcX2",
+      "name": "Classic2",
+      "balance": 0.019016002
+    },
+    {
+      "address": "HABhDh9zrzf8mA4SBo1yro8M6AirH2hZdLNPpuvMH6iA",
+      "name": "BUGHA",
+      "balance": 0.0
+    },
+    {
+      "address": "HaZtFxgw99iM97LxmwFuDW6k4MP1XwsWTGoy7GUoSELj",
+      "name": "cobie",
+      "balance": 1.137659767
+    },
+    {
+      "address": "HcPE7DGP3iRzBv9BJ4fYA5D5rLK84CHaRTn3dwukGxXe",
+      "name": "onchainclown",
+      "balance": 1.005102989
+    },
+    {
+      "address": "HCQb4Qrtk4qCfChDH8XvM5onymmCSmRj9bddV6QCPdRe",
+      "name": "Rektober",
+      "balance": 0.001140148
+    },
+    {
+      "address": "HD5fsofvcEaSimExUkPQxYPec3nT8g2tP2tw8oGPrpBT",
+      "name": "ANT",
+      "balance": 0.0
+    },
+    {
+      "address": "HJXRy9JA6xXhFPZCNfJhenAq6MpfTpV83X4p5nhzQiaz",
+      "name": "saudiprince",
+      "balance": 4.190256522
+    },
+    {
+      "address": "HmDvd2nPxtusK6ixBNz9qAwhahj692o4n23B2E8rEg1S",
+      "name": "chefin challenge",
+      "balance": 3.042194558
+    },
+    {
+      "address": "HqBuAzgiPtWQGwXNSQSjqWdFoHf1K6hfFUTbr9vYeGZy",
+      "name": "Mezo alt",
+      "balance": 0.005338513
+    },
+    {
+      "address": "HvatE85i3HBiXSLNx3jh18mVMnv4SVSfHD2QsbpTE1QN",
+      "name": "3toes",
+      "balance": 0.003931665
+    },
+    {
+      "address": "HwCsukvk3ZYiEEErDzL9eQduDPZKLxZJDm9bhsCG6zmv",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "HzFDj1CtTqiqi8B1RyYHJHFJd4yCrsQb8StkKw6nX1rA",
+      "name": "hades (idiot)",
+      "balance": 0.0
+    },
+    {
+      "address": "HzknJegT3QFJ7hnBdQFr976Rgii6B8cR4ibVUsy6dSyG",
+      "name": "CROSSFIRE4M",
+      "balance": 0.0
+    },
+    {
+      "address": "J359swDwM6DMrpTveYZt6Z9AVhZHJ3mVs1y8Gn4wKYGF",
+      "name": "ross ulbricht",
+      "balance": 2.217149123
+    },
+    {
+      "address": "kQdJVZvix2BPCz2i46ErUPk2a74Uf37QZL5jsRdAD8y",
+      "name": "KryptoKing",
+      "balance": 1.171892383
+    },
+    {
+      "address": "LJ2X58hCR38qtvLBTEhwVAMALz7bbqR1YVvq2mnVnqq",
+      "name": "Garlic Dev",
+      "balance": 0.60243239
+    },
+    {
+      "address": "na9E1w4pXVEcVMtqxkQHDs93TayXggt1yrxZbE2epfZ",
+      "name": "IAMCALLEDKEVIN",
+      "balance": 0.0
+    },
+    {
+      "address": "vQ33AcEii7mciXznW7TAqzpv18Z77PQHxSfJ7xNBHwU",
+      "name": "Marcell 1#",
+      "balance": 0.801913566
+    },
+    {
+      "address": "VyGNiGZ3PS3kHmnk5h3fkrcMBjLKFgX5acsnS4qaYKy",
+      "name": "JUICE",
+      "balance": 0.019005005
+    },
+    {
+      "address": "4CXgZNxiLU4yP6QUvvXMLd924YCMMLuosjyF5LAH8fcP",
+      "name": "bst dev 36",
+      "balance": 0.0
+    },
+    {
+      "address": "4UKercFmewDGPXV6LCQMgDWdVoX5ct3trTH18NrvK7AL",
+      "name": "3456",
+      "balance": 0.018882028
+    },
+    {
+      "address": "Bv3rhP592JL1d4sk5hccrycaTZQGGEQQUrZ41PrSwCKH",
+      "name": "yupp",
+      "balance": 0.0
+    },
+    {
+      "address": "8WFPmCD9mx54qzU9ZQuJAn3mhjNAQ3UaWHwztfv5wRSP",
+      "name": "gouhl",
+      "balance": 0.000890943
+    },
+    {
+      "address": "BepTjdWbWpQP9MD9JiAVUygoSPeuYS8S8NVhVgw5fJQ",
+      "name": "deviop",
+      "balance": 0.029217478
+    },
+    {
+      "address": "286CHN57Km41GsAnDv866WKd6YB6HPSjFgF4rGDJTRLf",
+      "name": "SOGOOD",
+      "balance": 0.015928584
+    },
+    {
+      "address": "28ipXVfkdmu1PDowCHbcSfzkpH9edZmSiVoDhY5xGVfR",
+      "name": "mim",
+      "balance": 0.727017366
+    },
+    {
+      "address": "2CXbN6nuTTb4vCrtYM89SfQHMMKGPAW4mvFe6Ht4Yo6z",
+      "name": "MoneyMaykah",
+      "balance": 0.001333412
+    },
+    {
+      "address": "2itf6FWdZUqUb3fKUFPGnaTgqjjvWZwzrz129LCaqFa2",
+      "name": "Weaver",
+      "balance": 0.00144768
+    },
+    {
+      "address": "2V54c75rjibgh6NsDWP88tbpu8KjQ3APRrK5zNQVqx1T",
+      "name": "Orangie",
+      "balance": 0.0
+    },
+    {
+      "address": "3A5FsRDnsUWHG3Fe6TAz8EeNjXxYAJTyKMmuAc9u34ug",
+      "name": "Early19",
+      "balance": 1.239029437
+    },
+    {
+      "address": "3eiDfhs5daac6UgPmzchZL49RttEL7d99kq7oaP57gFW",
+      "name": "JS",
+      "balance": 0.823867597
+    },
+    {
+      "address": "3GcR2XbNanPyeLZM4D2S9tD6i6evMAygEFyvqYmmQqJG",
+      "name": "TRAX",
+      "balance": 0.0
+    },
+    {
+      "address": "3JoVBiQEA2QKsq7TzW5ez5jVRtbbYgTNijoZzp5qgkr2",
+      "name": "Frank",
+      "balance": 0.842267854
+    },
+    {
+      "address": "3MfmnGLiEDwVQBqapeaE4eLo8BVhaz2R22nggqsL63Wb",
+      "name": "Early7",
+      "balance": 0.020984902
+    },
+    {
+      "address": "3pkY4S76Jw1UDS8Qgz4wD3DxrTxz7QfyC8yTbXJoZcMT",
+      "name": "Kai",
+      "balance": 0.129067723
+    },
+    {
+      "address": "3URnnJKdG8eTjrKo7G8rN5GjzweYwSZSxwyJm5Ut5UmL",
+      "name": "FRANK",
+      "balance": 0.0
+    },
+    {
+      "address": "3yaGWxjR43RtYYUz29KRRDs7KVZxL7RrcDUjRTUY9qKz",
+      "name": "max",
+      "balance": 0.643774318
+    },
+    {
+      "address": "48tnDo3bgKJW1iDhdMGSJq54N9Uv5pNixqGcF1yVC9JJ",
+      "name": "Realist",
+      "balance": 0.0
+    },
+    {
+      "address": "4U7WKe5o8ScS8n6Gy5tEmTdfsKHYeRNiKbqZ38Kp99Ps",
+      "name": "Union",
+      "balance": 0.01123011
+    },
+    {
+      "address": "5dhKiVtynZVDWGgvAFrz9mPPU1VNKkaMrcbrjKMtoANw",
+      "name": "Obi",
+      "balance": 0.011712436
+    },
+    {
+      "address": "5dzoivi2oG7Brpak98U2tZJZCwAhfLkiKdhQadW3Ef9P",
+      "name": "TurtleTavern",
+      "balance": 0.997849887
+    },
+    {
+      "address": "5M8ACGKEXG1ojKDTMH3sMqhTihTgHYMSsZc6W8i7QW3Y",
+      "name": "BonkGuy",
+      "balance": 3.608668943
+    },
+    {
+      "address": "5t9xBNuDdGTGpjaPTx6hKd7sdRJbvtKS8Mhq6qVbo8Qz",
+      "name": "smokez",
+      "balance": 3.043339261
+    },
+    {
+      "address": "5TuiERc4X7EgZTxNmj8PHgzUAfNHZRLYHKp4DuiWevXv",
+      "name": "Rev",
+      "balance": 0.039614056
+    },
+    {
+      "address": "6gZ9rBQSMJdvDsQziNBkao9kjVmPz4xwFJHqggztS4Sp",
+      "name": "Trax",
+      "balance": 0.0
+    },
+    {
+      "address": "6RjncKRpraJBYHAstPfys99ZEaL2pvKo3Sj66HD9agwv",
+      "name": "ANT",
+      "balance": 0.0
+    },
+    {
+      "address": "6RYVUPzp1rPaDQth8LaNLaMcZg4HRe3L9LhpJDV9ZZWf",
+      "name": "Casino",
+      "balance": 0.020367352
+    },
+    {
+      "address": "7CeeipDnoTVE343cfmNuaEPL1BWLBzFKL2jzHcqBXN9c",
+      "name": "Zinc",
+      "balance": 0.005842499
+    },
+    {
+      "address": "87MZqjjJgpuFvaU8GyQJKbZGnCFFhX82qAjBGLRXPfcn",
+      "name": "Nyrox",
+      "balance": 2.495433961
+    },
+    {
+      "address": "8CZjFG1EV3FduGV918QWUh7fevUoZSTffVY8bK6M3wbu",
+      "name": "Noodles",
+      "balance": 0.051294763
+    },
+    {
+      "address": "8XpXX8YxC5fmc5YTncf9RYV6dBuHv49L19nSVi4qy7R9",
+      "name": "legion",
+      "balance": 0.0
+    },
+    {
+      "address": "8zFZHuSRuDpuAR7J6FzwyF3vKNx4CVW3DFHJerQhc7Zd",
+      "name": "POW",
+      "balance": 4.786394366
+    },
+    {
+      "address": "96sErVjEN7LNJ6Uvj63bdRWZxNuBngj56fnT9biHLKBf",
+      "name": "orange",
+      "balance": 0.017628071
+    },
+    {
+      "address": "98T65wcMEjoNLDTJszBHGZEX75QRe8QaANXokv4yw3Mp",
+      "name": "leck",
+      "balance": 0.448763902
+    },
+    {
+      "address": "ApzJTWznNBrRDv8EdTx2Aq4QvsGn5YNf8qShgDDdWEYK",
+      "name": "Pionnerfnf",
+      "balance": 0.0
+    },
+    {
+      "address": "ATmKENkRrL1JQQnoUNAQvkiwgjiHKUkzyncxTGxyzQL1",
+      "name": "DXRANT",
+      "balance": 3.439210094
+    },
+    {
+      "address": "BD7oWkEQsUwE8sj4UT7jtrGjHC8Gq1iRqXY7U6DTbJpf",
+      "name": "GHOSTY",
+      "balance": 0.544020578
+    },
+    {
+      "address": "BDzbq7VxG5b2yg4vc11iPvpj51RTbmsnxaEPjwzbWQft",
+      "name": "ZEREBRO",
+      "balance": 0.8664303
+    },
+    {
+      "address": "BeuZdVAAw717ExNznuEsSsvc4tcBYkwySZZgTYG6q1g1",
+      "name": "JS",
+      "balance": 0.929521988
+    },
+    {
+      "address": "4B8oniN8zUxz6paXVGhEbmCEh7Mza3DQBpEiWYwW3NrM",
+      "name": "duck b3",
+      "balance": 0.0
+    },
+    {
+      "address": "kuFVeCCmVDGru5gucqBQdqP945XxerxFgTN3GqNZzRm",
+      "name": "Lu",
+      "balance": 0.0
+    },
+    {
+      "address": "3dfWugpXGepAhid3EZ7oyrum1Dn1r3Y16UT1BeBRbXPL",
+      "name": "Rename wallet",
+      "balance": 0.0
+    },
+    {
+      "address": "8oSNFTszkK1Z288Mq7J2dnVCxdw7TqPYgjEL1UckF38R",
+      "name": "psyco",
+      "balance": 4.051639644
+    },
+    {
+      "address": "J31SLJBmXYQoh5JBAq1BMbvRizbCAhuyQhoFMKy2R1aW",
+      "name": "op",
+      "balance": 0.192900631
+    },
+    {
+      "address": "KANYEsXAntLxYUE6GtPJ5CahFGpEbaSbd5xhNFYbvq3",
+      "name": "KANYE",
+      "balance": 0.251468301
+    },
+    {
+      "address": "HbkAXdVHv1QqcW22BMupnZn1Jg5K4Gnc2HED42Lpo5H1",
+      "name": "west side",
+      "balance": 0.0
+    },
+    {
+      "address": "EY5udSh8BjxKq3zqKJVtNgRWr1jWkcJtCrHCvAoBLmRW",
+      "name": "YELO",
+      "balance": 0.044125476
+    },
+    {
+      "address": "A4T5qRVgar4pheWT599aRoqScFCEZHe1krxWZeBPVtHZ",
+      "name": "albu alt?",
+      "balance": 0.475365452
+    },
+    {
+      "address": "AMPhmcp3uVyYShFnaJDtLAM22CvJPLxwVFWarLHf2Fw5",
+      "name": "qt",
+      "balance": 0.0
+    },
+    {
+      "address": "295dymjS4VYxfG9wV9jKZZFJoDXhyEYQYAfQtnPLL4gM",
+      "name": "duck",
+      "balance": 0.0
+    },
+    {
+      "address": "BJrhtoMD1D6mnD4ruaDPTERy3bZjXZ4DY4rw1gVncz5C",
+      "name": "zuki",
+      "balance": 0.0
+    },
+    {
+      "address": "HUzZ1MrEUXrdPJoAnn5B8uTcshwyyXxFW1EqY2dvcVhe",
+      "name": "Early",
+      "balance": 0.754239382
+    },
+    {
+      "address": "96879La9HWQ1nJMLW3o2VESjBoium6AGVJGsHXcMkiyS",
+      "name": "info",
+      "balance": 0.004866073
+    },
+    {
+      "address": "9WPQDif2aiFTUEJ5RuCogHTU1f6isSdoXriFLJ7ENqyu",
+      "name": "ngh",
+      "balance": 0.0
+    },
+    {
+      "address": "8LyFuMtH8NSUh9EUmxo83H7a9RW7UJXiPqQw8fiAF3dq",
+      "name": "Rename wallet",
+      "balance": 0.133881857
+    },
+    {
+      "address": "CHf9aNH6S3RrzkWD4fvGurFNLSywhEbw75YCtp34HKbf",
+      "name": "top",
+      "balance": 0.0
+    },
+    {
+      "address": "XDNyLB5cJF1DYp9BK3j2HfGjDpsQ3NrTcdMDtiihXpP",
+      "name": "go",
+      "balance": 0.13050122
+    },
+    {
+      "address": "6mSsSNyGYwpU9PP99Aq1BnEUcJDFcq9thbsQaJdPwF3w",
+      "name": "btk",
+      "balance": 0.001080534
+    },
+    {
+      "address": "HkFt55P3PhRWHXoTFeuvkKEE4ab26xZ1bk6UmXV88Pwz",
+      "name": "terp",
+      "balance": 3.925795901
+    },
+    {
+      "address": "6ohpxG26UM5VzsjvepvTM6PLmu5BjtHhhcCdK6tEGWJd",
+      "name": "track",
+      "balance": 0.0
+    },
+    {
+      "address": "CXErEgWxcdBHVw5JnC71i9MFwZU6s56cgPZq5zKQUN9P",
+      "name": "equ",
+      "balance": 0.0
+    },
+    {
+      "address": "DLrhyvfgULN5rXpLov3mi3cnyU1ycuG6Qby51sR5G8cV",
+      "name": "hidari",
+      "balance": 0.001934881
+    },
+    {
+      "address": "HZJGAcEMVB71xp47C6BjJZSHwx5yxEu9ANQLZnWyvjX5",
+      "name": "red 2",
+      "balance": 0.0
+    },
+    {
+      "address": "7Fw4ame77iT3nETxxCyBig6LCh1yu28U189R1YiM25Pw",
+      "name": "side insam",
+      "balance": 0.0
+    },
+    {
+      "address": "4JrhZ5EJ6QLPUmSdkDVgnMmtzUVNe22tHwJb4xZ3HgiX",
+      "name": "track lletter",
+      "balance": 0.0
+    },
+    {
+      "address": "EUTGz6e8o9Wh4mBe3mJ4B1Xwu5VfeZhy5ph3VscPdYPT",
+      "name": "kkkk",
+      "balance": 0.0
+    },
+    {
+      "address": "JBTzQFDC7kKzCjzksuJFgWjXa5VWL4jwA1AAFYrP7rcC",
+      "name": "xxxxx",
+      "balance": 0.0
+    },
+    {
+      "address": "H7nXqGD7a4g6cXEBqqP3Da5DMXB1v3ZmgJ4nRFeANhu",
+      "name": "Mby Mezo",
+      "balance": 0.0
+    },
+    {
+      "address": "6vRxHRAn7SctDHj1GFJWrmSLn4icsi6KGn8PhTMswtzr",
+      "name": "west 2",
+      "balance": 0.011580941
+    },
+    {
+      "address": "AVAZvHLR2PcWpDf8BXY4rVxNHYRBytycHkcB5z5QNXYm",
+      "name": "ANSEM?",
+      "balance": 0.386372203
+    },
+    {
+      "address": "Avc4fcAvrXRNnoEjwRVgM61EjwKX6smdPspGQjeRWLV1",
+      "name": "good trader pnut",
+      "balance": 2.264078213
+    },
+    {
+      "address": "5f39wS5vTiV8CbonynQoqUg7HajU6hcGfwASiVGko3TR",
+      "name": "jht",
+      "balance": 0.0
+    },
+    {
+      "address": "CBxKy1k9DwBtRvdCgTwbg76VsgxpNcuw4ufLGgNJQiXa",
+      "name": "Insyder",
+      "balance": 0.0189952
+    },
+    {
+      "address": "CNYdrnBpRb1qgdDkEtjAH3Rv2wGjx2DJkwR29mfj16WD",
+      "name": "Exy",
+      "balance": 0.0
+    },
+    {
+      "address": "FF4H9gfji3wXexbM7Ak7xogYuQiWSFhtSAyb2CNj819A",
+      "name": "Kevin1",
+      "balance": 0.0
+    },
+    {
+      "address": "FiwjgGxrWeq4Bjnf9nNFA1wdWZCCZyLqgureN7qpEowi",
+      "name": "FIW deployer",
+      "balance": 2.158749075
+    },
+    {
+      "address": "FkcmzuEGYMCkiwPGJcyCeqVmVQBCvfp8ZkC1VBLKjr6",
+      "name": "Casino Alt 2",
+      "balance": 0.509985328
+    },
+    {
+      "address": "2m8Mc2ngJCmpbEEoYhwT9U929z6C4CPKLatWnR775u9a",
+      "name": "boogie",
+      "balance": 1.201610002
+    },
+    {
+      "address": "7w7tQnyfZUpdHNTbTX9MVZHhWdaNcYKZuWaSSweMJxUJ",
+      "name": "TeTheGamer",
+      "balance": 0.001902024
+    },
+    {
+      "address": "7z5JF83gKaw7BfLdeSkJVBmZQFDF6xWbFdH4C4iLqvdL",
+      "name": "kevinio",
+      "balance": 0.0
+    },
+    {
+      "address": "87avD6SY2CRjkXVhd9vgBwzsu4Jnr5FYLrHpbcKosiFa",
+      "name": "nick",
+      "balance": 0.0
+    },
+    {
+      "address": "8iRuMD31AxPHHVGhDNbKHdRnuYriBMHCQbNHVfGy4PTz",
+      "name": "tjr",
+      "balance": 0.003971553
+    },
+    {
+      "address": "8mEWo5njoMR1CDemTQ739jDDkjvgHCcuQLL4cWojxKoT",
+      "name": "Mogger alt??",
+      "balance": 0.018996002
+    },
+    {
+      "address": "73LnJ7G9ffBDjEBGgJDdgvLUhD5APLonKrNiHsKDCw5B",
+      "name": "wadles",
+      "balance": 0.025046547
+    },
+    {
+      "address": "46TniFsKFT38W5x1eun3qVcWAGoQCHEPbGP2vd7UxthA",
+      "name": "Union",
+      "balance": 0.017790271
+    },
+    {
+      "address": "8RfH3LUSed9xM5bh7txdWKZFNbYGB8AeLCaeZjC9kN1o",
+      "name": "Marcell",
+      "balance": 0.155710206
+    },
+    {
+      "address": "C2n9iEKWntCSVwcpEdjR2VkXYvfdwuXfVk4N9DNRF47c",
+      "name": "HNNY",
+      "balance": 0.090525437
+    },
+    {
+      "address": "dVs7zZksjFuq73xbtUC62brFXYYuxCuPSG4wZeGiHck",
+      "name": "Apperal",
+      "balance": 0.0
+    },
+    {
+      "address": "EhRp3PVPqCe2ms3Cjgxg9LSXygxCkJfehPZnVPGienpg",
+      "name": "qt",
+      "balance": 0.010651543
+    },
+    {
+      "address": "HrTZPWV4ZPebBiwyzoTBajCD49kQqVwf4dwsLuYG8CXX",
+      "name": "killz",
+      "balance": 0.05804214
+    },
+    {
+      "address": "HWTVoxH2HaknzqanZXRxPa2L5tUkVixiLn5ZxTMtWU9N",
+      "name": "DUMBASS",
+      "balance": 0.034689553
+    },
+    {
+      "address": "7ABz8qEFZTHPkovMDsmQkm64DZWN5wRtU7LEtD2ShkQ6",
+      "name": "RED",
+      "balance": 0.703103185
+    },
+    {
+      "address": "7DKdBojSuUwAAJFk1wFX56cggpSwYssVogTiVkriqkjv",
+      "name": "HIGH WINRATE",
+      "balance": 0.0
+    },
+    {
+      "address": "Ga6DT278xpMWCwmPLrATQKreUccMMJjTVR88g6ocYGxq",
+      "name": "Krix",
+      "balance": 0.018995201
+    },
+    {
+      "address": "13E1Ut5Tu4AzLeazjgEWyfU44QXP7jkfya5qRfxdUx48",
+      "name": "senio",
+      "balance": 0.0
+    },
+    {
+      "address": "33HpeXzJPEYUEsAnjb3MDvrjfsgRUjbW6AuSh4A2Qnm3",
+      "name": "Kevin (new)",
+      "balance": 0.0
+    },
+    {
+      "address": "34yB4Gsr4mosETs8gcpFsu6TckRNaJJ6wqFCWKS3td3G",
+      "name": "Scrim2",
+      "balance": 0.0
+    },
+    {
+      "address": "9cqgXsqhksd16hLnupey9jt86jKDfbD6ZWVANccW1233",
+      "name": "Mr punk alt",
+      "balance": 0.258485442
+    },
+    {
+      "address": "2UMgatxXYFs83YxZVWo1qTgAR3rUiUGNnJYWNjqVZaug",
+      "name": "bts dev50",
+      "balance": 0.002537855
+    },
+    {
+      "address": "F85Hogx7RM6QB1C9hdzCrw1dD7WHaDnNCaGa8DeQu8aY",
+      "name": "rasss",
+      "balance": 0.0
+    },
+    {
+      "address": "215nhcAHjQQGgwpQSJQ7zR26etbjjtVdW74NLzwEgQjP",
+      "name": "ogant",
+      "balance": 0.423836735
+    },
+    {
+      "address": "4Bq5yvgoiZDsukGERb7aM52jDmbVPCpoihbztscZ5PeM",
+      "name": "Shocked",
+      "balance": 0.19537956
+    },
+    {
+      "address": "4Fz34tZXEHhQMu8spdyewW6hqno23CzoG14eVx1k12q4",
+      "name": "pre",
+      "balance": 0.062319326
+    },
+    {
+      "address": "9HCTuTPEiQvkUtLmTZvK6uch4E3pDynwJTbNw6jLhp9z",
+      "name": "wynn",
+      "balance": 0.001845001
+    },
+    {
+      "address": "9jqUPocwsjwPrhLmzn6eygEQkNUkrS33uKogRwvvK2dV",
+      "name": "trey dev",
+      "balance": 0.0
+    },
+    {
+      "address": "9jyqFiLnruggwNn4EQwBNFXwpbLM9hrA4hV59ytyAVVz",
+      "name": "NACH",
+      "balance": 0.36644939
+    },
+    {
+      "address": "9UWZFoiCHeYRLmzmDJhdMrP7wgrTw7DMSpPiT2eHgJHe",
+      "name": "Barsik",
+      "balance": 4.36076171
+    },
+    {
+      "address": "crimewwW8ABVdDRUdPYvMwYkxPkgytP65FsoVXxt99S",
+      "name": "Good wallet 17",
+      "balance": 0.779516099
+    },
+    {
+      "address": "GTvBQnRvAPweU2qmYg8MDLND2PAAyYFKe35aKQGMRDaL",
+      "name": "Polar",
+      "balance": 0.0
+    },
+    {
+      "address": "m7Kaas3Kd8FHLnCioSjCoSuVDReZ6FDNBVM6HTNYuF7",
+      "name": "FERB",
+      "balance": 0.0
+    },
+    {
+      "address": "mm3k8P6xgvGRxSyk6AfrDG1hwgPxtM9w9hrB8C6Ac7g",
+      "name": "Shaff",
+      "balance": 0.0
+    },
+    {
+      "address": "AT7xVDTNxhB6mT6hdonzkWdPR6117PFXcBaw3tAKJ9qH",
+      "name": "hidari",
+      "balance": 0.0
+    },
+    {
+      "address": "FyNrn5ELHtimjCscVqRK11Q59VaH3knzahtcaPpcmSro",
+      "name": "marcell",
+      "balance": 0.86607966
+    },
+    {
+      "address": "9Fbu5z3jLSVPGKSpFJ2LZgaPYKey43fREimG5ZrNyR8w",
+      "name": "INSIDER1",
+      "balance": 0.0
+    },
+    {
+      "address": "1ustwKGbFXLKcWmpMrTZ9hF52Gx4ScrU7p7hHNpxJCD",
+      "name": "bndfl",
+      "balance": 0.0
+    },
+    {
+      "address": "9Ch4eAD1VaEPnCimuKkCsXWxPicFrS1jDbXZeutdA3K9",
+      "name": "Rename wallet",
+      "balance": 0.000990002
+    }
+  ],
+  "total_removed": 483,
+  "filter_criteria": "Less than 5.0 SOL",
+  "date": "2025-11-08"
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "20251108_102325",
+  "best_model": "xgboost",
+  "best_accuracy": 0.956140350877193,
+  "n_samples_train": 385,
+  "n_samples_test": 114,
+  "n_features": 61,
+  "categories": {
+    "0": "RUG",
+    "1": "SAFE",
+    "2": "GEM"
+  },
+  "all_results": {
+    "random_forest": {
+      "accuracy": 0.9473684210526315,
+      "f1_score": 0.9315235080565839
+    },
+    "xgboost": {
+      "accuracy": 0.956140350877193,
+      "f1_score": 0.9452421376020697
+    },
+    "lightgbm": {
+      "accuracy": 0.9385964912280702,
+      "f1_score": 0.9302529579763361
+    },
+    "ensemble": {
+      "accuracy": 0.956140350877193,
+      "f1_score": 0.9452421376020697
+    }
+  }
+}

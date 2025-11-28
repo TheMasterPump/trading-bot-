@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Discovery Bot - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0e27;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #00d4ff;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-card h3 {
+            color: #8b9dc3;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .stat-card .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .section {
+            background: #151935;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+
+        .alerts-container {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .alert {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .alert.rocket {
+            border-left-color: #ff3366;
+            background: linear-gradient(135deg, #2d1a25 0%, #3a2532 100%);
+        }
+
+        .alert.diamond {
+            border-left-color: #00ff88;
+            background: linear-gradient(135deg, #1a2d25 0%, #253a32 100%);
+        }
+
+        .alert.momentum {
+            border-left-color: #ffd700;
+            background: linear-gradient(135deg, #2d2a1a 0%, #3a3625 100%);
+        }
+
+        .alert.runner {
+            border-left-color: #ffd700;
+            background: linear-gradient(135deg, #3a2f1a 0%, #4a3f2a 100%);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .alert-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-symbol {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .alert-details {
+            font-size: 0.9em;
+            color: #8b9dc3;
+            margin-top: 5px;
+        }
+
+        .tokens-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .token-card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #2d3561 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .token-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .token-symbol {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .token-status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .token-status.runner {
+            background: #00ff88;
+            color: #000;
+        }
+
+        .token-status.flop {
+            background: #ff3366;
+            color: #fff;
+        }
+
+        .token-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .metric {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.8em;
+            color: #8b9dc3;
+        }
+
+        .metric-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 212, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .refresh-indicator.active {
+            background: rgba(0, 255, 136, 0.3);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0e27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00d4ff;
+            border-radius: 4px;
+        }
+
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #8b9dc3;
+            font-style: italic;
+        }
+
+        .migration-buttons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .migration-buttons button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+
+        .btn-migrated {
+            background: #00ff88;
+            color: #000;
+        }
+
+        .btn-migrated:hover {
+            background: #00dd77;
+            transform: scale(1.05);
+        }
+
+        .btn-not-migrated {
+            background: #ff3366;
+            color: #fff;
+        }
+
+        .btn-not-migrated:hover {
+            background: #dd2255;
+            transform: scale(1.05);
+        }
+
+        .migration-status {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .migration-status.migrated {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            border: 2px solid #00ff88;
+        }
+
+        .migration-status.not-migrated {
+            background: rgba(255, 51, 102, 0.2);
+            color: #ff3366;
+            border: 2px solid #ff3366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Pattern Discovery Bot - Dashboard</h1>
+
+        <div class="refresh-indicator" id="refreshIndicator">
+            🔄 Actualisation toutes les 2s
+        </div>
+
+        <!-- Statistiques -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Tokens Analyzed</h3>
+                <div class="value" id="statTotalTokens">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Runners Detected</h3>
+                <div class="value" id="statRunners" style="color: #00ff88;">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Flops</h3>
+                <div class="value" id="statFlops" style="color: #ff3366;">-</div>
+            </div>
+            <div class="stat-card">
+                <h3>Win Rate</h3>
+                <div class="value" id="statWinRate" style="color: #ffd700;">-</div>
+            </div>
+        </div>
+
+        <!-- RUNNER CANDIDATES - Special Section -->
+        <div class="section" style="border: 2px solid #ffd700; background: linear-gradient(135deg, #1a1f3a 0%, #3a2f1a 100%);">
+            <div class="section-title" style="color: #ffd700; border-bottom-color: #ffd700;">🏆 RUNNER CANDIDATES - Optimized Filters (40-50% Win Rate Target)</div>
+            <div class="alerts-container" id="runnerCandidates">
+                <div class="no-data">No RUNNER detected at the moment...</div>
+            </div>
+        </div>
+
+        <!-- Recent Alerts -->
+        <div class="section">
+            <div class="section-title">🚨 Recent Alerts (🚀 Acceleration | 💎 High Buy Ratio | ⚡ Momentum)</div>
+            <div class="alerts-container" id="alertsContainer">
+                <div class="no-data">Aucune alerte pour le moment... Le bot cherche les runners!</div>
+            </div>
+        </div>
+
+        <!-- Completed Tokens -->
+        <div class="section">
+            <div class="section-title">✅ Completed Tokens (5 minutes)</div>
+            <div class="tokens-grid" id="completedTokens">
+                <div class="no-data">No completed token at the moment...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let lastUpdateTime = Date.now();
+
+        async function fetchData() {
+            try {
+                const response = await fetch('/api/data');
+                const data = await response.json();
+                updateDashboard(data);
+
+                // Indicateur de refresh
+                const indicator = document.getElementById('refreshIndicator');
+                indicator.classList.add('active');
+                setTimeout(() => indicator.classList.remove('active'), 300);
+
+                lastUpdateTime = Date.now();
+            } catch (error) {
+                console.error('Data retrieval error:', error);
+            }
+        }
+
+        function updateDashboard(data) {
+            // Store runner data for whale display
+            window.runnersData = data.runners || [];
+
+            // Updating statistics
+            document.getElementById('statTotalTokens').textContent = data.stats.total_tokens || 0;
+            document.getElementById('statRunners').textContent = data.stats.total_runners || 0;
+            document.getElementById('statFlops').textContent = data.stats.total_flops || 0;
+
+            const winRate = data.stats.win_rate || 0;
+            document.getElementById('statWinRate').textContent = winRate.toFixed(1) + '%';
+
+            // Updating RUNNER CANDIDATES
+            updateRunnerCandidates(data.alerts || []);
+
+            // Updating alerts
+            updateAlerts(data.alerts || []);
+
+            // Updating completed tokens
+            updateCompletedTokens(data.completed || []);
+        }
+
+        function updateRunnerCandidates(alerts) {
+            const container = document.getElementById('runnerCandidates');
+
+            // Filtrer uniquement les alertes de type 'runner'
+            const runnerAlerts = alerts.filter(alert => alert.type === 'runner');
+
+            if (runnerAlerts.length === 0) {
+                container.innerHTML = '<div class="no-data">No RUNNER detected at the moment...</div>';
+                return;
+            }
+
+            // Afficher les 10 derniers RUNNER CANDIDATES
+            const recentRunners = runnerAlerts.slice(-10).reverse();
+
+            container.innerHTML = recentRunners.map(alert => {
+                const migrated = alert.migrated;
+                const mint = alert.mint || '';
+
+                let migrationButtons = '';
+                if (migrated === null || migrated === undefined) {
+                    // Not yet marked - show buttons
+                    migrationButtons = `
+                        <div class="migration-buttons">
+                            <button class="btn-migrated" onclick="markMigration('${mint}', true)">✅ Migrated</button>
+                            <button class="btn-not-migrated" onclick="markMigration('${mint}', false)">❌ Pas Migrated</button>
+                        </div>
+                    `;
+                } else if (migrated === true) {
+                    // Marked as migrated
+                    migrationButtons = `
+                        <div class="migration-status migrated">✅ MIGRATED to Pumpswap</div>
+                    `;
+                } else {
+                    // Marked as not migrated
+                    migrationButtons = `
+                        <div class="migration-status not-migrated">❌ Did not migrate</div>
+                    `;
+                }
+
+                // Search full runner data to get whale info
+                const runnerData = window.runnersData?.find(r => r.mint === mint);
+                const whaleCount = runnerData?.whale_count || 0;
+                const whaleVolume = runnerData?.whale_total_volume_usd || 0;
+
+                let whaleInfo = '';
+                if (whaleCount > 0) {
+                    whaleInfo = `
+                        <div class="alert-details" style="color: #00ff88; font-weight: bold;">
+                            🐋 ${whaleCount} Whale${whaleCount > 1 ? 's' : ''} | Volume: $${whaleVolume.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                        </div>
+                    `;
+                }
+
+                return `
+                    <div class="alert runner">
+                        <div class="alert-icon">🏆🏆</div>
+                        <div class="alert-content">
+                            <div class="alert-symbol">${alert.symbol}</div>
+                            <div class="alert-details">${alert.message}</div>
+                            <div class="alert-details">${new Date(alert.timestamp).toLocaleTimeString()}</div>
+                            ${whaleInfo}
+                            ${migrationButtons}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function markMigration(mint, migrated) {
+            try {
+                const response = await fetch('/api/mark_migration', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ mint, migrated })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    // Refresh immediately
+                    fetchData();
+                } else {
+                    console.error('Erreur:', result.error);
+                }
+            } catch (error) {
+                console.error('Erreur lors du marquage:', error);
+            }
+        }
+
+        function updateAlerts(alerts) {
+            const container = document.getElementById('alertsContainer');
+
+            if (alerts.length === 0) {
+                container.innerHTML = '<div class="no-data">Aucune alerte pour le moment... Le bot cherche les runners!</div>';
+                return;
+            }
+
+            // Show last 20 alerts
+            const recentAlerts = alerts.slice(-20).reverse();
+
+            container.innerHTML = recentAlerts.map(alert => {
+                const type = alert.type || 'info';
+                const icon = type === 'rocket' ? '🚀🚀' : type === 'diamond' ? '💎💎' : type === 'momentum' ? '⚡⚡' : '⚡';
+                const className = type === 'rocket' ? 'alert rocket' : type === 'diamond' ? 'alert diamond' : type === 'momentum' ? 'alert momentum' : 'alert';
+
+                return `
+                    <div class="${className}">
+                        <div class="alert-icon">${icon}</div>
+                        <div class="alert-content">
+                            <div class="alert-symbol">${alert.symbol}</div>
+                            <div class="alert-details">${alert.message}</div>
+                            <div class="alert-details">${new Date(alert.timestamp).toLocaleTimeString()}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateCompletedTokens(tokens) {
+            const container = document.getElementById('completedTokens');
+
+            if (tokens.length === 0) {
+                container.innerHTML = '<div class="no-data">No completed token at the moment...</div>';
+                return;
+            }
+
+            // Show last 10 completed tokens
+            const recentTokens = tokens.slice(-10).reverse();
+
+            container.innerHTML = recentTokens.map(token => {
+                const isRunner = token.is_runner || false;
+                const statusClass = isRunner ? 'runner' : 'flop';
+                const statusText = isRunner ? 'RUNNER' : 'FLOP';
+
+                return `
+                    <div class="token-card">
+                        <div class="token-header">
+                            <div class="token-symbol">${token.symbol}</div>
+                            <div class="token-status ${statusClass}">${statusText}</div>
+                        </div>
+                        <div class="token-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Final MC</div>
+                                <div class="metric-value">$${(token.final_mc || 0).toLocaleString()}</div>
+                            </div>
+                            ${token['15s'] ? `
+                            <div class="metric">
+                                <div class="metric-label">15s</div>
+                                <div class="metric-value">${token['15s'].txn} txn | ${(token['15s'].buy_ratio * 100).toFixed(1)}%</div>
+                            </div>
+                            ` : ''}
+                            ${token['30s'] ? `
+                            <div class="metric">
+                                <div class="metric-label">30s</div>
+                                <div class="metric-value">${token['30s'].txn} txn | ${(token['30s'].buy_ratio * 100).toFixed(1)}%</div>
+                            </div>
+                            ` : ''}
+                            ${token['1min'] ? `
+                            <div class="metric">
+                                <div class="metric-label">1min</div>
+                                <div class="metric-value">${token['1min'].txn} txn | ${(token['1min'].buy_ratio * 100).toFixed(1)}%</div>
+                            </div>
+                            ` : ''}
+                            ${token['5min'] ? `
+                            <div class="metric">
+                                <div class="metric-label">5min</div>
+                                <div class="metric-value">${token['5min'].txn} txn | ${(token['5min'].buy_ratio * 100).toFixed(1)}%</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Actualisation automatique toutes les 2 secondes
+        fetchData();
+        setInterval(fetchData, 2000);
+    </script>
+</body>
+</html>

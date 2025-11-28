@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - VISION AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0a0e27;
+            min-height: 100vh;
+            color: #00ffff;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .navbar {
+            background-color: rgba(10, 14, 39, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand { color: #00ffff !important; font-weight: 700; }
+        .nav-link { color: rgba(0, 255, 255, 0.7) !important; }
+        .nav-link:hover, .nav-link.active { color: #00ffff !important; }
+
+        .main-content {
+            padding-top: 80px;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 153, 204, 0.2), rgba(0, 255, 255, 0.1));
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .vision-logo {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #00ffff;
+            text-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+            letter-spacing: 15px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 30px rgba(0, 255, 255, 0.5); }
+            to { text-shadow: 0 0 60px rgba(0, 255, 255, 1); }
+        }
+
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .section-dark {
+            background: rgba(0, 20, 40, 0.4);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .card-cyber {
+            background: rgba(0, 20, 40, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .card-cyber:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-big {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #00ffff;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+
+        .process-step {
+            background: rgba(0, 153, 204, 0.1);
+            border-left: 4px solid #00ffff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .step-number {
+            background: #00ffff;
+            color: #0a0e27;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            margin-right: 15px;
+        }
+
+        .tech-badge {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 5px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .tech-badge:hover {
+            background: rgba(0, 255, 255, 0.2);
+            border-color: #00ffff;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 153, 204, 0.1));
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .warning-box {
+            background: rgba(255, 0, 81, 0.1);
+            border: 1px solid rgba(255, 0, 81, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+            color: rgba(0, 255, 255, 0.8);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #00ffff, #0099cc);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 25px;
+            width: 10px;
+            height: 10px;
+            background: #00ffff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Roboto Mono', monospace;
+            color: #00ff88;
+            overflow-x: auto;
+        }
+
+        .btn-cyber {
+            background: linear-gradient(135deg, #0099cc, #00ffff);
+            border: none;
+            color: #0a0e27;
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-cyber:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.4);
+            color: #0a0e27;
+        }
+
+        .toc {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc a {
+            display: block;
+            padding: 10px 15px;
+            color: rgba(0, 255, 255, 0.6);
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .toc a:hover, .toc a.active {
+            color: #00ffff;
+            border-left-color: #00ffff;
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .comparison-table th {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+        }
+
+        .check-green { color: #00ff88; }
+        .cross-red { color: #ff0051; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-eye me-2"></i>VISION AI
+        </a>
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="/">HOME</a>
+            <a class="nav-link" href="/bot">VISION BOT</a>
+            <a class="nav-link active" href="/about">DOC</a>
+            <a href="https://x.com/VisionAIHQ" target="_blank" class="nav-link" title="Follow us on X" style="font-weight: bold; font-size: 1.1rem;">
+                𝕏
+            </a>
+            <a href="https://t.me/PortalvisionAI" target="_blank" class="nav-link" title="Join our Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="vision-logo">VISION</div>
+            <p style="font-size: 1.5rem; color: rgba(0, 255, 255, 0.8); margin-top: 20px;">
+                AI-Powered Predictive Intelligence for Crypto Trading
+            </p>
+            <p style="color: rgba(0, 255, 255, 0.6); max-width: 800px; margin: 20px auto;">
+                VISION is a complete prediction and automated trading system that uses
+                Machine Learning to detect high-potential tokens on the Solana blockchain.
+            </p>
+            <div style="margin-top: 30px;">
+                <span class="tech-badge"><i class="fas fa-brain me-2"></i>Machine Learning</span>
+                <span class="tech-badge"><i class="fas fa-robot me-2"></i>Auto Trading</span>
+                <span class="tech-badge"><i class="fas fa-bolt me-2"></i>Real-Time</span>
+                <span class="tech-badge"><i class="fas fa-shield-alt me-2"></i>Secure</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Table of Contents -->
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="toc card-cyber" style="margin-top: 40px;">
+                    <h5 style="color: #00ffff; margin-bottom: 20px;">Navigation</h5>
+                    <a href="#overview">Overview</a>
+                    <a href="#ai-model">AI Model</a>
+                    <a href="#features">61 Features</a>
+                    <a href="#scanner">Real-Time Scanner</a>
+                    <a href="#trading-bot">Trading Bot</a>
+                    <a href="#strategies">Strategies</a>
+                    <a href="#wallet">Wallet System</a>
+                    <a href="#architecture">Architecture</a>
+                    <a href="#security">Security</a>
+                    <a href="#roadmap">Roadmap</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+
+                <!-- Overview -->
+                <section id="overview" class="section">
+                    <h2 class="section-title"><i class="fas fa-eye me-3"></i>Overview</h2>
+
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="card-cyber">
+                                <div class="stat-big">94.74%</div>
+                                <p>Model Accuracy</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card-cyber">
+                                <div class="stat-big">61</div>
+                                <p>Features Analyzed</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card-cyber">
+                                <div class="stat-big">4000+</div>
+                                <p>Tokens Studied</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <div class="card-cyber">
+                                <div class="stat-big">24/7</div>
+                                <p>Continuous Monitoring</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box mt-4">
+                        <h4 style="color: #00ff88;"><i class="fas fa-lightbulb me-2"></i>The Concept</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8); font-size: 1.1rem;">
+                            VISION solves a major problem in crypto trading: <strong>how to identify promising tokens
+                            among thousands of new tokens launched every day?</strong>
+                        </p>
+                        <p style="color: rgba(0, 255, 255, 0.7);">
+                            Our AI automatically analyzes each new token by extracting 61 different features
+                            (on-chain and off-chain) and predicts its ROI potential in seconds.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- AI Model -->
+                <section id="ai-model" class="section">
+                    <h2 class="section-title"><i class="fas fa-brain me-3"></i>Artificial Intelligence Model</h2>
+
+                    <div class="card-cyber">
+                        <h4 style="color: #00ffff;"><i class="fas fa-graduation-cap me-2"></i>Model Training</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8);">
+                            Our model was trained on a dataset of <strong>over 4,000 historical tokens</strong>
+                            with their real performance (ROI measured after 24h, 48h, 1 week).
+                        </p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5 style="color: #00ff88;">Training Data</h5>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check me-2" style="color: #00ff88;"></i>Historical Pump.fun tokens</li>
+                                    <li><i class="fas fa-check me-2" style="color: #00ff88;"></i>Real measured ROI</li>
+                                    <li><i class="fas fa-check me-2" style="color: #00ff88;"></i>Verified on-chain data</li>
+                                    <li><i class="fas fa-check me-2" style="color: #00ff88;"></i>Manual classification</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 style="color: #00ff88;">Algorithm Used</h5>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-cog me-2" style="color: #00ffff;"></i>Random Forest Classifier</li>
+                                    <li><i class="fas fa-cog me-2" style="color: #00ffff;"></i>100 decision trees</li>
+                                    <li><i class="fas fa-cog me-2" style="color: #00ffff;"></i>5-fold cross-validation</li>
+                                    <li><i class="fas fa-cog me-2" style="color: #00ffff;"></i>Optimized hyperparameters</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-cyber mt-4">
+                        <h4 style="color: #00ffff;"><i class="fas fa-chart-pie me-2"></i>Prediction Categories</h4>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div style="background: rgba(0, 255, 136, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #00ff88; text-align: center;">
+                                    <h3 style="color: #00ff88;">GEM</h3>
+                                    <p style="color: rgba(0, 255, 255, 0.7);">ROI > 10x</p>
+                                    <small>Rare Opportunity</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div style="background: rgba(0, 255, 255, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #00ffff; text-align: center;">
+                                    <h3 style="color: #00ffff;">SAFE</h3>
+                                    <p style="color: rgba(0, 255, 255, 0.7);">ROI 1-10x</p>
+                                    <small>Good Opportunity</small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div style="background: rgba(255, 0, 81, 0.1); padding: 20px; border-radius: 10px; border: 1px solid #ff0051; text-align: center;">
+                                    <h3 style="color: #ff0051;">RUG</h3>
+                                    <p style="color: rgba(0, 255, 255, 0.7);">Likely Loss</p>
+                                    <small>Avoid</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 61 Features -->
+                <section id="features" class="section">
+                    <h2 class="section-title"><i class="fas fa-layer-group me-3"></i>The 61 Analyzed Features</h2>
+
+                    <p style="color: rgba(0, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 30px;">
+                        Each token is analyzed using 61 different characteristics extracted in real-time.
+                        Here are the main categories:
+                    </p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-users me-2"></i>Holder Analysis</h5>
+                                <ul class="feature-list">
+                                    <li>Total number of holders</li>
+                                    <li>Holdings distribution (top 10, top 20)</li>
+                                    <li>Whale concentration</li>
+                                    <li>Organic holders vs bots</li>
+                                    <li>Holder activity (active vs inactive)</li>
+                                    <li>New holders per hour</li>
+                                    <li>Buyer/seller ratio</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-user-secret me-2"></i>Developer Profile</h5>
+                                <ul class="feature-list">
+                                    <li>Dev holdings</li>
+                                    <li>Dev selling history</li>
+                                    <li>Wallets linked to dev</li>
+                                    <li>Behavior patterns</li>
+                                    <li>Dump risk</li>
+                                    <li>Previous tokens by dev</li>
+                                    <li>On-chain reputation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-chart-line me-2"></i>Market Metrics</h5>
+                                <ul class="feature-list">
+                                    <li>Current market cap</li>
+                                    <li>24h volume</li>
+                                    <li>USD liquidity</li>
+                                    <li>Liquidity depth</li>
+                                    <li>Current price and change</li>
+                                    <li>Volume/market cap ratio</li>
+                                    <li>Volatility</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-exchange-alt me-2"></i>Transaction Analysis</h5>
+                                <ul class="feature-list">
+                                    <li>Number of transactions</li>
+                                    <li>Transactions per minute</li>
+                                    <li>Average trade size</li>
+                                    <li>Buy/sell ratio</li>
+                                    <li>Wash trading detection</li>
+                                    <li>Sniping patterns</li>
+                                    <li>Bot activity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-cyber mt-3">
+                        <h5 style="color: #00ff88;"><i class="fas fa-star me-2"></i>Top 5 Most Important Features</h5>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <div class="process-step">
+                                    <span class="step-number">1</span>
+                                    <strong>Whale Presence</strong> - Detects large wallet accumulation patterns
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="process-step">
+                                    <span class="step-number">2</span>
+                                    <strong>Buy/Sell Ratio</strong> - Measures buying pressure vs selling
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="process-step">
+                                    <span class="step-number">3</span>
+                                    <strong>USD Liquidity</strong> - Total liquidity available for trading
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="process-step">
+                                    <span class="step-number">4</span>
+                                    <strong>Transaction Count</strong> - Number of unique transactions
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="process-step">
+                                    <span class="step-number">5</span>
+                                    <strong>Unique Traders</strong> - Number of different wallets trading
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Scanner -->
+                <section id="scanner" class="section">
+                    <h2 class="section-title"><i class="fas fa-radar me-3"></i>Real-Time Scanner</h2>
+
+                    <div class="card-cyber">
+                        <h4 style="color: #00ffff;"><i class="fas fa-bolt me-2"></i>How Does the Scanner Work?</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8);">
+                            The VISION scanner connects in real-time to new token feeds on Solana
+                            and instantly analyzes each token upon creation.
+                        </p>
+
+                        <div class="code-block mt-4">
+                            <p style="color: #ff6b6b;">// Processing Flow</p>
+                            <p>WebSocket(PumpPortal) --> New Token Detected</p>
+                            <p>    |</p>
+                            <p>    v</p>
+                            <p>Extract 61 Features (< 8 seconds)</p>
+                            <p>    |</p>
+                            <p>    v</p>
+                            <p>VISION AI Prediction (< 100ms)</p>
+                            <p>    |</p>
+                            <p>    v</p>
+                            <p>Signal: GEM / SAFE / RUG</p>
+                            <p>    |</p>
+                            <p>    v</p>
+                            <p>Notification + Bot Execution (if active)</p>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card-cyber" style="border-color: #00ff88;">
+                                <h5 style="color: #00ff88;"><i class="fas fa-check-circle me-2"></i>Scanner Benefits</h5>
+                                <ul class="feature-list">
+                                    <li>Detection in less than 8 seconds</li>
+                                    <li>100% automated analysis</li>
+                                    <li>Works 24/7 non-stop</li>
+                                    <li>No human intervention needed</li>
+                                    <li>Automatically filters rugs</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber" style="border-color: #00ffff;">
+                                <h5 style="color: #00ffff;"><i class="fas fa-tachometer-alt me-2"></i>Performance</h5>
+                                <ul class="feature-list">
+                                    <li>Average latency: < 8 seconds</li>
+                                    <li>Tokens scanned/day: 500+</li>
+                                    <li>GEM detection rate: 27%+</li>
+                                    <li>False positives: < 10%</li>
+                                    <li>Uptime: 99.9%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trading Bot -->
+                <section id="trading-bot" class="section">
+                    <h2 class="section-title"><i class="fas fa-robot me-3"></i>Automated Trading Bot</h2>
+
+                    <div class="highlight-box">
+                        <h4 style="color: #00ff88;"><i class="fas fa-magic me-2"></i>100% Automated Trading</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8); font-size: 1.1rem;">
+                            The VISION bot automatically executes trades based on AI predictions.
+                            Configure your strategy once, and let the bot trade for you 24/7.
+                        </p>
+                    </div>
+
+                    <div class="card-cyber mt-4">
+                        <h4 style="color: #00ffff;"><i class="fas fa-cogs me-2"></i>Bot Features</h4>
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="process-step">
+                                    <i class="fas fa-shopping-cart me-2" style="color: #00ff88;"></i>
+                                    <strong>Automatic Buy</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 10px; color: rgba(0, 255, 255, 0.7);">
+                                        Instantly buys when AI detects a GEM
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="process-step">
+                                    <i class="fas fa-hand-holding-usd me-2" style="color: #00ff88;"></i>
+                                    <strong>Take Profit</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 10px; color: rgba(0, 255, 255, 0.7);">
+                                        Automatically sells at profit target (2x, 3x, custom)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="process-step">
+                                    <i class="fas fa-shield-alt me-2" style="color: #ff6b6b;"></i>
+                                    <strong>Stop Loss</strong>
+                                    <p style="font-size: 0.9rem; margin-top: 10px; color: rgba(0, 255, 255, 0.7);">
+                                        Protects against excessive losses
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Strategies -->
+                <section id="strategies" class="section">
+                    <h2 class="section-title"><i class="fas fa-chess me-3"></i>Trading Strategies</h2>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-cyber" style="border-color: #ff6b6b;">
+                                <h3 style="color: #ff6b6b; text-align: center;">RISKY</h3>
+                                <hr style="border-color: rgba(255, 107, 107, 0.3);">
+                                <ul class="feature-list">
+                                    <li>Aggressive buying</li>
+                                    <li>High frequency trading</li>
+                                    <li>Confidence threshold: 60%</li>
+                                    <li>Take profit: 2x-3x</li>
+                                    <li>Stop loss: -30%</li>
+                                </ul>
+                                <div class="text-center mt-3">
+                                    <span class="tech-badge" style="border-color: #ff6b6b; color: #ff6b6b;">
+                                        High Risk
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber" style="border-color: #00ff88;">
+                                <h3 style="color: #00ff88; text-align: center;">SAFE</h3>
+                                <hr style="border-color: rgba(0, 255, 136, 0.3);">
+                                <ul class="feature-list">
+                                    <li>Strict filters</li>
+                                    <li>Fewer trades</li>
+                                    <li>Confidence threshold: 80%</li>
+                                    <li>Take profit: 3x-5x</li>
+                                    <li>Stop loss: -15%</li>
+                                </ul>
+                                <div class="text-center mt-3">
+                                    <span class="tech-badge" style="border-color: #00ff88; color: #00ff88;">
+                                        Recommended
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Wallet -->
+                <section id="wallet" class="section">
+                    <h2 class="section-title"><i class="fas fa-wallet me-3"></i>Wallet System</h2>
+
+                    <div class="highlight-box">
+                        <h4 style="color: #00ff88;"><i class="fas fa-key me-2"></i>Non-Custodial: You Own Your Keys</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8);">
+                            Unlike centralized platforms, VISION generates a wallet where
+                            <strong>YOU own the private key</strong>. You can withdraw your funds at any time
+                            via Phantom, Solflare, or any other Solana wallet.
+                        </p>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ffff;"><i class="fas fa-plus-circle me-2"></i>Wallet Creation</h5>
+                                <ol class="feature-list">
+                                    <li>Sign up on VISION</li>
+                                    <li>Automatic Solana wallet generation</li>
+                                    <li>UNIQUE display of private key</li>
+                                    <li>Mandatory backup</li>
+                                    <li>Wallet ready to use</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ffff;"><i class="fas fa-sync me-2"></i>Regeneration</h5>
+                                <ol class="feature-list">
+                                    <li>Transfer your funds elsewhere</li>
+                                    <li>Stop the bot</li>
+                                    <li>Click "Regenerate Wallet"</li>
+                                    <li>New wallet generated</li>
+                                    <li>New private key (save it!)</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Architecture -->
+                <section id="architecture" class="section">
+                    <h2 class="section-title"><i class="fas fa-server me-3"></i>Technical Architecture</h2>
+
+                    <div class="card-cyber">
+                        <h4 style="color: #00ffff;"><i class="fas fa-project-diagram me-2"></i>Technology Stack</h4>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <h5 style="color: #00ff88;">Backend</h5>
+                                <div class="mt-3">
+                                    <span class="tech-badge">Python 3.11</span>
+                                    <span class="tech-badge">Flask</span>
+                                    <span class="tech-badge">SQLite</span>
+                                    <span class="tech-badge">AsyncIO</span>
+                                    <span class="tech-badge">WebSocket</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 style="color: #00ff88;">Machine Learning</h5>
+                                <div class="mt-3">
+                                    <span class="tech-badge">Scikit-learn</span>
+                                    <span class="tech-badge">Random Forest</span>
+                                    <span class="tech-badge">Pandas</span>
+                                    <span class="tech-badge">NumPy</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h5 style="color: #00ff88;">Blockchain</h5>
+                                <div class="mt-3">
+                                    <span class="tech-badge">Solana</span>
+                                    <span class="tech-badge">SPL Tokens</span>
+                                    <span class="tech-badge">RPC Mainnet</span>
+                                    <span class="tech-badge">PumpPortal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-cyber mt-4">
+                        <h4 style="color: #00ffff;"><i class="fas fa-users me-2"></i>Scalability (200+ users)</h4>
+                        <p style="color: rgba(0, 255, 255, 0.8);">
+                            VISION architecture is optimized to support hundreds of simultaneous users:
+                        </p>
+                        <ul class="feature-list">
+                            <li><strong>Shared WebSocket</strong> - Single feed for all users</li>
+                            <li><strong>Centralized Engine</strong> - Unique analysis per token (no duplication)</li>
+                            <li><strong>Lightweight Workers</strong> - Each bot consumes minimal resources</li>
+                            <li><strong>Capacity Limit</strong> - Protection against overload</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Security -->
+                <section id="security" class="section">
+                    <h2 class="section-title"><i class="fas fa-shield-alt me-3"></i>Security</h2>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-lock me-2"></i>Data Protection</h5>
+                                <ul class="feature-list">
+                                    <li>Private keys encrypted AES-256</li>
+                                    <li>Hashed passwords (bcrypt)</li>
+                                    <li>Secure JWT sessions</li>
+                                    <li>HTTPS in production</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-cyber">
+                                <h5 style="color: #00ff88;"><i class="fas fa-user-shield me-2"></i>User Protection</h5>
+                                <ul class="feature-list">
+                                    <li>Double confirmation for sensitive actions</li>
+                                    <li>Private key shown only once</li>
+                                    <li>Bot must be stopped before regeneration</li>
+                                    <li>Daily trade limits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Roadmap -->
+                <section id="roadmap" class="section">
+                    <h2 class="section-title"><i class="fas fa-road me-3"></i>Roadmap</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h5 style="color: #00ff88;"><i class="fas fa-check-circle me-2"></i>Phase 1 - Complete</h5>
+                            <ul class="feature-list">
+                                <li>AI model trained (94.74% accuracy)</li>
+                                <li>Real-time scanner</li>
+                                <li>Automated trading bot</li>
+                                <li>Wallet system</li>
+                                <li>User interface</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 style="color: #00ffff;"><i class="fas fa-spinner me-2"></i>Phase 2 - In Progress</h5>
+                            <ul class="feature-list">
+                                <li>Crypto payment system</li>
+                                <li>Subscriptions (RISKY, SAFE)</li>
+                                <li>Advanced dashboard</li>
+                                <li>Public statistics</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h5 style="color: rgba(0, 255, 255, 0.5);"><i class="fas fa-clock me-2"></i>Phase 3 - Planned</h5>
+                            <ul class="feature-list">
+                                <li>Mobile application</li>
+                                <li>Public API</li>
+                                <li>Discord/Telegram integration</li>
+                                <li>Community leaderboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Warning -->
+                <section class="section">
+                    <div class="warning-box">
+                        <h3 style="color: #ff6b6b;"><i class="fas fa-exclamation-triangle me-2"></i>Important Disclaimer</h3>
+                        <ul style="color: rgba(255, 107, 107, 0.9);">
+                            <li>Cryptocurrency trading carries <strong>significant risks</strong></li>
+                            <li>Only trade with funds you can afford to <strong>lose entirely</strong></li>
+                            <li>AI predictions are <strong>not guarantees</strong> of profit</li>
+                            <li><strong>DYOR</strong> - Always do your own research</li>
+                            <li>Past performance does <strong>not</strong> predict future results</li>
+                            <li>VISION is a decision-support tool, <strong>not financial advice</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <div class="text-center py-5">
+                    <h3 style="color: #00ffff; margin-bottom: 30px;">Ready to Get Started?</h3>
+                    <a href="/bot" class="btn-cyber me-3">
+                        <i class="fas fa-robot me-2"></i>Access Bot
+                    </a>
+                    <a href="/" class="btn-cyber" style="background: linear-gradient(135deg, #00ff88, #00cc66);">
+                        <i class="fas fa-search me-2"></i>Test Scanner
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center py-4" style="color: rgba(0, 255, 255, 0.4); border-top: 1px solid rgba(0, 255, 255, 0.1);">
+    <p>VISION AI - 2025 | Documentation v1.0</p>
+</div>
+
+</body>
+</html>

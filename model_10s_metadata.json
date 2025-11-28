@@ -1,0 +1,18 @@
+{
+  "model_type": "GradientBoosting",
+  "roc_auc": 0.9008605851979347,
+  "best_threshold": 0.5646074361613138,
+  "precision": 0.2571428571428571,
+  "recall": 0.6428571428571429,
+  "f1_score": 0.36734693877551017,
+  "training_samples": 3314,
+  "test_samples": 429,
+  "features": [
+    "txn",
+    "traders",
+    "buy_ratio",
+    "mc",
+    "velocity",
+    "whale_count"
+  ]
+}

@@ -1,0 +1,84 @@
+================================================================================
+MODE SCREENSHOT - TRADUCTIONS APPLIQUÉES
+================================================================================
+
+PROBLÈME INITIAL:
+Le bot affichait encore du texte en français même avec SCREENSHOT_MODE = True:
+- "[NOUVEAU TOKEN]" au lieu de "[NEW TOKEN]"
+- "Prix trop élevé" au lieu de "Price too high"
+- "Pas assez de trades" au lieu de "Not enough trades"
+- "nouvelles baleines" au lieu de "new whales"
+- "[2EME CHANCE @ 15s]" au lieu de "[2ND CHANCE @ 15s]"
+
+================================================================================
+CORRECTIONS APPLIQUÉES
+================================================================================
+
+1. NOUVEAU TOKEN → NEW TOKEN (ligne 1198)
+   ✅ AVANT: [NOUVEAU TOKEN] MON2.0 (GBqRZfcD...) @ $4,106
+   ✅ APRÈS:  [NEW TOKEN] MON2.0 (GBqRZfcD...) @ $4,106
+
+2. SKIP @ 8s/15s - "Prix trop élevé" (ligne 1348-1352)
+   ✅ AVANT: [SKIP @ 15s] TOKEN: Prix trop élevé ($53,377 > $15,000)
+   ✅ APRÈS:  [SKIP @ 15s] TOKEN: Price too high ($53,377 > $15,000)
+
+3. NO DATA - "Pas assez de trades" (lignes 1289-1292, 1357-1360)
+   ✅ AVANT: [NO DATA @ 8s] TOKEN: Pas assez de trades pour analyser
+   ✅ APRÈS:  [NO DATA @ 8s] TOKEN: Not enough trades to analyze
+
+4. AUTO-BUY - "nouvelles baleines" → "new whales" (lignes 1139-1152)
+   ✅ AVANT: AUTO-BUY: 2 nouvelles baleines @ 15s (total: 3)
+   ✅ APRÈS:  AUTO-BUY: 2 new whales @ 15s (total: 3)
+
+5. 2EME CHANCE → 2ND CHANCE (lignes 242-253)
+   ✅ AVANT:
+      [2EME CHANCE @ 15s]
+      - 2 baleines consecutives @ 15s -> AUTO-BUY
+      - Elite wallet tardif: 1+ nouveau wallet VIP -> AUTO-BUY
+      - Baleines tardives: 2+ nouvelles baleines -> AUTO-BUY
+      - IA standard: Seuil 60%
+
+   ✅ APRÈS:
+      [2ND CHANCE @ 15s]
+      - 2 consecutive whales @ 15s -> AUTO-BUY
+      - Late elite wallet: 1+ new VIP wallet -> AUTO-BUY
+      - Late whales: 2+ new whales -> AUTO-BUY
+      - Standard AI: Threshold 60%
+
+6. BUY SIGNAL - "2EME CHANCE" (lignes 1353-1356)
+   ✅ AVANT: [BUY SIGNAL @ 15s - 2EME CHANCE] TOKEN: AUTO-BUY: 2 nouvelles baleines
+   ✅ APRÈS:  [BUY SIGNAL @ 15s - 2ND CHANCE] TOKEN: AUTO-BUY: 2 new whales
+
+7. CONDITION MISE À JOUR (ligne 1348, 1353)
+   ✅ Ajouté 'new whales' dans les conditions pour détecter aussi la version anglaise
+   ✅ elif 'nouvelles baleines' in reason or 'new whales' in reason:
+
+================================================================================
+LOGIQUE DE TRADUCTION
+================================================================================
+
+Toutes les traductions utilisent cette logique:
+
+if Config.SCREENSHOT_MODE:
+    print("English text")
+else:
+    print("Texte français")
+
+Cela permet de:
+✅ Afficher en anglais quand SCREENSHOT_MODE = True (pour screenshots pros)
+✅ Garder le français quand SCREENSHOT_MODE = False (pour usage perso)
+
+================================================================================
+RÉSULTAT FINAL
+================================================================================
+
+Avec SCREENSHOT_MODE = True, le bot affiche maintenant:
+
+[NEW TOKEN] TOKEN (GBqRZfcD...) @ $10,234
+  🐋 [WHALE DETECTED] BULLISH - 2 whales, Max: $1491
+  [SKIP @ 8s] TOKEN: Not enough trades to analyze
+  🐋 [BUY SIGNAL @ 15s - 2ND CHANCE] TOKEN: AUTO-BUY: 2 new whales @ 15s (total: 3), MC=$12,456
+
+✅ 100% ANGLAIS - Parfait pour screenshots professionnels!
+
+================================================================================

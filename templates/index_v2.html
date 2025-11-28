@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction AI V2 - Prédictions Précises</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .input-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .results {
+            display: none;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .price-big {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .price-current {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .price-predicted {
+            font-size: 1.2em;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .multiplier {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .action-box {
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .action-buy {
+            background: #28a745;
+            color: white;
+        }
+
+        .action-sell {
+            background: #dc3545;
+            color: white;
+        }
+
+        .action-hold {
+            background: #ffc107;
+            color: #333;
+        }
+
+        .top-warning {
+            background: #dc3545;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .signals {
+            list-style: none;
+            padding: 0;
+        }
+
+        .signals li {
+            padding: 8px;
+            margin: 5px 0;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+
+        .entry-exit {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .entry-exit-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .entry {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .exit {
+            background: #d1ecf1;
+            border: 2px solid #17a2b8;
+        }
+
+        .stoploss {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Prediction AI V2</h1>
+            <div class="subtitle">Prédictions de Prix Précises + Détection de Tops</div>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="tokenAddress" placeholder="Entrez l'adresse du token Solana...">
+                <button onclick="analyzToken()" id="analyzeBtn">Analyser</button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <h3>⏳ Analyse en cours...</h3>
+            <p>Extraction de 61 features et calcul des prédictions...</p>
+        </div>
+
+        <div class="results" id="results">
+            <!-- Price Prediction -->
+            <div class="card">
+                <h2 class="card-title">📈 Prédiction de Prix</h2>
+
+                <div class="price-big">
+                    <div class="price-current">Prix Actuel</div>
+                    <div class="price-value" id="currentPrice">$0.00000000</div>
+                    <div style="margin-top: 10px; opacity: 0.8;">Market Cap: $<span id="currentMcap">0</span></div>
+
+                    <div class="multiplier" id="multiplier">10.0x</div>
+
+                    <div class="price-predicted">
+                        Prix Maximum Prédit: $<span id="maxPrice">0.00000000</span>
+                        <div style="margin-top: 5px; opacity: 0.8;">Market Cap Max: $<span id="maxMcap">0</span></div>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="metric">
+                        <div class="metric-label">Potentiel Hausse</div>
+                        <div class="metric-value" id="upsidePercent">+0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Confiance</div>
+                        <div class="metric-value" id="confidence">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Detection -->
+            <div id="topWarning" style="display: none;">
+                <div class="top-warning">
+                    <h3>⚠ ALERTE: TOKEN AU TOP!</h3>
+                    <p style="font-size: 1.2em; margin: 10px 0;">Probabilité de dump: <span id="dumpProb">0%</span></p>
+                    <h4>Signaux détectés:</h4>
+                    <ul class="signals" id="topSignals"></ul>
+                </div>
+            </div>
+
+            <!-- Action Recommendation -->
+            <div class="action-box" id="actionBox">
+                <div id="actionText">ACHETER</div>
+                <div style="font-size: 0.8em; margin-top: 10px; opacity: 0.9;" id="actionReason"></div>
+            </div>
+
+            <!-- Entry/Exit Points -->
+            <div id="entryExitSection" style="display: none;">
+                <div class="card">
+                    <h2 class="card-title">🎯 Points d'Entrée/Sortie</h2>
+                    <div class="entry-exit">
+                        <div class="entry-exit-item entry">
+                            <div style="font-size: 0.9em; margin-bottom: 5px;">🟢 Point d'Entrée</div>
+                            <div style="font-size: 1.3em; font-weight: bold;">$<span id="entryPrice">0</span></div>
+                        </div>
+                        <div class="entry-exit-item exit">
+                            <div style="font-size: 0.9em; margin-bottom: 5px;">🎯 Point de Sortie</div>
+                            <div style="font-size: 1.3em; font-weight: bold;">$<span id="exitPrice">0</span></div>
+                        </div>
+                        <div class="entry-exit-item stoploss">
+                            <div style="font-size: 0.9em; margin-bottom: 5px;">🛑 Stop Loss</div>
+                            <div style="font-size: 1.3em; font-weight: bold;">$<span id="stopLoss">0</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Prediction -->
+            <div class="card">
+                <h2 class="card-title">🏷 Catégorie Prédite</h2>
+                <div class="grid">
+                    <div class="metric">
+                        <div class="metric-label">RUG (Rug Pull)</div>
+                        <div class="metric-value" id="probRug">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">SAFE (1-10x)</div>
+                        <div class="metric-value" id="probSafe">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">GEM (>10x)</div>
+                        <div class="metric-value" id="probGem">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="card">
+                <h2 class="card-title">📊 Métriques Clés</h2>
+                <div class="grid">
+                    <div class="metric">
+                        <div class="metric-label">Liquidité</div>
+                        <div class="metric-value">$<span id="liquidity">0</span></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Holders</div>
+                        <div class="metric-value" id="holders">0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Volume 24h</div>
+                        <div class="metric-value">$<span id="volume">0</span></div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Fresh Wallets</div>
+                        <div class="metric-value" id="freshWallets">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Top 10 Conc.</div>
+                        <div class="metric-value" id="top10">0%</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Snipers</div>
+                        <div class="metric-value" id="snipers">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function analyzToken() {
+            const address = document.getElementById('tokenAddress').value.trim();
+
+            if (!address) {
+                alert('Veuillez entrer une adresse de token');
+                return;
+            }
+
+            document.getElementById('analyzeBtn').disabled = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({token_address: address})
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    displayResults(data);
+                } else {
+                    alert('Erreur: ' + data.error);
+                }
+            } catch (error) {
+                alert('Erreur: ' + error.message);
+            } finally {
+                document.getElementById('analyzeBtn').disabled = false;
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function displayResults(data) {
+            const price = data.price_prediction;
+            const category = data.category_prediction;
+            const features = data.features;
+
+            // Price prediction
+            document.getElementById('currentPrice').textContent = price.current_price.toFixed(8);
+            document.getElementById('currentMcap').textContent = price.current_mcap.toLocaleString();
+            document.getElementById('maxPrice').textContent = price.predicted_max_price.toFixed(8);
+            document.getElementById('maxMcap').textContent = price.predicted_max_mcap.toLocaleString();
+            document.getElementById('multiplier').textContent = price.potential_multiplier.toFixed(2) + 'x';
+            document.getElementById('upsidePercent').textContent = '+' + price.upside_percentage.toFixed(1) + '%';
+            document.getElementById('confidence').textContent = price.confidence.toFixed(1) + '%';
+
+            // Top detection
+            if (price.is_at_top) {
+                document.getElementById('topWarning').style.display = 'block';
+                document.getElementById('dumpProb').textContent = price.dump_probability + '%';
+
+                const signalsList = document.getElementById('topSignals');
+                signalsList.innerHTML = '';
+                price.top_signals.forEach(signal => {
+                    const li = document.createElement('li');
+                    li.textContent = signal;
+                    signalsList.appendChild(li);
+                });
+            } else {
+                document.getElementById('topWarning').style.display = 'none';
+            }
+
+            // Action
+            const actionBox = document.getElementById('actionBox');
+            actionBox.className = 'action-box';
+
+            if (price.action_color === 'green') {
+                actionBox.classList.add('action-buy');
+            } else if (price.action_color === 'red') {
+                actionBox.classList.add('action-sell');
+            } else {
+                actionBox.classList.add('action-hold');
+            }
+
+            document.getElementById('actionText').textContent = price.action;
+            document.getElementById('actionReason').textContent = price.reason;
+
+            // Entry/Exit points
+            if (price.entry_price) {
+                document.getElementById('entryExitSection').style.display = 'block';
+                document.getElementById('entryPrice').textContent = price.entry_price.toFixed(8);
+                document.getElementById('exitPrice').textContent = price.exit_price.toFixed(8);
+                document.getElementById('stopLoss').textContent = price.stop_loss.toFixed(8);
+            } else {
+                document.getElementById('entryExitSection').style.display = 'none';
+            }
+
+            // Category probabilities
+            document.getElementById('probRug').textContent = category.probabilities.RUG.toFixed(1) + '%';
+            document.getElementById('probSafe').textContent = category.probabilities.SAFE.toFixed(1) + '%';
+            document.getElementById('probGem').textContent = category.probabilities.GEM.toFixed(1) + '%';
+
+            // Key metrics
+            document.getElementById('liquidity').textContent = features.liquidity_usd.toLocaleString();
+            document.getElementById('holders').textContent = features.holder_count.toLocaleString();
+            document.getElementById('volume').textContent = features.volume_24h.toLocaleString();
+            document.getElementById('freshWallets').textContent = features.fresh_wallets.toFixed(1) + '%';
+            document.getElementById('top10').textContent = features.top_10_concentration.toFixed(1) + '%';
+            document.getElementById('snipers').textContent = features.sniper_count;
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
