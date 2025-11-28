@@ -1,128 +1,237 @@
-# 🤖 Prediction AI - Système d'Apprentissage Continu
+# 🤖 Vision AI - Solana Trading Bot
 
-> Système de prédiction de tokens Pump.fun avec apprentissage automatique continu
+AI-powered trading bot for Solana with real-time signals and subscription-based access.
 
-## 🎯 Précision Actuelle: **95.61%** → Objectif: **99%+**
+[![Twitter](https://img.shields.io/badge/Twitter-@VisionAIHQ-1DA1F2?style=flat&logo=twitter)](https://x.com/VisionAIHQ)
+[![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=flat&logo=telegram)](https://t.me/PortalvisionAI)
 
 ---
 
-## ⚡ Démarrage Rapide
+## 🚀 Features
 
-### 1. Utiliser l'Application Web
+- **AI-Powered Predictions** - Machine learning models trained on 10,000+ tokens
+- **Real-Time Trading Signals** - Automated buy/sell signals with custom strategies
+- **Solana Payments** - Secure subscription system with SOL payments
+- **Three Trading Tiers** - RISKY, SAFE, and ULTRA strategies
+- **24/7 VIP Support** - Dedicated support for all subscribers
+- **Auto-Trading** - Set it and forget it with AI-powered automation
+
+---
+
+## 📊 Subscription Plans
+
+### 🔥 RISKY - Aggressive Strategy
+- **1.5 SOL/week** or **4 SOL/month**
+- ROI: 2-20x
+- Ultra-fast execution
+- AI trained on 4000+ tokens
+- Custom Take Profit & Stop Loss
+
+### 🛡️ SAFE - Conservative Strategy
+- **2 SOL/week** or **6 SOL/month**
+- ROI: 5x-30x
+- Safety filters & AI verification
+- AI trained on 6000+ tokens
+- Trailing Stop Loss
+
+### ⭐ ULTRA - Premium Strategy
+- **3 SOL/week** or **10 SOL/month**
+- ROI: x10-x100
+- AI + Auto-compound
+- Front-run top traders
+- AI trained on 10,000+ tokens
+- Multi-strategy approach
+
+---
+
+## ⚡ Quick Start
+
+### 1. Run Locally
 
 ```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask app
 python app.py
 ```
 
-→ Ouvrir: http://localhost:5001
+→ Open: http://localhost:5000
 
-### 2. Activer l'Apprentissage Continu
+### 2. Deploy to Production
+
+See [Deployment Guide](#-deployment) below for VPS setup instructions.
+
+---
+
+## 🏗️ Project Structure
+
+```
+vision-ai-bot/
+├── app.py                      # Flask web server
+├── payment_config.py           # Solana payment configuration
+├── payment_verifier.py         # Payment verification
+├── templates/
+│   ├── index.html             # Landing page
+│   ├── bot.html               # Trading interface
+│   └── about.html             # About page
+├── models/                     # AI models (ML/DL)
+│   ├── migration_classifier_latest.pkl
+│   ├── price_regressor_latest.pkl
+│   ├── runner_classifier_latest.pkl
+│   └── roi_predictor_*.pkl
+├── static/                     # CSS, JS, images
+└── requirements.txt            # Python dependencies
+```
+
+---
+
+## 🔧 Configuration
+
+### Payment Wallet Setup
+
+Edit `payment_config.py` to configure your Solana wallet:
+
+```python
+# Your Solana wallet address for receiving payments
+PAYMENT_WALLET_ADDRESS = 'YOUR_SOLANA_WALLET_HERE'
+
+# Subscription prices in SOL
+SUBSCRIPTION_PRICES = {
+    'RISKY': 1.5,   # per week
+    'SAFE': 2.0,
+    'ULTRA': 3.0
+}
+```
+
+---
+
+## 🌐 Deployment
+
+### Recommended: Hetzner VPS (€4.90/month)
+
+**Server Specs for 100+ users:**
+- 4GB RAM
+- 2 CPU cores
+- 40GB SSD
+- Ubuntu 22.04
+
+**Setup Steps:**
 
 ```bash
-python continuous_learning_system.py
+# 1. Update system
+sudo apt update && sudo apt upgrade -y
+
+# 2. Install Python and dependencies
+sudo apt install python3 python3-pip git -y
+
+# 3. Clone repository
+git clone https://github.com/TheMasterPump/trading-bot-.git
+cd trading-bot-
+
+# 4. Install requirements
+pip3 install -r requirements.txt
+
+# 5. Configure environment
+nano payment_config.py  # Add your wallet address
+
+# 6. Run with gunicorn (production)
+pip3 install gunicorn
+gunicorn --bind 0.0.0.0:5000 --workers 4 app:app
+
+# 7. (Optional) Setup as systemd service for 24/7 operation
+sudo nano /etc/systemd/system/visionai.service
 ```
 
-→ Le système s'améliore automatiquement 24/7!
+**Systemd Service Example:**
 
-### 3. Voir les Statistiques
+```ini
+[Unit]
+Description=Vision AI Trading Bot
+After=network.target
 
+[Service]
+User=your-username
+WorkingDirectory=/path/to/trading-bot-
+ExecStart=/usr/bin/gunicorn --bind 0.0.0.0:5000 --workers 4 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
 ```bash
-python dashboard.py
+sudo systemctl enable visionai
+sudo systemctl start visionai
 ```
 
 ---
 
-## 📊 Ce que fait le système
+## 🔐 Security
 
-- ✅ **Scanne** les nouveaux tokens Pump.fun automatiquement
-- ✅ **Prédit** RUG / SAFE / GEM avec 95.61% de précision
-- ✅ **Track** la performance réelle des tokens sur 24-48h
-- ✅ **Labellise** automatiquement basé sur le ROI réel
-- ✅ **Réentraîne** le modèle avec les nouvelles données
-- ✅ **S'améliore** continuellement vers 99%+ de précision
+- **Payments:** All Solana transactions are verified on-chain
+- **User Data:** SQLite database with encrypted passwords (bcrypt)
+- **API Keys:** Store sensitive keys in environment variables
+- **HTTPS:** Use Nginx reverse proxy with SSL/TLS in production
 
 ---
 
-## 📁 Fichiers Importants
+## 📈 AI Models
 
-| Fichier | Description |
-|---------|-------------|
-| **`GUIDE_COMPLET.md`** | 📖 **COMMENCEZ ICI** - Guide complet |
-| `app.py` | Application web Flask |
-| `continuous_learning_system.py` | Système d'apprentissage continu |
-| `dashboard.py` | Dashboard des statistiques |
-| `train_now.py` | Script d'entraînement manuel |
+The bot uses multiple machine learning models:
 
----
+- **Migration Classifier** - Detects when tokens will migrate to Raydium
+- **Price Regressor** - Predicts price movements
+- **Runner Classifier** - Identifies high-growth potential tokens
+- **ROI Predictor** - Estimates potential returns (ensemble model)
 
-## 🚀 Comment ça marche
-
-```
-Scanner nouveaux tokens → Prédire → Tracker performance
-    ↓                         ↓              ↓
-Labelliser auto ← Calculer ROI réel ← Prix 24-48h
-    ↓
-Réentraîner modèle → Précision augmente! → Répéter ♾️
-```
+All models are pre-trained and included in the `models/` directory.
 
 ---
 
-## 🎓 Documentation
+## 🛠️ Development
 
-- **`GUIDE_COMPLET.md`** - Guide complet du système
-- **`README_APPRENTISSAGE_CONTINU.md`** - Détails de l'apprentissage continu
-- **`GUIDE_AMELIORATION.md`** - Comment améliorer la précision
-
----
-
-## 📈 Résultats
-
-**Modèles Entraînés:**
-- Random Forest: 94.74%
-- **XGBoost: 95.61%** ⭐ (Meilleur)
-- LightGBM: 93.86%
-- Ensemble: 95.61%
-
-**Dataset:**
-- 568 tokens actuellement
-- S'agrandit automatiquement chaque jour
-
----
-
-## 💡 Conseils
-
-1. Lisez **`GUIDE_COMPLET.md`** pour tout comprendre
-2. Lancez `continuous_learning_system.py` et laissez tourner
-3. Consultez `dashboard.py` régulièrement
-4. Soyez patient - la précision augmente avec le temps!
-
----
-
-## ⚙️ Configuration Requise
-
+### Requirements
 - Python 3.8+
-- Windows / Linux / Mac
-- 2 GB RAM minimum
-- Connexion internet
+- Flask 2.x
+- scikit-learn
+- pandas, numpy
+- solana-py (for payment verification)
 
-**Installation:**
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🎯 Objectifs
-
-| Timeline | Précision Attendue |
-|----------|-------------------|
-| Maintenant | ✅ 95.61% |
-| 1 semaine | 96-97% |
-| 1 mois | 97-98% |
-| 2-3 mois | **98-99%** |
+### Database
+- SQLite (default, perfect for 100-500 users)
+- Upgrade to PostgreSQL for 1000+ users
 
 ---
 
-**🚀 Lancez le système maintenant et regardez-le s'améliorer automatiquement!**
+## 📞 Support
 
-*Pour plus de détails, consultez: **GUIDE_COMPLET.md***
+- **Twitter:** [@VisionAIHQ](https://x.com/VisionAIHQ)
+- **Telegram:** [Join Community](https://t.me/PortalvisionAI)
+- **Email:** support@visionai.bot (configure in app)
+
+---
+
+## 📝 License
+
+Proprietary - All rights reserved
+
+---
+
+## 🎯 Roadmap
+
+- [x] Web interface with subscription system
+- [x] Solana payment integration
+- [x] AI trading models
+- [x] Multi-tier subscription plans
+- [ ] Mobile app (iOS/Android)
+- [ ] Advanced analytics dashboard
+- [ ] Telegram bot integration
+- [ ] Copy-trading features
+
+---
+
+**🚀 Start earning with AI-powered trading signals today!**
+
+*Payment Wallet: 89WT9zM1um2prDXqaGaYPh9KjcrjgNe4n5HYwHHX9ji5*
