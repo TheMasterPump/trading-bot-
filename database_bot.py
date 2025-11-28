@@ -1,6 +1,7 @@
 """
 TRADING BOT DATABASE
 Gestion de la base de données pour le système de bot de trading
+Supporte SQLite (dev local) et PostgreSQL (production)
 """
 import sqlite3
 import hashlib
@@ -21,8 +22,7 @@ except ImportError:
 # Clé de chiffrement pour les wallets (PERMANENTE depuis .env)
 ENCRYPTION_KEY = os.environ.get('WALLET_ENCRYPTION_KEY')
 if not ENCRYPTION_KEY:
-    print("[ERROR] WALLET_ENCRYPTION_KEY not found in .env file!")
-    print("[ERROR] Creating temporary key - wallets will be lost on restart!")
+    print("[WARNING] WALLET_ENCRYPTION_KEY not found - generating temporary key")
     ENCRYPTION_KEY = Fernet.generate_key()
 else:
     # La clé depuis .env est en string, on doit l'encoder en bytes
@@ -30,19 +30,37 @@ else:
 
 cipher_suite = Fernet(ENCRYPTION_KEY)
 
+# Configuration base de données
+DATABASE_URL = os.environ.get('DATABASE_URL')
 DB_PATH = Path(__file__).parent / "trading_bot.db"
+
+# Détecter si PostgreSQL ou SQLite
+USE_POSTGRES = DATABASE_URL is not None and DATABASE_URL.startswith('postgres')
+
+if USE_POSTGRES:
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+    print("[DATABASE] Using PostgreSQL (production mode)")
+else:
+    print("[DATABASE] Using SQLite (local development mode)")
 
 
 class BotDatabase:
     def __init__(self):
         self.conn = None
+        self.use_postgres = USE_POSTGRES
         self.init_database()
 
     def get_connection(self):
-        """Connexion à la base de données"""
+        """Connexion à la base de données (SQLite ou PostgreSQL)"""
         if self.conn is None:
-            self.conn = sqlite3.connect(DB_PATH, check_same_thread=False)
-            self.conn.row_factory = sqlite3.Row
+            if self.use_postgres:
+                # PostgreSQL connection
+                self.conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+            else:
+                # SQLite connection
+                self.conn = sqlite3.connect(DB_PATH, check_same_thread=False)
+                self.conn.row_factory = sqlite3.Row
         return self.conn
 
     def init_database(self):
@@ -50,10 +68,16 @@ class BotDatabase:
         conn = self.get_connection()
         cursor = conn.cursor()
 
+        # Adapter le type AUTO INCREMENT selon la BDD
+        if self.use_postgres:
+            id_type = "SERIAL PRIMARY KEY"
+        else:
+            id_type = "INTEGER PRIMARY KEY AUTOINCREMENT"
+
         # Table Users
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 email TEXT UNIQUE NOT NULL,
                 password_hash TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
