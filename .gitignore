@@ -25,11 +25,8 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Modèles ML (trop gros pour Git)
-models/*.pkl
-models/*.joblib
-*.pkl
-*.joblib
-
 # Windows reserved filenames
 nul
+
+# Note: AI models (.pkl, .joblib) are included in the repo
+# They are needed for the trading bot to make predictions
