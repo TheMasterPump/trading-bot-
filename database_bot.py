@@ -128,7 +128,7 @@ class BotDatabase:
                 stop_loss REAL DEFAULT 0.5,
                 max_position_size REAL DEFAULT 0.1,
                 tp_strategy TEXT DEFAULT 'SIMPLE_MULTIPLIER',
-                tp_config TEXT DEFAULT '{{"multiplier": 2.0}}',
+                tp_config TEXT,
                 started_at TIMESTAMP,
                 stopped_at TIMESTAMP,
                 FOREIGN KEY (user_id) REFERENCES users(id)
