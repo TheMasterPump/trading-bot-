@@ -699,15 +699,15 @@ class BotDatabase:
             return None
 
         return {
-            'id': row[0],
-            'user_id': row[1],
-            'boost_level': row[2],
-            'amount_sol': row[3],
-            'payment_address': row[4],
-            'status': row[5],
-            'created_at': row[6],
-            'expires_at': row[7],
-            'tx_signature': row[8]
+            'id': row['id'],
+            'user_id': row['user_id'],
+            'boost_level': row['boost_level'],
+            'amount_sol': row['amount_sol'],
+            'payment_address': row['payment_address'],
+            'status': row['status'],
+            'created_at': row['created_at'],
+            'expires_at': row['expires_at'],
+            'tx_signature': row['tx_signature']
         }
 
     def verify_payment(self, payment_id, tx_signature):
@@ -768,13 +768,13 @@ class BotDatabase:
         payments = []
         for row in cursor.fetchall():
             payments.append({
-                'id': row[0],
-                'boost_level': row[1],
-                'amount_sol': row[2],
-                'status': row[3],
-                'created_at': row[4],
-                'verified_at': row[5],
-                'tx_signature': row[6]
+                'id': row['id'],
+                'boost_level': row['boost_level'],
+                'amount_sol': row['amount_sol'],
+                'status': row['status'],
+                'created_at': row['created_at'],
+                'verified_at': row['verified_at'],
+                'tx_signature': row['tx_signature']
             })
 
         return payments
@@ -844,15 +844,15 @@ class BotDatabase:
             return None
 
         return {
-            'id': row[0],
-            'start_time': row[1],
-            'end_time': row[2],
-            'virtual_balance': row[3],
-            'final_balance': row[4],
-            'total_trades': row[5],
-            'winning_trades': row[6],
-            'is_active': row[7],
-            'is_expired': row[8]
+            'id': row['id'],
+            'start_time': row['start_time'],
+            'end_time': row['end_time'],
+            'virtual_balance': row['virtual_balance_sol'],
+            'final_balance': row['final_balance_sol'],
+            'total_trades': row['total_trades'],
+            'winning_trades': row['winning_trades'],
+            'is_active': row['is_active'],
+            'is_expired': row['is_expired']
         }
 
     def update_simulation_balance(self, session_id, new_balance):
