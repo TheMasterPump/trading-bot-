@@ -87,9 +87,9 @@ class BotDatabase:
         """)
 
         # Table Wallets
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS wallets (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 address TEXT UNIQUE NOT NULL,
                 private_key_encrypted TEXT NOT NULL,
@@ -102,9 +102,9 @@ class BotDatabase:
         """)
 
         # Table Subscriptions (Boosts)
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS subscriptions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 boost_level TEXT DEFAULT 'BASIC',
                 price_paid REAL DEFAULT 0.0,
@@ -117,9 +117,9 @@ class BotDatabase:
         """)
 
         # Table Bot Status
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS bot_status (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 is_running BOOLEAN DEFAULT FALSE,
                 strategy TEXT DEFAULT 'AI_PREDICTIONS',
@@ -136,9 +136,9 @@ class BotDatabase:
         """)
 
         # Table Trades History
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS trades (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 token_address TEXT NOT NULL,
                 token_name TEXT,
@@ -159,9 +159,9 @@ class BotDatabase:
         """)
 
         # Table Bot Stats
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS bot_stats (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 total_trades INTEGER DEFAULT 0,
                 winning_trades INTEGER DEFAULT 0,
@@ -176,9 +176,9 @@ class BotDatabase:
         """)
 
         # Table Payments (pour tracker les paiements d'abonnement)
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS payments (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 boost_level TEXT NOT NULL,
                 amount_sol REAL NOT NULL,
@@ -193,9 +193,9 @@ class BotDatabase:
         """)
 
         # Table Simulation Sessions (Mode simulation 2h)
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS simulation_sessions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 start_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 end_time TIMESTAMP,
@@ -211,9 +211,9 @@ class BotDatabase:
         """)
 
         # Table Open Positions (pour persister les positions actives)
-        cursor.execute("""
+        cursor.execute(f"""
             CREATE TABLE IF NOT EXISTS open_positions (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id {id_type},
                 user_id INTEGER NOT NULL,
                 token_address TEXT NOT NULL,
                 token_name TEXT NOT NULL,
