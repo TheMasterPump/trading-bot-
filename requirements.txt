@@ -11,7 +11,8 @@ python-dotenv==1.0.0
 cryptography==42.0.5
 websockets==11.0.3
 aiohttp==3.9.1
-psycopg2-binary==2.9.9
+psycopg[binary]==3.2.3
+psycopg2-binary==2.9.10
 flask-sqlalchemy==3.1.1
 rich==13.7.1
 httpx==0.23.3
