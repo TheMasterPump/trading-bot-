@@ -485,14 +485,14 @@ class BotDatabase:
 
         cursor.execute("""
             UPDATE bot_status
-            SET is_running = 1, strategy = %s, risk_level = %s, started_at = CURRENT_TIMESTAMP
+            SET is_running = TRUE, strategy = %s, risk_level = %s, started_at = CURRENT_TIMESTAMP
             WHERE user_id = %s
         """, (strategy, risk_level, user_id))
 
         if cursor.rowcount == 0:
             cursor.execute("""
                 INSERT INTO bot_status (user_id, is_running, strategy, risk_level, started_at)
-                VALUES (%s, 1, %s, %s, CURRENT_TIMESTAMP)
+                VALUES (%s, TRUE, %s, %s, CURRENT_TIMESTAMP)
             """, (user_id, strategy, risk_level))
 
         conn.commit()
@@ -504,7 +504,7 @@ class BotDatabase:
 
         cursor.execute("""
             UPDATE bot_status
-            SET is_running = 0, stopped_at = CURRENT_TIMESTAMP
+            SET is_running = FALSE, stopped_at = CURRENT_TIMESTAMP
             WHERE user_id = %s
         """, (user_id,))
 
