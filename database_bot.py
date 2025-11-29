@@ -280,7 +280,7 @@ class BotDatabase:
         cursor.execute("""
             SELECT id, email, created_at
             FROM users
-            WHERE email = %s AND password_hash = %s AND is_active = 1
+            WHERE email = %s AND password_hash = %s AND is_active = TRUE
         """, (email, password_hash))
 
         user = cursor.fetchone()
@@ -448,7 +448,7 @@ class BotDatabase:
 
         cursor.execute("""
             SELECT * FROM subscriptions
-            WHERE user_id = %s AND is_active = 1 AND expires_at > CURRENT_TIMESTAMP
+            WHERE user_id = %s AND is_active = TRUE AND expires_at > CURRENT_TIMESTAMP
             ORDER BY expires_at DESC
             LIMIT 1
         """, (user_id,))
@@ -834,7 +834,7 @@ class BotDatabase:
             SELECT id, start_time, end_time, virtual_balance_sol, final_balance_sol,
                    total_trades, winning_trades, is_active, is_expired
             FROM simulation_sessions
-            WHERE user_id = %s AND is_active = 1
+            WHERE user_id = %s AND is_active = TRUE
             ORDER BY start_time DESC
             LIMIT 1
         """, (user_id,))
@@ -907,7 +907,7 @@ class BotDatabase:
 
             cursor.execute("""
                 UPDATE simulation_sessions
-                SET is_active = 0, is_expired = 1
+                SET is_active = FALSE, is_expired = TRUE
                 WHERE id = %s
             """, (session_id,))
 
