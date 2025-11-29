@@ -241,12 +241,20 @@ class BotDatabase:
             # Hash du password
             password_hash = hashlib.sha256(password.encode()).hexdigest()
 
-            cursor.execute("""
-                INSERT INTO users (email, password_hash)
-                VALUES (%s, %s)
-            """, (email, password_hash))
+            if USE_POSTGRES:
+                cursor.execute("""
+                    INSERT INTO users (email, password_hash)
+                    VALUES (%s, %s)
+                    RETURNING id
+                """, (email, password_hash))
+                user_id = cursor.fetchone()[0]
+            else:
+                cursor.execute("""
+                    INSERT INTO users (email, password_hash)
+                    VALUES (%s, %s)
+                """, (email, password_hash))
+                user_id = cursor.lastrowid
 
-            user_id = cursor.lastrowid
             conn.commit()
 
             # Initialiser les stats du bot
@@ -307,12 +315,20 @@ class BotDatabase:
             # Chiffrer la clé privée
             encrypted_key = cipher_suite.encrypt(private_key.encode()).decode()
 
-            cursor.execute("""
-                INSERT INTO wallets (user_id, address, private_key_encrypted)
-                VALUES (%s, %s, %s)
-            """, (user_id, address, encrypted_key))
+            if USE_POSTGRES:
+                cursor.execute("""
+                    INSERT INTO wallets (user_id, address, private_key_encrypted)
+                    VALUES (%s, %s, %s)
+                    RETURNING id
+                """, (user_id, address, encrypted_key))
+                wallet_id = cursor.fetchone()[0]
+            else:
+                cursor.execute("""
+                    INSERT INTO wallets (user_id, address, private_key_encrypted)
+                    VALUES (%s, %s, %s)
+                """, (user_id, address, encrypted_key))
+                wallet_id = cursor.lastrowid
 
-            wallet_id = cursor.lastrowid
             conn.commit()
 
             return wallet_id
@@ -402,13 +418,22 @@ class BotDatabase:
 
         expires_at = datetime.now() + timedelta(days=duration_days)
 
-        cursor.execute("""
-            INSERT INTO subscriptions (user_id, boost_level, price_paid, expires_at, payment_tx)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (user_id, boost_level, price_paid, expires_at, payment_tx))
+        if USE_POSTGRES:
+            cursor.execute("""
+                INSERT INTO subscriptions (user_id, boost_level, price_paid, expires_at, payment_tx)
+                VALUES (%s, %s, %s, %s, %s)
+                RETURNING id
+            """, (user_id, boost_level, price_paid, expires_at, payment_tx))
+            sub_id = cursor.fetchone()[0]
+        else:
+            cursor.execute("""
+                INSERT INTO subscriptions (user_id, boost_level, price_paid, expires_at, payment_tx)
+                VALUES (%s, %s, %s, %s, %s)
+            """, (user_id, boost_level, price_paid, expires_at, payment_tx))
+            sub_id = cursor.lastrowid
 
         conn.commit()
-        return cursor.lastrowid
+        return sub_id
 
     def get_active_subscription(self, user_id):
         """Récupère la subscription active d'un utilisateur"""
@@ -486,29 +511,54 @@ class BotDatabase:
         conn = self.get_connection()
         cursor = conn.cursor()
 
-        cursor.execute("""
-            INSERT INTO trades
-            (user_id, token_address, token_name, trade_type, amount_sol,
-             price_usd, tokens_bought, prediction_category, prediction_confidence, tx_signature, status, profit_loss, profit_loss_percentage)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        """, (
-            user_id,
-            token_address,
-            kwargs.get('token_name'),
-            trade_type,
-            amount_sol,
-            kwargs.get('price_usd'),
-            kwargs.get('tokens_bought'),
-            kwargs.get('prediction_category'),
-            kwargs.get('prediction_confidence'),
-            kwargs.get('tx_signature'),
-            kwargs.get('status', 'PENDING'),
-            kwargs.get('profit_loss', 0.0),
-            kwargs.get('profit_loss_percentage', 0.0)
-        ))
+        if USE_POSTGRES:
+            cursor.execute("""
+                INSERT INTO trades
+                (user_id, token_address, token_name, trade_type, amount_sol,
+                 price_usd, tokens_bought, prediction_category, prediction_confidence, tx_signature, status, profit_loss, profit_loss_percentage)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                RETURNING id
+            """, (
+                user_id,
+                token_address,
+                kwargs.get('token_name'),
+                trade_type,
+                amount_sol,
+                kwargs.get('price_usd'),
+                kwargs.get('tokens_bought'),
+                kwargs.get('prediction_category'),
+                kwargs.get('prediction_confidence'),
+                kwargs.get('tx_signature'),
+                kwargs.get('status', 'PENDING'),
+                kwargs.get('profit_loss', 0.0),
+                kwargs.get('profit_loss_percentage', 0.0)
+            ))
+            trade_id = cursor.fetchone()[0]
+        else:
+            cursor.execute("""
+                INSERT INTO trades
+                (user_id, token_address, token_name, trade_type, amount_sol,
+                 price_usd, tokens_bought, prediction_category, prediction_confidence, tx_signature, status, profit_loss, profit_loss_percentage)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """, (
+                user_id,
+                token_address,
+                kwargs.get('token_name'),
+                trade_type,
+                amount_sol,
+                kwargs.get('price_usd'),
+                kwargs.get('tokens_bought'),
+                kwargs.get('prediction_category'),
+                kwargs.get('prediction_confidence'),
+                kwargs.get('tx_signature'),
+                kwargs.get('status', 'PENDING'),
+                kwargs.get('profit_loss', 0.0),
+                kwargs.get('profit_loss_percentage', 0.0)
+            ))
+            trade_id = cursor.lastrowid
 
         conn.commit()
-        return cursor.lastrowid
+        return trade_id
 
     def get_user_trades(self, user_id, limit=50):
         """Récupère l'historique des trades"""
@@ -608,12 +658,20 @@ class BotDatabase:
         conn = self.get_connection()
         cursor = conn.cursor()
 
-        cursor.execute("""
-            INSERT INTO payments (user_id, boost_level, amount_sol, payment_address, status, expires_at)
-            VALUES (%s, %s, %s, %s, 'PENDING', %s)
-        """, (user_id, boost_level, amount_sol, payment_address, expires_at))
+        if USE_POSTGRES:
+            cursor.execute("""
+                INSERT INTO payments (user_id, boost_level, amount_sol, payment_address, status, expires_at)
+                VALUES (%s, %s, %s, %s, 'PENDING', %s)
+                RETURNING id
+            """, (user_id, boost_level, amount_sol, payment_address, expires_at))
+            payment_id = cursor.fetchone()[0]
+        else:
+            cursor.execute("""
+                INSERT INTO payments (user_id, boost_level, amount_sol, payment_address, status, expires_at)
+                VALUES (%s, %s, %s, %s, 'PENDING', %s)
+            """, (user_id, boost_level, amount_sol, payment_address, expires_at))
+            payment_id = cursor.lastrowid
 
-        payment_id = cursor.lastrowid
         conn.commit()
 
         return payment_id
@@ -737,13 +795,23 @@ class BotDatabase:
 
             # Créer une nouvelle session de simulation
             end_time = datetime.now() + timedelta(hours=2)
-            cursor.execute("""
-                INSERT INTO simulation_sessions
-                (user_id, end_time, duration_minutes, virtual_balance_sol, final_balance_sol, is_active)
-                VALUES (%s, %s, 120, 10.0, 10.0, 1)
-            """, (user_id, end_time))
 
-            session_id = cursor.lastrowid
+            if USE_POSTGRES:
+                cursor.execute("""
+                    INSERT INTO simulation_sessions
+                    (user_id, end_time, duration_minutes, virtual_balance_sol, final_balance_sol, is_active)
+                    VALUES (%s, %s, 120, 10.0, 10.0, TRUE)
+                    RETURNING id
+                """, (user_id, end_time))
+                session_id = cursor.fetchone()[0]
+            else:
+                cursor.execute("""
+                    INSERT INTO simulation_sessions
+                    (user_id, end_time, duration_minutes, virtual_balance_sol, final_balance_sol, is_active)
+                    VALUES (%s, %s, 120, 10.0, 10.0, 1)
+                """, (user_id, end_time))
+                session_id = cursor.lastrowid
+
             conn.commit()
 
             return session_id
@@ -851,13 +919,22 @@ class BotDatabase:
             conn = self.get_connection()
             cursor = conn.cursor()
 
-            cursor.execute("""
-                INSERT INTO open_positions (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-            """, (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id))
+            if USE_POSTGRES:
+                cursor.execute("""
+                    INSERT INTO open_positions (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                    RETURNING id
+                """, (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id))
+                position_id = cursor.fetchone()[0]
+            else:
+                cursor.execute("""
+                    INSERT INTO open_positions (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """, (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id))
+                position_id = cursor.lastrowid
 
             conn.commit()
-            return cursor.lastrowid
+            return position_id
         except Exception as e:
             print(f"[ERROR] Erreur create_open_position: {e}")
             return None
