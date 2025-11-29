@@ -261,8 +261,14 @@ class BotDatabase:
             self._init_bot_stats(user_id)
 
             return user_id
-        except sqlite3.IntegrityError:
-            return None
+        except (sqlite3.IntegrityError, Exception) as e:
+            # Rollback en cas d'erreur (important pour PostgreSQL)
+            conn.rollback()
+            # Si c'est une erreur d'unicité (email déjà existant), retourner None
+            if "unique" in str(e).lower() or "duplicate" in str(e).lower():
+                return None
+            # Sinon, relancer l'exception
+            raise
 
     def authenticate_user(self, email, password):
         """Authentifie un utilisateur"""
