@@ -243,7 +243,7 @@ class BotDatabase:
 
             cursor.execute("""
                 INSERT INTO users (email, password_hash)
-                VALUES (?, ?)
+                VALUES (%s, %s)
             """, (email, password_hash))
 
             user_id = cursor.lastrowid
@@ -266,7 +266,7 @@ class BotDatabase:
         cursor.execute("""
             SELECT id, email, created_at
             FROM users
-            WHERE email = ? AND password_hash = ? AND is_active = 1
+            WHERE email = %s AND password_hash = %s AND is_active = 1
         """, (email, password_hash))
 
         user = cursor.fetchone()
@@ -275,7 +275,7 @@ class BotDatabase:
             # Update last login
             cursor.execute("""
                 UPDATE users SET last_login = CURRENT_TIMESTAMP
-                WHERE id = ?
+                WHERE id = %s
             """, (user['id'],))
             conn.commit()
 
@@ -290,7 +290,7 @@ class BotDatabase:
         cursor.execute("""
             SELECT id, email, created_at, last_login
             FROM users
-            WHERE id = ?
+            WHERE id = %s
         """, (user_id,))
 
         user = cursor.fetchone()
@@ -309,7 +309,7 @@ class BotDatabase:
 
             cursor.execute("""
                 INSERT INTO wallets (user_id, address, private_key_encrypted)
-                VALUES (?, ?, ?)
+                VALUES (%s, %s, %s)
             """, (user_id, address, encrypted_key))
 
             wallet_id = cursor.lastrowid
@@ -328,7 +328,7 @@ class BotDatabase:
         cursor.execute("""
             SELECT id, address, balance_sol, balance_usd, created_at, last_updated
             FROM wallets
-            WHERE user_id = ?
+            WHERE user_id = %s
         """, (user_id,))
 
         wallet = cursor.fetchone()
@@ -342,7 +342,7 @@ class BotDatabase:
         cursor.execute("""
             SELECT private_key_encrypted
             FROM wallets
-            WHERE user_id = ?
+            WHERE user_id = %s
         """, (user_id,))
 
         result = cursor.fetchone()
@@ -358,8 +358,8 @@ class BotDatabase:
 
         cursor.execute("""
             UPDATE wallets
-            SET balance_sol = ?, balance_usd = ?, last_updated = CURRENT_TIMESTAMP
-            WHERE user_id = ?
+            SET balance_sol = %s, balance_usd = %s, last_updated = CURRENT_TIMESTAMP
+            WHERE user_id = %s
         """, (balance_sol, balance_usd, user_id))
 
         conn.commit()
@@ -378,12 +378,12 @@ class BotDatabase:
         try:
             cursor.execute("""
                 UPDATE wallets
-                SET address = ?,
-                    private_key_encrypted = ?,
+                SET address = %s,
+                    private_key_encrypted = %s,
                     balance_sol = 0.0,
                     balance_usd = 0.0,
                     last_updated = CURRENT_TIMESTAMP
-                WHERE user_id = ?
+                WHERE user_id = %s
             """, (new_address, encrypted_key, user_id))
 
             conn.commit()
@@ -404,7 +404,7 @@ class BotDatabase:
 
         cursor.execute("""
             INSERT INTO subscriptions (user_id, boost_level, price_paid, expires_at, payment_tx)
-            VALUES (?, ?, ?, ?, ?)
+            VALUES (%s, %s, %s, %s, %s)
         """, (user_id, boost_level, price_paid, expires_at, payment_tx))
 
         conn.commit()
@@ -417,7 +417,7 @@ class BotDatabase:
 
         cursor.execute("""
             SELECT * FROM subscriptions
-            WHERE user_id = ? AND is_active = 1 AND expires_at > CURRENT_TIMESTAMP
+            WHERE user_id = %s AND is_active = 1 AND expires_at > CURRENT_TIMESTAMP
             ORDER BY expires_at DESC
             LIMIT 1
         """, (user_id,))
@@ -433,7 +433,7 @@ class BotDatabase:
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT * FROM bot_status WHERE user_id = ?
+            SELECT * FROM bot_status WHERE user_id = %s
         """, (user_id,))
 
         status = cursor.fetchone()
@@ -442,7 +442,7 @@ class BotDatabase:
         else:
             # Créer un statut par défaut
             cursor.execute("""
-                INSERT INTO bot_status (user_id) VALUES (?)
+                INSERT INTO bot_status (user_id) VALUES (%s)
             """, (user_id,))
             conn.commit()
             return self.get_bot_status(user_id)
@@ -454,14 +454,14 @@ class BotDatabase:
 
         cursor.execute("""
             UPDATE bot_status
-            SET is_running = 1, strategy = ?, risk_level = ?, started_at = CURRENT_TIMESTAMP
-            WHERE user_id = ?
+            SET is_running = 1, strategy = %s, risk_level = %s, started_at = CURRENT_TIMESTAMP
+            WHERE user_id = %s
         """, (strategy, risk_level, user_id))
 
         if cursor.rowcount == 0:
             cursor.execute("""
                 INSERT INTO bot_status (user_id, is_running, strategy, risk_level, started_at)
-                VALUES (?, 1, ?, ?, CURRENT_TIMESTAMP)
+                VALUES (%s, 1, %s, %s, CURRENT_TIMESTAMP)
             """, (user_id, strategy, risk_level))
 
         conn.commit()
@@ -474,7 +474,7 @@ class BotDatabase:
         cursor.execute("""
             UPDATE bot_status
             SET is_running = 0, stopped_at = CURRENT_TIMESTAMP
-            WHERE user_id = ?
+            WHERE user_id = %s
         """, (user_id,))
 
         conn.commit()
@@ -490,7 +490,7 @@ class BotDatabase:
             INSERT INTO trades
             (user_id, token_address, token_name, trade_type, amount_sol,
              price_usd, tokens_bought, prediction_category, prediction_confidence, tx_signature, status, profit_loss, profit_loss_percentage)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
             user_id,
             token_address,
@@ -517,9 +517,9 @@ class BotDatabase:
 
         cursor.execute("""
             SELECT * FROM trades
-            WHERE user_id = ?
+            WHERE user_id = %s
             ORDER BY created_at DESC
-            LIMIT ?
+            LIMIT %s
         """, (user_id, limit))
 
         trades = cursor.fetchall()
@@ -533,7 +533,7 @@ class BotDatabase:
         cursor = conn.cursor()
 
         cursor.execute("""
-            INSERT INTO bot_stats (user_id) VALUES (?)
+            INSERT INTO bot_stats (user_id) VALUES (%s)
         """, (user_id,))
 
         conn.commit()
@@ -544,7 +544,7 @@ class BotDatabase:
         cursor = conn.cursor()
 
         cursor.execute("""
-            SELECT * FROM bot_stats WHERE user_id = ?
+            SELECT * FROM bot_stats WHERE user_id = %s
         """, (user_id,))
 
         stats = cursor.fetchone()
@@ -565,7 +565,7 @@ class BotDatabase:
                 MAX(profit_loss) as best_trade,
                 MIN(profit_loss) as worst_trade
             FROM trades
-            WHERE user_id = ? AND status = 'EXECUTED'
+            WHERE user_id = %s AND status = 'EXECUTED'
         """, (user_id,))
 
         result = cursor.fetchone()
@@ -579,15 +579,15 @@ class BotDatabase:
         cursor.execute("""
             UPDATE bot_stats
             SET
-                total_trades = ?,
-                winning_trades = ?,
-                losing_trades = ?,
-                total_profit_usd = ?,
-                win_rate = ?,
-                best_trade_profit = ?,
-                worst_trade_loss = ?,
+                total_trades = %s,
+                winning_trades = %s,
+                losing_trades = %s,
+                total_profit_usd = %s,
+                win_rate = %s,
+                best_trade_profit = %s,
+                worst_trade_loss = %s,
                 updated_at = CURRENT_TIMESTAMP
-            WHERE user_id = ?
+            WHERE user_id = %s
         """, (
             result['total_trades'] or 0,
             result['winning_trades'] or 0,
@@ -610,7 +610,7 @@ class BotDatabase:
 
         cursor.execute("""
             INSERT INTO payments (user_id, boost_level, amount_sol, payment_address, status, expires_at)
-            VALUES (?, ?, ?, ?, 'PENDING', ?)
+            VALUES (%s, %s, %s, %s, 'PENDING', %s)
         """, (user_id, boost_level, amount_sol, payment_address, expires_at))
 
         payment_id = cursor.lastrowid
@@ -627,7 +627,7 @@ class BotDatabase:
             SELECT id, user_id, boost_level, amount_sol, payment_address, status,
                    created_at, expires_at, tx_signature
             FROM payments
-            WHERE id = ? AND status = 'PENDING'
+            WHERE id = %s AND status = 'PENDING'
         """, (payment_id,))
 
         row = cursor.fetchone()
@@ -659,8 +659,8 @@ class BotDatabase:
         # Mettre à jour le paiement
         cursor.execute("""
             UPDATE payments
-            SET status = 'VERIFIED', tx_signature = ?, verified_at = CURRENT_TIMESTAMP
-            WHERE id = ?
+            SET status = 'VERIFIED', tx_signature = %s, verified_at = CURRENT_TIMESTAMP
+            WHERE id = %s
         """, (tx_signature, payment_id))
 
         # Activer l'abonnement
@@ -683,7 +683,7 @@ class BotDatabase:
         cursor.execute("""
             UPDATE payments
             SET status = 'EXPIRED'
-            WHERE id = ? AND status = 'PENDING'
+            WHERE id = %s AND status = 'PENDING'
         """, (payment_id,))
 
         conn.commit()
@@ -696,9 +696,9 @@ class BotDatabase:
         cursor.execute("""
             SELECT id, boost_level, amount_sol, status, created_at, verified_at, tx_signature
             FROM payments
-            WHERE user_id = ?
+            WHERE user_id = %s
             ORDER BY created_at DESC
-            LIMIT ?
+            LIMIT %s
         """, (user_id, limit))
 
         payments = []
@@ -726,7 +726,7 @@ class BotDatabase:
             # Vérifier si l'utilisateur a déjà fait une simulation
             cursor.execute("""
                 SELECT id, is_expired FROM simulation_sessions
-                WHERE user_id = ?
+                WHERE user_id = %s
                 ORDER BY start_time DESC
                 LIMIT 1
             """, (user_id,))
@@ -740,7 +740,7 @@ class BotDatabase:
             cursor.execute("""
                 INSERT INTO simulation_sessions
                 (user_id, end_time, duration_minutes, virtual_balance_sol, final_balance_sol, is_active)
-                VALUES (?, ?, 120, 10.0, 10.0, 1)
+                VALUES (%s, %s, 120, 10.0, 10.0, 1)
             """, (user_id, end_time))
 
             session_id = cursor.lastrowid
@@ -760,7 +760,7 @@ class BotDatabase:
             SELECT id, start_time, end_time, virtual_balance_sol, final_balance_sol,
                    total_trades, winning_trades, is_active, is_expired
             FROM simulation_sessions
-            WHERE user_id = ? AND is_active = 1
+            WHERE user_id = %s AND is_active = 1
             ORDER BY start_time DESC
             LIMIT 1
         """, (user_id,))
@@ -789,8 +789,8 @@ class BotDatabase:
 
             cursor.execute("""
                 UPDATE simulation_sessions
-                SET final_balance_sol = ?
-                WHERE id = ?
+                SET final_balance_sol = %s
+                WHERE id = %s
             """, (new_balance, session_id))
 
             conn.commit()
@@ -810,13 +810,13 @@ class BotDatabase:
                     UPDATE simulation_sessions
                     SET total_trades = total_trades + 1,
                         winning_trades = winning_trades + 1
-                    WHERE id = ?
+                    WHERE id = %s
                 """, (session_id,))
             else:
                 cursor.execute("""
                     UPDATE simulation_sessions
                     SET total_trades = total_trades + 1
-                    WHERE id = ?
+                    WHERE id = %s
                 """, (session_id,))
 
             conn.commit()
@@ -834,7 +834,7 @@ class BotDatabase:
             cursor.execute("""
                 UPDATE simulation_sessions
                 SET is_active = 0, is_expired = 1
-                WHERE id = ?
+                WHERE id = %s
             """, (session_id,))
 
             conn.commit()
@@ -853,7 +853,7 @@ class BotDatabase:
 
             cursor.execute("""
                 INSERT INTO open_positions (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """, (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id))
 
             conn.commit()
@@ -870,7 +870,7 @@ class BotDatabase:
 
             cursor.execute("""
                 SELECT * FROM open_positions
-                WHERE user_id = ?
+                WHERE user_id = %s
             """, (user_id,))
 
             rows = cursor.fetchall()
@@ -887,7 +887,7 @@ class BotDatabase:
 
             cursor.execute("""
                 DELETE FROM open_positions
-                WHERE user_id = ? AND token_address = ?
+                WHERE user_id = %s AND token_address = %s
             """, (user_id, token_address))
 
             conn.commit()
