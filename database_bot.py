@@ -49,6 +49,8 @@ class BotDatabase:
     def __init__(self):
         self.conn = None
         self.use_postgres = USE_POSTGRES
+        # Placeholder SQL selon la base de données
+        self.ph = '%s' if USE_POSTGRES else '?'
         self.init_database()
 
     def get_connection(self):
@@ -57,16 +59,78 @@ class BotDatabase:
             if self.use_postgres:
                 # PostgreSQL connection
                 self.conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+                # Auto-commit mode OFF pour gérer les transactions manuellement
+                self.conn.autocommit = False
             else:
                 # SQLite connection
                 self.conn = sqlite3.connect(DB_PATH, check_same_thread=False)
                 self.conn.row_factory = sqlite3.Row
         return self.conn
 
+    def safe_execute(self, cursor, query, params=None):
+        """
+        Exécute une requête SQL de manière sécurisée avec gestion automatique des erreurs
+        et rollback en cas d'échec (important pour PostgreSQL)
+        """
+        try:
+            if params:
+                cursor.execute(query, params)
+            else:
+                cursor.execute(query)
+            return True
+        except Exception as e:
+            # Rollback automatique en cas d'erreur
+            if self.conn:
+                self.conn.rollback()
+            print(f"[DATABASE ERROR] Query failed: {e}")
+            raise
+
+    def safe_commit(self):
+        """Commit avec gestion d'erreur et rollback automatique"""
+        try:
+            if self.conn:
+                self.conn.commit()
+            return True
+        except Exception as e:
+            if self.conn:
+                self.conn.rollback()
+            print(f"[DATABASE ERROR] Commit failed: {e}")
+            raise
+
+    def get_cursor(self):
+        """
+        Retourne un cursor avec wrapper automatique pour:
+        - Convertir les placeholders PostgreSQL (%s) en SQLite (?) si nécessaire
+        - Gérer automatiquement les rollback en cas d'erreur
+        """
+        conn = self.get_connection()
+        cursor = conn.cursor()  # Utiliser conn.cursor() ici pour éviter la récursion
+
+        original_execute = cursor.execute
+
+        def execute_wrapper(query, params=None):
+            try:
+                # Si SQLite, convertir %s en ?
+                if not self.use_postgres:
+                    query = query.replace('%s', '?')
+
+                return original_execute(query, params) if params else original_execute(query)
+            except Exception as e:
+                # Rollback automatique en cas d'erreur (SQLite et PostgreSQL)
+                try:
+                    conn.rollback()
+                    print(f"[DATABASE] Auto-rollback after error: {str(e)[:100]}")
+                except:
+                    pass
+                raise
+
+        cursor.execute = execute_wrapper
+        return cursor
+
     def init_database(self):
         """Initialise les tables de la base de données"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         # Adapter le type AUTO INCREMENT selon la BDD
         if self.use_postgres:
@@ -236,7 +300,7 @@ class BotDatabase:
         """Crée un nouvel utilisateur"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             # Hash du password
             password_hash = hashlib.sha256(password.encode()).hexdigest()
@@ -273,7 +337,7 @@ class BotDatabase:
     def authenticate_user(self, email, password):
         """Authentifie un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         password_hash = hashlib.sha256(password.encode()).hexdigest()
 
@@ -299,7 +363,7 @@ class BotDatabase:
     def get_user(self, user_id):
         """Récupère les infos d'un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT id, email, created_at, last_login
@@ -316,7 +380,7 @@ class BotDatabase:
         """Crée un wallet pour un utilisateur"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             # Chiffrer la clé privée
             encrypted_key = cipher_suite.encrypt(private_key.encode()).decode()
@@ -345,7 +409,7 @@ class BotDatabase:
     def get_wallet(self, user_id):
         """Récupère le wallet d'un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT id, address, balance_sol, balance_usd, created_at, last_updated
@@ -359,7 +423,7 @@ class BotDatabase:
     def get_wallet_private_key(self, user_id):
         """Récupère la clé privée déchiffrée (USE WITH CAUTION)"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT private_key_encrypted
@@ -376,7 +440,7 @@ class BotDatabase:
     def update_wallet_balance(self, user_id, balance_sol, balance_usd):
         """Met à jour le solde du wallet"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             UPDATE wallets
@@ -392,7 +456,7 @@ class BotDatabase:
         ATTENTION: Remplace complètement l'ancien wallet!
         """
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         # Chiffrer la nouvelle clé privée
         encrypted_key = cipher_suite.encrypt(new_private_key.encode()).decode()
@@ -420,7 +484,7 @@ class BotDatabase:
     def create_subscription(self, user_id, boost_level, price_paid, duration_days=30, payment_tx=None):
         """Crée une nouvelle subscription"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         expires_at = datetime.now() + timedelta(days=duration_days)
 
@@ -444,7 +508,7 @@ class BotDatabase:
     def get_active_subscription(self, user_id):
         """Récupère la subscription active d'un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT * FROM subscriptions
@@ -461,7 +525,7 @@ class BotDatabase:
     def get_bot_status(self, user_id):
         """Récupère le statut du bot"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT * FROM bot_status WHERE user_id = %s
@@ -481,7 +545,7 @@ class BotDatabase:
     def start_bot(self, user_id, strategy='AI_PREDICTIONS', risk_level='MEDIUM'):
         """Démarre le bot"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             UPDATE bot_status
@@ -500,7 +564,7 @@ class BotDatabase:
     def stop_bot(self, user_id):
         """Arrête le bot"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             UPDATE bot_status
@@ -515,7 +579,7 @@ class BotDatabase:
     def create_trade(self, user_id, token_address, trade_type, amount_sol, **kwargs):
         """Enregistre un nouveau trade"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         if USE_POSTGRES:
             cursor.execute("""
@@ -569,7 +633,7 @@ class BotDatabase:
     def get_user_trades(self, user_id, limit=50):
         """Récupère l'historique des trades"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT * FROM trades
@@ -586,7 +650,7 @@ class BotDatabase:
     def _init_bot_stats(self, user_id):
         """Initialise les stats pour un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             INSERT INTO bot_stats (user_id) VALUES (%s)
@@ -597,7 +661,7 @@ class BotDatabase:
     def get_bot_stats(self, user_id):
         """Récupère les statistiques du bot"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT * FROM bot_stats WHERE user_id = %s
@@ -609,7 +673,7 @@ class BotDatabase:
     def update_bot_stats(self, user_id):
         """Recalcule les stats basées sur les trades"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         # Calculer les stats depuis les trades
         cursor.execute("""
@@ -662,7 +726,7 @@ class BotDatabase:
     def create_payment_request(self, user_id, boost_level, amount_sol, payment_address, expires_at):
         """Crée une demande de paiement"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         if USE_POSTGRES:
             cursor.execute("""
@@ -685,7 +749,7 @@ class BotDatabase:
     def get_pending_payment(self, payment_id):
         """Récupère un paiement en attente"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT id, user_id, boost_level, amount_sol, payment_address, status,
@@ -713,7 +777,7 @@ class BotDatabase:
     def verify_payment(self, payment_id, tx_signature):
         """Marque un paiement comme vérifié et active l'abonnement"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         # Récupérer les infos du paiement
         payment = self.get_pending_payment(payment_id)
@@ -742,7 +806,7 @@ class BotDatabase:
     def expire_payment(self, payment_id):
         """Marque un paiement comme expiré"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             UPDATE payments
@@ -755,7 +819,7 @@ class BotDatabase:
     def get_user_payments(self, user_id, limit=20):
         """Récupère l'historique des paiements d'un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT id, boost_level, amount_sol, status, created_at, verified_at, tx_signature
@@ -785,7 +849,7 @@ class BotDatabase:
         """Démarre une session de simulation pour un utilisateur"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             # Vérifier si l'utilisateur a déjà fait une simulation
             cursor.execute("""
@@ -828,7 +892,7 @@ class BotDatabase:
     def get_simulation_session(self, user_id):
         """Récupère la session de simulation active d'un utilisateur"""
         conn = self.get_connection()
-        cursor = conn.cursor()
+        cursor = self.get_cursor()
 
         cursor.execute("""
             SELECT id, start_time, end_time, virtual_balance_sol, final_balance_sol,
@@ -859,7 +923,7 @@ class BotDatabase:
         """Met à jour le solde virtuel de la simulation"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             cursor.execute("""
                 UPDATE simulation_sessions
@@ -877,7 +941,7 @@ class BotDatabase:
         """Incrémente le compteur de trades simulés"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             if is_win:
                 cursor.execute("""
@@ -903,7 +967,7 @@ class BotDatabase:
         """Termine une session de simulation"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             cursor.execute("""
                 UPDATE simulation_sessions
@@ -923,7 +987,7 @@ class BotDatabase:
         """Crée une position ouverte en BDD"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             if USE_POSTGRES:
                 cursor.execute("""
@@ -949,7 +1013,7 @@ class BotDatabase:
         """Récupère toutes les positions ouvertes d'un utilisateur"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             cursor.execute("""
                 SELECT * FROM open_positions
@@ -966,7 +1030,7 @@ class BotDatabase:
         """Supprime une position ouverte (quand elle est fermée)"""
         try:
             conn = self.get_connection()
-            cursor = conn.cursor()
+            cursor = self.get_cursor()
 
             cursor.execute("""
                 DELETE FROM open_positions
