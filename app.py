@@ -1550,6 +1550,21 @@ def test_positions():
         })
 
 
+# Global error handler pour logger toutes les exceptions
+@app.errorhandler(500)
+def internal_error(error):
+    import traceback
+    print("\n" + "="*80)
+    print("[ERROR 500] Internal Server Error:")
+    print("="*80)
+    traceback.print_exc()
+    print("="*80 + "\n")
+    return jsonify({
+        'success': False,
+        'error': 'Internal server error'
+    }), 500
+
+
 if __name__ == '__main__':
     print("\n" + "=" * 70)
     print("  PREDICTION AI - Site Web de Prediction ROI")
