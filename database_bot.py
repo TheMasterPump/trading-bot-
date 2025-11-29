@@ -82,7 +82,7 @@ class BotDatabase:
                 password_hash TEXT NOT NULL,
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 last_login TIMESTAMP,
-                is_active BOOLEAN DEFAULT 1
+                is_active BOOLEAN DEFAULT TRUE
             )
         """)
 
@@ -110,7 +110,7 @@ class BotDatabase:
                 price_paid REAL DEFAULT 0.0,
                 starts_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                 expires_at TIMESTAMP,
-                is_active BOOLEAN DEFAULT 1,
+                is_active BOOLEAN DEFAULT TRUE,
                 payment_tx TEXT,
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
@@ -121,7 +121,7 @@ class BotDatabase:
             CREATE TABLE IF NOT EXISTS bot_status (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 user_id INTEGER NOT NULL,
-                is_running BOOLEAN DEFAULT 0,
+                is_running BOOLEAN DEFAULT FALSE,
                 strategy TEXT DEFAULT 'AI_PREDICTIONS',
                 risk_level TEXT DEFAULT 'MEDIUM',
                 take_profit REAL DEFAULT 2.0,
@@ -204,8 +204,8 @@ class BotDatabase:
                 final_balance_sol REAL DEFAULT 10.0,
                 total_trades INTEGER DEFAULT 0,
                 winning_trades INTEGER DEFAULT 0,
-                is_active BOOLEAN DEFAULT 1,
-                is_expired BOOLEAN DEFAULT 0,
+                is_active BOOLEAN DEFAULT TRUE,
+                is_expired BOOLEAN DEFAULT FALSE,
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
         """)
