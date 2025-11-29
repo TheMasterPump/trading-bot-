@@ -247,7 +247,7 @@ class BotDatabase:
                     VALUES (%s, %s)
                     RETURNING id
                 """, (email, password_hash))
-                user_id = cursor.fetchone()[0]
+                user_id = cursor.fetchone()['id']
             else:
                 cursor.execute("""
                     INSERT INTO users (email, password_hash)
@@ -327,7 +327,7 @@ class BotDatabase:
                     VALUES (%s, %s, %s)
                     RETURNING id
                 """, (user_id, address, encrypted_key))
-                wallet_id = cursor.fetchone()[0]
+                wallet_id = cursor.fetchone()['id']
             else:
                 cursor.execute("""
                     INSERT INTO wallets (user_id, address, private_key_encrypted)
@@ -430,7 +430,7 @@ class BotDatabase:
                 VALUES (%s, %s, %s, %s, %s)
                 RETURNING id
             """, (user_id, boost_level, price_paid, expires_at, payment_tx))
-            sub_id = cursor.fetchone()[0]
+            sub_id = cursor.fetchone()['id']
         else:
             cursor.execute("""
                 INSERT INTO subscriptions (user_id, boost_level, price_paid, expires_at, payment_tx)
@@ -539,7 +539,7 @@ class BotDatabase:
                 kwargs.get('profit_loss', 0.0),
                 kwargs.get('profit_loss_percentage', 0.0)
             ))
-            trade_id = cursor.fetchone()[0]
+            trade_id = cursor.fetchone()['id']
         else:
             cursor.execute("""
                 INSERT INTO trades
@@ -670,7 +670,7 @@ class BotDatabase:
                 VALUES (%s, %s, %s, %s, 'PENDING', %s)
                 RETURNING id
             """, (user_id, boost_level, amount_sol, payment_address, expires_at))
-            payment_id = cursor.fetchone()[0]
+            payment_id = cursor.fetchone()['id']
         else:
             cursor.execute("""
                 INSERT INTO payments (user_id, boost_level, amount_sol, payment_address, status, expires_at)
@@ -809,7 +809,7 @@ class BotDatabase:
                     VALUES (%s, %s, 120, 10.0, 10.0, TRUE)
                     RETURNING id
                 """, (user_id, end_time))
-                session_id = cursor.fetchone()[0]
+                session_id = cursor.fetchone()['id']
             else:
                 cursor.execute("""
                     INSERT INTO simulation_sessions
@@ -931,7 +931,7 @@ class BotDatabase:
                     VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                     RETURNING id
                 """, (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id))
-                position_id = cursor.fetchone()[0]
+                position_id = cursor.fetchone()['id']
             else:
                 cursor.execute("""
                     INSERT INTO open_positions (user_id, token_address, token_name, entry_mc, entry_time, amount_sol, tokens, simulation_session_id)
