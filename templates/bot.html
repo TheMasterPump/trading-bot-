@@ -2292,19 +2292,19 @@ async function loadActivePositions() {
 
                     if (pos.migration_reached || pos.current_mc >= 58000) {
                         statusEmoji = '✅';
-                        statusText = 'MIGRATION ATTEINTE';
+                        statusText = 'MIGRATION REACHED';
                         statusColor = '#00ff88';
                     } else if (pos.partial_sold) {
                         statusEmoji = '💰';
-                        statusText = 'EN ATTENTE MIGRATION';
+                        statusText = 'AWAITING MIGRATION';
                         statusColor = '#ffa500';
                     } else if (pos.current_mc >= 40000) {
                         statusEmoji = '🎯';
-                        statusText = 'PROCHE MIGRATION';
+                        statusText = 'NEAR MIGRATION';
                         statusColor = '#ffd700';
                     } else if (profitPercent >= 50) {
                         statusEmoji = '📈';
-                        statusText = 'EN PROFIT';
+                        statusText = 'IN PROFIT';
                         statusColor = '#00ff88';
                     }
 
@@ -2350,7 +2350,7 @@ async function loadActivePositions() {
 
                             <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem; margin-bottom: 8px;">
                                 <i class="fas fa-bullseye me-1"></i>
-                                Distance migration: <span style="color: #ffd700; font-weight: 600;">$${distanceToMigration.toLocaleString()}</span>
+                                Migration distance: <span style="color: #ffd700; font-weight: 600;">$${distanceToMigration.toLocaleString()}</span>
                                 <span style="color: rgba(255, 255, 255, 0.5);"> (${percentToMigration}% to 58K)</span>
                             </div>
 
