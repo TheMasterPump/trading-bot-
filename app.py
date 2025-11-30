@@ -8,8 +8,6 @@ import joblib
 import json
 import asyncio
 import sys
-import random
-import time
 from pathlib import Path
 from datetime import datetime, timedelta
 from functools import wraps
@@ -28,8 +26,6 @@ from system_limits import MAX_CONCURRENT_BOTS, get_capacity_status, ERROR_MESSAG
 from scanner_data_manager import scanner_manager
 from predict_runner import RunnerPredictor
 from console_logger import get_console_logger
-from demo_data_generator import demo_generator
-import threading
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -1500,164 +1496,6 @@ def end_simulation_route():
             'success': False,
             'error': str(e)
         }), 500
-
-
-# ====== DEMO MODE API ======
-
-# Variables globales pour le mode démo
-demo_active = False
-demo_thread = None
-demo_logs = []
-demo_max_logs = 200
-
-def run_demo_simulation():
-    """Thread qui exécute la simulation en arrière-plan"""
-    global demo_active, demo_logs
-
-    print("[DEMO] Starting demo simulation thread...")
-
-    try:
-        # Réinitialiser le générateur
-        demo_generator.active_positions = []
-        demo_generator.completed_trades = []
-        demo_generator.total_profit_sol = 0.0
-        demo_generator.virtual_balance = 10.0
-
-        while demo_active:
-            # Vérifier si on peut acheter un nouveau token
-            if len(demo_generator.active_positions) < 3:  # Max 3 positions en même temps
-                # Générer un nouveau token runner toutes les 10-20 secondes
-                if random.random() < 0.3:  # 30% de chance à chaque tick
-                    token = demo_generator.generate_runner_token()
-                    demo_generator.active_positions.append(token)
-
-                    # Logs pour le nouveau token
-                    demo_logs.append(demo_generator.generate_log('NEW_TOKEN', token))
-                    time.sleep(0.5)
-                    demo_logs.append(demo_generator.generate_log('AI_ANALYSIS', token))
-                    time.sleep(0.5)
-                    demo_logs.append(demo_generator.generate_log('BUY_SIGNAL', token))
-
-                    # Limiter la taille des logs
-                    if len(demo_logs) > demo_max_logs:
-                        demo_logs = demo_logs[-demo_max_logs:]
-
-            # Mettre à jour les prix des positions actives
-            positions_to_remove = []
-
-            for i, token in enumerate(demo_generator.active_positions):
-                # Simuler le mouvement de prix
-                demo_generator.simulate_price_movement(token)
-
-                # Log de mise à jour de prix toutes les quelques updates
-                if random.random() < 0.4:  # 40% de chance
-                    demo_logs.append(demo_generator.generate_log('PRICE_UPDATE', token))
-
-                # Log de migration si atteinte
-                if token['migration_reached'] and token.get('migration_logged') is None:
-                    demo_logs.append(demo_generator.generate_log('MIGRATION', token))
-                    token['migration_logged'] = True
-
-                # Vérifier si on doit vendre
-                if demo_generator.should_sell(token):
-                    # Exécuter la vente
-                    trade = demo_generator.execute_sell(token)
-                    demo_logs.append(demo_generator.generate_log('SELL_EXECUTED', trade))
-
-                    # Marquer pour suppression
-                    positions_to_remove.append(i)
-
-                    # Log de stats
-                    stats = demo_generator.get_current_stats()
-                    demo_logs.append(demo_generator.generate_log('STATS_UPDATE', stats))
-
-                # Limiter la taille des logs
-                if len(demo_logs) > demo_max_logs:
-                    demo_logs = demo_logs[-demo_max_logs:]
-
-            # Supprimer les positions vendues
-            for i in reversed(positions_to_remove):
-                demo_generator.active_positions.pop(i)
-
-            # Pause entre les ticks (2-4 secondes)
-            time.sleep(random.uniform(2, 4))
-
-    except Exception as e:
-        print(f"[DEMO ERROR] {e}")
-        import traceback
-        traceback.print_exc()
-
-    print("[DEMO] Demo simulation thread stopped")
-
-
-@app.route('/api/demo/start', methods=['POST'])
-@login_required
-def start_demo():
-    """Démarre le mode démo"""
-    global demo_active, demo_thread, demo_logs
-
-    if demo_active:
-        return jsonify({
-            'success': False,
-            'error': 'Demo already running'
-        }), 400
-
-    # Réinitialiser les logs
-    demo_logs = []
-
-    # Démarrer le thread de simulation
-    demo_active = True
-    demo_thread = threading.Thread(target=run_demo_simulation, daemon=True)
-    demo_thread.start()
-
-    return jsonify({
-        'success': True,
-        'message': '🎮 Demo mode started!'
-    })
-
-
-@app.route('/api/demo/stop', methods=['POST'])
-@login_required
-def stop_demo():
-    """Arrête le mode démo"""
-    global demo_active
-
-    demo_active = False
-
-    return jsonify({
-        'success': True,
-        'message': 'Demo stopped',
-        'final_stats': demo_generator.get_current_stats()
-    })
-
-
-@app.route('/api/demo/status')
-@login_required
-def demo_status():
-    """Récupère le statut du mode démo"""
-    return jsonify({
-        'success': True,
-        'active': demo_active,
-        'stats': demo_generator.get_current_stats()
-    })
-
-
-@app.route('/api/demo/logs')
-@login_required
-def demo_logs_api():
-    """Récupère les derniers logs de la démo"""
-    global demo_logs
-
-    # Récupérer les N derniers logs
-    limit = request.args.get('limit', 50, type=int)
-    logs = demo_logs[-limit:] if len(demo_logs) > limit else demo_logs
-
-    return jsonify({
-        'success': True,
-        'logs': logs,
-        'count': len(logs),
-        'active': demo_active
-    })
 
 
 # ====== BOT PAGE ======
