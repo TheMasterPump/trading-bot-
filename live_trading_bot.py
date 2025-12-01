@@ -690,11 +690,11 @@ class PositionManager:
                 # COMPTER LA MIGRATION DÈS MAINTENANT (pas à la fermeture!)
                 self.migrations_count += 1
 
-                print(f'\n🚀 [MIGRATION ATTEINTE - {position["symbol"]}] 🚀')
+                print(f'\n🚀 [MIGRATION REACHED - {position["symbol"]}] 🚀')
                 print(f'  MC: ${actual_mc:,.0f} >= ${position["final_take_profit_mc"]:,.0f}')
-                print(f'  🎉 MIGRATION #{self.migrations_count} DÉTECTÉE!')
-                print(f'  🔄 VENTE PROGRESSIVE activée: 5% toutes les 20 secondes')
-                print(f'  Protection: Si MC baisse de 15% depuis max, vente totale du reste')
+                print(f'  🎉 MIGRATION #{self.migrations_count} DETECTED!')
+                print(f'  🔄 PROGRESSIVE SELLING enabled: 5% every 20 seconds')
+                print(f'  Protection: If MC drops 15% from max, sell all remaining')
 
                 # Mettre à jour le titre immédiatement
                 self.update_title()
@@ -712,9 +712,9 @@ class PositionManager:
                 remaining_after_partial = 1.0 - Config.PARTIAL_SELL_PERCENT  # 50% restant
                 amount_to_sell_pct = int(Config.PROGRESSIVE_SELL_PERCENT * 100)  # 5% de la position totale
 
-                print(f'\n💰 [VENTE PROGRESSIVE #{position["progressive_sell_count"]+1}] {position["symbol"]}')
+                print(f'\n💰 [PROGRESSIVE SELL #{position["progressive_sell_count"]+1}] {position["symbol"]}')
                 print(f'  MC: ${actual_mc:,.0f} (Max: ${position["max_mc_since_migration"]:,.0f})')
-                print(f'  Vente: {amount_to_sell_pct}% de la position TOTALE')
+                print(f'  Selling: {amount_to_sell_pct}% of TOTAL position')
 
                 # VENTE PROGRESSIVE RÉELLE (si pas en simulation)
                 if not Config.SIMULATION_MODE:
@@ -736,23 +736,23 @@ class PositionManager:
                 position['last_progressive_sell_time'] = datetime.now()
 
                 remaining_pct = position['amount_remaining'] * 100
-                print(f'  Restant: {remaining_pct:.0f}%')
+                print(f'  Remaining: {remaining_pct:.0f}%')
 
                 # Si moins de 5% reste, vendre tout et fermer
                 if position['amount_remaining'] <= Config.PROGRESSIVE_SELL_PERCENT:
-                    print(f'  ✅ POSITION FINALE - Vente du reste ({remaining_pct:.0f}%)')
-                    self.close_position(mint, actual_mc, f'VENTE PROGRESSIVE COMPLETE ({position["progressive_sell_count"]} ventes)')
+                    print(f'  ✅ FINAL POSITION - Selling remainder ({remaining_pct:.0f}%)')
+                    self.close_position(mint, actual_mc, f'PROGRESSIVE SELLING COMPLETE ({position["progressive_sell_count"]} sells)')
                     return
 
             # STOP LOSS: Si MC baisse de 15% depuis le max, vendre tout le reste
             mc_drop_from_max = (position['max_mc_since_migration'] - actual_mc) / position['max_mc_since_migration']
             if mc_drop_from_max >= Config.PROGRESSIVE_SELL_STOP_LOSS:
                 remaining_pct = position['amount_remaining'] * 100
-                print(f'\n⚠️ [STOP LOSS PROGRESSIF] {position["symbol"]}')
-                print(f'  MC baisse de {mc_drop_from_max*100:.1f}% depuis max ${position["max_mc_since_migration"]:,.0f}')
-                print(f'  MC actuel: ${actual_mc:,.0f}')
-                print(f'  Vente du reste: {remaining_pct:.0f}%')
-                self.close_position(mint, actual_mc, f'STOP LOSS PROGRESSIF (MC baisse -{mc_drop_from_max*100:.0f}% depuis max)')
+                print(f'\n⚠️ [PROGRESSIVE STOP LOSS] {position["symbol"]}')
+                print(f'  MC dropped {mc_drop_from_max*100:.1f}% from max ${position["max_mc_since_migration"]:,.0f}')
+                print(f'  Current MC: ${actual_mc:,.0f}')
+                print(f'  Selling remainder: {remaining_pct:.0f}%')
+                self.close_position(mint, actual_mc, f'PROGRESSIVE STOP LOSS (MC dropped -{mc_drop_from_max*100:.0f}% from max)')
                 return
 
             # Continuer à surveiller
@@ -1571,13 +1571,13 @@ class LiveTradingBot:
 
                     # Emoji selon statut
                     if partial_sold:
-                        status = '🎯 EN ATTENTE MIGRATION (50% vendus)'
+                        status = '🎯 AWAITING MIGRATION (50% sold)'
                         status_color = '✅'
                     elif profit_pct > 0:
-                        status = '📈 EN PROFIT'
+                        status = '📈 IN PROFIT'
                         status_color = '💚'
                     else:
-                        status = '📉 EN PERTE'
+                        status = '📉 IN LOSS'
                         status_color = '🔴'
 
                     print(f'\n{status_color} {symbol}: {status}')
@@ -1585,12 +1585,12 @@ class LiveTradingBot:
                     print(f'   Profit: {profit_ratio:.2f}x ({profit_pct:+.1f}%)')
 
                     if current_mc < 53000:
-                        print(f'   Distance migration: ${distance_to_migration:,.0f} ({migration_pct:.1f}% vers 53K)')
+                        print(f'   Distance to migration: ${distance_to_migration:,.0f} ({migration_pct:.1f}% to 53K)')
                     else:
-                        print(f'   ✅ MIGRATION ATTEINTE ! MC: ${current_mc:,.0f}')
+                        print(f'   ✅ MIGRATION REACHED! MC: ${current_mc:,.0f}')
 
                     if partial_sold:
-                        print(f'   💰 Position GRATUITE - Investissement récupéré !')
+                        print(f'   💰 FREE Position - Investment recovered!')
 
                 print(f'\n{"="*80}')
 
