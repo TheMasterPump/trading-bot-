@@ -259,7 +259,7 @@ class AITradingEngine:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: MC hors sweet spot (${mc:,.0f})'
+                'reason': f'SKIP: MC outside sweet spot (${mc:,.0f})'
             }
 
         # NIVEAU 0A: 2 BALEINES CONSECUTIVES
@@ -300,7 +300,7 @@ class AITradingEngine:
                     'confidence': 0.0,
                     'mc': mc,
                     'should_buy': False,
-                    'reason': f'SKIP AUTO-BUY: {whale_count} baleines (max {max_whales_allowed})'
+                    'reason': f'SKIP AUTO-BUY: {whale_count} whales (max {max_whales_allowed})'
                 }
 
             if txn > Config.AUTO_BUY_MAX_TXN or traders > Config.AUTO_BUY_MAX_TRADERS:
@@ -308,7 +308,7 @@ class AITradingEngine:
                     'confidence': 0.0,
                     'mc': mc,
                     'should_buy': False,
-                    'reason': f'SKIP AUTO-BUY: Volume trop élevé (probable bots)'
+                    'reason': f'SKIP AUTO-BUY: Volume too high (likely bots)'
                 }
 
             return {
@@ -326,7 +326,7 @@ class AITradingEngine:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': 'SKIP: Critères trop faibles'
+                'reason': 'SKIP: Criteria too weak'
             }
 
         # NIVEAU 2: IA
@@ -335,7 +335,7 @@ class AITradingEngine:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: Buy ratio trop faible ({buy_ratio*100:.0f}%)'
+                'reason': f'SKIP: Buy ratio too low ({buy_ratio*100:.0f}%)'
             }
 
         max_whales_allowed = Config.AI_MAX_WHALES_EARLY if mc < 12000 else Config.AI_MAX_WHALES_LATE
@@ -344,7 +344,7 @@ class AITradingEngine:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP IA: {whale_count} baleines (max {max_whales_allowed})'
+                'reason': f'SKIP AI: {whale_count} whales (max {max_whales_allowed})'
             }
 
         # Prédiction avec modèle IA (EXACT comme live_trading_bot.py)
@@ -375,7 +375,7 @@ class AITradingEngine:
             'confidence': 0.0,
             'mc': mc,
             'should_buy': False,
-            'reason': 'WAIT: En observation'
+            'reason': 'WAIT: Observing'
         }
 
     async def handle_new_token(self, data, ws):

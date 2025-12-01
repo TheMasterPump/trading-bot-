@@ -88,7 +88,7 @@ class Config:
     AI_MIN_TRADERS = adaptive_config.get_param('AI_MIN_TRADERS')
     AI_MIN_BUY_RATIO = adaptive_config.get_param('AI_MIN_BUY_RATIO')
 
-    # Niveau 3: SKIP automatique (trop faible)
+    # Level 3: AUTO SKIP (too weak)
     SKIP_IF_TXN_BELOW = 5        # Skip si < 5 transactions
     SKIP_IF_BUY_RATIO_BELOW = 0.40  # Skip si < 40% buy ratio
 
@@ -235,31 +235,31 @@ print(f'     -> Protection: Si MC baisse {int(Config.PROGRESSIVE_SELL_STOP_LOSS*
 print(f'  ✅ Après 2x: Position 100% RISK-FREE!')
 
 print(f'\n[🐋 PATTERNS ULTRA-PRIORITAIRES - FILTRES STRICTS]')
-print(f'  1. 2 baleines consecutives (>$500) -> AUTO-BUY')
-print(f'  2. Wallet ELITE detecte -> AUTO-BUY ({len(Config.ELITE_WALLETS)} VIP trackes)')
+print(f'  1. 2 consecutive whales (>$500) -> AUTO-BUY')
+print(f'  2. ELITE Wallet detected -> AUTO-BUY ({len(Config.ELITE_WALLETS)} VIP tracked)')
 print(f'  FILTRES: MC < ${Config.ELITE_WALLET_MAX_MC:,}, buy_ratio >= {Config.ELITE_MIN_BUY_RATIO*100:.0f}%, {Config.ELITE_MIN_WHALE_COUNT}+ whales')
 
 print(f'\n[⚡ ANTI-LATENCE]')
-print(f'  > Verification prix temps reel avant achat')
-print(f'  > Skip si prix explose +{Config.PRICE_JUMP_TOLERANCE*100:.0f}% pendant analyse')
-print(f'  > Evite d\'acheter a 17K quand whale a achete a 10K!')
+print(f'  > Real-time price verification before buy')
+print(f'  > Skip if price explodes +{Config.PRICE_JUMP_TOLERANCE*100:.0f}% during analysis')
+print(f'  > Avoid buying at 17K when whale bought at 10K!')
 
 print(f'\n[⏰ TIMEOUT POSITIONS]')
-print(f'  > Fermeture auto apres {Config.POSITION_TIMEOUT_MINUTES} minutes')
-print(f'  > Garantit que TOUS les trades sont enregistres')
-print(f'  > Verification toutes les 5 minutes')
+print(f'  > Auto close after {Config.POSITION_TIMEOUT_MINUTES} minutes')
+print(f'  > Ensures ALL trades are recorded')
+print(f'  > Check every 5 minutes')
 
-print(f'\n[SYSTEME DE DECISION AMELIORE @ 8s]')
-print(f'  Niveau 1 - AUTO-BUY (bypass IA):')
+print(f'\n[IMPROVED DECISION SYSTEM @ 8s]')
+print(f'  Level 1 - AUTO-BUY (bypass AI):')
 print(f'    - Txn: {Config.AUTO_BUY_MIN_TXN}-{Config.AUTO_BUY_MAX_TXN}, Traders: {Config.AUTO_BUY_MIN_TRADERS}-{Config.AUTO_BUY_MAX_TRADERS}')
 print(f'    - Buy Ratio >= {Config.AUTO_BUY_MIN_BUY_RATIO*100:.0f}%, MC < ${Config.AUTO_BUY_MAX_MC:,}')
-print(f'    - ❌ REJET si baleines détectées (0 baleine requis)')
-print(f'  Niveau 2 - IA + Filtres:')
-print(f'    - Seuil IA: {Config.THRESHOLD_8S*100:.0f}% (plus strict), MC < ${Config.MAX_PRICE_8S:,}')
-print(f'    - ❌ REJET si > 1 baleine (baleines = red flag)')
+print(f'    - ❌ REJECT if whales detected (0 whale required)')
+print(f'  Level 2 - AI + Filters:')
+print(f'    - AI Threshold: {Config.THRESHOLD_8S*100:.0f}% (stricter), MC < ${Config.MAX_PRICE_8S:,}')
+print(f'    - ❌ REJECT if > 1 whale (whales = red flag)')
 print(f'    - Buy ratio minimum: {Config.AI_STRICT_BUY_RATIO*100:.0f}%')
-print(f'  Niveau 3 - SKIP auto:')
-print(f'    - Transactions < {Config.SKIP_IF_TXN_BELOW} OU Buy Ratio < {Config.SKIP_IF_BUY_RATIO_BELOW*100:.0f}%')
+print(f'  Level 3 - AUTO SKIP:')
+print(f'    - Transactions < {Config.SKIP_IF_TXN_BELOW} OR Buy Ratio < {Config.SKIP_IF_BUY_RATIO_BELOW*100:.0f}%')
 if Config.SCREENSHOT_MODE:
     print(f'\n[2ND CHANCE @ 15s]')
     print(f'  - 2 consecutive whales @ 15s -> AUTO-BUY (MC < ${Config.ELITE_WALLET_MAX_MC:,})')
@@ -267,11 +267,11 @@ if Config.SCREENSHOT_MODE:
     print(f'  - Late whales: 2+ new whales -> AUTO-BUY (MC < ${Config.MAX_PRICE_15S:,})')
     print(f'  - Standard AI: Threshold {Config.THRESHOLD_15S*100:.0f}%')
 else:
-    print(f'\n[2EME CHANCE @ 15s]')
-    print(f'  - 2 baleines consecutives @ 15s -> AUTO-BUY (MC < ${Config.ELITE_WALLET_MAX_MC:,})')
-    print(f'  - Elite wallet tardif: 1+ nouveau wallet VIP -> AUTO-BUY (MC < ${Config.ELITE_WALLET_MAX_MC:,})')
-    print(f'  - Baleines tardives: 2+ nouvelles baleines -> AUTO-BUY (MC < ${Config.MAX_PRICE_15S:,})')
-    print(f'  - IA standard: Seuil {Config.THRESHOLD_15S*100:.0f}%')
+    print(f'\n[2ND CHANCE @ 15s]')
+    print(f'  - 2 consecutive whales @ 15s -> AUTO-BUY (MC < ${Config.ELITE_WALLET_MAX_MC:,})')
+    print(f'  - Late elite wallet: 1+ new VIP wallet -> AUTO-BUY (MC < ${Config.ELITE_WALLET_MAX_MC:,})')
+    print(f'  - Late whales: 2+ new whales -> AUTO-BUY (MC < ${Config.MAX_PRICE_15S:,})')
+    print(f'  - Standard AI: Threshold {Config.THRESHOLD_15S*100:.0f}%')
 if Config.SCREENSHOT_MODE:
     print(f'\n[PARAMETERS]')
     print(f'Amount per trade: {Config.DISPLAY_AMOUNT} SOL')
@@ -574,9 +574,9 @@ class PositionManager:
             # Utiliser le dernier MC connu ou le MC d'entrée
             last_known_mc = position.get('last_mc', position['entry_mc'])
 
-            print(f'\n⏰ [TIMEOUT] Position expirée: {position["symbol"]}')
-            print(f'   Ouverte depuis: {Config.POSITION_TIMEOUT_MINUTES} minutes')
-            print(f'   Fermeture automatique au prix actuel: ${last_known_mc:,.0f}')
+            print(f'\n⏰ [TIMEOUT] Position expired: {position["symbol"]}')
+            print(f'   Opened since: {Config.POSITION_TIMEOUT_MINUTES} minutes')
+            print(f'   Auto close at current price: ${last_known_mc:,.0f}')
 
             self.close_position(mint, last_known_mc, f'TIMEOUT ({Config.POSITION_TIMEOUT_MINUTES}min)')
 
@@ -999,7 +999,7 @@ class LiveTradingBot:
                         'confidence': 0.0,
                         'mc': mc_live,
                         'should_buy': False,
-                        'reason': f'SKIP: Prix a sauté +{price_jump_pct:.0f}% (MC ${mc:.0f} -> ${mc_live:.0f})'
+                        'reason': f'SKIP: Price jumped +{price_jump_pct:.0f}% (MC ${mc:.0f} -> ${mc_live:.0f})'
                     }
                 # Utiliser le prix live pour la suite
                 mc = mc_live
@@ -1012,7 +1012,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: Hors sweet spot (MC ${mc:,.0f}, zone optimale: {Config.SWEET_SPOT_MIN_MC/1000:.0f}K-{Config.SWEET_SPOT_MAX_MC/1000:.0f}K)'
+                'reason': f'SKIP: Outside sweet spot (MC ${mc:,.0f}, optimal zone: {Config.SWEET_SPOT_MIN_MC/1000:.0f}K-{Config.SWEET_SPOT_MAX_MC/1000:.0f}K)'
             }
 
         # ========================================================================
@@ -1064,7 +1064,7 @@ class LiveTradingBot:
                     'confidence': 0.0,
                     'mc': mc,
                     'should_buy': False,
-                    'reason': f'SKIP AUTO-BUY: {whale_count} baleines (max {max_whales_allowed} @ ${mc:,.0f})'
+                    'reason': f'SKIP AUTO-BUY: {whale_count} whales (max {max_whales_allowed} @ ${mc:,.0f})'
                 }
 
             # NOUVEAU FILTRE: Volume modéré (pas trop de bots)
@@ -1073,7 +1073,7 @@ class LiveTradingBot:
                     'confidence': 0.0,
                     'mc': mc,
                     'should_buy': False,
-                    'reason': f'SKIP AUTO-BUY: Volume trop élevé ({txn}txn, {traders}traders - probable bots)'
+                    'reason': f'SKIP AUTO-BUY: Volume too high ({txn}txn, {traders}traders - likely bots)'
                 }
 
             return {
@@ -1094,7 +1094,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: Critères trop faibles'
+                'reason': f'SKIP: Criteria too weak'
             }
 
         # ========================================================================
@@ -1106,7 +1106,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP IA: MC trop bas (${mc:,.0f} < ${Config.SWEET_SPOT_MIN_MC:,}) - zone perdante'
+                'reason': f'SKIP AI: MC too low (${mc:,.0f} < ${Config.SWEET_SPOT_MIN_MC:,}) - losing zone'
             }
 
         # NOUVEAU FILTRE INTELLIGENT: Baleines conditionnelles au MC
@@ -1119,7 +1119,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP IA: {whale_count} baleines (max {max_whales_allowed} @ ${mc:,.0f})'
+                'reason': f'SKIP AI: {whale_count} whales (max {max_whales_allowed} @ ${mc:,.0f})'
             }
 
         if buy_ratio < Config.AI_STRICT_BUY_RATIO:
@@ -1127,7 +1127,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: Buy ratio trop faible ({buy_ratio*100:.0f}% < {Config.AI_STRICT_BUY_RATIO*100:.0f}%)'
+                'reason': f'SKIP: Buy ratio too low ({buy_ratio*100:.0f}% < {Config.AI_STRICT_BUY_RATIO*100:.0f}%)'
             }
 
         # Compter critères remplis
@@ -1145,7 +1145,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP: {criteria_met}/3 critères IA'
+                'reason': f'SKIP: {criteria_met}/3 AI criteria'
             }
 
         # Prédiction IA
@@ -1163,7 +1163,7 @@ class LiveTradingBot:
         # BONUS BALEINES: Si 3+ baleines, boost le score
         if whale_count >= Config.WHALE_BOOST_THRESHOLD:
             proba = min(1.0, proba + Config.WHALE_BOOST_AMOUNT)
-            whale_boost_msg = f' +WHALE BOOST ({whale_count} baleines)'
+            whale_boost_msg = f' +WHALE BOOST ({whale_count} whales)'
         else:
             whale_boost_msg = ''
 
@@ -1174,7 +1174,7 @@ class LiveTradingBot:
             'confidence': proba,
             'mc': mc,
             'should_buy': should_buy,
-            'reason': f'IA: {proba*100:.0f}%{whale_boost_msg}'
+            'reason': f'AI: {proba*100:.0f}%{whale_boost_msg}'
         }
 
     def predict_15s(self, snapshot_8s, snapshot_15s):
@@ -1235,7 +1235,7 @@ class LiveTradingBot:
                 'confidence': 0.0,
                 'mc': mc,
                 'should_buy': False,
-                'reason': f'SKIP @ 15s: MC trop bas (${mc:,.0f} < ${Config.SWEET_SPOT_MIN_MC:,}) - zone perdante'
+                'reason': f'SKIP @ 15s: MC too low (${mc:,.0f} < ${Config.SWEET_SPOT_MIN_MC:,}) - losing zone'
             }
 
         # Compter les NOUVELLES baleines arrivées après 8s
@@ -1254,7 +1254,7 @@ class LiveTradingBot:
                     'confidence': 1.0,
                     'mc': mc,
                     'should_buy': True,
-                    'reason': f'AUTO-BUY: {new_whales} nouvelles baleines @ 15s (total: {whale_count_15s})'
+                    'reason': f'AUTO-BUY: {new_whales} new whales @ 15s (total: {whale_count_15s})'
                 }
 
         mc_growth = 0
@@ -1286,7 +1286,7 @@ class LiveTradingBot:
             'confidence': proba,
             'mc': mc,
             'should_buy': proba >= Config.THRESHOLD_15S and mc < Config.MAX_PRICE_15S,
-            'reason': f'IA: {proba*100:.0f}%'
+            'reason': f'AI: {proba*100:.0f}%'
         }
 
     async def handle_new_token(self, data, ws):
@@ -1403,7 +1403,7 @@ class LiveTradingBot:
             if Config.SCREENSHOT_MODE:
                 print_blue(f'  [NO DATA @ 8s] {token["symbol"]}: Not enough trades to analyze')
             else:
-                print_blue(f'  [NO DATA @ 8s] {token["symbol"]}: Pas assez de trades pour analyser')
+                print_blue(f'  [NO DATA @ 8s] {token["symbol"]}: Not enough trades to analyze')
 
         # Attendre 7 secondes de plus (total 15s)
         await asyncio.sleep(7)
@@ -1444,7 +1444,7 @@ class LiveTradingBot:
                         emoji = '🐋🐋'  # Pattern ultra-fort tardif
                     elif 'ELITE WALLET' in reason:
                         emoji = '👑'  # Elite wallet tardif
-                    elif 'nouvelles baleines' in reason or 'new whales' in reason:
+                    elif 'new whales' in reason:
                         emoji = '🐋'  # Baleines tardives
                     else:
                         emoji = '✅'  # IA standard
@@ -1452,7 +1452,7 @@ class LiveTradingBot:
                     if Config.SCREENSHOT_MODE:
                         print_blue(f'  {emoji} [BUY SIGNAL @ 15s - 2ND CHANCE] {token["symbol"]}: {reason}, MC=${actual_buy_mc:,.0f}')
                     else:
-                        print_blue(f'  {emoji} [BUY SIGNAL @ 15s - 2EME CHANCE] {token["symbol"]}: {reason}, MC=${actual_buy_mc:,.0f}')
+                        print_blue(f'  {emoji} [BUY SIGNAL @ 15s - 2ND CHANCE] {token["symbol"]}: {reason}, MC=${actual_buy_mc:,.0f}')
 
                     self.positions.open_position(
                         mint, token['symbol'], actual_buy_mc,
@@ -1466,15 +1466,15 @@ class LiveTradingBot:
                         if Config.SCREENSHOT_MODE:
                             print_blue(f'  [SKIP @ 15s] {token["symbol"]}: Price too high (${prediction["mc"]:,.0f} > ${Config.MAX_PRICE_15S:,})')
                         else:
-                            print_blue(f'  [SKIP @ 15s] {token["symbol"]}: Prix trop élevé (${prediction["mc"]:,.0f} > ${Config.MAX_PRICE_15S:,})')
-                    elif prediction['confidence'] < Config.THRESHOLD_15S and 'nouvelles baleines' not in reason and 'new whales' not in reason:
+                            print_blue(f'  [SKIP @ 15s] {token["symbol"]}: Price too high (${prediction["mc"]:,.0f} > ${Config.MAX_PRICE_15S:,})')
+                    elif prediction['confidence'] < Config.THRESHOLD_15S and 'new whales' not in reason:
                         print_blue(f'  [SKIP @ 15s] {token["symbol"]}: {reason}, MC=${prediction["mc"]:,.0f}')
         else:
             if not snapshot_15s:
                 if Config.SCREENSHOT_MODE:
                     print_blue(f'  [NO DATA @ 15s] {token["symbol"]}: Not enough trades to analyze')
                 else:
-                    print_blue(f'  [NO DATA @ 15s] {token["symbol"]}: Pas assez de trades pour analyser')
+                    print_blue(f'  [NO DATA @ 15s] {token["symbol"]}: Not enough trades to analyze')
 
         # Nettoyer les vieux tokens pour libérer la mémoire
         await asyncio.sleep(600)  # Après 10 minutes total
@@ -1662,7 +1662,7 @@ class LiveTradingBot:
             expired_count = self.positions.check_expired_positions()
 
             if expired_count > 0:
-                print(f'\n⏰ [TIMEOUT CHECK] {expired_count} position(s) expirée(s) fermée(s)')
+                print(f'\n⏰ [TIMEOUT CHECK] {expired_count} position(s) expired and closed')
 
             # Vérifier toutes les 5 minutes
             await asyncio.sleep(300)
