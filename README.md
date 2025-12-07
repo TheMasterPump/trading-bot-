@@ -2,8 +2,8 @@
 
 AI-powered trading bot for Solana with real-time signals and token-based access.
 
-[![Twitter](https://img.shields.io/badge/Twitter-@VisionAIHQ-1DA1F2?style=flat&logo=twitter)](https://x.com/VisionAIHQ)
-[![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=flat&logo=telegram)](https://t.me/PortalvisionAI)
+[![Twitter](https://img.shields.io/badge/Twitter-@VenomAIapp-1DA1F2?style=flat&logo=twitter)](https://x.com/VenomAIapp)
+[![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=flat&logo=telegram)](https://t.me/PortalVenom)
 
 ---
 
@@ -206,8 +206,8 @@ All models are pre-trained and included in the `models/` directory.
 
 ## 📞 Support
 
-- **Twitter:** [@VisionAIHQ](https://x.com/VisionAIHQ)
-- **Telegram:** [Join Community](https://t.me/PortalvisionAI)
+- **Twitter:** [@VenomAIapp](https://x.com/VenomAIapp)
+- **Telegram:** [Join Community](https://t.me/PortalVenom)
 - **Documentation:** Full setup guide in `VENOM_SETUP.md`
 
 ---
