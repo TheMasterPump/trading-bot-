@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRADING BOT AI - Automated Solana Trading</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>VENOM AI - Automated Solana Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
 
         * {
             margin: 0;
@@ -16,24 +15,39 @@
         }
 
         :root {
-            --terminal-bg: #0a0e27;
-            --terminal-text: #00ffff;
-            --terminal-blue: #0099cc;
-            --terminal-cyan: #00ffff;
-            --terminal-green: #00ff88;
+            --terminal-bg: #000;
+            --terminal-text: #39FF14;
+            --terminal-blue: #39FF14;
+            --terminal-cyan: #39FF14;
+            --terminal-green: #39FF14;
             --terminal-red: #ff0051;
             --terminal-yellow: #ffd700;
-            --terminal-border: #0099cc;
-            --terminal-glow: #00ffff;
+            --terminal-border: #39FF14;
+            --terminal-glow: #39FF14;
+            --venom: #39FF14;
+            --venom-dim: rgba(57, 255, 20, 0.5);
+            --venom-glow: rgba(57, 255, 20, 0.15);
+            --black: #000;
+            --dark: #0a0a0a;
+            --gray: #1a1a1a;
+            --gray-light: #888;
+            --white: #fff;
         }
 
         body {
             background: var(--terminal-bg);
             color: var(--terminal-text);
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Inter', -apple-system, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
         }
 
         /* Matrix Rain Background */
@@ -46,6 +60,7 @@
             overflow: hidden;
             z-index: 0;
             pointer-events: none;
+            display: none; /* Désactivé pour design Venom propre */
         }
 
         .matrix-column {
@@ -53,9 +68,9 @@
             top: -100%;
             font-family: 'Courier New', monospace;
             font-size: 14px;
-            color: #00ffff;
+            color: #39FF14;
             opacity: 0.2;
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #0099cc;
+            text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
             animation: matrixFall linear infinite;
             line-height: 1.2;
             white-space: nowrap;
@@ -73,35 +88,80 @@
             z-index: 10;
         }
 
-        /* Scanlines */
+        /* Scanlines - Désactivé pour design Venom propre */
         body::before {
-            content: "";
+            display: none;
+        }
+
+        header {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(0deg, rgba(0, 255, 255, 0.03), rgba(0, 255, 255, 0.03) 1px, transparent 1px, transparent 2px);
-            pointer-events: none;
+            right: 0;
             z-index: 1000;
-        }
-
-        .terminal-header {
-            background: linear-gradient(180deg, #0d1330 0%, #0a0e27 100%);
-            border-bottom: 2px solid var(--terminal-border);
-            padding: 15px 0;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0099cc;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-eye {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--white);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--white);
+        }
+
+        .btn-launch {
+            padding: 10px 24px;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-launch:hover {
+            background: var(--venom);
+            box-shadow: 0 0 30px var(--venom-glow);
         }
 
         /* Cyber Eye Logo Styles */
@@ -130,29 +190,29 @@
             height: 100%;
             border-radius: 50%;
             background: radial-gradient(circle at 30% 30%,
-                #00ffff 0%,
-                #0099cc 40%,
+                var(--venom) 0%,
+                rgba(57, 255, 20, 0.5) 40%,
                 #006699 70%,
                 #003366 100%);
             box-shadow:
-                0 0 20px #00ffff,
-                0 0 40px #0099cc,
-                inset 0 0 20px rgba(0, 255, 255, 0.3);
+                0 0 20px var(--venom),
+                0 0 40px rgba(57, 255, 20, 0.5),
+                inset 0 0 20px rgba(57, 255, 20, 0.3);
             animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
         }
 
         @keyframes cyberPulse {
             0%, 100% {
                 box-shadow:
-                    0 0 20px #00ffff,
-                    0 0 40px #0099cc,
-                    inset 0 0 20px rgba(0, 255, 255, 0.3);
+                    0 0 20px var(--venom),
+                    0 0 40px rgba(57, 255, 20, 0.5),
+                    inset 0 0 20px rgba(57, 255, 20, 0.3);
             }
             50% {
                 box-shadow:
-                    0 0 30px #00ffff,
-                    0 0 60px #0099cc,
-                    inset 0 0 30px rgba(0, 255, 255, 0.5);
+                    0 0 30px var(--venom),
+                    0 0 60px rgba(57, 255, 20, 0.5),
+                    inset 0 0 30px var(--gray-light);
             }
         }
 
@@ -275,7 +335,7 @@
             height: 1px;
             background: linear-gradient(90deg,
                 transparent 0%,
-                #00ffff 50%,
+                var(--venom) 50%,
                 transparent 100%);
             opacity: 0.6;
             animation: cyberScan 3s linear infinite;
@@ -300,7 +360,7 @@
         }
 
         .nav-link {
-            color: rgba(0, 255, 255, 0.7);
+            color: var(--gray-light);
             text-decoration: none;
             margin: 0 15px;
             transition: all 0.3s;
@@ -311,19 +371,17 @@
         }
 
         .nav-link:hover, .nav-link.active {
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff;
+            color: var(--white);
+            text-shadow: none;
         }
 
         .terminal-window {
-            background: rgba(10, 14, 39, 0.95);
-            border: 2px solid #0099cc;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), inset 0 0 50px rgba(0, 255, 255, 0.1);
-            padding: 30px;
-            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 24px auto;
             max-width: 1200px;
-            position: relative;
         }
 
         .auth-container {
@@ -332,59 +390,49 @@
         }
 
         .form-control {
-            background: rgba(0, 20, 40, 0.8);
-            border: 2px solid #0099cc;
-            color: #00ffff;
-            font-family: 'Roboto Mono', monospace;
-            padding: 15px 20px;
-            font-size: 1rem;
-            border-radius: 4px;
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s;
         }
 
         .form-control:focus {
-            background: rgba(0, 30, 60, 0.9);
-            border-color: #00ffff;
-            color: #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
             outline: none;
         }
 
         .form-control::placeholder {
-            color: rgba(0, 153, 204, 0.5);
+            color: var(--gray-light);
         }
 
         .btn-cyber {
-            background: linear-gradient(135deg, #00ffff, #0099cc, #00ffff);
-            background-size: 200% 200%;
-            border: 2px solid #00ffff;
-            color: #0a0e27;
-            font-weight: 700;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 4px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            background: var(--white);
+            border: none;
+            color: var(--black);
+            font-weight: 500;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            border-radius: 6px;
             transition: all 0.3s;
             cursor: pointer;
-            animation: gradientShift 3s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            font-family: inherit;
         }
 
         .btn-cyber:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 40px rgba(0, 255, 255, 1);
+            background: var(--venom);
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            background: rgba(0, 153, 204, 0.2);
-            border: 2px solid #0099cc;
-            color: #00ffff;
+            background: var(--gray);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
         }
 
         .btn-danger {
@@ -435,53 +483,50 @@
         }
 
         .dashboard-card {
-            background: rgba(0, 20, 40, 0.6);
-            border: 2px solid #0099cc;
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
-            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.3s ease;
         }
 
         .dashboard-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .card-title {
-            color: #00ffff;
-            font-size: 1.2rem;
-            font-weight: 700;
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px #00ffff;
-            border-bottom: 2px solid rgba(0, 153, 204, 0.4);
-            padding-bottom: 10px;
+            letter-spacing: 1px;
+            opacity: 0.6;
         }
 
         .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow: 0 0 15px #00ffff;
-            margin: 15px 0;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin: 10px 0;
         }
 
         .stat-label {
-            color: rgba(0, 255, 255, 0.7);
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            color: var(--gray-light);
+            font-size: 0.85rem;
+            text-transform: none;
+            opacity: 0.7;
         }
 
         .wallet-address {
-            background: rgba(0, 10, 20, 0.8);
-            border: 1px solid #0099cc;
+            background: var(--gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             padding: 15px;
             font-size: 0.85rem;
             word-break: break-all;
-            color: #00ffff;
+            color: var(--white);
             position: relative;
         }
 
@@ -489,9 +534,9 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(0, 153, 204, 0.3);
-            border: 1px solid #0099cc;
-            color: #00ffff;
+            background: var(--gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--venom);
             padding: 5px 10px;
             border-radius: 4px;
             cursor: pointer;
@@ -500,8 +545,9 @@
         }
 
         .copy-btn:hover {
-            background: rgba(0, 153, 204, 0.6);
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            background: var(--venom);
+            color: var(--black);
+            box-shadow: 0 0 20px var(--venom-glow);
         }
 
         .boost-grid {
@@ -558,14 +604,14 @@
         }
 
         .boost-card.ultra .duration-btn {
-            border-color: #00d4ff;
-            color: rgba(0, 212, 255, 0.7);
+            border-color: var(--venom);
+            color: var(--gray-light);
         }
 
         .boost-card.ultra .duration-btn.active {
-            background: #00d4ff;
+            background: var(--venom);
             color: #0a0e27;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
         }
 
         .boost-card.lifetime .duration-btn {
@@ -600,8 +646,8 @@
         }
 
         .boost-card.ultra {
-            border-color: #00d4ff;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+            border-color: var(--venom);
+            box-shadow: 0 0 40px rgba(57, 255, 20, 0.3);
             opacity: 0.7;
         }
 
@@ -618,7 +664,7 @@
         }
 
         .boost-card.ultra:hover {
-            box-shadow: 0 15px 60px rgba(0, 212, 255, 0.6);
+            box-shadow: 0 15px 60px rgba(57, 255, 20, 0.6);
         }
 
         .boost-card.featured {
@@ -646,9 +692,9 @@
         }
 
         .boost-badge.coming-soon {
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
-            border: 2px solid #00d4ff;
+            background: rgba(57, 255, 20, 0.2);
+            color: var(--venom);
+            border: 2px solid var(--venom);
         }
 
         .limited-spots {
@@ -676,9 +722,9 @@
         }
 
         .boost-card.ultra .limited-spots {
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
-            border: 2px solid #00d4ff;
+            background: rgba(57, 255, 20, 0.2);
+            color: var(--venom);
+            border: 2px solid var(--venom);
         }
 
         .boost-card.lifetime .limited-spots {
@@ -744,14 +790,14 @@
         /* Blue Eye */
         .blue-eye .eye-outer-ring {
             background: radial-gradient(circle at 30% 30%,
-                #00d4ff 0%, #0099cc 40%, #006699 70%, #003366 100%);
-            box-shadow: 0 0 25px #00d4ff, 0 0 50px #0099cc, inset 0 0 25px rgba(0, 212, 255, 0.3);
+                var(--venom) 0%, rgba(57, 255, 20, 0.5) 40%, #006699 70%, #003366 100%);
+            box-shadow: 0 0 25px var(--venom), 0 0 50px rgba(57, 255, 20, 0.5), inset 0 0 25px rgba(57, 255, 20, 0.3);
         }
 
         .blue-eye .eye-iris {
             background: radial-gradient(circle at 40% 40%,
-                #00d4ff 0%, #0099cc 40%, #006699 70%, #003366 100%);
-            box-shadow: 0 0 15px #00d4ff;
+                var(--venom) 0%, rgba(57, 255, 20, 0.5) 40%, #006699 70%, #003366 100%);
+            box-shadow: 0 0 15px var(--venom);
         }
 
         .eye-outer-ring {
@@ -862,8 +908,8 @@
         }
 
         .boost-card.ultra .boost-name {
-            color: #00d4ff;
-            text-shadow: 0 0 20px #00d4ff;
+            color: var(--venom);
+            text-shadow: 0 0 20px var(--venom);
         }
 
         .boost-card.lifetime {
@@ -908,7 +954,7 @@
 
         .boost-features li {
             padding: 8px 0;
-            color: rgba(0, 255, 255, 0.8);
+            color: var(--gray-light);
             font-size: 0.9rem;
         }
 
@@ -925,24 +971,26 @@
         }
 
         .trades-table th {
-            background: rgba(0, 20, 40, 0.8);
-            color: #00ffff;
-            padding: 12px;
+            background: transparent;
+            color: var(--gray-light);
+            padding: 12px 16px;
             text-align: left;
-            border-bottom: 2px solid #0099cc;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .trades-table td {
-            padding: 12px;
-            border-bottom: 1px solid rgba(0, 153, 204, 0.3);
-            color: rgba(0, 255, 255, 0.9);
+            padding: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--white);
             font-size: 0.9rem;
         }
 
         .trades-table tr:hover {
-            background: rgba(0, 20, 40, 0.6);
+            background: rgba(255, 255, 255, 0.01);
         }
 
         .profit-positive {
@@ -958,59 +1006,55 @@
         .bot-status {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: rgba(0, 10, 20, 0.8);
-            border-radius: 8px;
-            border: 2px solid #0099cc;
-            margin: 20px 0;
+            gap: 16px;
+            padding: 20px 24px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 24px 0;
         }
 
         .status-indicator {
-            width: 20px;
-            height: 20px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
         }
 
         .status-indicator.running {
-            background: var(--terminal-green);
-            box-shadow: 0 0 20px var(--terminal-green);
+            background: var(--venom);
         }
 
         .status-indicator.stopped {
             background: var(--terminal-red);
-            box-shadow: 0 0 20px var(--terminal-red);
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.2); }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .alert {
-            padding: 15px 20px;
-            border-radius: 4px;
-            margin: 15px 0;
-            border: 2px solid;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            border-left: 3px solid;
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .alert-error {
-            background: rgba(255, 0, 81, 0.1);
             border-color: var(--terminal-red);
-            color: var(--terminal-red);
+            color: rgba(255, 0, 81, 0.9);
         }
 
         .alert-success {
-            background: rgba(0, 255, 136, 0.1);
             border-color: var(--terminal-green);
-            color: var(--terminal-green);
+            color: rgba(0, 255, 136, 0.9);
         }
 
         .alert-info {
-            background: rgba(0, 255, 255, 0.1);
-            border-color: var(--terminal-cyan);
-            color: var(--terminal-cyan);
+            border-color: var(--venom);
+            color: rgba(57, 255, 20, 0.9);
         }
 
         .hidden {
@@ -1021,8 +1065,8 @@
             display: inline-block;
             width: 30px;
             height: 30px;
-            border: 3px solid rgba(0, 153, 204, 0.3);
-            border-top: 3px solid #00ffff;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--venom);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -1036,16 +1080,16 @@
             display: flex;
             gap: 10px;
             margin: 20px 0;
-            border-bottom: 2px solid rgba(0, 153, 204, 0.3);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
 
         .tab {
             padding: 15px 30px;
-            background: rgba(0, 20, 40, 0.4);
+            background: var(--gray);
             border: 2px solid transparent;
             border-bottom: none;
             border-radius: 8px 8px 0 0;
-            color: rgba(0, 255, 255, 0.6);
+            color: var(--gray-light);
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
@@ -1054,37 +1098,31 @@
         }
 
         .tab:hover {
-            color: #00ffff;
-            background: rgba(0, 20, 40, 0.6);
+            color: var(--white);
+            background: var(--dark);
         }
 
         .tab.active {
-            background: rgba(0, 20, 40, 0.8);
-            border-color: #0099cc;
-            color: #00ffff;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            background: var(--dark);
+            border-color: var(--venom);
+            color: var(--white);
+            box-shadow: none;
         }
 
         .tab-content {
             padding: 30px;
-            background: rgba(0, 20, 40, 0.4);
+            background: var(--dark);
             border-radius: 0 8px 8px 8px;
-            border: 2px solid #0099cc;
+            border: 2px solid rgba(255, 255, 255, 0.05);
         }
 
         .terminal-title {
-            color: #00ffff;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #0099cc;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
             text-align: center;
-        }
-
-        .terminal-title::before {
-            content: "> ";
-            color: #0099cc;
+            letter-spacing: -0.5px;
         }
 
         .qr-code-container {
@@ -1105,47 +1143,32 @@
 <div class="content-wrapper">
 
 <!-- Header -->
-<div class="terminal-header">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <span>VISION BOT</span>
-                <div class="cyber-eye-container">
-                    <div class="cyber-eye-logo" id="headerEye">
-                        <div class="cyber-outer-ring"></div>
-                        <div class="cyber-white-ring"></div>
-                        <div class="cyber-iris" id="headerIris"></div>
-                        <div class="cyber-pupil" id="headerPupil"></div>
-                        <div class="cyber-reflection1"></div>
-                        <div class="cyber-reflection2"></div>
-                        <div class="cyber-scan-line"></div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <a href="/" class="nav-link">
-                    <i class="fas fa-home me-1"></i>HOME
-                </a>
-                <a href="/bot" class="nav-link active">
-                    <i class="fas fa-eye me-1"></i>VISION BOT
-                </a>
-                <a href="/about" class="nav-link">
-                    <i class="fas fa-book me-1"></i>DOC
-                </a>
-                <span id="userEmail" class="nav-link" style="cursor: default;"></span>
-                <a href="#" id="logoutBtn" class="nav-link hidden">
-                    <i class="fas fa-sign-out-alt me-1"></i>LOGOUT
-                </a>
-                <a href="https://x.com/VisionAIHQ" target="_blank" class="nav-link" title="Follow us on X" style="font-weight: bold; font-size: 1.1rem;">
-                    𝕏
-                </a>
-                <a href="https://t.me/PortalvisionAI" target="_blank" class="nav-link" title="Join our Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<header>
+    <a href="/" class="logo">
+        <svg class="logo-eye" viewBox="0 0 200 200">
+            <defs>
+                <radialGradient id="irisSmall" cx="50%" cy="50%" r="55%">
+                    <stop offset="0%" stop-color="#7FFF00"/>
+                    <stop offset="50%" stop-color="#39FF14"/>
+                    <stop offset="100%" stop-color="#0d5a05"/>
+                </radialGradient>
+                <filter id="glowSmall"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <ellipse cx="100" cy="100" rx="75" ry="48" fill="#0d0d0d" stroke="#39FF14" stroke-width="3" filter="url(#glowSmall)"/>
+            <ellipse cx="100" cy="100" rx="40" ry="40" fill="url(#irisSmall)"/>
+            <ellipse cx="100" cy="100" rx="7" ry="38" fill="#020202"/>
+        </svg>
+        <span class="logo-text">VENOM</span>
+    </a>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/bot" class="active">Bot</a>
+        <a href="/about">Docs</a>
+        <span id="userEmail" style="color: var(--venom); font-size: 0.85rem;"></span>
+        <a href="#" id="logoutBtn" class="hidden">Logout</a>
+        <button class="btn-launch" onclick="window.location='/bot'">Dashboard</button>
+    </nav>
+</header>
 
 <div class="container">
     <!-- Auth Section (shown when not logged in) -->
@@ -1224,9 +1247,9 @@
             <div class="bot-status">
                 <div id="statusIndicator" class="status-indicator stopped"></div>
                 <div style="flex: 1;">
-                    <strong style="color: #00ffff;">BOT STATUS:</strong>
+                    <strong style="color: var(--venom);">BOT STATUS:</strong>
                     <span id="botStatusText" style="color: var(--terminal-red);">STOPPED</span>
-                    <div style="font-size: 0.85rem; color: rgba(0, 255, 255, 0.6); margin-top: 5px;">
+                    <div style="font-size: 0.85rem; color: var(--gray-light); margin-top: 5px;">
                         Strategy: <span id="botStrategy">AI PREDICTIONS</span> |
                         Risk: <span id="botRisk">MEDIUM</span> |
                         Mode: <span id="botMode">SIMULATION</span>
@@ -1279,12 +1302,12 @@
             </div>
 
             <!-- Simulation Mode Toggle (for users without subscription) -->
-            <div id="simulationToggleCard" style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(138, 43, 226, 0.1)); border: 2px solid rgba(0, 212, 255, 0.3); border-radius: 15px; padding: 25px; margin: 20px 0;">
+            <div id="simulationToggleCard" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(138, 43, 226, 0.1)); border: 2px solid rgba(57, 255, 20, 0.3); border-radius: 15px; padding: 25px; margin: 20px 0;">
                 <div style="text-align: center; margin-bottom: 20px;">
-                    <i class="fas fa-gamepad" style="font-size: 3rem; color: #00d4ff; margin-bottom: 15px;"></i>
-                    <h3 style="color: #00ffff; margin-bottom: 10px; font-size: 1.3rem;">TRY THE BOT FOR FREE</h3>
+                    <i class="fas fa-gamepad" style="font-size: 3rem; color: var(--venom); margin-bottom: 15px;"></i>
+                    <h3 style="color: var(--venom); margin-bottom: 10px; font-size: 1.3rem;">TRY THE BOT FOR FREE</h3>
                     <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; line-height: 1.6;">
-                        Test VISION AI for <strong>2 hours</strong> with <strong>10 virtual SOL</strong>.<br>
+                        Test VENOM AI for <strong>2 hours</strong> with <strong>10 virtual SOL</strong>.<br>
                         See how the bot detects and trades the best tokens in real-time!
                     </p>
                 </div>
@@ -1306,8 +1329,8 @@
                             Simulation duration
                         </div>
                     </div>
-                    <div style="background: rgba(0, 212, 255, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(0, 212, 255, 0.3);">
-                        <div style="color: #00d4ff; font-weight: 700; margin-bottom: 5px;">
+                    <div style="background: rgba(57, 255, 20, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(57, 255, 20, 0.3);">
+                        <div style="color: var(--venom); font-weight: 700; margin-bottom: 5px;">
                             <i class="fas fa-robot me-2"></i>REAL TRADING
                         </div>
                         <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem;">
@@ -1317,7 +1340,7 @@
                 </div>
 
                 <div style="text-align: center;">
-                    <button onclick="startSimulationMode()" class="btn btn-cyber" style="background: linear-gradient(135deg, #00d4ff, #8a2be2); padding: 15px 40px; font-size: 1.1rem; font-weight: 700;">
+                    <button onclick="startSimulationMode()" class="btn btn-cyber" style="background: linear-gradient(135deg, var(--venom), #8a2be2); padding: 15px 40px; font-size: 1.1rem; font-weight: 700;">
                         <i class="fas fa-play me-2"></i>START SIMULATION
                     </button>
                     <div style="margin-top: 15px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.6);">
@@ -1335,7 +1358,7 @@
                     <i class="fas fa-wallet me-2"></i>WALLET
                 </div>
                 <div class="tab" onclick="showDashboardTab('boosts')">
-                    <i class="fas fa-rocket me-2"></i>BOOSTS
+                    <i class="fas fa-rocket me-2"></i>ACCESS
                 </div>
                 <div class="tab" onclick="showDashboardTab('console')">
                     <i class="fas fa-terminal me-2"></i>CONSOLE
@@ -1374,12 +1397,12 @@
                 </div>
 
                 <div class="dashboard-card mt-4">
-                    <div class="card-title"><i class="fas fa-info-circle me-2"></i>HOW TO USE VISION BOT</div>
-                    <div style="color: rgba(0, 255, 255, 0.8); line-height: 1.8;">
-                        <p><strong>1. CHOOSE YOUR SUBSCRIPTION</strong></p>
-                        <p>Go to the BOOSTS tab and select a plan (RISKY, SAFE, or ULTRA).</p>
-                        <p>Pay with SOL to activate your bot. Free 2-hour trial available in SIMULATION mode!</p>
-                        <p class="mt-3"><strong>2. DEPOSIT FUNDS</strong></p>
+                    <div class="card-title"><i class="fas fa-info-circle me-2"></i>HOW TO USE VENOM BOT</div>
+                    <div style="color: var(--gray-light); line-height: 1.8;">
+                        <p><strong>1. GET VENOM TOKENS</strong></p>
+                        <p>Hold 10,000,000 VENOM tokens in your wallet to unlock bot access.</p>
+                        <p>No subscriptions, no monthly fees - just hold the tokens! Free 2-hour trial available in SIMULATION mode.</p>
+                        <p class="mt-3"><strong>2. DEPOSIT TRADING FUNDS</strong></p>
                         <p>Go to the WALLET tab and deposit SOL to your generated wallet.</p>
                         <p>Minimum: 0.01 SOL for testing, recommended: 1+ SOL for real trading.</p>
                         <p class="mt-3"><strong>3. START THE BOT</strong></p>
@@ -1423,178 +1446,68 @@
                 </div>
             </div>
 
-            <!-- Boosts Tab -->
+            <!-- Access Tab -->
             <div id="boostsTab" class="tab-content hidden">
                 <div class="alert alert-info">
-                    <i class="fas fa-rocket me-2"></i>
-                    Choose your trading strategy and start generating profits with VISION AI!
+                    <i class="fas fa-coins me-2"></i>
+                    Hold 10,000,000 VENOM tokens to unlock full access to the trading bot!
                 </div>
 
-                <div class="boost-grid">
-                    <!-- RISKY Plan -->
-                    <div class="boost-card risky" id="riskyBoost">
-                        <div class="boost-eye-container">
-                            <div class="boost-eye red-eye">
-                                <div class="eye-outer-ring"></div>
-                                <div class="eye-white-ring"></div>
-                                <div class="eye-iris"></div>
-                                <div class="eye-pupil"></div>
-                                <div class="eye-reflection1"></div>
-                                <div class="eye-reflection2"></div>
-                            </div>
-                        </div>
-                        <div class="boost-name">RISKY</div>
-                        <div class="limited-spots">
-                            <i class="fas fa-fire me-1"></i>99 SPOTS REMAINING
-                        </div>
+                <div style="max-width: 600px; margin: 40px auto;">
+                    <!-- VENOM Token Access Card -->
+                    <div class="dashboard-card" style="text-align: center; padding: 50px; border: 2px solid var(--venom);">
+                        <!-- Venom Eye Logo -->
+                        <svg viewBox="0 0 200 200" style="width: 120px; height: 120px; margin: 0 auto 30px;">
+                            <defs>
+                                <radialGradient id="venomIris" cx="50%" cy="50%" r="55%">
+                                    <stop offset="0%" stop-color="#7FFF00"/>
+                                    <stop offset="50%" stop-color="#39FF14"/>
+                                    <stop offset="100%" stop-color="#0d5a05"/>
+                                </radialGradient>
+                            </defs>
+                            <ellipse cx="100" cy="100" rx="75" ry="48" fill="#0d0d0d" stroke="#39FF14" stroke-width="3"/>
+                            <ellipse cx="100" cy="100" rx="40" ry="40" fill="url(#venomIris)"/>
+                            <ellipse cx="100" cy="100" rx="7" ry="38" fill="#020202"/>
+                        </svg>
 
-                        <!-- Duration Toggle -->
-                        <div class="duration-toggle">
-                            <div class="duration-btn active" onclick="selectDuration('risky', 'week', 1.5)">WEEK</div>
-                            <div class="duration-btn" onclick="selectDuration('risky', 'month', 4)">MONTH</div>
-                        </div>
+                        <h2 style="color: var(--white); font-size: 2rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 2px;">
+                            VENOM ACCESS
+                        </h2>
 
-                        <div class="boost-price" id="risky-price" data-amount="1.5">1.5 SOL</div>
-                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Aggressive Strategy</p>
-                        <ul class="boost-features">
-                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
-                            <li><i class="fas fa-chart-line me-2"></i> ROI: 2-20x</li>
-                            <li><i class="fas fa-brain me-2"></i> AI high confidence</li>
-                            <li><i class="fas fa-rocket me-2"></i> Ultra-fast execution</li>
-                            <li><i class="fas fa-database me-2"></i> AI trained on 4000+ tokens</li>
-                            <li><i class="fas fa-bullseye me-2"></i> Custom Take Profit</li>
-                            <li><i class="fas fa-shield-alt me-2"></i> Custom Stop Loss</li>
-                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
-                        </ul>
-                        <button class="btn btn-cyber" onclick="openPaymentModal('RISKY', document.getElementById('risky-price').dataset.amount)" style="background: linear-gradient(135deg, #ff0051, #cc0040); border-color: #ff0051;" id="risky-btn">
-                            <i class="fas fa-fire me-2"></i>ACTIVATE
-                        </button>
-                    </div>
-
-                    <!-- SAFE Plan -->
-                    <div class="boost-card safe featured" id="safeBoost">
-                        <div class="boost-badge recommended">RECOMMENDED</div>
-                        <div class="boost-eye-container">
-                            <div class="boost-eye green-eye">
-                                <div class="eye-outer-ring"></div>
-                                <div class="eye-white-ring"></div>
-                                <div class="eye-iris"></div>
-                                <div class="eye-pupil"></div>
-                                <div class="eye-reflection1"></div>
-                                <div class="eye-reflection2"></div>
-                            </div>
-                        </div>
-                        <div class="boost-name">SAFE</div>
-                        <div class="limited-spots">
-                            <i class="fas fa-users me-1"></i>69 SPOTS REMAINING
-                        </div>
-
-                        <!-- Duration Toggle -->
-                        <div class="duration-toggle">
-                            <div class="duration-btn active" onclick="selectDuration('safe', 'week', 2)">WEEK</div>
-                            <div class="duration-btn" onclick="selectDuration('safe', 'month', 6)">MONTH</div>
-                        </div>
-
-                        <div class="boost-price" id="safe-price" data-amount="2">2 SOL</div>
-                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Conservative Strategy</p>
-                        <ul class="boost-features">
-                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
-                            <li><i class="fas fa-chart-line me-2"></i> ROI: 5x-30x</li>
-                            <li><i class="fas fa-check-circle me-2"></i> AI verified</li>
-                            <li><i class="fas fa-filter me-2"></i> Safety filters</li>
-                            <li><i class="fas fa-database me-2"></i> AI trained on 6000+ tokens</li>
-                            <li><i class="fas fa-bullseye me-2"></i> AI Strategy</li>
-                            <li><i class="fas fa-shield-alt me-2"></i> Trailing Stop Loss</li>
-                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
-                        </ul>
-                        <button class="btn btn-cyber" onclick="openPaymentModal('SAFE', document.getElementById('safe-price').dataset.amount)" style="background: linear-gradient(135deg, #00ff88, #00cc66); border-color: #00ff88; color: #0a0e27;" id="safe-btn">
-                            <i class="fas fa-check me-2"></i>ACTIVATE
-                        </button>
-                    </div>
-
-                    <!-- ULTRA Plan -->
-                    <div class="boost-card ultra" id="ultraBoost">
-                        <div class="boost-badge coming-soon">COMING SOON</div>
-                        <div class="boost-eye-container">
-                            <div class="boost-eye blue-eye">
-                                <div class="eye-outer-ring"></div>
-                                <div class="eye-white-ring"></div>
-                                <div class="eye-iris"></div>
-                                <div class="eye-pupil"></div>
-                                <div class="eye-reflection1"></div>
-                                <div class="eye-reflection2"></div>
-                            </div>
-                        </div>
-                        <div class="boost-name">ULTRA</div>
-                        <div class="limited-spots">
-                            <i class="fas fa-star me-1"></i>59 SPOTS REMAINING
-                        </div>
-
-                        <!-- Duration Toggle -->
-                        <div class="duration-toggle">
-                            <div class="duration-btn active" onclick="selectDuration('ultra', 'week', 3)">WEEK</div>
-                            <div class="duration-btn" onclick="selectDuration('ultra', 'month', 10)">MONTH</div>
-                        </div>
-
-                        <div class="boost-price" id="ultra-price" data-amount="3">3 SOL</div>
-                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase;">Premium Strategy</p>
-                        <ul class="boost-features">
-                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
-                            <li><i class="fas fa-chart-line me-2"></i> ROI: x10-x100</li>
-                            <li><i class="fas fa-brain me-2"></i> AI + Auto-compound</li>
-                            <li><i class="fas fa-bolt me-2"></i> Front run top traders</li>
-                            <li><i class="fas fa-layer-group me-2"></i> Multi-strategy</li>
-                            <li><i class="fas fa-database me-2"></i> AI trained on 10,000+ tokens</li>
-                            <li><i class="fas fa-bullseye me-2"></i> AI Strategy</li>
-                            <li><i class="fas fa-shield-alt me-2"></i> Trailing Stop Loss</li>
-                            <li><i class="fas fa-headset me-2"></i> VIP Support 24/7</li>
-                        </ul>
-                        <button class="btn btn-cyber" disabled style="background: rgba(0, 212, 255, 0.2); border-color: #00d4ff; color: #00d4ff; cursor: not-allowed;">
-                            <i class="fas fa-lock me-2"></i>COMING SOON
-                        </button>
-                    </div>
-
-                    <!-- LIFETIME Plan -->
-                    <div class="boost-card lifetime" id="lifetimeBoost">
-                        <div class="boost-badge" style="background: rgba(255, 215, 0, 0.2); color: #ffd700; border: 2px solid #ffd700;">
-                            <i class="fas fa-lock me-1"></i>COMING SOON
-                        </div>
-                        <div class="boost-eye-container">
-                            <div class="boost-eye gold-eye">
-                                <div class="eye-outer-ring"></div>
-                                <div class="eye-white-ring"></div>
-                                <div class="eye-iris"></div>
-                                <div class="eye-pupil"></div>
-                                <div class="eye-reflection1"></div>
-                                <div class="eye-reflection2"></div>
-                            </div>
-                        </div>
-                        <div class="boost-name">LIFETIME</div>
-                        <div class="limited-spots">
-                            <i class="fas fa-crown me-1"></i>49 SPOTS REMAINING
-                        </div>
-                        <div class="boost-price" style="color: #ffd700; text-shadow: 0 0 20px #ffd700;">18 SOL</div>
-                        <p style="color: rgba(255, 215, 0, 0.9); font-size: 0.9rem; margin: 10px 0 20px; text-transform: uppercase; font-weight: 700;">
-                            <i class="fas fa-infinity me-1"></i>ONE-TIME PAYMENT
+                        <p style="color: var(--gray-light); font-size: 1rem; margin-bottom: 30px;">
+                            Token-Based Access System
                         </p>
-                        <ul class="boost-features" style="text-align: left;">
-                            <li><i class="fas fa-check-circle me-2" style="color: #ffd700;"></i> ALL BOTS ACCESS (Risky+Safe+Ultra)</li>
-                            <li><i class="fas fa-infinity me-2" style="color: #ffd700;"></i> Unlimited trades</li>
-                            <li><i class="fas fa-chart-line me-2" style="color: #ffd700;"></i> ROI: x10-x100</li>
-                            <li><i class="fas fa-brain me-2" style="color: #ffd700;"></i> AI + Auto-compound</li>
-                            <li><i class="fas fa-bolt me-2" style="color: #ffd700;"></i> Front run top traders</li>
-                            <li><i class="fas fa-layer-group me-2" style="color: #ffd700;"></i> Multi-strategy</li>
-                            <li><i class="fas fa-database me-2" style="color: #ffd700;"></i> AI trained on 10,000+ tokens</li>
-                            <li><i class="fas fa-bullseye me-2" style="color: #ffd700;"></i> AI Strategy</li>
-                            <li><i class="fas fa-shield-alt me-2" style="color: #ffd700;"></i> Trailing Stop Loss</li>
-                            <li><i class="fas fa-sync-alt me-2" style="color: #ffd700;"></i> Lifetime free updates</li>
-                            <li><i class="fas fa-star me-2" style="color: #ffd700;"></i> Early access to new features</li>
-                            <li><i class="fas fa-infinity me-2" style="color: #ffd700;"></i> Unlimited everything</li>
-                            <li><i class="fas fa-headset me-2" style="color: #ffd700;"></i> VIP Support 24/7</li>
-                            <li><i class="fas fa-crown me-2" style="color: #ffd700;"></i> Priority support</li>
+
+                        <div style="background: rgba(57, 255, 20, 0.1); border: 2px solid var(--venom); border-radius: 12px; padding: 30px; margin: 30px 0;">
+                            <div style="color: var(--gray-light); font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
+                                Required Balance
+                            </div>
+                            <div style="color: var(--venom); font-size: 3rem; font-weight: 700; margin: 15px 0;">
+                                10,000,000
+                            </div>
+                            <div style="color: var(--white); font-size: 1.2rem; font-weight: 600; letter-spacing: 2px;">
+                                VENOM TOKENS
+                            </div>
+                        </div>
+
+                        <ul class="boost-features" style="text-align: left; max-width: 400px; margin: 30px auto;">
+                            <li><i class="fas fa-infinity me-2"></i> Unlimited trades</li>
+                            <li><i class="fas fa-brain me-2"></i> AI-powered predictions</li>
+                            <li><i class="fas fa-chart-line me-2"></i> Real-time signals</li>
+                            <li><i class="fas fa-robot me-2"></i> Automated trading</li>
+                            <li><i class="fas fa-shield-alt me-2"></i> Custom risk management</li>
+                            <li><i class="fas fa-headset me-2"></i> 24/7 Support</li>
                         </ul>
-                        <button class="btn btn-cyber" disabled style="background: rgba(255, 215, 0, 0.2); border-color: #ffd700; color: #ffd700; cursor: not-allowed; font-weight: 700;">
-                            <i class="fas fa-lock me-2"></i>COMING SOON
+
+                        <div style="background: rgba(255, 193, 7, 0.1); border-left: 3px solid #ffc107; padding: 15px; margin: 30px 0; text-align: left; border-radius: 4px;">
+                            <strong style="color: #ffc107;"><i class="fas fa-info-circle me-2"></i>How it works:</strong>
+                            <p style="color: var(--gray-light); margin: 10px 0 0 0; font-size: 0.9rem;">
+                                Simply hold 10,000,000 VENOM tokens in your connected wallet to automatically unlock full bot access. No subscriptions, no recurring fees.
+                            </p>
+                        </div>
+
+                        <button class="btn btn-cyber" onclick="showVenomTokenInfo()" style="background: var(--venom); color: var(--black); padding: 16px 40px; font-size: 1.1rem; margin-top: 20px;">
+                            <i class="fas fa-wallet me-2"></i>CONNECT WALLET
                         </button>
                     </div>
                 </div>
@@ -1606,10 +1519,10 @@
                 <div class="dashboard-card" id="activePositionsCard" style="margin-bottom: 20px;">
                     <div class="card-title">
                         <i class="fas fa-chart-line me-2"></i>POSITIONS ACTIVES
-                        <span id="positionsCount" style="background: rgba(0, 255, 255, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px;">0</span>
+                        <span id="positionsCount" style="background: rgba(57, 255, 20, 0.2); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-left: 10px;">0</span>
                     </div>
                     <div id="activePositionsContent">
-                        <div style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 30px;">
+                        <div style="text-align: center; color: var(--gray-light); padding: 30px;">
                             <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.3;"></i>
                             <p>No active positions at the moment</p>
                         </div>
@@ -1634,7 +1547,7 @@
                             </thead>
                             <tbody id="tradesTableBody">
                                 <tr>
-                                    <td colspan="7" style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 40px;">
+                                    <td colspan="7" style="text-align: center; color: var(--gray-light); padding: 40px;">
                                         No trades yet. Start the bot to begin!
                                     </td>
                                 </tr>
@@ -1691,41 +1604,41 @@
                             <!-- SIMPLE_MULTIPLIER -->
                             <div id="config_SIMPLE_MULTIPLIER" class="tp-config">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-times me-1"></i>Multiplier (sell at x?)
                                     </label>
                                     <input type="number" class="form-control" id="simple_multiplier" value="2.0" min="1.5" max="20" step="0.5">
-                                    <small style="color: rgba(0, 255, 255, 0.5);">Example: x2 = sell all when 2x initial</small>
+                                    <small style="color: var(--gray-light);">Example: x2 = sell all when 2x initial</small>
                                 </div>
                             </div>
 
                             <!-- PARTIAL_HOLD -->
                             <div id="config_PARTIAL_HOLD" class="tp-config" style="display: none;">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-percent me-1"></i>% to sell at first TP
                                     </label>
                                     <input type="number" class="form-control" id="partial_first_percent" value="50" min="10" max="90" step="10">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-times me-1"></i>Premier TP multiplier
                                     </label>
                                     <input type="number" class="form-control" id="partial_first_tp" value="2.0" min="1.5" max="10" step="0.5">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-arrow-up me-1"></i>Hold rest until (MC)
                                     </label>
                                     <input type="number" class="form-control" id="partial_hold_until" value="50000" min="10000" max="100000" step="5000">
-                                    <small style="color: rgba(0, 255, 255, 0.5);">Sell rest before this market cap</small>
+                                    <small style="color: var(--gray-light);">Sell rest before this market cap</small>
                                 </div>
                             </div>
 
                             <!-- EXIT_BEFORE_MIGRATION -->
                             <div id="config_EXIT_BEFORE_MIGRATION" class="tp-config" style="display: none;">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-flag me-1"></i>Exit Market Cap Target
                                     </label>
                                     <select class="form-control" id="exit_target">
@@ -1733,27 +1646,27 @@
                                         <option value="50000">50K (proche migration)</option>
                                         <option value="58000" selected>58K (juste avant migration)</option>
                                     </select>
-                                    <small style="color: rgba(0, 255, 255, 0.5);">Sell 100% at this market cap</small>
+                                    <small style="color: var(--gray-light);">Sell 100% at this market cap</small>
                                 </div>
                             </div>
 
                             <!-- PROGRESSIVE_AFTER_MIGRATION -->
                             <div id="config_PROGRESSIVE_AFTER_MIGRATION" class="tp-config" style="display: none;">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-percent me-1"></i>Sell initiaux @ x2
                                     </label>
                                     <input type="number" class="form-control" id="progressive_initial_percent" value="50" min="0" max="90" step="10">
-                                    <small style="color: rgba(0, 255, 255, 0.5);">0 = pas de sell partiel, directement migration</small>
+                                    <small style="color: var(--gray-light);">0 = pas de sell partiel, directement migration</small>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-chart-line me-1"></i>% to sell per step after migration
                                     </label>
                                     <input type="number" class="form-control" id="progressive_step_percent" value="5" min="1" max="20" step="1">
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-clock me-1"></i>Delay between each sale (seconds)
                                     </label>
                                     <input type="number" class="form-control" id="progressive_step_interval" value="20" min="5" max="60" step="5">
@@ -1763,7 +1676,7 @@
                             <!-- ALL_IN_AFTER_MIGRATION -->
                             <div id="config_ALL_IN_AFTER_MIGRATION" class="tp-config" style="display: none;">
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-bolt me-1"></i>Sell 100% when migration reached
                                     </label>
                                     <div style="background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.3);">
@@ -1779,7 +1692,7 @@
                                 <i class="fas fa-arrow-down me-2"></i>STOP LOSS (%)
                             </label>
                             <input type="number" class="form-control" id="stopLossInput" value="25" min="10" max="90" step="5">
-                            <small style="color: rgba(0, 255, 255, 0.5);">Automatic sale if loss exceeds this %</small>
+                            <small style="color: var(--gray-light);">Automatic sale if loss exceeds this %</small>
                         </div>
 
                         <!-- TRAILING STOP LOSS -->
@@ -1789,7 +1702,7 @@
                             </label>
                             <div class="form-check mb-3" style="padding-left: 0;">
                                 <input type="checkbox" class="form-check-input" id="trailingStopEnabled" style="width: 20px; height: 20px; margin-right: 10px; cursor: pointer;">
-                                <label class="form-check-label" for="trailingStopEnabled" style="color: rgba(0, 255, 255, 0.9); font-weight: 600; cursor: pointer;">
+                                <label class="form-check-label" for="trailingStopEnabled" style="color: var(--white); font-weight: 600; cursor: pointer;">
                                     Activer le Trailing Stop Loss
                                 </label>
                             </div>
@@ -1808,19 +1721,19 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-percentage me-1"></i>Stop Loss if profit ≥ 80%
                                     </label>
                                     <input type="number" class="form-control" id="trailingStop80" value="30" min="0" max="70" step="5">
-                                    <small style="color: rgba(0, 255, 255, 0.5);">If you make +80% profit, SL rises to +X%</small>
+                                    <small style="color: var(--gray-light);">If you make +80% profit, SL rises to +X%</small>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label class="form-label" style="color: rgba(0, 255, 255, 0.7); font-size: 0.9rem;">
+                                    <label class="form-label" style="color: var(--gray-light); font-size: 0.9rem;">
                                         <i class="fas fa-percentage me-1"></i>Stop Loss if profit ≥ 50%
                                     </label>
                                     <input type="number" class="form-control" id="trailingStop50" value="0" min="-10" max="40" step="5">
-                                    <small style="color: rgba(0, 255, 255, 0.5);">If you make +50% profit, SL rises to +X% (0 = breakeven)</small>
+                                    <small style="color: var(--gray-light);">If you make +50% profit, SL rises to +X% (0 = breakeven)</small>
                                 </div>
                             </div>
                         </div>
@@ -1874,12 +1787,12 @@
                 <div class="dashboard-card">
                     <div class="card-title">
                         <i class="fas fa-terminal me-2"></i>BOT CONSOLE - LIVE LOGS
-                        <button class="btn btn-sm" style="background: rgba(0, 153, 204, 0.2); border: 1px solid #0099cc; padding: 5px 15px; margin-left: 10px; float: right;" onclick="clearConsole()">
+                        <button class="btn btn-sm" style="background: rgba(57, 255, 20, 0.2); border: 1px solid rgba(57, 255, 20, 0.5); padding: 5px 15px; margin-left: 10px; float: right;" onclick="clearConsole()">
                             <i class="fas fa-trash me-2"></i>CLEAR
                         </button>
                     </div>
-                    <div id="consoleOutput" style="background: #000; color: #00ff00; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 15px; border-radius: 5px; height: 600px; overflow-y: auto; border: 1px solid #0099cc;">
-                        <div style="color: #0099cc;">[CONSOLE] Waiting for logs...</div>
+                    <div id="consoleOutput" style="background: #000; color: #00ff00; font-family: 'Courier New', monospace; font-size: 0.85rem; padding: 15px; border-radius: 5px; height: 600px; overflow-y: auto; border: 1px solid rgba(57, 255, 20, 0.5);">
+                        <div style="color: rgba(57, 255, 20, 0.5);">[CONSOLE] Waiting for logs...</div>
                     </div>
                 </div>
             </div>
@@ -2197,7 +2110,7 @@ async function loadTradesData() {
             if (data.trades.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="7" style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 40px;">
+                        <td colspan="7" style="text-align: center; color: var(--gray-light); padding: 40px;">
                             No trades yet. Start the bot to begin!
                         </td>
                     </tr>
@@ -2233,9 +2146,9 @@ async function loadTradesData() {
                     return `
                         <tr style="${isSimulated ? 'background: rgba(255, 165, 0, 0.05);' : ''}">
                             <td>${statusBadge}</td>
-                            <td style="font-weight: 700; color: #00ffff;">${trade.token_name || trade.token_address.substring(0, 8) + '...'}</td>
-                            <td style="color: rgba(0, 255, 255, 0.7);">${formatMC(entryMC)}</td>
-                            <td style="color: rgba(0, 255, 255, 0.7);">${formatMC(exitMC)}</td>
+                            <td style="font-weight: 700; color: var(--venom);">${trade.token_name || trade.token_address.substring(0, 8) + '...'}</td>
+                            <td style="color: var(--gray-light);">${formatMC(entryMC)}</td>
+                            <td style="color: var(--gray-light);">${formatMC(exitMC)}</td>
                             <td style="color: rgba(255, 255, 255, 0.8);">${trade.amount_sol.toFixed(3)} SOL</td>
                             <td class="${isWin ? 'profit-positive' : 'profit-negative'}" style="font-weight: 700;">
                                 ${isWin ? '+' : ''}${trade.profit_loss.toFixed(3)} SOL<br>
@@ -2273,7 +2186,7 @@ async function loadActivePositions() {
 
             if (data.positions.length === 0) {
                 content.innerHTML = `
-                    <div style="text-align: center; color: rgba(0, 255, 255, 0.5); padding: 30px;">
+                    <div style="text-align: center; color: var(--gray-light); padding: 30px;">
                         <i class="fas fa-chart-line" style="font-size: 2rem; margin-bottom: 10px; opacity: 0.3;"></i>
                         <p>No active positions at the moment</p>
                     </div>
@@ -2288,7 +2201,7 @@ async function loadActivePositions() {
                     // CORRECT status emoji based on partial_sold and migration_reached
                     let statusEmoji = '🟢';
                     let statusText = 'ACTIVE';
-                    let statusColor = '#00ffff';
+                    let statusColor = 'var(--venom)';
 
                     if (pos.migration_reached || pos.current_mc >= 58000) {
                         statusEmoji = '✅';
@@ -2316,10 +2229,10 @@ async function loadActivePositions() {
                     const percentToMigration = ((pos.current_mc / 58000) * 100).toFixed(1);
 
                     return `
-                        <div style="background: rgba(0, 255, 255, 0.05); border-left: 3px solid ${statusColor}; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+                        <div style="background: rgba(57, 255, 20, 0.05); border-left: 3px solid ${statusColor}; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
                             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                                 <div style="flex: 1;">
-                                    <div style="font-size: 1.1rem; font-weight: 700; color: #00ffff; margin-bottom: 5px;">
+                                    <div style="font-size: 1.1rem; font-weight: 700; color: var(--venom); margin-bottom: 5px;">
                                         ${statusEmoji} ${pos.token_name}
                                     </div>
                                     <div style="color: ${statusColor}; font-size: 0.9rem; font-weight: 600;">
@@ -2338,7 +2251,7 @@ async function loadActivePositions() {
 
                             <div style="background: rgba(0, 0, 0, 0.3); padding: 10px; border-radius: 5px; margin-bottom: 10px;">
                                 <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 5px;">
-                                    Entry: <span style="color: #00ffff; font-weight: 600;">$${formatMC(pos.entry_mc)}</span>
+                                    Entry: <span style="color: var(--venom); font-weight: 600;">$${formatMC(pos.entry_mc)}</span>
                                     →
                                     Current: <span style="color: #ffd700; font-weight: 600;">$${formatMC(pos.current_mc)}</span>
                                 </div>
@@ -2420,7 +2333,7 @@ async function loadConsoleLogs() {
             const consoleOutput = document.getElementById('consoleOutput');
 
             if (data.logs.length === 0) {
-                consoleOutput.innerHTML = '<div style="color: #0099cc;">[CONSOLE] Waiting for logs...</div>';
+                consoleOutput.innerHTML = '<div style="color: rgba(57, 255, 20, 0.5);">[CONSOLE] Waiting for logs...</div>';
                 return;
             }
 
@@ -2432,13 +2345,13 @@ async function loadConsoleLogs() {
                 } else if (log.type === 'SKIP') {
                     color = '#ff9900'; // Orange pour SKIP
                 } else if (log.type === 'NEW_TOKEN') {
-                    color = '#00ffff'; // Cyan pour nouveau token
+                    color = 'var(--venom)'; // Cyan pour nouveau token
                 } else if (log.type === 'ERROR') {
                     color = '#ff0051'; // Red for error
                 } else if (log.type === 'SELL') {
                     color = '#ffd700'; // Or pour SELL
                 } else if (log.type === 'INFO') {
-                    color = '#0099cc'; // Bleu pour info
+                    color = 'rgba(57, 255, 20, 0.5)'; // Bleu pour info
                 }
 
                 return `<div style="color: ${color}; margin-bottom: 5px;">[${log.timestamp}] ${log.message}</div>`;
@@ -2453,7 +2366,7 @@ async function loadConsoleLogs() {
 }
 
 function clearConsole() {
-    document.getElementById('consoleOutput').innerHTML = '<div style="color: #0099cc;">[CONSOLE] Logs cleared...</div>';
+    document.getElementById('consoleOutput').innerHTML = '<div style="color: rgba(57, 255, 20, 0.5);">[CONSOLE] Logs cleared...</div>';
 }
 
 // Auto-refresh console quand le tab est actif
@@ -2511,9 +2424,9 @@ async function selectMode(mode) {
     if (mode === 'real') {
         // Check if user can use real mode
         if (!userInfo || !userInfo.permissions.can_use_real_mode) {
-            await showCustomAlert('⚠️ REAL MODE RESERVED FOR SUBSCRIBERS\n\n' +
-                  'Real money mode is reserved for RISKY and SAFE subscriptions.\n\n' +
-                  'Go to the BOOSTS tab to subscribe!', 'warning');
+            await showCustomAlert('⚠️ VENOM TOKENS REQUIRED\n\n' +
+                  'Real money mode requires holding 10,000,000 VENOM tokens in your wallet.\n\n' +
+                  'Go to the ACCESS tab for more info!', 'warning');
             return;
         }
 
@@ -2580,7 +2493,7 @@ async function startBot() {
         } else {
             // Specific errors
             if (data.require_subscription) {
-                await showCustomAlert('⚠️ SUBSCRIPTION REQUIRED\n\n' + data.error + '\n\nGo to the BOOSTS tab to subscribe!', 'warning');
+                await showCustomAlert('⚠️ VENOM TOKENS REQUIRED\n\n' + data.error + '\n\nHold 10M VENOM tokens to unlock bot access!', 'warning');
             } else if (data.insufficient_balance) {
                 await showCustomAlert('⚠️ INSUFFICIENT BALANCE\n\n' + data.error, 'warning');
             } else {
@@ -2627,8 +2540,8 @@ async function manualSell(tokenAddress, tokenName, percentage) {
         // Afficher un message de chargement
         const loadingMsg = document.createElement('div');
         loadingMsg.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); ' +
-                                   'background: rgba(0, 0, 0, 0.9); color: #00ffff; padding: 20px 40px; ' +
-                                   'border-radius: 10px; z-index: 10000; border: 2px solid #00ffff;';
+                                   'background: rgba(0, 0, 0, 0.9); color: var(--venom); padding: 20px 40px; ' +
+                                   'border-radius: 10px; z-index: 10000; border: 2px solid var(--venom);';
         loadingMsg.innerHTML = `<i class="fas fa-spinner fa-spin me-2"></i>Selling ${percentage}% in progress...`;
         document.body.appendChild(loadingMsg);
 
@@ -2865,7 +2778,7 @@ async function startSimulationMode() {
 
         // Show success message
         const statusEl = document.createElement('div');
-        statusEl.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(0, 212, 255, 0.2); border: 1px solid rgba(0, 212, 255, 0.5); color: #00d4ff; padding: 15px 25px; border-radius: 10px; z-index: 10000; font-weight: 700;';
+        statusEl.style.cssText = 'position: fixed; top: 20px; right: 20px; background: rgba(57, 255, 20, 0.2); border: 1px solid rgba(57, 255, 20, 0.5); color: var(--venom); padding: 15px 25px; border-radius: 10px; z-index: 10000; font-weight: 700;';
         statusEl.innerHTML = '<i class="fas fa-gamepad me-2"></i>' + data.message;
         document.body.appendChild(statusEl);
 
@@ -2883,7 +2796,7 @@ async function startSimulationMode() {
 async function toggleSimulationMode() {
     if (await showCustomConfirm('Do you want to exit simulation mode and switch to real mode?\n\nYou will need to subscribe to trade with real money.', 'warning')) {
         endSimulationMode();
-        // Redirect to BOOSTS tab
+        // Redirect to ACCESS tab
         showDashboardTab('boosts');
     }
 }
@@ -2943,7 +2856,7 @@ function updateSimulationTimer() {
     if (remaining <= 0) {
         // Simulation time expired
         endSimulationMode();
-        showCustomAlert('⏱️ Your 2-hour simulation period has ended!\n\nTo continue trading, please subscribe to a plan in the BOOSTS tab.', 'warning');
+        showCustomAlert('⏱️ Your 2-hour simulation period has ended!\n\nTo continue trading, hold 10M VENOM tokens in your wallet.', 'warning');
         showDashboardTab('boosts');
         return;
     }
@@ -3027,11 +2940,74 @@ setInterval(() => {
         console.log('[AUTO-REFRESH] No currentUser, skipping refresh');
     }
 }, 3000);
+
+// Function to check VENOM tokens
+async function showVenomTokenInfo() {
+    try {
+        // Show loading message
+        showCustomAlert('🔄 Checking your VENOM token balance...', 'info');
+
+        // Call API to check VENOM balance
+        const response = await fetch('/api/venom/check');
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            // Error checking balance
+            await showCustomAlert(
+                '❌ ERROR CHECKING BALANCE\n\n' +
+                (data.error || 'Could not verify VENOM token balance') + '\n\n' +
+                '💡 Make sure you have a wallet generated in the WALLET tab.',
+                'error'
+            );
+            return;
+        }
+
+        // Display result
+        const hasAccess = data.has_access;
+        const balance = data.balance || 0;
+        const required = data.required || 10000000;
+        const message = data.message || '';
+
+        if (hasAccess) {
+            await showCustomAlert(
+                '✅ ACCESS GRANTED!\n\n' +
+                `You have ${balance.toLocaleString()} VENOM tokens\n` +
+                `Required: ${required.toLocaleString()}\n\n` +
+                '🎉 You can now use the trading bot in REAL mode!\n\n' +
+                'Go to the DASHBOARD tab and click START BOT.',
+                'success'
+            );
+        } else {
+            const shortage = required - balance;
+            await showCustomAlert(
+                '❌ ACCESS DENIED\n\n' +
+                `Current balance: ${balance.toLocaleString()} VENOM\n` +
+                `Required: ${required.toLocaleString()} VENOM\n` +
+                `You need: ${shortage.toLocaleString()} more tokens\n\n` +
+                '📍 How to get VENOM tokens:\n' +
+                '1. Buy on DEX (Raydium, Jupiter, etc.)\n' +
+                '2. Send to your wallet address\n' +
+                '3. Refresh to verify\n\n' +
+                `Wallet: ${data.wallet_address}\n\n` +
+                '💡 No subscriptions needed - just hold the tokens!',
+                'warning'
+            );
+        }
+    } catch (error) {
+        console.error('[VENOM] Error:', error);
+        await showCustomAlert(
+            '❌ CONNECTION ERROR\n\n' +
+            'Could not connect to verification service.\n\n' +
+            'Please try again or contact support.',
+            'error'
+        );
+    }
+}
 </script>
 
 <!-- Payment Modal -->
 <div id="paymentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; align-items: center; justify-content: center;">
-    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 600px; width: 90%; position: relative; box-shadow: 0 0 50px rgba(0, 255, 255, 0.3);">
+    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 600px; width: 90%; position: relative; box-shadow: 0 0 50px rgba(57, 255, 20, 0.3);">
 
         <!-- Close Button -->
         <button onclick="closePaymentModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: var(--terminal-cyan); font-size: 30px; cursor: pointer; transition: all 0.3s;">&times;</button>
@@ -3041,13 +3017,13 @@ setInterval(() => {
             <i class="fas fa-wallet me-2"></i>Payment <span id="paymentPlanName">RISKY</span>
         </h2>
 
-        <div style="text-align: center; color: rgba(0, 255, 255, 0.6); margin-bottom: 30px; font-size: 0.9rem;">
+        <div style="text-align: center; color: var(--gray-light); margin-bottom: 30px; font-size: 0.9rem;">
             <i class="fas fa-clock me-2"></i>Expires in <span id="paymentTimer">30:00</span>
         </div>
 
         <!-- Amount -->
-        <div style="background: rgba(0, 255, 255, 0.1); padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 30px; border: 1px solid rgba(0, 255, 255, 0.3);">
-            <div style="font-size: 0.9rem; color: rgba(0, 255, 255, 0.7); margin-bottom: 10px;">AMOUNT TO PAY</div>
+        <div style="background: rgba(57, 255, 20, 0.1); padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 30px; border: 1px solid rgba(57, 255, 20, 0.3);">
+            <div style="font-size: 0.9rem; color: var(--gray-light); margin-bottom: 10px;">AMOUNT TO PAY</div>
             <div style="font-size: 2.5rem; font-weight: 700; color: var(--terminal-cyan); font-family: 'Courier New', monospace;">
                 <span id="paymentAmount">0.15</span> SOL
             </div>
@@ -3058,15 +3034,15 @@ setInterval(() => {
             <div style="background: white; padding: 20px; border-radius: 10px; display: inline-block;">
                 <img id="paymentQRCode" src="" alt="QR Code" style="width: 200px; height: 200px;">
             </div>
-            <div style="margin-top: 10px; font-size: 0.8rem; color: rgba(0, 255, 255, 0.6);">
+            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--gray-light);">
                 <i class="fas fa-qrcode me-2"></i>Scan with your Solana wallet
             </div>
         </div>
 
         <!-- Payment Address -->
         <div style="margin-bottom: 30px;">
-            <div style="font-size: 0.9rem; color: rgba(0, 255, 255, 0.7); margin-bottom: 10px; text-align: center;">PAYMENT ADDRESS</div>
-            <div style="background: rgba(0, 255, 255, 0.1); padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(0, 255, 255, 0.3);">
+            <div style="font-size: 0.9rem; color: var(--gray-light); margin-bottom: 10px; text-align: center;">PAYMENT ADDRESS</div>
+            <div style="background: rgba(57, 255, 20, 0.1); padding: 15px; border-radius: 10px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(57, 255, 20, 0.3);">
                 <input id="paymentAddress" type="text" readonly value="" style="flex: 1; background: transparent; border: none; color: var(--terminal-cyan); font-family: 'Courier New', monospace; font-size: 0.85rem; outline: none;">
                 <button onclick="copyPaymentAddress()" style="background: var(--terminal-cyan); color: black; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: 700; transition: all 0.3s;">
                     <i class="fas fa-copy"></i> COPY
@@ -3095,7 +3071,7 @@ setInterval(() => {
             <i class="fas fa-check-circle me-2"></i>VERIFY PAYMENT
         </button>
 
-        <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: rgba(0, 255, 255, 0.5);">
+        <div style="text-align: center; margin-top: 20px; font-size: 0.85rem; color: var(--gray-light);">
             <i class="fas fa-shield-alt me-2"></i>Secure transaction on Solana blockchain
         </div>
     </div>
@@ -3631,7 +3607,7 @@ function showCustomConfirm(message, type = 'warning') {
 
 <!-- Custom Alert Modal -->
 <div id="customAlertModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 99999; align-items: center; justify-content: center;">
-    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 500px; width: 90%; box-shadow: 0 0 50px rgba(0, 255, 255, 0.3); animation: slideIn 0.3s ease;">
+    <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); padding: 40px; border-radius: 20px; border: 2px solid var(--terminal-cyan); max-width: 500px; width: 90%; box-shadow: 0 0 50px rgba(57, 255, 20, 0.3); animation: slideIn 0.3s ease;">
 
         <div style="text-align: center; margin-bottom: 20px;">
             <i id="customAlertIcon" class="fas fa-info-circle" style="font-size: 3.5rem; color: var(--terminal-cyan);"></i>

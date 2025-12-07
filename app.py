@@ -26,6 +26,8 @@ from system_limits import MAX_CONCURRENT_BOTS, get_capacity_status, ERROR_MESSAG
 from scanner_data_manager import scanner_manager
 from predict_runner import RunnerPredictor
 from console_logger import get_console_logger
+from venom_verifier import check_venom_access, format_venom_message
+from venom_config import VENOM_TOKEN_ADDRESS, REQUIRED_VENOM_BALANCE
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -795,17 +797,37 @@ def get_user_info():
     if not user:
         return jsonify({'success': False, 'error': 'Utilisateur non trouvé'}), 404
 
-    # Récupérer l'abonnement actif
+    # Récupérer l'abonnement actif (legacy system - keeping for backwards compatibility)
     subscription = db.get_active_subscription(user_id)
     has_subscription = subscription is not None
     boost_level = subscription['boost_level'] if subscription else 'BASIC'
 
-    # Vérifier si peut utiliser le mode réel
-    can_use_real_mode = boost_level in ['RISKY', 'SAFE']
-
     # Récupérer le wallet
     wallet = db.get_wallet(user_id)
     wallet_address = wallet['address'] if wallet else None
+
+    # NOUVEAU SYSTÈME: Vérifier les tokens VENOM
+    venom_verification = None
+    can_use_real_mode_venom = False
+
+    if wallet_address:
+        try:
+            venom_verification = check_venom_access(wallet_address)
+            can_use_real_mode_venom = venom_verification.get('has_access', False)
+            print(f"[VENOM] User {user_id} verification: {format_venom_message(venom_verification)}")
+        except Exception as e:
+            print(f"[VENOM] Error checking tokens for user {user_id}: {str(e)}")
+            venom_verification = {
+                'has_access': False,
+                'balance': 0,
+                'required': REQUIRED_VENOM_BALANCE,
+                'error': str(e)
+            }
+
+    # Vérifier si peut utiliser le mode réel
+    # OLD: boost_level in ['RISKY', 'SAFE']
+    # NEW: must have VENOM tokens OR old subscription (for transition period)
+    can_use_real_mode = can_use_real_mode_venom or (boost_level in ['RISKY', 'SAFE'])
 
     # Récupérer le solde réel (depuis la blockchain)
     wallet_balance = 0.0
@@ -838,15 +860,62 @@ def get_user_info():
             'balance_sol': wallet_balance,
             'balance_usd': wallet_balance * wallet_manager.get_sol_price()
         },
+        'venom': {
+            'enabled': venom_verification is not None,
+            'has_access': can_use_real_mode_venom,
+            'balance': venom_verification.get('balance', 0) if venom_verification else 0,
+            'required': REQUIRED_VENOM_BALANCE,
+            'token_address': VENOM_TOKEN_ADDRESS,
+            'message': format_venom_message(venom_verification) if venom_verification else None
+        },
         'simulation': {
             'active': has_simulation,
             'balance_sol': virtual_balance
         },
         'permissions': {
             'can_use_real_mode': can_use_real_mode,
-            'can_use_simulation': True
+            'can_use_simulation': True,
+            'access_method': 'venom_tokens' if can_use_real_mode_venom else ('subscription' if (boost_level in ['RISKY', 'SAFE']) else 'none')
         }
     })
+
+
+@app.route('/api/venom/check')
+@login_required
+def check_venom_tokens():
+    """Vérifie le solde de tokens VENOM d'un utilisateur"""
+    user_id = session['user_id']
+
+    # Récupérer le wallet
+    wallet = db.get_wallet(user_id)
+    if not wallet:
+        return jsonify({
+            'success': False,
+            'error': 'No wallet found. Please generate a wallet first.'
+        }), 404
+
+    wallet_address = wallet['address']
+
+    try:
+        # Vérifier les tokens VENOM
+        result = check_venom_access(wallet_address)
+
+        return jsonify({
+            'success': True,
+            'wallet_address': wallet_address,
+            'has_access': result.get('has_access', False),
+            'balance': result.get('balance', 0),
+            'required': REQUIRED_VENOM_BALANCE,
+            'token_address': VENOM_TOKEN_ADDRESS,
+            'message': format_venom_message(result)
+        })
+
+    except Exception as e:
+        print(f"[VENOM] Error in check endpoint: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
 
 
 @app.route('/api/bot/stats')

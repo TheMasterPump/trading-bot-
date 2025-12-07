@@ -1,6 +1,6 @@
-# 🤖 Vision AI - Solana Trading Bot
+# 🐍 VENOM AI - Solana Trading Bot
 
-AI-powered trading bot for Solana with real-time signals and subscription-based access.
+AI-powered trading bot for Solana with real-time signals and token-based access.
 
 [![Twitter](https://img.shields.io/badge/Twitter-@VisionAIHQ-1DA1F2?style=flat&logo=twitter)](https://x.com/VisionAIHQ)
 [![Telegram](https://img.shields.io/badge/Telegram-Join-26A5E4?style=flat&logo=telegram)](https://t.me/PortalvisionAI)
@@ -11,36 +11,29 @@ AI-powered trading bot for Solana with real-time signals and subscription-based 
 
 - **AI-Powered Predictions** - Machine learning models trained on 10,000+ tokens
 - **Real-Time Trading Signals** - Automated buy/sell signals with custom strategies
-- **Solana Payments** - Secure subscription system with SOL payments
-- **Three Trading Tiers** - RISKY, SAFE, and ULTRA strategies
-- **24/7 VIP Support** - Dedicated support for all subscribers
+- **Token-Based Access** - Hold VENOM tokens to unlock bot access
+- **Blockchain Verification** - Automatic on-chain token balance verification
+- **Non-Custodial** - Users control their own wallets and private keys
 - **Auto-Trading** - Set it and forget it with AI-powered automation
 
 ---
 
-## 📊 Subscription Plans
+## 🐍 Token-Based Access
 
-### 🔥 RISKY - Aggressive Strategy
-- **1.5 SOL/week** or **4 SOL/month**
-- ROI: 2-20x
-- Ultra-fast execution
-- AI trained on 4000+ tokens
-- Custom Take Profit & Stop Loss
+### 🔑 VENOM Access
+- **Hold 10,000,000 VENOM tokens** in your Solana wallet
+- One-time token purchase - no recurring fees
+- Token retains market value - can sell anytime
+- Automatic blockchain verification
+- Full bot access with all features
+- No subscriptions or monthly payments
 
-### 🛡️ SAFE - Conservative Strategy
-- **2 SOL/week** or **6 SOL/month**
-- ROI: 5x-30x
-- Safety filters & AI verification
-- AI trained on 6000+ tokens
-- Trailing Stop Loss
-
-### ⭐ ULTRA - Premium Strategy
-- **3 SOL/week** or **10 SOL/month**
-- ROI: x10-x100
-- AI + Auto-compound
-- Front-run top traders
-- AI trained on 10,000+ tokens
-- Multi-strategy approach
+**How it works:**
+1. Buy VENOM tokens on a Solana DEX (Raydium, Jupiter, etc.)
+2. Hold 10M+ VENOM tokens in your Solana wallet
+3. Connect your wallet in the bot
+4. Automatic verification grants instant access
+5. Keep trading as long as you hold the tokens
 
 ---
 
@@ -67,14 +60,15 @@ See [Deployment Guide](#-deployment) below for VPS setup instructions.
 ## 🏗️ Project Structure
 
 ```
-vision-ai-bot/
+venom-ai-bot/
 ├── app.py                      # Flask web server
-├── payment_config.py           # Solana payment configuration
-├── payment_verifier.py         # Payment verification
+├── venom_config.py             # VENOM token configuration
+├── venom_verifier.py           # Token balance verification
+├── VENOM_SETUP.md              # Token setup guide
 ├── templates/
 │   ├── index.html             # Landing page
 │   ├── bot.html               # Trading interface
-│   └── about.html             # About page
+│   └── about.html             # Documentation page
 ├── models/                     # AI models (ML/DL)
 │   ├── migration_classifier_latest.pkl
 │   ├── price_regressor_latest.pkl
@@ -88,21 +82,25 @@ vision-ai-bot/
 
 ## 🔧 Configuration
 
-### Payment Wallet Setup
+### VENOM Token Setup
 
-Edit `payment_config.py` to configure your Solana wallet:
+Edit `venom_config.py` to configure your token:
 
 ```python
-# Your Solana wallet address for receiving payments
-PAYMENT_WALLET_ADDRESS = 'YOUR_SOLANA_WALLET_HERE'
+# VENOM Token Contract Address on Solana
+VENOM_TOKEN_ADDRESS = "YOUR_VENOM_TOKEN_CONTRACT_ADDRESS_HERE"
 
-# Subscription prices in SOL
-SUBSCRIPTION_PRICES = {
-    'RISKY': 1.5,   # per week
-    'SAFE': 2.0,
-    'ULTRA': 3.0
-}
+# Minimum VENOM tokens required to unlock bot access
+REQUIRED_VENOM_BALANCE = 10_000_000  # 10 million tokens
+
+# Token decimals (standard SPL token = 9)
+VENOM_DECIMALS = 9
+
+# Enable/disable verification (set False for testing)
+ENABLE_VENOM_VERIFICATION = True
 ```
+
+See `VENOM_SETUP.md` for complete setup instructions.
 
 ---
 
@@ -132,22 +130,22 @@ cd trading-bot-
 # 4. Install requirements
 pip3 install -r requirements.txt
 
-# 5. Configure environment
-nano payment_config.py  # Add your wallet address
+# 5. Configure VENOM token
+nano venom_config.py  # Add your token contract address
 
 # 6. Run with gunicorn (production)
 pip3 install gunicorn
 gunicorn --bind 0.0.0.0:5000 --workers 4 app:app
 
 # 7. (Optional) Setup as systemd service for 24/7 operation
-sudo nano /etc/systemd/system/visionai.service
+sudo nano /etc/systemd/system/venomai.service
 ```
 
 **Systemd Service Example:**
 
 ```ini
 [Unit]
-Description=Vision AI Trading Bot
+Description=VENOM AI Trading Bot
 After=network.target
 
 [Service]
@@ -162,17 +160,18 @@ WantedBy=multi-user.target
 
 Enable and start:
 ```bash
-sudo systemctl enable visionai
-sudo systemctl start visionai
+sudo systemctl enable venomai
+sudo systemctl start venomai
 ```
 
 ---
 
 ## 🔐 Security
 
-- **Payments:** All Solana transactions are verified on-chain
+- **Token Verification:** All token balances verified on-chain via Solana RPC
+- **Non-Custodial:** Users control their own private keys and wallets
 - **User Data:** SQLite database with encrypted passwords (bcrypt)
-- **API Keys:** Store sensitive keys in environment variables
+- **Private Keys:** AES-256 encryption for stored wallet keys
 - **HTTPS:** Use Nginx reverse proxy with SSL/TLS in production
 
 ---
@@ -209,7 +208,7 @@ All models are pre-trained and included in the `models/` directory.
 
 - **Twitter:** [@VisionAIHQ](https://x.com/VisionAIHQ)
 - **Telegram:** [Join Community](https://t.me/PortalvisionAI)
-- **Email:** support@visionai.bot (configure in app)
+- **Documentation:** Full setup guide in `VENOM_SETUP.md`
 
 ---
 
@@ -221,17 +220,16 @@ Proprietary - All rights reserved
 
 ## 🎯 Roadmap
 
-- [x] Web interface with subscription system
-- [x] Solana payment integration
-- [x] AI trading models
-- [x] Multi-tier subscription plans
+- [x] Web interface with user authentication
+- [x] AI trading models (94.74% accuracy)
+- [x] Real-time token scanner
+- [x] VENOM token integration
+- [x] Blockchain verification system
 - [ ] Mobile app (iOS/Android)
 - [ ] Advanced analytics dashboard
 - [ ] Telegram bot integration
-- [ ] Copy-trading features
+- [ ] Public API for developers
 
 ---
 
-**🚀 Start earning with AI-powered trading signals today!**
-
-*Payment Wallet: 89WT9zM1um2prDXqaGaYPh9KjcrjgNe4n5HYwHHX9ji5*
+**🐍 Start earning with VENOM AI-powered trading signals today!**

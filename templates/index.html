@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VISION AI - Next-Gen Trading Intelligence</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>VENOM AI - Precision Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -16,1900 +13,1809 @@
         }
 
         :root {
-            --terminal-bg: #0a0e27;
-            --terminal-text: #00ffff;
-            --terminal-blue: #0099cc;
-            --terminal-cyan: #00ffff;
-            --terminal-green: #00ff88;
-            --terminal-red: #ff0051;
-            --terminal-yellow: #ffd700;
-            --terminal-border: #0099cc;
-            --terminal-glow: #00ffff;
+            --venom: #39FF14;
+            --venom-dim: rgba(57, 255, 20, 0.5);
+            --venom-glow: rgba(57, 255, 20, 0.15);
+            --black: #000;
+            --dark: #0a0a0a;
+            --gray-dark: #111;
+            --gray: #1a1a1a;
+            --gray-light: #888;
+            --white: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            background: var(--terminal-bg);
-            color: var(--terminal-text);
-            font-family: 'Roboto Mono', monospace;
-            min-height: 100vh;
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Inter', -apple-system, sans-serif;
+            line-height: 1.6;
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Matrix Rain Background */
-        .matrix-bg {
+        ::selection {
+            background: var(--venom);
+            color: var(--black);
+        }
+
+        header {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .matrix-column {
-            position: absolute;
-            top: -100%;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            color: #00ffff;
-            opacity: 0.2;
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #0099cc;
-            animation: matrixFall linear infinite;
-            line-height: 1.2;
-            white-space: nowrap;
-        }
-
-        @keyframes matrixFall {
-            0% {
-                top: -100%;
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.15;
-            }
-            90% {
-                opacity: 0.15;
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-            }
-        }
-
-        /* Content wrapper with z-index */
-        .content-wrapper {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Scanlines effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 255, 255, 0.03),
-                rgba(0, 255, 255, 0.03) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            pointer-events: none;
+            right: 0;
             z-index: 1000;
-        }
-
-        /* CRT effect */
-        .crt {
-            animation: flicker 0.15s infinite;
-        }
-
-        @keyframes flicker {
-            0% { opacity: 0.98; }
-            50% { opacity: 1; }
-            100% { opacity: 0.98; }
-        }
-
-        .terminal-header {
-            background: linear-gradient(180deg, #0d1330 0%, #0a0e27 100%);
-            border-bottom: 2px solid var(--terminal-border);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .terminal-header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
-            box-shadow: 0 0 10px #00ffff;
-            animation: scan 2s linear infinite;
-        }
-
-        @keyframes scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow:
-                0 0 10px #00ffff,
-                0 0 20px #00ffff,
-                0 0 30px #0099cc;
             display: flex;
             align-items: center;
-            gap: 15px;
-            animation: rgbSplit 5s infinite;
-        }
-
-        @keyframes rgbSplit {
-            0%, 100% {
-                text-shadow:
-                    0 0 10px #00ffff,
-                    0 0 20px #0099cc;
-            }
-            25% {
-                text-shadow:
-                    -2px 0 #00ffff,
-                    2px 0 #0099cc,
-                    0 0 20px #00ffff;
-            }
-            50% {
-                text-shadow:
-                    2px 0 #00ffff,
-                    -2px 0 #0099cc,
-                    0 0 20px #0099cc;
-            }
-            75% {
-                text-shadow:
-                    0 0 10px #00ffff,
-                    0 0 20px #0099cc;
-            }
-        }
-
-        .logo .blink {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        .nav-link {
-            color: rgba(0, 255, 255, 0.7);
+            gap: 12px;
             text-decoration: none;
-            margin: 0 15px;
-            transition: all 0.3s;
-            text-transform: uppercase;
+        }
+
+        .logo-eye {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--white);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--gray-light);
+            text-decoration: none;
             font-size: 0.9rem;
-            letter-spacing: 1px;
-            display: inline-block;
+            font-weight: 400;
+            transition: color 0.3s;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: #00ffff;
-            text-shadow: 0 0 10px #00ffff;
+        nav a:hover {
+            color: var(--white);
         }
 
-        /* Cyber Eye Logo */
-        .cyber-eye-container {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            cursor: pointer;
-        }
-
-        .cyber-eye-logo {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            animation: eyeFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes eyeFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-3px) scale(1.05); }
-        }
-
-        .cyber-outer-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%,
-                #00ffff 0%,
-                #0099cc 40%,
-                #006699 70%,
-                #003366 100%);
-            box-shadow:
-                0 0 20px #00ffff,
-                0 0 40px #0099cc,
-                inset 0 0 20px rgba(0, 255, 255, 0.3);
-            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
-        }
-
-        @keyframes cyberPulse {
-            0%, 100% {
-                box-shadow:
-                    0 0 20px #00ffff,
-                    0 0 40px #0099cc,
-                    inset 0 0 20px rgba(0, 255, 255, 0.3);
-            }
-            50% {
-                box-shadow:
-                    0 0 30px #00ffff,
-                    0 0 60px #0099cc,
-                    inset 0 0 30px rgba(0, 255, 255, 0.5);
-            }
-        }
-
-        @keyframes cyberRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .cyber-white-ring {
-            position: absolute;
-            top: 15%;
-            left: 15%;
-            width: 70%;
-            height: 70%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                #ffffff 0%,
-                #f0f0f0 50%,
-                #e0e0e0 100%);
-            box-shadow:
-                0 0 10px rgba(255, 255, 255, 0.8),
-                inset 0 0 8px rgba(0, 0, 0, 0.1);
-            animation: glowWhite 3s ease-in-out infinite;
-        }
-
-        @keyframes glowWhite {
-            0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
-            50% { box-shadow: 0 0 20px rgba(255, 255, 255, 1); }
-        }
-
-        .cyber-iris {
-            position: absolute;
-            top: 30%;
-            left: 30%;
-            width: 40%;
-            height: 40%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 40% 40%,
-                #00ff88 0%,
-                #00cc66 40%,
-                #009944 70%,
-                #006633 100%);
-            box-shadow:
-                0 0 15px #00ff88,
-                inset 0 0 10px rgba(0, 0, 0, 0.3);
-            animation: irisPulse 2.5s ease-in-out infinite;
-            transition: transform 0.15s ease-out;
-        }
-
-        @keyframes irisPulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 15px #00ff88;
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 0 25px #00ff88;
-            }
-        }
-
-        .cyber-pupil {
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            width: 20%;
-            height: 20%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                #000000 0%,
-                #111111 50%,
-                #000000 100%);
-            box-shadow:
-                inset 0 0 8px #000,
-                0 0 3px rgba(0, 0, 0, 0.8);
-            animation: pupilDilate 4s ease-in-out infinite;
-            transition: transform 0.1s ease-out;
-        }
-
-        @keyframes pupilDilate {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(0.8); }
-            75% { transform: scale(1.2); }
-        }
-
-        .cyber-reflection1 {
-            position: absolute;
-            top: 25%;
-            left: 35%;
-            width: 15%;
-            height: 20%;
-            border-radius: 50%;
-            background: radial-gradient(ellipse,
-                rgba(255, 255, 255, 0.9) 0%,
-                rgba(255, 255, 255, 0.6) 40%,
-                transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        .cyber-reflection2 {
-            position: absolute;
-            top: 60%;
-            right: 25%;
-            width: 8%;
-            height: 8%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                rgba(255, 255, 255, 0.7) 0%,
-                transparent 70%);
-            animation: shimmer 3s ease-in-out infinite 1.5s;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.8; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        .cyber-scan-line {
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg,
-                transparent 0%,
-                #00ffff 50%,
-                transparent 100%);
-            opacity: 0.6;
-            animation: cyberScan 3s linear infinite;
-        }
-
-        @keyframes cyberScan {
-            0% { top: -1px; }
-            100% { top: 100%; }
-        }
-
-        /* Click effect - color flash */
-        .cyber-eye-logo.clicked {
-            animation: colorFlash 0.8s ease-in-out;
-        }
-
-        @keyframes colorFlash {
-            0% { filter: hue-rotate(0deg) brightness(1); }
-            20% { filter: hue-rotate(30deg) brightness(1.5); }
-            40% { filter: hue-rotate(350deg) brightness(1.5); }
-            60% { filter: hue-rotate(120deg) brightness(1.5); }
-            80% { filter: hue-rotate(220deg) brightness(1.5); }
-            100% { filter: hue-rotate(0deg) brightness(1); }
-        }
-
-        .hero-section {
-            padding: 80px 0 60px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 4rem;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow:
-                0 0 20px #00ffff,
-                0 0 40px #0099cc,
-                0 0 60px #006699;
-            margin-bottom: 20px;
-            animation: rgbSplit 4s infinite;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: rgba(0, 255, 255, 0.8);
-            margin-bottom: 15px;
+        .btn-launch {
+            padding: 10px 24px;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
             font-weight: 500;
-        }
-
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: rgba(0, 255, 255, 0.6);
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #00ffff, #0099cc, #00ffff);
-            background-size: 200% 200%;
-            border: 2px solid #00ffff;
-            color: #0a0e27;
-            font-weight: 700;
-            padding: 18px 45px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 8px;
-            box-shadow:
-                0 0 30px rgba(0, 255, 255, 0.8),
-                0 0 60px rgba(0, 153, 204, 0.5);
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            animation: gradientShift 3s ease infinite;
-            margin: 0 10px 10px;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow:
-                0 10px 50px rgba(0, 255, 255, 1),
-                0 0 80px rgba(0, 255, 255, 0.8);
-            color: #0a0e27;
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid #00ffff;
-            color: #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(0, 255, 255, 0.1);
-            color: #00ffff;
-        }
-
-        /* Live Stats Section */
-        .live-stats {
-            background: rgba(13, 19, 48, 0.8);
-            border: 2px solid #0099cc;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 1200px;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .stat-box {
-            background: rgba(10, 14, 39, 0.9);
-            border: 2px solid #0099cc;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
+            cursor: pointer;
             transition: all 0.3s;
         }
 
-        .stat-box:hover {
-            transform: translateY(-5px);
-            border-color: #00ffff;
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+        .btn-launch:hover {
+            background: var(--venom);
+            box-shadow: 0 0 30px var(--venom-glow);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #00ffff;
-            text-shadow: 0 0 20px #00ffff;
-            margin-bottom: 10px;
-        }
-
-        .stat-number.positive {
-            color: #00ff88;
-            text-shadow: 0 0 20px #00ff88;
-        }
-
-        .stat-number.warning {
-            color: #ffd700;
-            text-shadow: 0 0 20px #ffd700;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(0, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* How It Works Section */
-        .how-it-works {
-            padding: 80px 0;
-            background: rgba(13, 19, 48, 0.5);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: #00ffff;
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #00ffff;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: rgba(0, 255, 255, 0.7);
-            font-size: 1.1rem;
-            margin-bottom: 50px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .step-card {
-            background: rgba(10, 14, 39, 0.95);
-            border: 2px solid #0099cc;
-            border-radius: 15px;
-            padding: 35px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s;
-        }
-
-        .step-card:hover {
-            transform: translateY(-10px);
-            border-color: #00ffff;
-            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.5);
-        }
-
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #00ffff, #0099cc);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #0a0e27;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-        }
-
-        .step-icon {
-            font-size: 3rem;
-            color: #00ffff;
-            margin: 20px 0;
-            text-shadow: 0 0 20px #00ffff;
-        }
-
-        .step-title {
-            font-size: 1.3rem;
-            color: #00ffff;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .step-description {
-            color: rgba(0, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Dual System Section */
-        .dual-system {
-            padding: 80px 0;
-        }
-
-        .system-comparison {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .system-card {
-            background: rgba(10, 14, 39, 0.95);
-            border: 3px solid;
-            border-radius: 15px;
-            padding: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .system-card.auto-buy {
-            border-color: #00ff88;
-            box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
-        }
-
-        .system-card.ai {
-            border-color: #00ffff;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
-        }
-
-        .system-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .system-badge.auto-buy {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-            border: 2px solid #00ff88;
-        }
-
-        .system-badge.ai {
-            background: rgba(0, 255, 255, 0.2);
-            color: #00ffff;
-            border: 2px solid #00ffff;
-        }
-
-        .system-title {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .system-description {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .system-features {
-            list-style: none;
-            padding: 0;
-        }
-
-        .system-features li {
-            padding: 10px 0;
-            color: rgba(255, 255, 255, 0.8);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .system-features li i {
-            color: #00ff88;
-            margin-top: 3px;
-        }
-
-        .system-card.ai .system-features li i {
-            color: #00ffff;
-        }
-
-        /* Features Grid */
-        .features-section {
-            padding: 80px 0;
-            background: rgba(13, 19, 48, 0.5);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature-card {
-            background: rgba(10, 14, 39, 0.95);
-            border: 2px solid #0099cc;
-            border-radius: 15px;
-            padding: 35px;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: #00ffff;
-            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.5);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #00ffff;
-        }
-
-        .feature-title {
-            font-size: 1.4rem;
-            color: #00ffff;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .feature-description {
-            color: rgba(0, 255, 255, 0.7);
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 153, 204, 0.1));
-            border: 3px solid #00ffff;
-            border-radius: 20px;
-            padding: 60px 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 0 60px rgba(0, 255, 255, 0.4);
-        }
-
-        .cta-box h2 {
-            font-size: 2.5rem;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px #00ffff;
-        }
-
-        .cta-box p {
-            font-size: 1.2rem;
-            color: rgba(0, 255, 255, 0.8);
-            margin-bottom: 30px;
-        }
-
-        .terminal-footer {
-            text-align: center;
-            padding: 40px 0;
-            color: rgba(0, 255, 255, 0.6);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(0, 153, 204, 0.3);
-            margin-top: 50px;
-        }
-
-        .footer-links {
-            margin: 20px 0;
-        }
-
-        .footer-links a {
-            color: #00ffff;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: all 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 10px #00ffff;
-        }
-
-        /* Intro Screen */
-        .intro-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            z-index: 9999;
-            animation: fadeOut 0.8s ease-out 2s forwards;
-        }
-
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        .intro-cyber-eye {
+            padding: 120px 48px 80px;
             position: relative;
-            width: 150px;
-            height: 150px;
-            animation: introEyeGlow 2s ease-in-out;
         }
 
-        @keyframes introEyeGlow {
-            0% {
-                opacity: 0;
-                transform: scale(0.5) rotate(0deg);
-            }
-            20% {
-                opacity: 1;
-                transform: scale(1) rotate(360deg);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateX(0);
-            }
+        .hero-eye-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin-bottom: 60px;
         }
 
-        .intro-text {
-            margin-top: 30px;
-            font-size: 1.5rem;
-            color: #00ffff;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            animation: textFlicker 2s ease-in-out;
-            text-shadow:
-                0 0 10px #00ffff,
-                0 0 20px #0099cc,
-                0 0 30px #006699;
+        .hero-eye-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--venom-glow) 0%, transparent 70%);
+            animation: glowPulse 4s ease-in-out infinite;
+            pointer-events: none;
         }
 
-        @keyframes textFlicker {
-            0%, 100% {
-                opacity: 0;
-            }
-            15%, 85% {
-                opacity: 1;
-            }
-            20%, 25%, 45%, 50%, 70%, 75% {
-                opacity: 0.7;
-                transform: translate(1px, 0);
-            }
-            22%, 47%, 72% {
-                transform: translate(-1px, 0);
-            }
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
         }
 
-        .main-content {
-            opacity: 0;
-            animation: fadeIn 0.8s ease-in 2s forwards;
+        .hero-eye {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 1;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Pricing Section */
-        .pricing-section {
-            padding: 80px 0;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .pricing-card {
-            background: rgba(10, 14, 39, 0.95);
-            border: 3px solid;
-            border-radius: 20px;
-            padding: 40px 30px;
+        .hero-content {
             text-align: center;
-            position: relative;
-            transition: all 0.4s;
+            max-width: 700px;
         }
 
-        .pricing-card.risky {
-            border-color: #ff0051;
-            box-shadow: 0 0 40px rgba(255, 0, 81, 0.3);
-        }
-
-        .pricing-card.safe {
-            border-color: #00ff88;
-            box-shadow: 0 0 40px rgba(0, 255, 136, 0.3);
-        }
-
-        .pricing-card.ultra {
-            border-color: #00d4ff;
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
-            opacity: 0.7;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-15px) scale(1.02);
-        }
-
-        .pricing-card.risky:hover {
-            box-shadow: 0 20px 60px rgba(255, 0, 81, 0.6);
-        }
-
-        .pricing-card.safe:hover {
-            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.6);
-        }
-
-        .pricing-card.ultra:hover {
-            box-shadow: 0 20px 60px rgba(0, 212, 255, 0.6);
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            border-width: 4px;
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #00ff88, #00cc66);
-            color: #0a0e27;
-            padding: 8px 25px;
-            border-radius: 20px;
+        .hero-title {
+            font-size: 4.5rem;
             font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.8);
+            letter-spacing: 20px;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .coming-soon-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 212, 255, 0.2);
-            color: #00d4ff;
-            border: 2px solid #00d4ff;
-            padding: 8px 25px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-light);
+            font-weight: 300;
+            margin-bottom: 48px;
             letter-spacing: 1px;
         }
 
-        .pricing-eye-container {
-            width: 120px;
-            height: 120px;
-            margin: 30px auto 25px;
-            position: relative;
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
         }
 
-        .pricing-eye {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            animation: eyeFloat 4s ease-in-out infinite;
+        .btn-primary {
+            padding: 16px 40px;
+            background: var(--venom);
+            color: var(--black);
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        /* Red Eye (RISKY) */
-        .red-eye .eye-outer-ring {
+        .btn-primary:hover {
+            box-shadow: 0 0 40px var(--venom-dim);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .scroll-indicator {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%,
-                #ff0051 0%,
-                #cc0040 40%,
-                #990030 70%,
-                #660020 100%);
-            box-shadow:
-                0 0 30px #ff0051,
-                0 0 60px #cc0040,
-                inset 0 0 30px rgba(255, 0, 81, 0.3);
-            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-light);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
         }
 
-        .red-eye .eye-iris {
-            background: radial-gradient(circle at 40% 40%,
-                #ff3366 0%,
-                #ff0051 40%,
-                #cc0040 70%,
-                #990030 100%);
-            box-shadow: 0 0 20px #ff0051;
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
         }
 
-        /* Green Eye (SAFE) */
-        .green-eye .eye-outer-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%,
-                #00ff88 0%,
-                #00cc66 40%,
-                #009944 70%,
-                #006633 100%);
-            box-shadow:
-                0 0 30px #00ff88,
-                0 0 60px #00cc66,
-                inset 0 0 30px rgba(0, 255, 136, 0.3);
-            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
+        .scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--gray-light);
         }
 
-        .green-eye .eye-iris {
-            background: radial-gradient(circle at 40% 40%,
-                #00ff88 0%,
-                #00cc66 40%,
-                #009944 70%,
-                #006633 100%);
-            box-shadow: 0 0 20px #00ff88;
+        .stats {
+            padding: 100px 48px;
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
         }
 
-        /* Blue Eye (ULTRA) */
-        .blue-eye .eye-outer-ring {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%,
-                #00d4ff 0%,
-                #0099cc 40%,
-                #006699 70%,
-                #003366 100%);
-            box-shadow:
-                0 0 30px #00d4ff,
-                0 0 60px #0099cc,
-                inset 0 0 30px rgba(0, 212, 255, 0.3);
-            animation: cyberPulse 2s ease-in-out infinite, cyberRotate 20s linear infinite;
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .blue-eye .eye-iris {
-            background: radial-gradient(circle at 40% 40%,
-                #00d4ff 0%,
-                #0099cc 40%,
-                #006699 70%,
-                #003366 100%);
-            box-shadow: 0 0 20px #00d4ff;
+        .stat {
+            text-align: center;
+            padding: 40px;
+            border-right: 1px solid var(--gray);
         }
 
-        /* Common eye parts */
-        .eye-white-ring {
-            position: absolute;
-            top: 15%;
-            left: 15%;
-            width: 70%;
-            height: 70%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                #ffffff 0%,
-                #f0f0f0 50%,
-                #e0e0e0 100%);
-            box-shadow:
-                0 0 15px rgba(255, 255, 255, 0.8),
-                inset 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: glowWhite 3s ease-in-out infinite;
+        .stat:last-child {
+            border-right: none;
         }
 
-        .eye-iris {
-            position: absolute;
-            top: 30%;
-            left: 30%;
-            width: 40%;
-            height: 40%;
-            border-radius: 50%;
-            animation: irisPulse 2.5s ease-in-out infinite;
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .eye-pupil {
-            position: absolute;
-            top: 40%;
-            left: 40%;
-            width: 20%;
-            height: 20%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                #000000 0%,
-                #111111 50%,
-                #000000 100%);
-            box-shadow:
-                inset 0 0 10px #000,
-                0 0 5px rgba(0, 0, 0, 0.8);
-            animation: pupilDilate 4s ease-in-out infinite;
-        }
-
-        .eye-reflection1 {
-            position: absolute;
-            top: 25%;
-            left: 35%;
-            width: 15%;
-            height: 20%;
-            border-radius: 50%;
-            background: radial-gradient(ellipse,
-                rgba(255, 255, 255, 0.9) 0%,
-                rgba(255, 255, 255, 0.6) 40%,
-                transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        .eye-reflection2 {
-            position: absolute;
-            top: 60%;
-            right: 25%;
-            width: 8%;
-            height: 8%;
-            border-radius: 50%;
-            background: radial-gradient(circle,
-                rgba(255, 255, 255, 0.7) 0%,
-                transparent 70%);
-            animation: shimmer 3s ease-in-out infinite 1.5s;
-        }
-
-        .pricing-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+        .stat-label {
+            color: var(--gray-light);
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
 
-        .pricing-card.risky .pricing-title {
-            color: #ff0051;
-            text-shadow: 0 0 20px #ff0051;
+        .token-access {
+            padding: 150px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--gray);
         }
 
-        .pricing-card.safe .pricing-title {
-            color: #00ff88;
-            text-shadow: 0 0 20px #00ff88;
+        .access-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .pricing-card.ultra .pricing-title {
-            color: #00d4ff;
-            text-shadow: 0 0 20px #00d4ff;
+        .access-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .pricing-price {
+        .access-content p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .access-card {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.05) 0%, transparent 100%);
+            border: 2px solid var(--venom);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .access-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .token-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 24px;
+        }
+
+        .token-amount {
             font-size: 3rem;
             font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 10px;
+            color: var(--venom);
+            margin-bottom: 8px;
         }
 
-        .pricing-price span {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.6);
-            font-weight: 400;
+        .token-label {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
         }
 
-        .pricing-strategy {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .pricing-features {
+        .access-benefits {
             list-style: none;
-            padding: 0;
-            margin: 30px 0;
             text-align: left;
         }
 
-        .pricing-features li {
+        .access-benefits li {
             padding: 12px 0;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .access-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .access-benefits li::before {
+            content: '✓ ';
+            color: var(--venom);
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .features {
+            padding: 150px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--gray);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--venom);
+            margin-bottom: 24px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--venom);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(57, 255, 20, 0.1);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(57, 255, 20, 0.1);
+            border-radius: 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
-        }
-
-        .pricing-card.risky .pricing-features li i {
-            color: #ff0051;
-        }
-
-        .pricing-card.safe .pricing-features li i {
-            color: #00ff88;
-        }
-
-        .pricing-card.ultra .pricing-features li i {
-            color: #00d4ff;
-        }
-
-        .pricing-button {
-            display: block;
-            width: 100%;
-            padding: 18px 30px;
-            border-radius: 10px;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 0.6rem;
             font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--venom);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--venom);
+            color: var(--black);
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .feature-desc {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .what-is-venom {
+            padding: 150px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .venom-intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .venom-intro h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .venom-intro p {
+            color: var(--gray-light);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 32px;
+        }
+
+        .venom-meaning {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .venom-meaning h3 {
+            font-size: 1.5rem;
+            color: var(--venom);
+            margin-bottom: 16px;
+        }
+
+        .venom-meaning p {
+            color: var(--white);
             font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .venom-letters {
+            display: grid;
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .letter-card {
+            background: var(--black);
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 24px;
+            align-items: center;
             transition: all 0.3s;
-            margin-top: 20px;
-            border: 2px solid;
         }
 
-        .risky-btn {
-            background: linear-gradient(135deg, #ff0051, #cc0040);
-            border-color: #ff0051;
-            color: #ffffff;
-            box-shadow: 0 0 30px rgba(255, 0, 81, 0.5);
+        .letter-card:hover {
+            border-color: var(--venom);
+            transform: translateX(10px);
         }
 
-        .risky-btn:hover {
-            background: linear-gradient(135deg, #ff3366, #ff0051);
-            box-shadow: 0 10px 40px rgba(255, 0, 81, 0.8);
-            transform: translateY(-3px);
-            color: #ffffff;
+        .letter-symbol {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
         }
 
-        .safe-btn {
-            background: linear-gradient(135deg, #00ff88, #00cc66);
-            border-color: #00ff88;
-            color: #0a0e27;
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        .letter-content h4 {
+            font-size: 1.3rem;
+            color: var(--venom);
+            margin-bottom: 8px;
         }
 
-        .safe-btn:hover {
-            background: linear-gradient(135deg, #33ff99, #00ff88);
-            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.8);
-            transform: translateY(-3px);
-            color: #0a0e27;
+        .letter-content p {
+            color: var(--gray-light);
+            line-height: 1.6;
+            font-size: 1rem;
         }
 
-        .ultra-btn {
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            border-color: #00d4ff;
-            color: #0a0e27;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        .venom-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
-        .ultra-btn.disabled {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-            color: #00d4ff;
-            cursor: not-allowed;
+        .pillar-card {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--venom);
+            transform: translateY(-5px);
+        }
+
+        .pillar-icon {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--venom);
+            margin-bottom: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 1px;
+        }
+
+        .pillar-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--venom);
+        }
+
+        .pillar-card p {
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .how-it-works {
+            padding: 150px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--dark);
+        }
+
+        .steps-container {
+            display: grid;
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .step-card {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 32px;
+            background: var(--black);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+
+        .step-card:hover {
+            border-color: var(--venom);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        .step-content p {
+            color: var(--gray-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .user-journey {
+            padding: 150px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .journey-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--venom) 0%, var(--venom) 100%);
+            opacity: 0.3;
+        }
+
+        .journey-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .journey-number {
+            width: 80px;
+            height: 80px;
+            background: var(--dark);
+            border: 3px solid var(--venom);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--venom);
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-step h4 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .journey-step p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .faq-section {
+            padding: 150px 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--dark);
+        }
+
+        .faq-item {
+            background: var(--black);
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--venom);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--venom);
+        }
+
+        .faq-answer {
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .performance-metrics {
+            padding: 150px 48px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: var(--black);
+            border-top: 1px solid var(--gray);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .metric-card {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
+            border-color: var(--venom);
+            transform: translateY(-5px);
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--venom) 0%, #7FFF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .metric-desc {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .why-tokens {
+            padding: 150px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .comparison-card {
+            background: var(--dark);
+            border: 1px solid var(--gray);
+            border-radius: 16px;
+            padding: 40px;
+        }
+
+        .comparison-card.old-way {
             opacity: 0.6;
         }
 
-        .ultra-btn.disabled:hover {
-            transform: none;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        .comparison-card.new-way {
+            border-color: var(--venom);
+            border-width: 2px;
         }
 
-        /* Responsive */
+        .comparison-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card.old-way h3 {
+            color: #ff6b6b;
+        }
+
+        .comparison-card.new-way h3 {
+            color: var(--venom);
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-list li::before {
+            margin-right: 12px;
+            font-weight: 700;
+        }
+
+        .old-way .comparison-list li::before {
+            content: '✗ ';
+            color: #ff6b6b;
+        }
+
+        .new-way .comparison-list li::before {
+            content: '✓ ';
+            color: var(--venom);
+        }
+
+        .terminal-section {
+            padding: 150px 48px;
+            background: var(--dark);
+        }
+
+        .terminal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .terminal-content h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .terminal-content p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .terminal-features {
+            list-style: none;
+        }
+
+        .terminal-features li {
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--gray-light);
+        }
+
+        .terminal-features li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--venom);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--venom);
+        }
+
+        .terminal-box {
+            background: var(--black);
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            padding: 16px 20px;
+            background: var(--gray);
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 2;
+        }
+
+        .terminal-line {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-prompt {
+            color: var(--venom);
+        }
+
+        .terminal-command {
+            color: var(--white);
+        }
+
+        .terminal-output {
+            color: var(--gray-light);
+            padding-left: 20px;
+        }
+
+        .terminal-output.success {
+            color: var(--venom);
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: var(--venom);
+            animation: cursorBlink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes cursorBlink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .cta-section {
+            padding: 150px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--venom-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            color: var(--gray-light);
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+        }
+
+        footer {
+            padding: 48px;
+            border-top: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-text {
+            color: var(--gray-light);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat {
+                border-right: none;
+                border-bottom: 1px solid var(--gray);
+            }
+
+            .stat:nth-child(3), .stat:nth-child(4) {
+                border-bottom: none;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .terminal-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
+            header {
+                padding: 16px 24px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 24px 60px;
+            }
+
+            .hero-eye-container {
+                width: 280px;
+                height: 280px;
+            }
+
             .hero-title {
                 font-size: 2.5rem;
+                letter-spacing: 10px;
             }
 
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                border-bottom: 1px solid var(--gray);
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .steps-container,
-            .system-comparison,
-            .features-grid {
-                grid-template-columns: 1fr;
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
             }
         }
     </style>
 </head>
-<body class="crt">
+<body>
+    <header>
+        <a href="/" class="logo">
+            <svg class="logo-eye" viewBox="0 0 200 200">
+                <defs>
+                    <radialGradient id="irisSmall" cx="50%" cy="50%" r="55%">
+                        <stop offset="0%" stop-color="#7FFF00"/>
+                        <stop offset="50%" stop-color="#39FF14"/>
+                        <stop offset="100%" stop-color="#0d5a05"/>
+                    </radialGradient>
+                    <filter id="glowSmall"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <ellipse cx="100" cy="100" rx="75" ry="48" fill="#0d0d0d" stroke="#39FF14" stroke-width="3" filter="url(#glowSmall)"/>
+                <ellipse cx="100" cy="100" rx="40" ry="40" fill="url(#irisSmall)"/>
+                <ellipse cx="100" cy="100" rx="7" ry="38" fill="#020202"/>
+            </svg>
+            <span class="logo-text">VENOM</span>
+        </a>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#how">How It Works</a>
+            <a href="#access">Token Access</a>
+            <a href="/bot">Bot</a>
+            <a href="/about">Docs</a>
+            <button class="btn-launch" onclick="window.location='/bot'">Launch App</button>
+        </nav>
+    </header>
 
-<!-- Matrix Rain Background -->
-<div class="matrix-bg" id="matrixBg"></div>
+    <section class="hero">
+        <div class="hero-eye-container">
+            <div class="hero-eye-glow"></div>
+            <svg class="hero-eye" id="heroEye" viewBox="0 0 200 200">
+                <defs>
+                    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur stdDeviation="2" result="blur1"/>
+                        <feMerge><feMergeNode in="blur1"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <filter id="outerGlow" x="-100%" y="-100%" width="300%" height="300%">
+                        <feGaussianBlur stdDeviation="4"/>
+                        <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <filter id="pupilGlow" x="-200%" y="-50%" width="500%" height="200%">
+                        <feGaussianBlur stdDeviation="2"/>
+                        <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <radialGradient id="irisGradient" cx="50%" cy="50%" r="55%">
+                        <stop offset="0%" stop-color="#7FFF00"/>
+                        <stop offset="25%" stop-color="#39FF14"/>
+                        <stop offset="50%" stop-color="#2abd0f"/>
+                        <stop offset="75%" stop-color="#1a8a0a"/>
+                        <stop offset="100%" stop-color="#0d5a05"/>
+                    </radialGradient>
+                    <radialGradient id="irisInner" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#39FF14" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#39FF14" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="scleraGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#1a1a1a"/>
+                        <stop offset="50%" stop-color="#0a0a0a"/>
+                        <stop offset="100%" stop-color="#1a1a1a"/>
+                    </linearGradient>
+                    <clipPath id="eyeClip">
+                        <ellipse cx="100" cy="100" rx="75" ry="48"/>
+                    </clipPath>
+                    <clipPath id="irisClip">
+                        <ellipse cx="100" cy="100" rx="42" ry="42"/>
+                    </clipPath>
+                </defs>
 
-<!-- Intro Screen -->
-<div class="intro-screen">
-    <div class="intro-cyber-eye">
-        <div class="cyber-eye-logo">
-            <div class="cyber-outer-ring"></div>
-            <div class="cyber-white-ring"></div>
-            <div class="cyber-iris"></div>
-            <div class="cyber-pupil"></div>
-            <div class="cyber-reflection1"></div>
-            <div class="cyber-reflection2"></div>
-            <div class="cyber-scan-line"></div>
+                <g clip-path="url(#eyeClip)">
+                    <ellipse cx="100" cy="100" rx="75" ry="48" fill="url(#scleraGrad)"/>
+                    <ellipse cx="100" cy="100" rx="70" ry="44" fill="none" stroke="#000" stroke-width="8" opacity="0.5"/>
+                    <ellipse cx="100" cy="100" rx="42" ry="42" fill="url(#irisGradient)" filter="url(#softGlow)"/>
+
+                    <g clip-path="url(#irisClip)" opacity="0.5">
+                        <g stroke="#0a4a05" stroke-width="0.8">
+                            <line x1="100" y1="58" x2="100" y2="78"/>
+                            <line x1="100" y1="122" x2="100" y2="142"/>
+                            <line x1="78" y1="100" x2="58" y2="100"/>
+                            <line x1="122" y1="100" x2="142" y2="100"/>
+                            <line x1="115" y1="72" x2="128" y2="60"/>
+                            <line x1="85" y1="72" x2="72" y2="60"/>
+                            <line x1="115" y1="128" x2="128" y2="140"/>
+                            <line x1="85" y1="128" x2="72" y2="140"/>
+                        </g>
+                        <ellipse cx="100" cy="100" rx="36" ry="36" fill="none" stroke="#2acd10" stroke-width="0.5"/>
+                        <ellipse cx="100" cy="100" rx="28" ry="28" fill="none" stroke="#1a8a0a" stroke-width="0.5"/>
+                    </g>
+
+                    <ellipse cx="100" cy="100" rx="28" ry="28" fill="url(#irisInner)"/>
+
+                    <g id="pupilGroup">
+                        <ellipse cx="100" cy="100" rx="9" ry="42" fill="#000" filter="url(#pupilGlow)"/>
+                        <ellipse cx="100" cy="100" rx="6" ry="40" fill="#020202"/>
+                        <ellipse cx="100" cy="100" rx="3" ry="38" fill="#050505"/>
+                    </g>
+
+                    <ellipse cx="118" cy="78" rx="12" ry="8" fill="#fff" opacity="0.08"/>
+                    <ellipse cx="120" cy="76" rx="6" ry="4" fill="#fff" opacity="0.2"/>
+                    <ellipse cx="122" cy="74" rx="3" ry="2" fill="#fff" opacity="0.5"/>
+
+                    <rect id="eyelidTop" x="0" y="-48" width="200" height="48" fill="#000"/>
+                    <rect id="eyelidBottom" x="0" y="148" width="200" height="48" fill="#000"/>
+                </g>
+
+                <ellipse cx="100" cy="100" rx="75" ry="48" fill="none" stroke="#39FF14" stroke-width="2" filter="url(#outerGlow)"/>
+            </svg>
         </div>
-    </div>
-    <div class="intro-text">
-        VISION AI
-    </div>
-</div>
 
-<!-- Main Content -->
-<div class="main-content">
-<div class="content-wrapper">
+        <div class="hero-content">
+            <h1 class="hero-title">VENOM</h1>
+            <p class="hero-subtitle">AI-Powered Solana Trading Bot That Hunts Gems 24/7</p>
+            <p style="color: var(--gray-light); font-size: 1rem; margin: -32px auto 48px; max-width: 600px;">
+                Autonomous trading system with 94.74% AI accuracy. Auto-executes profitable trades while you sleep. Hold 10M VENOM tokens for lifetime access.
+            </p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="window.location='/bot'">Activate VENOM</button>
+                <button class="btn-secondary" onclick="window.location='#about'">Learn More</button>
+            </div>
+        </div>
 
-<!-- Header -->
-<div class="terminal-header">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div class="logo">
-                <span>VISION AI</span>
-                <div class="cyber-eye-container">
-                    <div class="cyber-eye-logo" id="headerEye">
-                        <div class="cyber-outer-ring"></div>
-                        <div class="cyber-white-ring"></div>
-                        <div class="cyber-iris" id="headerIris"></div>
-                        <div class="cyber-pupil" id="headerPupil"></div>
-                        <div class="cyber-reflection1"></div>
-                        <div class="cyber-reflection2"></div>
-                        <div class="cyber-scan-line"></div>
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-value">52.8%</div>
+                <div class="stat-label">Win Rate</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">98</div>
+                <div class="stat-label">Total Trades</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">&lt;8s</div>
+                <div class="stat-label">Strike Speed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">94.7%</div>
+                <div class="stat-label">AI Accuracy</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="token-access" id="access">
+        <div class="access-container">
+            <div class="access-content">
+                <h2>🐍 Token-Powered Access</h2>
+                <p>
+                    VENOM operates on a revolutionary token-based access model. Hold <strong>10,000,000 VENOM tokens</strong> in your Solana wallet and gain instant, permanent access to the full trading bot—no subscriptions, no recurring fees, no locked funds.
+                </p>
+                <p>
+                    Your tokens remain in YOUR wallet. You control them. Sell anytime. The bot verifies your balance on-chain automatically. Simple. Transparent. Unstoppable.
+                </p>
+                <button class="btn-primary" onclick="window.location='/bot'">Activate Access →</button>
+            </div>
+            <div class="access-card">
+                <div class="access-card-content">
+                    <svg class="token-icon" viewBox="0 0 200 200">
+                        <defs>
+                            <radialGradient id="tokenGrad" cx="50%" cy="50%" r="55%">
+                                <stop offset="0%" stop-color="#7FFF00"/>
+                                <stop offset="50%" stop-color="#39FF14"/>
+                                <stop offset="100%" stop-color="#0d5a05"/>
+                            </radialGradient>
+                        </defs>
+                        <ellipse cx="100" cy="100" rx="75" ry="48" fill="#0d0d0d" stroke="#39FF14" stroke-width="3"/>
+                        <ellipse cx="100" cy="100" rx="40" ry="40" fill="url(#tokenGrad)"/>
+                        <ellipse cx="100" cy="100" rx="7" ry="38" fill="#020202"/>
+                    </svg>
+                    <div class="token-amount">10,000,000</div>
+                    <div class="token-label">VENOM TOKENS</div>
+                    <ul class="access-benefits">
+                        <li>Full bot access, no limits</li>
+                        <li>No monthly payments</li>
+                        <li>Tokens stay in your wallet</li>
+                        <li>Auto blockchain verification</li>
+                        <li>Tradeable anytime</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">ARSENAL</span>
+            <h2 class="section-title">Engineered to Dominate</h2>
+            <p class="section-subtitle">When others are still clicking, VENOM has already executed. This is precision at neural speed.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">SPEED</div>
+                <h3 class="feature-title">Neural Strike Speed</h3>
+                <p class="feature-desc">8s average execution. Lightning-fast AUTO-BUY captures 93% of winners instantly. AI model handles edge cases with 61+ features.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">TARGET</div>
+                <h3 class="feature-title">Precision Targeting</h3>
+                <p class="feature-desc">AI trained on 4,000+ launches identifies gems in seconds. Scan liquidity, holders, whale patterns—auto-execute before the crowd arrives.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">DUAL</div>
+                <h3 class="feature-title">Dual-System Architecture</h3>
+                <p class="feature-desc">AUTO-BUY + AI System working in perfect harmony. Zero overlap, maximum coverage. Captures obvious runners and hidden gems.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">WHALE</div>
+                <h3 class="feature-title">Elite Wallet Tracking</h3>
+                <p class="feature-desc">Monitors high-value wallets (1+ SOL). Detects whale accumulation patterns. Auto-buy when 2+ VIP wallets accumulate under $10K MC.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">SHIELD</div>
+                <h3 class="feature-title">Venom Shield</h3>
+                <p class="feature-desc">Trailing stop loss that rises with profit. Anti-latency system skips pumped tokens. Migration detection with progressive selling.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">LEARN</div>
+                <h3 class="feature-title">Adaptive Learning</h3>
+                <p class="feature-desc">Self-adjusting parameters based on performance. Win rate &lt;30% → ULTRA_CONSERVATIVE mode. Learns continuously from every trade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is VENOM -->
+    <section class="what-is-venom" id="about">
+        <div class="venom-intro">
+            <span class="section-tag">ABOUT</span>
+            <h2>What is VENOM?</h2>
+            <p>
+                VENOM is not just another trading bot. It's an autonomous AI-powered trading system that hunts for gems on Solana's Pump.fun platform 24/7, executing trades at lightning speed while you sleep. Think of it as your personal hedge fund manager, but faster, smarter, and never tired.
+            </p>
+        </div>
+
+        <div class="venom-meaning">
+            <h3>Why VENOM?</h3>
+            <p style="margin-bottom: 32px;">
+                In nature, venom is the ultimate weapon: fast, precise, and paralyzing. A predator doesn't chase its prey for hours—it strikes once, with perfect timing, and wins instantly. That's exactly how this bot operates in crypto markets. While others manually hunt for tokens, VENOM strikes automatically, captures the opportunity in seconds, and moves on to the next target. No hesitation. No emotion. Pure execution.
+            </p>
+
+            <div class="venom-letters">
+                <div class="letter-card">
+                    <div class="letter-symbol">V</div>
+                    <div class="letter-content">
+                        <h4>Velocity</h4>
+                        <p>Speed is everything in crypto. VENOM executes trades in under 8 seconds—from token detection to order placement. While manual traders are still reading the chart, VENOM has already bought and is tracking profit.</p>
                     </div>
                 </div>
-                <span class="blink">_</span>
-            </div>
-            <div>
-                <a href="/" class="nav-link">
-                    <i class="fas fa-home me-1"></i>HOME
-                </a>
-                <a href="/bot" class="nav-link">
-                    <i class="fas fa-eye me-1"></i>VISION BOT
-                </a>
-                <a href="/about" class="nav-link">
-                    <i class="fas fa-book me-1"></i>DOC
-                </a>
-                <a href="https://x.com/VisionAIHQ" target="_blank" class="nav-link" title="Follow us on X" style="font-weight: bold; font-size: 1.1rem;">
-                    𝕏
-                </a>
-                <a href="https://t.me/PortalvisionAI" target="_blank" class="nav-link" title="Join our Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-        <h1 class="hero-title">
-            VISION AI TRADING BOT
-        </h1>
-        <p class="hero-subtitle">
-            Next-Generation AI Trading Intelligence for PumpFun Tokens
-        </p>
-        <p class="hero-tagline">
-            Dual-system architecture combining lightning-fast AUTO-BUY execution with deep AI analysis.
-            Adaptive learning, elite wallet tracking, and intelligent risk management—all in real-time.
-        </p>
-        <div>
-            <a href="/bot" class="cta-button">
-                LAUNCH VISION BOT
-            </a>
-            <a href="#how-it-works" class="cta-button secondary">
-                <i class="fas fa-info-circle me-2"></i>HOW IT WORKS
-            </a>
-        </div>
+                <div class="letter-card">
+                    <div class="letter-symbol">E</div>
+                    <div class="letter-content">
+                        <h4>Enhanced</h4>
+                        <p>Not just any bot—ENHANCED with machine learning. 61 features analyzed per token. Trained on 4,000+ historical launches. Continuously learning from every trade. This isn't basic automation; it's intelligent automation.</p>
+                    </div>
+                </div>
 
-        <!-- Live Stats -->
-        <div class="live-stats">
-            <h3 style="color: #00ffff; text-align: center; margin-bottom: 10px;">
-                <i class="fas fa-chart-line me-2"></i>LIVE PERFORMANCE METRICS
-            </h3>
-            <p style="text-align: center; color: rgba(0, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 20px;">
-                Real-time statistics from the last 98 trades
-            </p>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number positive" id="statWinRate">52.8%</div>
-                    <div class="stat-label">Win Rate</div>
+                <div class="letter-card">
+                    <div class="letter-symbol">N</div>
+                    <div class="letter-content">
+                        <h4>Neural</h4>
+                        <p>Powered by a Random Forest neural network that mimics how human traders think—but faster. Pattern recognition, risk assessment, opportunity scoring. The AI sees what humans miss and acts before humans can.</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number" id="statTotalTrades">98</div>
-                    <div class="stat-label">Total Trades</div>
+
+                <div class="letter-card">
+                    <div class="letter-symbol">O</div>
+                    <div class="letter-content">
+                        <h4>Opportunity</h4>
+                        <p>Every second, new tokens launch on Solana. 99% are rugs. 1% are gems. VENOM filters the noise, identifies the real opportunities, and only acts when the odds are in your favor. High conviction, high probability.</p>
+                    </div>
                 </div>
-                <div class="stat-box">
-                    <div class="stat-number positive" id="statMigrations">28</div>
-                    <div class="stat-label">Migrations to Pumpswap</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number warning" id="statBestTrade">+1000%</div>
-                    <div class="stat-label">Best Performer</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number" id="statAvgAnalysis">&lt;8s</div>
-                    <div class="stat-label">Avg Analysis Speed</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number positive" id="statAccuracy">94.7%</div>
-                    <div class="stat-label">AI Accuracy (4K+ tokens trained)</div>
+
+                <div class="letter-card">
+                    <div class="letter-symbol">M</div>
+                    <div class="letter-content">
+                        <h4>Miner</h4>
+                        <p>Like a miner extracting gold from dirt, VENOM extracts profit from the chaos of new token launches. It digs through hundreds of tokens daily, filters out the trash, and surfaces only the valuable gems worth trading.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- How It Works -->
-<section class="how-it-works" id="how-it-works">
-    <div class="container">
-        <h2 class="section-title">
-            <i class="fas fa-cogs me-2"></i>HOW IT WORKS
-        </h2>
-        <p class="section-subtitle">
-            Four-step intelligent analysis pipeline processes every PumpFun token in real-time
-        </p>
+        <div class="venom-pillars">
+            <div class="pillar-card">
+                <div class="pillar-icon">AI</div>
+                <h4>AI-Powered Intelligence</h4>
+                <p>Trained on 4,000+ token launches, our Random Forest model analyzes 61 unique features per token to predict gems with 94.74% accuracy. No guessing. Pure data.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">8s</div>
+                <h4>Lightning Execution</h4>
+                <p>Average execution time: 8 seconds. From token detection to trade execution, VENOM moves faster than manual traders can even process the information.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-icon">24/7</div>
+                <h4>Non-Custodial Security</h4>
+                <p>Your keys, your crypto. VENOM never holds your funds. Generate your wallet, control your private keys, trade with full sovereignty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how">
+        <div class="section-header">
+            <span class="section-tag">PROCESS</span>
+            <h2 class="section-title">How VENOM Hunts</h2>
+            <p class="section-subtitle">A dual-system architecture that never misses an opportunity</p>
+        </div>
 
         <div class="steps-container">
             <div class="step-card">
                 <div class="step-number">1</div>
-                <div class="step-icon">
-                    <i class="fas fa-radar"></i>
+                <div class="step-content">
+                    <h3>Real-Time Monitoring</h3>
+                    <p>VENOM connects to Pump.fun's WebSocket feed and monitors every single token launch in real-time. The moment a new token hits the chain, VENOM knows about it.</p>
                 </div>
-                <h3 class="step-title">Real-Time Scanning</h3>
-                <p class="step-description">
-                    24/7 monitoring of PumpFun token launches. Instant detection within 8 seconds of bonding curve creation. WebSocket integration for zero-latency updates.
-                </p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">2</div>
-                <div class="step-icon">
-                    <i class="fas fa-brain"></i>
+                <div class="step-content">
+                    <h3>Instant Analysis</h3>
+                    <p>Within 8 seconds, VENOM extracts 61 on-chain features: liquidity depth, holder distribution, whale patterns, transaction velocity, dev behavior, and more. The AI model processes this data instantly.</p>
                 </div>
-                <h3 class="step-title">Dual-System Analysis</h3>
-                <p class="step-description">
-                    AUTO-BUY instantly catches obvious runners (22+ txn, 72%+ buy ratio). AI model trained on 4,000+ tokens handles edge cases with 61+ features including whale patterns.
-                </p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">3</div>
-                <div class="step-icon">
-                    <i class="fas fa-shield-alt"></i>
+                <div class="step-content">
+                    <h3>AI Decision Making</h3>
+                    <p>The Random Forest classifier (trained on 4,000+ historical tokens) predicts the token's category: GEM (10x+ potential), SAFE (good opportunity), or RUG (avoid). Confidence threshold: 80%+.</p>
                 </div>
-                <h3 class="step-title">Smart Risk Management</h3>
-                <p class="step-description">
-                    Trailing stop loss protects profits dynamically. Progressive selling at 53K migration. Anti-latence system skips tokens that pumped +20% before execution.
-                </p>
             </div>
 
             <div class="step-card">
                 <div class="step-number">4</div>
-                <div class="step-icon">
-                    <i class="fas fa-graduation-cap"></i>
+                <div class="step-content">
+                    <h3>Auto-Execution</h3>
+                    <p>If the token passes all filters, VENOM executes the buy order automatically. No manual intervention. No delay. You wake up to new positions—or profits already secured.</p>
                 </div>
-                <h3 class="step-title">Adaptive Learning</h3>
-                <p class="step-description">
-                    Self-optimizing parameters based on win rate. Analyzes every trade outcome. Automatically adjusts thresholds to improve performance over time.
-                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Smart Profit Taking</h3>
+                    <p>Trailing stop-loss that rises with your profit. Automatic migration detection. Progressive selling strategy. VENOM knows when to hold and when to exit.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Dual System -->
-<section class="dual-system">
-    <div class="container">
-        <h2 class="section-title">
-            <i class="fas fa-layer-group me-2"></i>DUAL-SYSTEM ARCHITECTURE
-        </h2>
-        <p class="section-subtitle">
-            Two complementary systems working in perfect harmony for maximum coverage
-        </p>
+    <!-- User Journey -->
+    <section class="user-journey">
+        <div class="section-header">
+            <span class="section-tag">GET STARTED</span>
+            <h2 class="section-title">Your Path to Automated Profits</h2>
+            <p class="section-subtitle">From zero to fully automated trading in 4 simple steps</p>
+        </div>
 
-        <div class="system-comparison">
-            <div class="system-card auto-buy">
-                <span class="system-badge auto-buy">
-                    <i class="fas fa-bolt me-1"></i>AUTO-BUY
-                </span>
-                <h3 class="system-title">Lightning-Fast Execution</h3>
-                <p class="system-description">
-                    Captures 93% of historical winners with strict rule-based filters. Instant buy when conditions are met—no AI delay.
-                </p>
-                <ul class="system-features">
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>22+ transactions</strong> within 8 seconds</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>72%+ buy ratio</strong> for strong momentum</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>17+ unique traders</strong> minimum</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>&lt;30K market cap</strong> entry zone</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Max 3 whales</strong> to avoid manipulation</span>
-                    </li>
+        <div class="journey-timeline">
+            <div class="journey-step">
+                <div class="journey-number">1</div>
+                <h4>Buy VENOM Tokens</h4>
+                <p>Purchase 10,000,000 VENOM tokens on Raydium, Jupiter, or any Solana DEX. One-time purchase, lifetime access.</p>
+            </div>
+
+            <div class="journey-step">
+                <div class="journey-number">2</div>
+                <h4>Create Account</h4>
+                <p>Sign up on VENOM AI. Your Solana wallet is auto-generated. Save your private key—you control everything.</p>
+            </div>
+
+            <div class="journey-step">
+                <div class="journey-number">3</div>
+                <h4>Connect & Verify</h4>
+                <p>Click "Connect Wallet" in the bot. VENOM automatically verifies your token balance on-chain. Access granted instantly.</p>
+            </div>
+
+            <div class="journey-step">
+                <div class="journey-number">4</div>
+                <h4>Activate & Profit</h4>
+                <p>Fund your wallet with SOL, click "Start Bot", set your parameters. VENOM hunts 24/7. You just collect profits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="performance-metrics">
+        <div class="section-header">
+            <span class="section-tag">METRICS</span>
+            <h2 class="section-title">Real Performance Data</h2>
+            <p class="section-subtitle">Numbers don't lie. Here's what VENOM has achieved in live trading.</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-number">52.8%</div>
+                <div class="metric-label">Win Rate</div>
+                <p class="metric-desc">Over 98 total trades executed. More than half profitable. Consistent performance across market conditions.</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-number">94.74%</div>
+                <div class="metric-label">AI Accuracy</div>
+                <p class="metric-desc">The prediction model correctly classifies gems vs rugs with near-perfect accuracy. Trained on 4,000+ historical tokens.</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-number">8s</div>
+                <div class="metric-label">Avg Execution</div>
+                <p class="metric-desc">From token detection to order placement. Faster than humanly possible. Speed is the edge in crypto.</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-number">61+</div>
+                <div class="metric-label">Features Analyzed</div>
+                <p class="metric-desc">Every token is dissected: liquidity, holders, whale activity, dev behavior, transaction patterns, and more.</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-number">24/7</div>
+                <div class="metric-label">Uptime</div>
+                <p class="metric-desc">Never sleeps. Never misses. Continuous monitoring of Pump.fun for new opportunities while you live your life.</p>
+            </div>
+
+            <div class="metric-card">
+                <div class="metric-number">4000+</div>
+                <div class="metric-label">Training Dataset</div>
+                <p class="metric-desc">Tokens used to train the AI model. Real historical data. Real ROI measurements. No synthetic data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Token-Based Access -->
+    <section class="why-tokens">
+        <div class="section-header">
+            <span class="section-tag">ACCESS MODEL</span>
+            <h2 class="section-title">Why Token-Based Access?</h2>
+            <p class="section-subtitle">The subscription model is broken. We fixed it.</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-card old-way">
+                <h3>Traditional Subscriptions</h3>
+                <ul class="comparison-list">
+                    <li>Monthly recurring fees forever</li>
+                    <li>Payment processing fees eat profit</li>
+                    <li>Chargebacks and refund drama</li>
+                    <li>Credit card required (privacy risk)</li>
+                    <li>Cancel anytime = lose all access</li>
+                    <li>No asset value retention</li>
+                    <li>Platform controls everything</li>
                 </ul>
             </div>
 
-            <div class="system-card ai">
-                <span class="system-badge ai">
-                    <i class="fas fa-brain me-1"></i>AI SYSTEM
-                </span>
-                <h3 class="system-title">Deep Learning Analysis</h3>
-                <p class="system-description">
-                    Handles edge cases that AUTO-BUY misses. 61-feature neural network trained on 4,000+ real PumpFun tokens. Catches hidden gems like IDM (+72%).
-                </p>
-                <ul class="system-features">
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>17+ transactions</strong> (flexible threshold)</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>55%+ buy ratio</strong> (accepts lower)</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>8+ unique traders</strong> minimum</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>60%+ confidence</strong> from ML model</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Advanced pattern recognition</strong> for early signals</span>
-                    </li>
+            <div class="comparison-card new-way">
+                <h3>VENOM Token Access</h3>
+                <ul class="comparison-list">
+                    <li>One-time token purchase, forever access</li>
+                    <li>Zero payment processing (blockchain native)</li>
+                    <li>No chargebacks, no middlemen</li>
+                    <li>Fully decentralized verification</li>
+                    <li>Sell tokens anytime, get money back</li>
+                    <li>Token value can appreciate over time</li>
+                    <li>YOU control your access (non-custodial)</li>
                 </ul>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(0, 255, 255, 0.05); border: 2px solid #0099cc; border-radius: 10px;">
-            <p style="color: #00ffff; font-size: 1.1rem; margin: 0;">
-                <i class="fas fa-lightbulb me-2"></i>
-                <strong>Option B Strategy:</strong> AUTO-BUY captures 93% of winners instantly. AI catches the remaining 7% edge cases.
-                Zero overlap, maximum coverage.
+        <div style="margin-top: 60px; text-align: center;">
+            <p style="color: var(--gray-light); font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                <strong style="color: var(--venom);">The economics are simple:</strong> As more traders use VENOM, demand for the token increases. Token holders benefit from price appreciation while enjoying bot access. It's not an expense—it's an investment that grants access. Aligned incentives. No rent-seeking. Pure crypto economics.
             </p>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Features -->
-<section class="features-section">
-    <div class="container">
-        <h2 class="section-title">
-            <i class="fas fa-star me-2"></i>ADVANCED FEATURES
-        </h2>
-        <p class="section-subtitle">
-            Enterprise-grade trading technology powered by machine learning
-        </p>
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="section-header">
+            <span class="section-tag">FAQ</span>
+            <h2 class="section-title">Questions & Answers</h2>
+            <p class="section-subtitle">Everything you need to know about VENOM</p>
+        </div>
 
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <h3 class="feature-title">Elite Wallet Tracking</h3>
-                <p class="feature-description">
-                    Monitors high-value wallets (1+ SOL = $200+). Detects whale accumulation patterns. Auto-buy when 2+ VIP wallets accumulate with 75%+ buy ratio under $10K MC.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="feature-title">Trailing Stop Loss</h3>
-                <p class="feature-description">
-                    Dynamic stop loss that rises with profit. 80%+ profit locks in +30% gain. 50%+ profit moves to breakeven. Protects capital intelligently.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-rocket"></i>
-                </div>
-                <h3 class="feature-title">Migration Detection</h3>
-                <p class="feature-description">
-                    Automatically detects 53K Pumpswap migration. Sells 50% at 2x. Progressive 5% sells every 20 seconds. 15% stop loss from peak protects migration gains.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <h3 class="feature-title">Anti-Latency System</h3>
-                <p class="feature-description">
-                    Skips tokens that pumped +20% before execution. Prevents buying tops. Real-time price validation before every trade to avoid slippage losses.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-sync-alt"></i>
-                </div>
-                <h3 class="feature-title">Adaptive Configuration</h3>
-                <p class="feature-description">
-                    Self-adjusting parameters based on 20+ trade performance. Win rate &lt;30% → ULTRA_CONSERVATIVE mode. Win rate &gt;60% → OPTIMAL mode. Learns continuously.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3 class="feature-title">Historical Analysis</h3>
-                <p class="feature-description">
-                    AI trained on 4,000+ real PumpFun tokens. Stores every trade with 61-feature dataset. Analyzes patterns continuously. Uses historical data to refine predictions.
-                </p>
+        <div class="faq-item">
+            <div class="faq-question">Why 10 million VENOM tokens?</div>
+            <div class="faq-answer">
+                The token-based access model ensures alignment between VENOM holders and bot users. No recurring fees, no payment processing, no chargebacks. Buy once, use forever. Plus, as the bot gains traction, VENOM token value increases—creating a win-win ecosystem.
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Pricing Section -->
-<section class="pricing-section">
-    <div class="container">
-        <h2 class="section-title">
-            <i class="fas fa-tags me-2"></i>CHOOSE YOUR STRATEGY
-        </h2>
-        <p class="section-subtitle">
-            Select the trading plan that matches your risk tolerance and profit goals
-        </p>
-
-        <div class="pricing-grid">
-            <!-- RISKY Plan -->
-            <div class="pricing-card risky">
-                <div class="pricing-eye-container">
-                    <div class="pricing-eye red-eye">
-                        <div class="eye-outer-ring"></div>
-                        <div class="eye-white-ring"></div>
-                        <div class="eye-iris"></div>
-                        <div class="eye-pupil"></div>
-                        <div class="eye-reflection1"></div>
-                        <div class="eye-reflection2"></div>
-                    </div>
-                </div>
-                <h3 class="pricing-title">RISKY</h3>
-                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 15px;">
-                    <i class="fas fa-users me-1"></i>99 SPOTS REMAINING
-                </div>
-                <div class="pricing-price">1.5 SOL<span>/week</span></div>
-                <p class="pricing-strategy">Aggressive Strategy</p>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-infinity"></i> Unlimited trades</li>
-                    <li><i class="fas fa-chart-line"></i> ROI: 2-20x</li>
-                    <li><i class="fas fa-brain"></i> AI high confidence</li>
-                    <li><i class="fas fa-rocket"></i> Ultra-fast execution</li>
-                    <li><i class="fas fa-database"></i> AI trained on 4000+ tokens</li>
-                    <li><i class="fas fa-bullseye"></i> Custom Take Profit</li>
-                    <li><i class="fas fa-shield-alt"></i> Custom Stop Loss</li>
-                    <li><i class="fas fa-headset"></i> VIP Support 24/7</li>
-                </ul>
-                <a href="/bot" class="pricing-button risky-btn">
-                    <i class="fas fa-fire me-2"></i>ACTIVATE
-                </a>
-            </div>
-
-            <!-- SAFE Plan -->
-            <div class="pricing-card safe featured">
-                <div class="featured-badge">RECOMMENDED</div>
-                <div class="pricing-eye-container">
-                    <div class="pricing-eye green-eye">
-                        <div class="eye-outer-ring"></div>
-                        <div class="eye-white-ring"></div>
-                        <div class="eye-iris"></div>
-                        <div class="eye-pupil"></div>
-                        <div class="eye-reflection1"></div>
-                        <div class="eye-reflection2"></div>
-                    </div>
-                </div>
-                <h3 class="pricing-title">SAFE</h3>
-                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 15px;">
-                    <i class="fas fa-users me-1"></i>69 SPOTS REMAINING
-                </div>
-                <div class="pricing-price">2 SOL<span>/week</span></div>
-                <p class="pricing-strategy">Conservative Strategy</p>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-infinity"></i> Unlimited trades</li>
-                    <li><i class="fas fa-chart-line"></i> ROI: 5x-30x</li>
-                    <li><i class="fas fa-check-circle"></i> AI verified</li>
-                    <li><i class="fas fa-filter"></i> Safety filters</li>
-                    <li><i class="fas fa-database"></i> AI trained on 6000+ tokens</li>
-                    <li><i class="fas fa-bullseye"></i> AI Strategy</li>
-                    <li><i class="fas fa-shield-alt"></i> Trailing Stop Loss</li>
-                    <li><i class="fas fa-headset"></i> VIP Support 24/7</li>
-                </ul>
-                <a href="/bot" class="pricing-button safe-btn">
-                    <i class="fas fa-check me-2"></i>ACTIVATE
-                </a>
-            </div>
-
-            <!-- ULTRA Plan -->
-            <div class="pricing-card ultra">
-                <div class="coming-soon-badge">COMING SOON</div>
-                <div class="pricing-eye-container">
-                    <div class="pricing-eye blue-eye">
-                        <div class="eye-outer-ring"></div>
-                        <div class="eye-white-ring"></div>
-                        <div class="eye-iris"></div>
-                        <div class="eye-pupil"></div>
-                        <div class="eye-reflection1"></div>
-                        <div class="eye-reflection2"></div>
-                    </div>
-                </div>
-                <h3 class="pricing-title">ULTRA</h3>
-                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-bottom: 15px;">
-                    <i class="fas fa-star me-1"></i>59 SPOTS REMAINING
-                </div>
-                <div class="pricing-price">3 SOL<span>/week</span></div>
-                <p class="pricing-strategy">Premium Strategy</p>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-infinity"></i> Unlimited trades</li>
-                    <li><i class="fas fa-chart-line"></i> ROI: x10-x100</li>
-                    <li><i class="fas fa-brain"></i> AI + Auto-compound</li>
-                    <li><i class="fas fa-users"></i> Front run top traders</li>
-                    <li><i class="fas fa-layer-group"></i> Multi-strategy</li>
-                    <li><i class="fas fa-database"></i> AI trained on 10,000+ tokens</li>
-                    <li><i class="fas fa-bullseye"></i> AI Strategy</li>
-                    <li><i class="fas fa-shield-alt"></i> Trailing Stop Loss</li>
-                    <li><i class="fas fa-headset"></i> VIP Support 24/7</li>
-                </ul>
-                <a href="#" class="pricing-button ultra-btn disabled">
-                    <i class="fas fa-lock me-2"></i>COMING SOON
-                </a>
+        <div class="faq-item">
+            <div class="faq-question">Can I sell my VENOM tokens later?</div>
+            <div class="faq-answer">
+                Absolutely. Your tokens remain in YOUR wallet at all times. Sell them on any DEX whenever you want. As long as you hold 10M+ tokens, you have bot access. Drop below that, access pauses until you buy back.
             </div>
         </div>
-    </div>
-</section>
 
-<!-- CTA Section -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-box">
-            <h2>Ready to Trade Smarter?</h2>
-            <p>
-                Join the next generation of AI-powered trading. VISION AI analyzes thousands of tokens daily
-                to find high-potential opportunities before they moon.
-            </p>
-            <a href="/bot" class="cta-button">
-                <i class="fas fa-rocket me-2"></i>START TRADING NOW
-            </a>
+        <div class="faq-item">
+            <div class="faq-question">Is my crypto safe?</div>
+            <div class="faq-answer">
+                Yes. VENOM is 100% non-custodial. We never hold your funds. You generate your own Solana wallet, you control the private keys (AES-256 encrypted in our database, but YOU have the seed phrase). You can withdraw everything at any time.
+            </div>
         </div>
-    </div>
-</section>
 
-<!-- Footer -->
-<div class="terminal-footer">
-    <div class="container">
+        <div class="faq-item">
+            <div class="faq-question">What's the minimum SOL needed to start?</div>
+            <div class="faq-answer">
+                Recommended: 1-2 SOL to start. The bot will use a portion of your balance per trade (you can configure this). More capital = more trades = more profit potential. But start small, test the system, scale up when confident.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I lose money?</div>
+            <div class="faq-answer">
+                Yes. Crypto trading carries risk. VENOM has a 52.8% win rate and 94.74% AI accuracy, but NOT every trade wins. The bot uses stop-losses, anti-rug filters, and risk management—but losses are possible. Only invest what you can afford to lose.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do I need to watch the bot 24/7?</div>
+            <div class="faq-answer">
+                No. That's the whole point. Set your parameters (buy amount, take profit, stop loss), activate the bot, and let it run. Check your dashboard occasionally to see profits. VENOM works while you sleep, work, or live your life.
+            </div>
+        </div>
+    </section>
+
+    <section class="terminal-section">
+        <div class="terminal-container">
+            <div class="terminal-content">
+                <h2>Built for Operators</h2>
+                <p>Professional-grade terminal interface. Set parameters once, let the neural network hunt 24/7 while you sleep.</p>
+                <ul class="terminal-features">
+                    <li>Self-learning prediction engine</li>
+                    <li>Microsecond opportunity detection</li>
+                    <li>Zero-latency position tracking</li>
+                    <li>Autonomous profit extraction</li>
+                </ul>
+            </div>
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">venom connect</span>
+                    </div>
+                    <div class="terminal-output success">✓ Connected to Solana mainnet</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-command">venom bot start</span>
+                    </div>
+                    <div class="terminal-output">Initializing trading engine...</div>
+                    <div class="terminal-output success">✓ Bot started successfully</div>
+                    <div class="terminal-output success">✓ Monitoring Pump.fun for opportunities...</div>
+                    <div class="terminal-output">Scanning for high-potential tokens...</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-glow"></div>
+        <div class="cta-content">
+            <h2 class="cta-title">Deploy VENOM Now</h2>
+            <p class="cta-subtitle">Join the elite traders hunting with precision. Don't watch from the sidelines.</p>
+            <button class="btn-primary" onclick="window.location='/bot'">Activate Terminal →</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-left">
+            <svg class="logo-eye" viewBox="0 0 200 200" style="width: 24px; height: 24px;">
+                <defs>
+                    <radialGradient id="irisFooter" cx="50%" cy="50%" r="55%">
+                        <stop offset="0%" stop-color="#7FFF00"/>
+                        <stop offset="100%" stop-color="#0d5a05"/>
+                    </radialGradient>
+                </defs>
+                <ellipse cx="100" cy="100" rx="75" ry="48" fill="#0d0d0d" stroke="#39FF14" stroke-width="4"/>
+                <ellipse cx="100" cy="100" rx="40" ry="40" fill="url(#irisFooter)"/>
+                <ellipse cx="100" cy="100" rx="8" ry="38" fill="#020202"/>
+            </svg>
+            <span class="footer-text">© 2025 VENOM AI. Strike first, profit faster.</span>
+        </div>
         <div class="footer-links">
-            <a href="/bot"><i class="fas fa-eye me-1"></i>Vision Bot</a>
-            <a href="/about"><i class="fas fa-book me-1"></i>Documentation</a>
-            <a href="#how-it-works"><i class="fas fa-question-circle me-1"></i>How It Works</a>
-            <a href="https://x.com/VisionAIHQ" target="_blank"><span style="font-weight: bold; font-size: 1.1rem; margin-right: 5px;">𝕏</span>X (Twitter)</a>
-            <a href="https://t.me/PortalvisionAI" target="_blank"><i class="fab fa-telegram me-1"></i>Telegram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Telegram</a>
+            <a href="#">Discord</a>
+            <a href="/bot">Launch App</a>
         </div>
-        <div style="margin-top: 20px;">
-            >> VISION AI v1.0 | AI TRADING INTELLIGENCE | POWERED BY ML <<
-        </div>
-        <small style="color: rgba(0, 136, 255, 0.3); display: block; margin-top: 10px;">
-            [WARNING] AI-ASSISTED TRADING SYSTEM - ALWAYS DO YOUR OWN RESEARCH (DYOR)
-        </small>
-    </div>
-</div>
+    </footer>
 
-</div>
-<!-- End content-wrapper -->
-</div>
-<!-- End Main Content -->
+    <script>
+        const heroEye = document.getElementById('heroEye');
+        const pupilGroup = document.getElementById('pupilGroup');
+        const eyelidTop = document.getElementById('eyelidTop');
+        const eyelidBottom = document.getElementById('eyelidBottom');
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// Eye tracking - Pupil and Iris follow mouse
-document.addEventListener('mousemove', (e) => {
-    const pupil = document.getElementById('headerPupil');
-    const iris = document.getElementById('headerIris');
-    if (!pupil || !iris) return;
+        // Eye tracking
+        document.addEventListener('mousemove', (e) => {
+            const rect = heroEye.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
 
-    const container = document.querySelector('.cyber-eye-container');
-    const rect = container.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+            const deltaX = (e.clientX - centerX) / 30;
+            const deltaY = (e.clientY - centerY) / 50;
 
-    const angleX = (e.clientX - centerX) / window.innerWidth;
-    const angleY = (e.clientY - centerY) / window.innerHeight;
+            const maxX = 12;
+            const maxY = 6;
+            const clampedX = Math.max(-maxX, Math.min(maxX, deltaX));
+            const clampedY = Math.max(-maxY, Math.min(maxY, deltaY));
 
-    const maxMovement = 8;
+            pupilGroup.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+        });
 
-    iris.style.transform = `translate(${angleX * maxMovement}px, ${angleY * maxMovement}px)`;
-    pupil.style.transform = `scale(1) translate(${angleX * maxMovement * 2}px, ${angleY * maxMovement * 2}px)`;
-});
+        // Blinking
+        function blink() {
+            eyelidTop.style.transition = 'transform 0.1s ease-in-out';
+            eyelidBottom.style.transition = 'transform 0.1s ease-in-out';
+            eyelidTop.style.transform = 'translateY(48px)';
+            eyelidBottom.style.transform = 'translateY(-48px)';
 
-// Click effect on cyber eye - color flash
-document.getElementById('headerEye').addEventListener('click', function() {
-    this.classList.add('clicked');
-    setTimeout(() => {
-        this.classList.remove('clicked');
-    }, 800);
-});
+            setTimeout(() => {
+                eyelidTop.style.transform = 'translateY(0)';
+                eyelidBottom.style.transform = 'translateY(0)';
+            }, 100);
+        }
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        // Random blinking
+        function randomBlink() {
+            blink();
+            setTimeout(randomBlink, 2500 + Math.random() * 4000);
+        }
+
+        setTimeout(randomBlink, 1500);
+
+        // Click to blink
+        heroEye.addEventListener('click', blink);
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
-        }
-    });
-});
-
-// Matrix rain effect
-function createMatrix() {
-    const container = document.getElementById('matrixBg');
-    const characters = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン10ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-    for (let i = 0; i < 40; i++) {
-        const column = document.createElement('div');
-        column.className = 'matrix-column';
-        column.style.left = Math.random() * 100 + '%';
-        column.style.animationDuration = (Math.random() * 12 + 8) + 's';
-        column.style.animationDelay = Math.random() * 5 + 's';
-        column.style.fontSize = (Math.random() * 6 + 10) + 'px';
-
-        let text = '';
-        for (let j = 0; j < 80; j++) {
-            text += characters[Math.floor(Math.random() * characters.length)] + '<br>';
-        }
-        column.innerHTML = text;
-        container.appendChild(column);
-    }
-}
-
-// Initialize matrix on page load
-createMatrix();
-
-// Animate stats numbers on scroll
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.stat-box, .step-card, .feature-card, .system-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
-});
-</script>
-
+        });
+    </script>
 </body>
 </html>

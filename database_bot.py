@@ -104,28 +104,36 @@ class BotDatabase:
         - Gérer automatiquement les rollback en cas d'erreur
         """
         conn = self.get_connection()
-        cursor = conn.cursor()  # Utiliser conn.cursor() ici pour éviter la récursion
+        cursor = conn.cursor()
 
-        original_execute = cursor.execute
+        # Wrapper class for cursor to override execute method
+        class CursorWrapper:
+            def __init__(self, cursor, conn, use_postgres):
+                self._cursor = cursor
+                self._conn = conn
+                self._use_postgres = use_postgres
 
-        def execute_wrapper(query, params=None):
-            try:
-                # Si SQLite, convertir %s en ?
-                if not self.use_postgres:
-                    query = query.replace('%s', '?')
-
-                return original_execute(query, params) if params else original_execute(query)
-            except Exception as e:
-                # Rollback automatique en cas d'erreur (SQLite et PostgreSQL)
+            def execute(self, query, params=None):
                 try:
-                    conn.rollback()
-                    print(f"[DATABASE] Auto-rollback after error: {str(e)[:100]}")
-                except:
-                    pass
-                raise
+                    # Si SQLite, convertir %s en ?
+                    if not self._use_postgres:
+                        query = query.replace('%s', '?')
 
-        cursor.execute = execute_wrapper
-        return cursor
+                    return self._cursor.execute(query, params) if params else self._cursor.execute(query)
+                except Exception as e:
+                    # Rollback automatique en cas d'erreur
+                    try:
+                        self._conn.rollback()
+                        print(f"[DATABASE] Auto-rollback after error: {str(e)[:100]}")
+                    except:
+                        pass
+                    raise
+
+            def __getattr__(self, name):
+                # Proxy all other methods to the original cursor
+                return getattr(self._cursor, name)
+
+        return CursorWrapper(cursor, conn, self.use_postgres)
 
     def init_database(self):
         """Initialise les tables de la base de données"""
